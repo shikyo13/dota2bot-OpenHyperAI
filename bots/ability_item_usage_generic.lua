@@ -392,6 +392,12 @@ function X.SetTalkMessage()
 	nLastDeathCount = GetHeroDeaths( nBotID )
 	nLastGold = bot:GetGold()
 
+	-- Comms: announce "On my way!" when TP in progress
+	if J.Comms ~= nil and bot:HasModifier('modifier_teleporting') then
+		local tpDest = bot:GetLocation()  -- approximate
+		J.Comms.AnnounceOnMyWay(bot, tpDest)
+	end
+
 end
 
 

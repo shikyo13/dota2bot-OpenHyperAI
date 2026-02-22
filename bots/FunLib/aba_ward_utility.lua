@@ -687,4 +687,69 @@ function X.IsThereEnemySentry(vLocation, nRadius)
 	return false
 end
 
+--------------------------------------------------------------------
+-- Dewarding: returns spots where the ENEMY team would typically
+-- place observer wards (based on opposing team's ward location data)
+--------------------------------------------------------------------
+function X.GetEnemyLikelyObsSpots(bot)
+	local enemyTeam = GetOpposingTeam()
+	local result = {}
+
+	-- Pick the ward data that the enemy uses for THEIR "ally tower standing" spots
+	local enemyBeforeData = (enemyTeam == TEAM_RADIANT)
+		and WardLocationsBeforeAllyTowerFall__Radiant
+		or  WardLocationsBeforeAllyTowerFall__Dire
+
+	for _, towerConst in pairs(nTowerList) do
+		local t = GetTower(enemyTeam, towerConst)
+		if t ~= nil then  -- enemy tower still standing → enemy likely warding here
+			local spots = enemyBeforeData[towerConst]
+			if spots ~= nil then
+				for _, spot in pairs(spots) do
+					if spot.location ~= nil
+					and IsLocationPassable(spot.location)
+					and not X.IsOtherWardClose(spot.location, 'npc_dota_sentry_wards', 1200, true, false)
+					and not J.Site.IsLocationHaveTrueSight(spot.location)
+					then
+						table.insert(result, spot)
+					end
+				end
+			end
+		end
+	end
+
+	-- Also check the enemy's "after our tower falls" data
+	local enemyAfterData = (enemyTeam == TEAM_RADIANT)
+		and WardLocationsAfterEnemyTowerFall__Dire   -- Dire data when Radiant towers fell
+		or  WardLocationsAfterEnemyTowerFall__Radiant -- Radiant data when Dire towers fell
+
+	for _, towerConst in pairs(nTowerList) do
+		local t = GetTower(GetTeam(), towerConst)
+		if t == nil then  -- OUR tower fell → enemy pushes wards forward here
+			local spots = enemyAfterData[towerConst]
+			if spots ~= nil then
+				for _, spot in pairs(spots) do
+					if spot.location ~= nil
+					and IsLocationPassable(spot.location)
+					and not X.IsOtherWardClose(spot.location, 'npc_dota_sentry_wards', 1200, true, false)
+					and not J.Site.IsLocationHaveTrueSight(spot.location)
+					then
+						table.insert(result, spot)
+					end
+				end
+			end
+		end
+	end
+
+	-- Also add any visible enemy wards
+	local enemyWards = GetUnitList(UNIT_LIST_ENEMY_WARDS)
+	for _, ward in pairs(enemyWards) do
+		if J.IsValid(ward) and string.find(ward:GetUnitName(), 'npc_dota_observer_wards') then
+			table.insert(result, { location = ward:GetLocation(), plant_time_obs = 0, plant_time_sentry = 0 })
+		end
+	end
+
+	return result
+end
+
 return X

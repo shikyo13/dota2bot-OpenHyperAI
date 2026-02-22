@@ -59,7 +59,19 @@ export function GetPushDesire(bot: Unit, lane: Lane): BotModeDesire {
     }
 
     // 2) compute and publish
-    const res = GetPushDesireHelper(bot, lane);
+    let res = GetPushDesireHelper(bot, lane);
+
+    // Comms: !push command boost
+    const Comms = (jmz as any).Comms;
+    if (Comms != null) {
+        const cmd = Comms.GetCurrentCommand();
+        if (cmd != null && cmd.type === "push" && Comms.IsCommandFresh(20)) {
+            if (cmd.lane == null || cmd.lane === lane) {
+                res = Math.max(res, 0.9);
+            }
+        }
+    }
+
     jmz.Utils.SetCachedVars(cacheKey, res);
     (bot as any).pushDesire = res;
     return res;

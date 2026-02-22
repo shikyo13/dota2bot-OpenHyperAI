@@ -915,6 +915,15 @@ function ____exports.GetDefendDesire(bot, lane)
         return cachedVar
     end
     local res = ____exports.GetDefendDesireHelper(bot, lane)
+    local Comms = jmz.Comms
+    if Comms ~= nil then
+        local cmd = Comms.GetCurrentCommand()
+        if cmd ~= nil and cmd.type == "defend" and Comms.IsCommandFresh(20) then
+            if cmd.lane == nil or cmd.lane == lane then
+                res = math.max(res, 0.95)
+            end
+        end
+    end
     jmz.Utils.SetCachedVars(cacheKey, res)
     bot.defendDesire = res
     return res

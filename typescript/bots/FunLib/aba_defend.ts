@@ -456,7 +456,19 @@ export function GetDefendDesire(bot: Unit, lane: Lane): BotModeDesire {
     }
 
     // 2) compute and publish
-    const res = GetDefendDesireHelper(bot, lane);
+    let res = GetDefendDesireHelper(bot, lane);
+
+    // Comms: !def command boost
+    const Comms = (jmz as any).Comms;
+    if (Comms != null) {
+        const cmd = Comms.GetCurrentCommand();
+        if (cmd != null && cmd.type === "defend" && Comms.IsCommandFresh(20)) {
+            if (cmd.lane == null || cmd.lane === lane) {
+                res = Math.max(res, 0.95);
+            }
+        }
+    }
+
     jmz.Utils.SetCachedVars(cacheKey, res);
     (bot as any).defendDesire = res;
     return res;

@@ -44,6 +44,18 @@ function GetDesire()
 	if DotaTime() < lastDesireTime + 0.5 then return BOT_MODE_DESIRE_NONE end
 	lastDesireTime = DotaTime()
 
+	-- Comms: !help command — come to human's location
+	if J.Comms ~= nil then
+		local cmd = J.Comms.GetCurrentCommand()
+		if cmd ~= nil and cmd.type == "help" and J.Comms.IsCommandFresh(15) then
+			local humanAlly = GetClosestHumanAlly()
+			if humanAlly ~= nil then
+				local dist = GetUnitToUnitDistance(bot, humanAlly)
+				return RemapValClamped(dist, 500, 5000, BOT_MODE_DESIRE_VERYHIGH, BOT_MODE_DESIRE_MODERATE)
+			end
+		end
+	end
+
 	local humanAlly, humanDist = GetClosestHumanAlly()
 	if humanAlly == nil then return BOT_MODE_DESIRE_NONE end
 

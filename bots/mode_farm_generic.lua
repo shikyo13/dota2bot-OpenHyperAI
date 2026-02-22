@@ -44,6 +44,7 @@ local numberAnnouncePrinted = 1
 local announcementGap = 6
 local hasPickedOneAnnouncer = false
 local CleanupCachedVarsTime = -100
+local lastEnemySeenInLane = 0
 
 local runTime = 0;
 local shouldRunTime = 0
@@ -71,6 +72,21 @@ function GetDesireHelper()
 
 	PickOneAnnouncer()
 	AnnounceMessages()
+
+	-- Comms: announce "missing" when lane opponent disappears during laning
+	if J.Comms ~= nil and J.IsInLaningPhase() and DotaTime() > 60 then
+		local assignedLane = bot:GetAssignedLane()
+		if assignedLane ~= nil then
+			local laneFront = GetLaneFrontLocation(GetOpposingTeam(), assignedLane, 0)
+			local nEnemyLaners = J.GetEnemiesNearLoc(laneFront, 2500)
+			if #nEnemyLaners > 0 then
+				lastEnemySeenInLane = DotaTime()
+			elseif lastEnemySeenInLane > 0 and DotaTime() - lastEnemySeenInLane > 15 then
+				J.Comms.AnnounceMissing(bot, assignedLane)
+				lastEnemySeenInLane = DotaTime()
+			end
+		end
+	end
 
     J.Utils['GameStates'] = J.Utils['GameStates'] or {}
     J.Utils['GameStates']['defendPings'] = J.Utils['GameStates']['defendPings'] or { pingedTime = GameTime() }

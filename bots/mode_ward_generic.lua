@@ -33,6 +33,53 @@ function GetDesireHelper()
         return BOT_MODE_DESIRE_NONE
     end
 
+	-- Comms: warding/dewarding mission override (highest priority)
+	if J.Comms ~= nil and J.Comms.IsOnWardingMission(bot) then
+		local missionTarget = J.Comms.GetMissionTarget(bot)
+		if missionTarget then
+			hTargetSpot = missionTarget
+			-- Find appropriate ward item for mission
+			local missionType = J.Comms.GetMissionType(bot)
+			if missionType == "obs" then
+				for i = 0, 5 do
+					local hItem = bot:GetItemInSlot(i)
+					if hItem then
+						local sItemName = hItem:GetName()
+						if sItemName == 'item_ward_observer' or sItemName == 'item_ward_dispenser' then
+							ObserverWard = hItem
+							break
+						end
+					end
+				end
+			else
+				for i = 0, 5 do
+					local hItem = bot:GetItemInSlot(i)
+					if hItem then
+						local sItemName = hItem:GetName()
+						if sItemName == 'item_ward_sentry' or sItemName == 'item_ward_dispenser' then
+							SentryWard = hItem
+							break
+						end
+					end
+				end
+			end
+			return BOT_MODE_DESIRE_VERYHIGH
+		else
+			J.Comms.EndMission(bot)
+		end
+	end
+
+	-- Comms: !ward or !deward command (even if not on mission yet)
+	if J.Comms ~= nil then
+		local cmd = J.Comms.GetCurrentCommand()
+		if cmd ~= nil and (cmd.type == "ward_obs" or cmd.type == "deward") and J.Comms.IsCommandFresh(25) then
+			if J.GetPosition(bot) >= 4 then
+				-- Boost desire to get into ward mode
+				return BOT_MODE_DESIRE_HIGH
+			end
+		end
+	end
+
 	-- 如果在打高地 就别撤退去干别的
 	if J.Utils.IsTeamPushingSecondTierOrHighGround(bot) then
 		return BOT_MODE_DESIRE_NONE
@@ -100,6 +147,12 @@ end
 function Think()
 	if J.CanNotUseAction(bot) then return end
 	if J.Utils.IsBotThinkingMeaningfulAction(bot, Customize.ThinkLess, "ward") then return end
+
+	-- Announce warding if on mission
+	if J.Comms ~= nil and J.Comms.IsOnWardingMission(bot) then
+		J.Comms.AnnounceWarding(bot)
+	end
+
 	if hTargetSpot then
 		if ObserverWard and J.CanCastAbility(ObserverWard) then
 			if GetUnitToLocationDistance(bot, hTargetSpot.location) <= nObserverWardCastRange then
@@ -115,6 +168,11 @@ function Think()
 				end
 
 				hTargetSpot.plant_time_obs = DotaTime()
+				fLastWardPlantTime = DotaTime()
+				-- Advance mission to next spot
+				if J.Comms ~= nil and J.Comms.IsOnWardingMission(bot) then
+					J.Comms.AdvanceMissionSpot(bot)
+				end
 				return
 			else
 				bot:Action_MoveToLocation(hTargetSpot.location)
@@ -141,6 +199,11 @@ function Think()
 				end
 
 				hTargetSpot.plant_time_sentry = DotaTime()
+				fLastWardPlantTime = DotaTime()
+				-- Advance mission to next spot
+				if J.Comms ~= nil and J.Comms.IsOnWardingMission(bot) then
+					J.Comms.AdvanceMissionSpot(bot)
+				end
 				return
 			else
 				bot:Action_MoveToLocation(hTargetSpot.location)

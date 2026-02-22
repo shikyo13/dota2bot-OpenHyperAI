@@ -41,6 +41,14 @@ function GetDesireHelper()
         end
     end
 
+	-- Comms: !rosh command
+	if J.Comms ~= nil then
+		local cmd = J.Comms.GetCurrentCommand()
+		if cmd ~= nil and cmd.type == "roshan" and J.Comms.IsCommandFresh(25) then
+			return BOT_MODE_DESIRE_HIGH
+		end
+	end
+
 	-- 如果在打高地 就别撤退去干别的
 	if J.Utils.IsTeamPushingSecondTierOrHighGround(bot) then
 		return BOT_MODE_DESIRE_NONE

@@ -525,6 +525,15 @@ function ____exports.GetPushDesire(bot, lane)
         return cachedVar
     end
     local res = ____exports.GetPushDesireHelper(bot, lane)
+    local Comms = jmz.Comms
+    if Comms ~= nil then
+        local cmd = Comms.GetCurrentCommand()
+        if cmd ~= nil and cmd.type == "push" and Comms.IsCommandFresh(20) then
+            if cmd.lane == nil or cmd.lane == lane then
+                res = math.max(res, 0.9)
+            end
+        end
+    end
     jmz.Utils.SetCachedVars(cacheKey, res)
     bot.pushDesire = res
     return res

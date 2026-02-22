@@ -97,6 +97,20 @@ function GetDesireHelper()
 		end
 	end
 
+    -- Comms: !back command
+    if J.Comms ~= nil then
+        local cmd = J.Comms.GetCurrentCommand()
+        if cmd ~= nil and cmd.type == "retreat" and J.Comms.IsCommandFresh(10) then
+            return 0.9
+        end
+    end
+
+    -- Comms: announce need help when outnumbered + taking damage
+    if J.Comms ~= nil and #nEnemyHeroes > #nAllyHeroes
+    and bot:WasRecentlyDamagedByAnyHero(2.0) and J.GetHP(bot) < 0.5 then
+        J.Comms.AnnounceNeedHelp(bot)
+    end
+
     if J.GetHP(bot) < 0.3 and #nEnemyHeroes >= 2 and bot:WasRecentlyDamagedByAnyHero(1) then
         return RemapValClamped(J.GetHP(bot), 0.5, 0, BOT_MODE_DESIRE_HIGH, BOT_MODE_DESIRE_ABSOLUTE)
     end

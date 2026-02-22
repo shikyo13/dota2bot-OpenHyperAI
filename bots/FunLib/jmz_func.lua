@@ -34,6 +34,7 @@ J.Skill = require( GetScriptDirectory()..'/FunLib/aba_skill' )
 J.Chat = require( GetScriptDirectory()..'/FunLib/aba_chat' )
 J.Utils = require( GetScriptDirectory()..'/FunLib/utils' )
 J.Customize = require(GetScriptDirectory()..'/FunLib/custom_loader')
+J.Comms = require(GetScriptDirectory()..'/FunLib/aba_comms')
 
 
 function J.SetUserHeroInit( nAbilityBuildList, nTalentBuildList, sBuyList, sSellList )

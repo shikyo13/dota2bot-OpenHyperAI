@@ -257,6 +257,15 @@ function Think()
 	-- diabled think less to avoid failing to last hit
     -- if J.Utils.IsBotThinkingMeaningfulAction(bot, Customize.ThinkLess, "team_roam") then return end
 
+    -- Comms: announce "Back!" when in fight but team is weaker
+    if J.Comms ~= nil and J.IsInTeamFight(bot, 1200) then
+        local allies = J.GetAlliesNearLoc(bot:GetLocation(), 1600)
+        local enemies = J.GetEnemiesNearLoc(bot:GetLocation(), 1600)
+        if #enemies > #allies + 1 and not J.WeAreStronger(bot, 1200) then
+            J.Comms.AnnounceRetreat(bot, bot:GetLocation())
+        end
+    end
+
     ItemOpsThink()
 
 	-- Leash & validity guard to prevent pacing back and forth

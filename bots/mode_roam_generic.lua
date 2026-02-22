@@ -114,6 +114,21 @@ function GetDesireHelper()
 		end
 	end
 
+	-- Comms: gank/smoke/focus commands
+	if J.Comms ~= nil then
+		J.Comms.Think()
+		local cmd = J.Comms.GetCurrentCommand()
+		if cmd ~= nil and J.Comms.IsCommandFresh(20) then
+			if cmd.type == "gank" and (J.GetPosition(bot) == 2 or J.GetPosition(bot) == 4) then
+				return 0.85
+			elseif cmd.type == "smoke" and J.GetPosition(bot) >= 2 then
+				return 0.85
+			elseif cmd.type == "focus" and J.IsInTeamFight(bot, 1600) then
+				return 0.85
+			end
+		end
+	end
+
 	-- general items or conditions.
 	local generalRoaming = ConsiderGeneralRoamingInConditions()
 	if generalRoaming then
@@ -124,17 +139,6 @@ function GetDesireHelper()
 		end
 	end
 
-	-- if J.IsValidHero(botTarget)
-	-- and (J.GetModifierTime(botTarget, 'modifier_dazzle_shallow_grave') > 0.5
-	-- 	or J.GetModifierTime(botTarget, 'modifier_oracle_false_promise_timer') > 0.5
-	-- 	or botTarget:HasModifier('modifier_skeleton_king_reincarnation_scepter_active')
-	-- 	or botTarget:HasModifier('modifier_item_helm_of_the_undying_active'))
-	-- and J.GetHP(botTarget) < 0.2 and botName ~= "npc_dota_hero_axe"
-	-- then
-	-- 	local nAttackTarget = J.GetAttackableWeakestUnit( bot, bot:GetAttackRange() + 400, true, true )
-	-- 	bot:SetTarget( nAttackTarget )
-	-- end
-
 	return BOT_MODE_DESIRE_NONE
 end
 
@@ -143,6 +147,47 @@ function Think()
 	if J.Utils.IsBotThinkingMeaningfulAction(bot, Customize.ThinkLess, "roam") then return end
 
 	nInRangeEnemy = bot:GetNearbyHeroes(1200, true, BOT_MODE_NONE)
+
+	-- Comms: focus target override
+	if J.Comms ~= nil then
+		local focusTarget = J.Comms.GetFocusTarget(bot)
+		if focusTarget ~= nil and J.IsInTeamFight(bot, 1600) then
+			bot:SetTarget(focusTarget)
+		end
+
+		-- Comms: gank command — move toward target or lane
+		local cmd = J.Comms.GetCurrentCommand()
+		if cmd ~= nil and cmd.type == "gank" and J.Comms.IsCommandFresh(20) then
+			if cmd.location ~= nil then
+				J.Comms.AnnounceGanking(bot, cmd.lane)
+				if GetUnitToLocationDistance(bot, cmd.location) > 500 then
+					bot:Action_MoveToLocation(cmd.location)
+					return
+				end
+			elseif cmd.lane ~= nil then
+				J.Comms.AnnounceGanking(bot, cmd.lane)
+				local targetLoc = GetLaneFrontLocation(GetTeam(), cmd.lane, -300)
+				if GetUnitToLocationDistance(bot, targetLoc) > 500 then
+					bot:Action_MoveToLocation(targetLoc)
+					return
+				end
+			end
+		end
+
+		-- Comms: TP rescue evaluation
+		local tpTarget = J.Comms.GetBestTPTarget(bot)
+		if tpTarget ~= nil and J.Comms.ShouldTPToSave(bot, tpTarget) then
+			local tp = J.Utils.GetItemFromFullInventory(bot, 'item_tpscroll')
+			if tp ~= nil and tp:IsFullyCastable() then
+				local allyTowers = tpTarget:GetNearbyTowers(2500, false)
+				if allyTowers ~= nil and #allyTowers >= 1 then
+					J.Comms.AnnounceOnMyWay(bot, tpTarget:GetLocation())
+					bot:Action_UseAbilityOnLocation(tp, allyTowers[1]:GetLocation())
+					return
+				end
+			end
+		end
+	end
 
 	ThinkIndividualRoaming() -- unit special abilities
 	ThinkGeneralRoaming() -- general items or conditions.

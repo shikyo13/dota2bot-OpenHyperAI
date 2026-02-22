@@ -740,6 +740,29 @@ function ItemPurchaseThink()
 		end
 	end
 
+	-- Comms: reactive ward buying on !ward / !deward command
+	if J.Comms ~= nil and J.GetPosition(bot) >= 4 then
+		local cmd = J.Comms.GetCurrentCommand()
+		if cmd ~= nil and J.Comms.IsCommandFresh(30) then
+			if cmd.type == "ward_obs"
+			and Item.GetItemCharges(bot, 'item_ward_observer') < 1
+			and GetItemStockCount('item_ward_observer') > 0
+			and botGold >= GetItemCost('item_ward_observer')
+			and Item.GetEmptyInventoryAmount(bot) >= 1
+			then
+				bot:ActionImmediate_PurchaseItem('item_ward_observer')
+			end
+			if cmd.type == "deward"
+			and Item.GetItemCharges(bot, 'item_ward_sentry') < 1
+			and GetItemStockCount('item_ward_sentry') > 0
+			and botGold >= GetItemCost('item_ward_sentry')
+			and Item.GetEmptyInventoryAmount(bot) >= 1
+			then
+				bot:ActionImmediate_PurchaseItem('item_ward_sentry')
+			end
+		end
+	end
+
 	-- Smoke of Deceit
 	if J.GetPosition(bot) == 5 and botWorth < 10000
 	and Utils.CountBackpackEmptySpace(bot) >= 2
