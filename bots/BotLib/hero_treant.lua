@@ -14,8 +14,10 @@ local tTalentTreeList = {
                         ['t10'] = {10, 0},
 }
 
+-- 7.40: Leech Seed(W) is now autocast attack modifier, Eyes in Forest(E) is Shard ability
+-- Nature's Guise is now active innate
 local tAllAbilityBuildList = {
-                        {2,1,2,1,2,6,2,1,1,3,6,3,3,3,6},--pos4,5
+                        {2,1,2,1,2,6,2,1,1,1,6,3,3,3,6},--pos4,5 (skip E until Shard)
 }
 
 local nAbilityBuildList = J.Skill.GetRandomBuild(tAllAbilityBuildList)
@@ -571,9 +573,11 @@ function X.ConsiderOvergrowth()
     return BOT_ACTION_DESIRE_NONE
 end
 
+-- 7.40: Eyes in the Forest is now a Shard ability (3 charges)
 function X.ConsiderEyesInTheForest()
     if not EyesInTheForest:IsTrained()
     or not EyesInTheForest:IsFullyCastable()
+    or not bot:HasShard()
     then
         return BOT_ACTION_DESIRE_NONE, nil
     end

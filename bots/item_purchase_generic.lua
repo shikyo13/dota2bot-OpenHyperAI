@@ -73,13 +73,28 @@ local initSmoke = false
 
 local currentTime, botLevel, botGold, botWorth, botMode, botHP, botCourierValue, botStashValue, botDistanceFromFountain
 
+local tStackableItems = {
+    item_ward_observer = true,
+    item_ward_sentry = true,
+    item_tango = true,
+    item_dust = true,
+    item_smoke_of_deceit = true,
+    item_blood_grenade = true,
+    item_clarity = true,
+    item_flask = true,
+    item_tpscroll = true,
+    item_enchanted_mango = true,
+}
+
 local function CountItemEverywhere(unit, itemName)
+    local isStackable = tStackableItems[itemName] or false
     local function countIn(invOwner)
         local c = 0
         for s = 0, 14 do
             local it = invOwner:GetItemInSlot(s)
             if it ~= nil and it:GetName() == itemName then
-                c = c + (it:GetCurrentCharges() > 0 and 1 or 1) -- components don't stack; keep 1
+                local charges = it:GetCurrentCharges()
+                c = c + (isStackable and charges > 0 and charges or 1)
             end
         end
         return c
@@ -88,14 +103,14 @@ local function CountItemEverywhere(unit, itemName)
     local total = countIn(unit)
 
     -- include courier if we can access it
-    local c = unit.theCourier
-    if c ~= nil then
-        -- Best-effort: some APIs hide courier slots; try typical 0..8
+    local courier = GetCourier(0)
+    if courier ~= nil then
         pcall(function()
             for s = 0, 8 do
-                local it = c:GetItemInSlot(s)
+                local it = courier:GetItemInSlot(s)
                 if it ~= nil and it:GetName() == itemName then
-                    total = total + 1
+                    local charges = it:GetCurrentCharges()
+                    total = total + (isStackable and charges > 0 and charges or 1)
                 end
             end
         end)
@@ -182,6 +197,15 @@ local function GeneralPurchase()
 		end
 	end
 
+	-- Skip buying basic boots if we already have an upgraded boot (check all slots + courier)
+	if bot.currBuyingBasicItem == 'item_boots'
+		and bot.currBuyingItemInPurchaseList ~= 'item_boots'
+		and Item.HasBootsAnywhere( bot )
+	then
+		ClearCurrBuyingBasicItemList()
+		return
+	end
+
 	local cost = itemCost
 
 
@@ -249,9 +273,10 @@ local function GeneralPurchase()
 		cost = itemCost
 	end
 
-	--从第12分钟起存钱买魔晶
+	--从第12分钟起存钱买魔晶 (cap at 20min so we don't block purchases forever)
 	if not bot.hasBuyShard
 		and DotaTime() > 12 * 60
+		and DotaTime() < 20 * 60
 	then
 		local shardCDTime = 15 * 60 - DotaTime()
 		if shardCDTime < 0
@@ -381,6 +406,15 @@ local function TurboModeGeneralPurchase()
 		end
 	end
 
+	-- Skip buying basic boots if we already have an upgraded boot (check all slots + courier)
+	if bot.currBuyingBasicItem == 'item_boots'
+		and bot.currBuyingItemInPurchaseList ~= 'item_boots'
+		and Item.HasBootsAnywhere( bot )
+	then
+		ClearCurrBuyingBasicItemList()
+		return
+	end
+
 	local cost = itemCost
 
 	if bot.lastItemToBuy == 'item_boots'
@@ -393,6 +427,7 @@ local function TurboModeGeneralPurchase()
 
 	if not bot.hasBuyShard
 		and DotaTime() > 8 * 60
+		and DotaTime() < 14 * 60
 	then
 		local shardCDTime = 10 * 60 - DotaTime()
 		if shardCDTime < 0
@@ -932,6 +967,26 @@ function ItemPurchaseThink()
 				end
 			end
 		end
+
+		-- Sell duplicate boots: if we have 2+ boot types, sell the cheaper one
+		local bootCount = 0
+		local cheapestBootSlot = -1
+		local cheapestBootCost = 99999
+		local allBoots = {'item_boots', 'item_phase_boots', 'item_power_treads', 'item_tranquil_boots', 'item_arcane_boots', 'item_travel_boots', 'item_travel_boots_2', 'item_boots_of_bearing', 'item_guardian_greaves'}
+		for _, bootName in pairs(allBoots) do
+			local slot = bot:FindItemSlot(bootName)
+			if slot >= 0 then
+				bootCount = bootCount + 1
+				local c = GetItemCost(bootName)
+				if c < cheapestBootCost then
+					cheapestBootCost = c
+					cheapestBootSlot = slot
+				end
+			end
+		end
+		if bootCount >= 2 and cheapestBootSlot >= 0 then
+			bot:ActionImmediate_SellItem(bot:GetItemInSlot(cheapestBootSlot))
+		end
 	end
 
 	if Item.HasItem(bot, 'item_mask_of_madness')
@@ -1033,7 +1088,7 @@ end
 function ClearCurrBuyingBasicItemList()
 	bot.countInvCheck = 0
 	bot.currBuyingBasicItem = nil
-	bot.currBuyingBasicItemList[#bot.currBuyingBasicItemList] = nil
+	table.remove(bot.currBuyingBasicItemList)
 end
 
 function IsThereHealingInStash(unit)

@@ -1428,6 +1428,39 @@ function Item.HasBootsInMainSolt( bot )
 
 end
 
+
+-- Check if bot has any boot-type item anywhere: main inventory, backpack, stash, or courier
+function Item.HasBootsAnywhere( bot )
+	local allBoots = {
+		'item_boots', 'item_phase_boots', 'item_power_treads',
+		'item_tranquil_boots', 'item_arcane_boots',
+		'item_travel_boots', 'item_travel_boots_2',
+		'item_boots_of_bearing', 'item_guardian_greaves'
+	}
+	-- Check all inventory slots (0-5 main, 6-8 backpack, 9-14 stash)
+	for _, bootName in pairs(allBoots) do
+		local slot = bot:FindItemSlot(bootName)
+		if slot >= 0 then
+			return true
+		end
+	end
+	-- Check courier
+	local courier = GetCourier(0)
+	if courier ~= nil then
+		for s = 0, 8 do
+			local it = courier:GetItemInSlot(s)
+			if it ~= nil then
+				for _, bootName in pairs(allBoots) do
+					if it:GetName() == bootName then
+						return true
+					end
+				end
+			end
+		end
+	end
+	return false
+end
+
 function Item.GetItemTotalWorthInSlots(unit)
 	local totalValue = 0
 	for i = 0, 16

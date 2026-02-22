@@ -24,7 +24,7 @@ local tTalentTreeList = {
 }
 
 local tAllAbilityBuildList = {
-						{3,2,1,1,1,6,1,2,2,2,6,3,3,3,6},--pos1
+						{1,2,3,1,1,6,1,3,3,3,6,2,2,2,6},--pos1 (7.40: E=Saltwater Shiv, Essence Shift is now innate)
 }
 
 local nAbilityBuildList = J.Skill.GetRandomBuild( tAllAbilityBuildList )
@@ -118,12 +118,12 @@ end
 
 --[[
 
-npc_dota_hero_slark
+npc_dota_hero_slark (7.40 rework)
 
-
+"Innate"		"slark_essence_shift" (now innate passive)
 "Ability1"		"slark_dark_pact"
 "Ability2"		"slark_pounce"
-"Ability3"		"slark_essence_shift"
+"Ability3"		"slark_saltwater_shiv" (NEW: was Essence Shift slot, now autocast attack modifier)
 "Ability4"		"slark_depth_shroud"
 "Ability5"		"generic_hidden"
 "Ability6"		"slark_shadow_dance"

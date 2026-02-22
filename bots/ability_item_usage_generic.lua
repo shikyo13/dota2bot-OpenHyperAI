@@ -46,16 +46,46 @@ local function AbilityLevelUpComplement()
 	if bot:IsAlive()
 		and DotaTime() > 90
 		and bot:GetCurrentActionType() == BOT_ACTION_TYPE_MOVE_TO
-		and not IsLocationPassable( botLoc )
 	then
 		if bot.stuckLoc == nil
 		then
 			bot.stuckLoc = botLoc
 			bot.stuckTime = DotaTime()
-		elseif bot.stuckLoc ~= botLoc
+		elseif GetUnitToLocationDistance( bot, bot.stuckLoc ) > 50
 		then
+			-- bot moved meaningfully, reset tracking
 			bot.stuckLoc = botLoc
 			bot.stuckTime = DotaTime()
+		end
+		-- else: bot hasn't moved >50 units, keep stuckLoc/stuckTime unchanged
+
+		-- Unstuck recovery: if stuck for >10 seconds, TP to fountain
+		if bot.stuckTime ~= nil and DotaTime() > bot.stuckTime + 10.0
+			and GetUnitToLocationDistance( bot, bot.stuckLoc ) < 50
+		then
+			local tpSlot = bot:FindItemSlot("item_tpscroll")
+			if tpSlot >= 0
+			then
+				local tpItem = bot:GetItemInSlot(tpSlot)
+				if tpItem ~= nil and tpItem:IsFullyCastable()
+				then
+					local fountain = GetAncient( GetTeam() ):GetLocation()
+					bot:Action_UseAbilityOnLocation( tpItem, fountain )
+					bot.stuckLoc = nil
+					bot.stuckTime = nil
+				end
+			else
+				-- No TP: try to move toward nearest lane center
+				local lane = bot:GetAssignedLane()
+				if lane ~= nil then
+					local laneLoc = GetLaneFrontLocation( GetTeam(), lane, 0 )
+					if laneLoc ~= nil then
+						bot:Action_MoveToLocation( laneLoc )
+					end
+				end
+				bot.stuckLoc = nil
+				bot.stuckTime = nil
+			end
 		end
 	else
 		bot.stuckTime = nil
@@ -68,6 +98,22 @@ local function AbilityLevelUpComplement()
 	end
 
 	local botLevel = bot:GetLevel()
+
+	-- 7.40: Talents auto-grant and don't consume ability points.
+	-- Strip talent entries from the front of the queue, choosing them as we go.
+	while #sAbilityLevelUpList >= 1 do
+		local frontName = sAbilityLevelUpList[1]
+		if J.Skill.IsTalentName( bot, frontName ) then
+			local talent = bot:GetAbilityByName( frontName )
+			if talent ~= nil and botLevel >= talent:GetHeroLevelRequiredToUpgrade() then
+				-- Try to choose the talent (works in 7.40 auto-grant system)
+				bot:ActionImmediate_LevelAbility( frontName )
+			end
+			table.remove( sAbilityLevelUpList, 1 )
+		else
+			break -- front is a regular ability, proceed to normal leveling
+		end
+	end
 
 	if #sAbilityLevelUpList >= 1
 	and bot:GetAbilityPoints() > 0
@@ -177,6 +223,8 @@ local function AbilityLevelUpComplement()
 		end
 	end
 
+	-- 7.40: For levels 25-30, try to spend remaining ability points on any upgradeable ability.
+	-- Also try choosing any remaining unchosen talents.
 	if botLevel > 25 and botLevel < 30 and bot:GetAbilityPoints() >= 1 and #sAbilityLevelUpList <= 3 then
 		sAbilityLevelUpList = J.Utils.CombineTablesUnique(J.Skill.GetTalentList( bot ), J.Skill.GetAbilityList( bot ))
 	end

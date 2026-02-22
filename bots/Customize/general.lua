@@ -86,13 +86,20 @@ Customize.Trash_Talk_Level = 1
 
 -- To set the names for the Radiant bots. Don't need to provide a value for all 5 bots, missing names will have a Random value.
 Customize.Radiant_Names = {
-    'Random',
-    'Random',
+    'Zero-1',
+    'Zero-2',
+    'Zero-3',
+    'Zero-4',
+    'Zero-5',
 }
 
 -- Same notes as above for setting the bots' names but for the Dire side.
 Customize.Dire_Names = {
-    'Random',
+    'Zero-1',
+    'Zero-2',
+    'Zero-3',
+    'Zero-4',
+    'Zero-5',
 }
 
 -- The desire level that the bots will group up and push the same lane. 

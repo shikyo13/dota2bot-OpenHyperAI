@@ -17,12 +17,10 @@ local tTalentTreeList = {--pos2
                         ['t10'] = {0, 10},
 }
 
+-- 7.40: Bear is now innate. Q=Entangle(new), W=Spirit Link, E=Savage Roar, R=True Form
 local tAllAbilityBuildList = {
-                        -- {1,2,1,2,1,6,1,2,2,3,6,3,3,3,6},--pos2
-                        {2,2,6,2,2,3,6,3,3,3,6,1,1,1,1},--no bear
+                        {1,2,1,2,1,6,1,2,2,3,6,3,3,3,6},--pos1/2 (Entangle max first)
 }
-
-local nAbilityBuildListWithBear = {1,2,1,3,1,6,1,2,2,2,6,3,3,3,6} --pos2
 
 local nAbilityBuildList = J.Skill.GetRandomBuild( tAllAbilityBuildList )
 
@@ -102,18 +100,11 @@ X['sSellList'] = {
 	-- "item_quelling_blade",
 }
 
+-- 7.40: Bear is always available (innate), use bear build always
 if Utils.GetLoneDruid(bot).roleType == nil then
-    if RandomInt(1, 5) >= 0 then -- always with bear, for now.
-        Utils.GetLoneDruid(bot).roleType = 'pos_1_w_bear'
-    else
-        Utils.GetLoneDruid(bot).roleType = 'pos_1'
-    end
-else
-    if Utils.GetLoneDruid(bot).roleType == 'pos_1_w_bear' then
-        X['sBuyList'] = sRoleItemsBuyList['pos_1_w_bear']
-        nAbilityBuildList = nAbilityBuildListWithBear
-    end
+    Utils.GetLoneDruid(bot).roleType = 'pos_1_w_bear'
 end
+X['sBuyList'] = sRoleItemsBuyList['pos_1_w_bear']
 
 
 if J.Role.IsPvNMode() or J.Role.IsAllShadow() then X['sBuyList'], X['sSellList'] = { 'PvN_antimage' }, {} end
@@ -129,12 +120,14 @@ function X.MinionThink(hMinionUnit)
     Minion.MinionThink(hMinionUnit)
 end
 
-local SummonSpiritBear  = bot:GetAbilityByName('lone_druid_spirit_bear')
--- local SpiritLink        = bot:GetAbilityByName('lone_druid_spirit_link')
+-- 7.40: Spirit Bear is innate, Q is now Entangle
+local SummonSpiritBear  = bot:GetAbilityByName('lone_druid_spirit_bear') -- innate
+local Entangle          = bot:GetAbilityByName('lone_druid_entangle')    -- new Q ability
+local SpiritLink        = bot:GetAbilityByName('lone_druid_spirit_link')
 local SavageRoar        = bot:GetAbilityByName('lone_druid_savage_roar')
 local TrueForm          = bot:GetAbilityByName('lone_druid_true_form')
 
-local SummonSpiritBearDesire
+local EntangleDesire, EntangleLocation
 local SavageRoarDesire
 local TrueFormDesire
 
@@ -152,33 +145,67 @@ function X.SkillsComplement()
         return
     end
 
+    EntangleDesire, EntangleLocation = X.ConsiderEntangle()
+    if EntangleDesire > 0
+    then
+        bot:Action_UseAbilityOnLocation(Entangle, EntangleLocation)
+        return
+    end
+
     SavageRoarDesire = X.ConsiderSavageRoar()
     if SavageRoarDesire > 0
     then
         bot:Action_UseAbility(SavageRoar)
         return
     end
-
-    SummonSpiritBearDesire = X.ConsiderSummonSpiritBear()
-    if SummonSpiritBearDesire > 0
-    then
-        bot:Action_UseAbility(SummonSpiritBear)
-        return
-    end
 end
 
-function X.ConsiderSummonSpiritBear()
-    if not SummonSpiritBear:IsFullyCastable() or Utils.GetLoneDruid(bot).roleType ~= 'pos_1_w_bear'
+-- 7.40: Entangle (new Q) — AoE root, cast range 750, radius 350
+function X.ConsiderEntangle()
+    if Entangle == nil or not J.CanCastAbility(Entangle)
     then
-        return BOT_ACTION_DESIRE_NONE
+        return BOT_ACTION_DESIRE_NONE, 0
     end
 
-	if Utils.GetLoneDruid(bot).bear == nil or not Utils.GetLoneDruid(bot).bear:IsAlive()
-    then
-		return BOT_ACTION_DESIRE_HIGH
-	end
+    local nCastRange = J.GetProperCastRange(false, bot, Entangle:GetCastRange())
+    local nRadius = 350
+    local nCastPoint = Entangle:GetCastPoint()
 
-    return BOT_ACTION_DESIRE_NONE
+    if J.IsInTeamFight(bot, 1200)
+    then
+        local nLocationAoE = bot:FindAoELocation(true, true, bot:GetLocation(), nCastRange, nRadius, nCastPoint, 0)
+        local nInRangeEnemy = J.GetEnemiesNearLoc(nLocationAoE.targetloc, nRadius)
+        if nInRangeEnemy ~= nil and #nInRangeEnemy >= 2
+        then
+            return BOT_ACTION_DESIRE_HIGH, nLocationAoE.targetloc
+        end
+    end
+
+    if J.IsGoingOnSomeone(bot)
+    then
+        if J.IsValidTarget(botTarget)
+        and J.CanCastOnNonMagicImmune(botTarget)
+        and J.IsInRange(bot, botTarget, nCastRange)
+        and not J.IsSuspiciousIllusion(botTarget)
+        and not J.IsDisabled(botTarget)
+        then
+            return BOT_ACTION_DESIRE_HIGH, botTarget:GetLocation()
+        end
+    end
+
+    if J.IsRetreating(bot)
+    then
+        local nInRangeEnemy = J.GetNearbyHeroes(bot, nCastRange, true, BOT_MODE_NONE)
+        if J.IsValidHero(nInRangeEnemy[1])
+        and J.CanCastOnNonMagicImmune(nInRangeEnemy[1])
+        and J.IsChasingTarget(nInRangeEnemy[1], bot)
+        and not J.IsDisabled(nInRangeEnemy[1])
+        then
+            return BOT_ACTION_DESIRE_HIGH, nInRangeEnemy[1]:GetLocation()
+        end
+    end
+
+    return BOT_ACTION_DESIRE_NONE, 0
 end
 
 function X.ConsiderSavageRoar()

@@ -708,23 +708,6 @@ function ____exports.GetDefendDesireHelper(bot, lane)
         if lane ~= threatenedLane then
             return BotModeDesire.VeryLow
         end
-    else
-        if jmz.Utils.GetLocationToLocationDistance(
-            jmz.Utils.GetTeamFountainTpPoint(),
-            defendLoc
-        ) < 3000 then
-            local enemyLaneFront = GetLaneFrontLocation(
-                GetOpposingTeam(),
-                lane,
-                0
-            )
-            local eNear = jmz.GetLastSeenEnemiesNearLoc(enemyLaneFront, 1600)
-            local aNear = jmz.GetAlliesNearLoc(enemyLaneFront, 1600)
-            if GetUnitToLocationDistance(bot, enemyLaneFront) > bot:GetAttackRange() and #eNear <= #aNear + 1 then
-                defendLoc = enemyLaneFront
-                bot:Action_AttackMove(defendLoc)
-            end
-        end
     end
     distanceToLane[lane] = GetUnitToLocationDistance(bot, defendLoc)
     nInRangeAlly = jmz.GetNearbyHeroes(bot, 1600, false, BotMode.None)
@@ -1060,6 +1043,16 @@ function ____exports.DefendThink(bot, lane)
         return
     end
     local dist = distanceToLane[lane] or GetUnitToLocationDistance(bot, hub)
+    if dist > 3500 and bld and IsValidBuildingTarget(bld) and bld:GetHealth() < bld:GetMaxHealth() * 0.9 then
+        local tp = jmz.GetItem2(bot, "item_tpscroll")
+        if not tp then
+            tp = jmz.GetItem2(bot, "item_travel_boots") or jmz.GetItem2(bot, "item_travel_boots_2")
+        end
+        if tp and jmz.CanCastAbility(tp) then
+            bot:Action_UseAbilityOnLocation(tp, hub)
+            return
+        end
+    end
     if (weAreStronger or #nInRangeAlly >= #nInRangeEnemy) and dist < SEARCH_RANGE_DEFAULT then
         bot:Action_AttackMove(add(
             hub,

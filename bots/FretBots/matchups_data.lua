@@ -16005,6 +16005,8 @@ local heroList = {
         ['npc_dota_hero_drow_ranger'] = -2.02,
         ['npc_dota_hero_sand_king'] = -2.84,
     },
+    ['npc_dota_hero_largo'] = {
+    },
 }
 
 return heroList

@@ -270,5 +270,34 @@ function X.GetOutfitName( bot )
 end
 
 
+-- 7.40: Talent choices are auto-granted, not skilled. This helper detects talents
+-- in the skill list and tries to choose them without consuming ability points.
+function X.TryChooseTalents( bot, sTalentList, nTalentBuildList )
+	if sTalentList == nil or nTalentBuildList == nil then return end
+	for idx = 1, #nTalentBuildList do
+		local talentIndex = nTalentBuildList[idx]
+		if talentIndex ~= nil and sTalentList[talentIndex] ~= nil then
+			local talentName = sTalentList[talentIndex]
+			local talent = bot:GetAbilityByName( talentName )
+			if talent ~= nil and talent:IsTalent()
+				and talent:GetLevel() == 0
+				and bot:GetLevel() >= talent:GetHeroLevelRequiredToUpgrade()
+			then
+				bot:ActionImmediate_LevelAbility( talentName )
+			end
+		end
+	end
+end
+
+-- Check if a given ability name is a talent for this bot.
+function X.IsTalentName( bot, abilityName )
+	if abilityName == nil then return false end
+	local ability = bot:GetAbilityByName( abilityName )
+	if ability ~= nil then return ability:IsTalent() end
+	-- Fallback: talent names start with "special_bonus_"
+	return string.find( abilityName, "special_bonus_" ) ~= nil
+end
+
+
 return X
 -- dota2jmz@163.com QQ:2462331592..

@@ -14,8 +14,9 @@ local tTalentTreeList = {
 						['t10'] = {0, 10},
 }
 
+-- 7.40: Desolate is now innate. Slot 2 = Shadow Step (basic ability, was sub-ability)
 local tAllAbilityBuildList = {
-						{1,3,1,2,1,6,1,3,3,3,6,2,2,2,6},--pos1
+						{1,3,2,1,1,6,1,3,3,3,6,2,2,2,6},--pos1 (get Shadow Step at 3)
 }
 
 local nAbilityBuildList = J.Skill.GetRandomBuild( tAllAbilityBuildList )
@@ -555,9 +556,9 @@ function X.ConsiderReality()
     return BOT_ACTION_DESIRE_NONE, 0
 end
 
+-- 7.40: Shadow Step is now a basic ability (slot 2), usable from early game
 function X.ConsiderShadowStep()
     if not ShadowStep:IsFullyCastable()
-    or J.IsInLaningPhase()
     then
         return BOT_ACTION_DESIRE_NONE, nil
     end

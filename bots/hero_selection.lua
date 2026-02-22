@@ -126,6 +126,8 @@ local WeakHeroes = {
 	'npc_dota_hero_rubick',
 	'npc_dota_hero_brewmaster',
 
+	'npc_dota_hero_largo', -- rhythm ult not fully implemented
+
 	-- Buggys (as of 2024/8/1):
     'npc_dota_hero_marci',
     'npc_dota_hero_lone_druid',

@@ -11,29 +11,34 @@ local isTierFiveDone  = false
 local DOTA_ITEM_NEUTRAL_SLOT = 16
 
 local Tier1NeutralItems = {
-    --[[Trusty Shovel]]         "item_trusty_shovel",
+    -- --[[Trusty Shovel]]         "item_trusty_shovel",
     -- --[[Arcane Ring]]           "item_arcane_ring",
     -- --[[Fairy's Trinket]]       "item_mysterious_hat",
-    --[[Pig Pole]]              "item_unstable_wand",
+    -- --[[Pig Pole]]              "item_unstable_wand",
     -- --[[Safety Bubble]]         "item_safety_bubble",
     -- --[[Seeds of Serenity]]     "item_seeds_of_serenity",
     -- --[[Lance of Pursuit]]      "item_lance_of_pursuit",
     --[[Occult Bracelet]]       "item_occult_bracelet",
-    -- --[[Duelist Gloves]]        "item_duelist_gloves",
+    --[[Duelist Gloves]]        "item_duelist_gloves",
     -- --[[Broom Handle]]          "item_broom_handle",
     -- --[[Royal Jelly]]           "item_royal_jelly",
     -- --[[Faded Broach]]          "item_faded_broach",
-    --[[Spark Of Courage]]      "item_spark_of_courage",
+    -- --[[Spark Of Courage]]      "item_spark_of_courage",  -- cycled out 7.40
     -- --[[Ironwood Tree]]         "item_ironwood_tree",
-    --[[Mana Draught]]          "item_mana_draught",
+    -- --[[Mana Draught]]          "item_mana_draught",  -- moved to tier 2
     --[[Polliwog Charm]]        "item_polliwog_charm",
-    --[[Ripper's Lash]]         "item_rippers_lash",
-    --[[Orb of Destruction]]    "item_orb_of_destruction",
+    -- --[[Ripper's Lash]]         "item_rippers_lash",  -- cycled out 7.40
+    -- --[[Orb of Destruction]]    "item_orb_of_destruction",
+    --[[Chipped Vest]]          "item_chipped_vest",
+    --[[Dormant Curio]]         "item_dormant_curio",
+    --[[Kobold Cup]]            "item_kobold_cup",
+    --[[Ash Legion Shield]]    "item_ash_legion_shield",  -- new 7.40
+    --[[Weighted Dice]]         "item_weighted_dice",  -- new 7.40
 }
 
 local Tier2NeutralItems = {
     -- --[[Dragon Scale]]          "item_dragon_scale",
-    -- --[[Whisper of the Dread]]  "item_whisper_of_the_dread",
+    -- --[[Whisper of the Dread]]  "item_whisper_of_the_dread",  -- moved to tier 3
     -- --[[Pupil's Gift]]          "item_pupils_gift",
     -- --[[Grove Bow]]             "item_grove_bow",
     -- --[[Philosopher's Stone]]   "item_philosophers_stone",
@@ -42,19 +47,22 @@ local Tier2NeutralItems = {
     -- --[[Specialist's Array]]    "item_specialists_array",
     -- --[[Eye of the Vizier]]     "item_eye_of_the_vizier",
     -- --[[Vampire Fangs]]         "item_vampire_fangs",
-    --[[Gossamer's Cape]]       "item_gossamer_cape",
+    -- --[[Gossamer's Cape]]       "item_gossamer_cape",
     -- --[[Light Collector]]       "item_light_collector",
-    --[[Iron Talon]]            "item_iron_talon",
+    -- --[[Iron Talon]]            "item_iron_talon",
     --[[Essence Ring]]          "item_essence_ring",
     --[[Searing Signet]]        "item_searing_signet",
-    --[[Brigand's Balde]]       "item_misericorde",
+    -- --[[Brigand's Blade]]       "item_misericorde",  -- cycled out 7.40
     --[[Tumbler's Toy]]         "item_pogo_stick",
+    --[[Defiant Shell]]         "item_defiant_shell",
+    --[[Mana Draught]]          "item_mana_draught",
+    --[[Poor Man's Shield]]     "item_poor_mans_shield",
 }
 
 local Tier3NeutralItems = {
-    -- --[[Defiant Shell]]         "item_defiant_shell",
+    -- --[[Defiant Shell]]         "item_defiant_shell",  -- moved to tier 2
     -- --[[Paladin Sword]]         "item_paladin_sword",
-    --[[Nemesis Curse]]         "item_nemesis_curse",
+    -- --[[Nemesis Curse]]         "item_nemesis_curse",
     -- --[[Vindicator's Axe]]      "item_vindicators_axe",
     -- --[[Dandelion Amulet]]      "item_dandelion_amulet",
     -- --[[Craggy Coat]]           "item_craggy_coat",
@@ -62,14 +70,16 @@ local Tier3NeutralItems = {
     -- --[[Elven Tunic]]           "item_elven_tunic",
     -- --[[Cloack of Flames]]      "item_cloak_of_flames",
     -- --[[Ceremonial Robe]]       "item_ceremonial_robe",
-    -- --[[Psychic Headband]]      "item_psychic_headband",
+    --[[Psychic Headband]]      "item_psychic_headband",
     -- --[[Doubloon]]              "item_doubloon",
     -- --[[Vambrace]]              "item_vambrace",
     --[[Whisper of the Dread]]  "item_whisper_of_the_dread",
-    --[[Serrrated Shiv]]        "item_serrated_shiv",
-    --[[Gale Guard]]            "item_gale_guard",
+    --[[Serrated Shiv]]         "item_serrated_shiv",
+    -- --[[Gale Guard]]            "item_gale_guard",  -- cycled out 7.40
     --[[Gunpowder Gauntlet]]    "item_gunpowder_gauntlets",
-    --[[Ninja Gear]]            "item_ninja_gear",
+    -- --[[Ninja Gear]]            "item_ninja_gear",
+    --[[Jidi Pollen Bag]]       "item_jidi_pollen_bag",
+    --[[Unrelenting Eye]]       "item_unrelenting_eye",  -- moved from tier 5
 }
 
 local Tier4NeutralItems = {
@@ -82,14 +92,18 @@ local Tier4NeutralItems = {
     -- --[[Stormcrafter]]          "item_stormcrafter",
     -- --[[Ancient Guardian]]      "item_ancient_guardian",
     -- --[[Havoc Hammer]]          "item_havoc_hammer",
-    --[[Mind Breaker]]          "item_mind_breaker",
+    -- --[[Mind Breaker]]          "item_mind_breaker",
     -- --[[Martyr's Plate]]        "item_martyrs_plate",
-    -- --[[Rattlecage]]            "item_rattlecage",
-    --[[Ogre Seal Totem]]       "item_ogre_seal_totem",
+    --[[Rattlecage]]            "item_rattlecage",
+    -- --[[Ogre Seal Totem]]       "item_ogre_seal_totem",
     --[[Crippling Crossbow]]    "item_crippling_crossbow",
-    --[[Magnifying Monocle]]    "item_magnifying_monocle",
-    --[[Ceremonial Robe]]       "item_ceremonial_robe",
-    --[[Pyrrhic Cloak]]         "item_pyrrhic_cloak",
+    -- --[[Magnifying Monocle]]    "item_magnifying_monocle",  -- cycled out 7.40
+    -- --[[Ceremonial Robe]]       "item_ceremonial_robe",
+    -- --[[Pyrrhic Cloak]]         "item_pyrrhic_cloak",  -- cycled out 7.40
+    --[[Giant's Maul]]          "item_giant_maul",
+    --[[Flayer's Bota]]         "item_flayers_bota",  -- new 7.40
+    --[[Idol of Scree'Auk]]    "item_idol_of_screeauk",  -- new 7.40
+    --[[Metamorphic Mandible]]  "item_metamorphic_mandible",  -- new 7.40
 }
 
 local Tier5NeutralItems = {
@@ -100,15 +114,18 @@ local Tier5NeutralItems = {
     -- --[[Apex]]                  "item_apex",
     --[[Book of the Dead]]      "item_demonicon",
     -- --[[Arcanist's Armor]]      "item_force_field",
-    --[[Pirate Hat]]            "item_pirate_hat",
+    -- --[[Pirate Hat]]            "item_pirate_hat",
     -- --[[Giant's Ring]]          "item_giants_ring",
     -- --[[Unwavering Condition]]  "item_unwavering_condition",
     -- --[[Book of Shadows]]       "item_book_of_shadows",
-    --[[Magic Lamp]]            "item_panic_button",
+    -- --[[Magic Lamp]]            "item_panic_button",
     --[[Fallen Sky]]            "item_fallen_sky",
     --[[Minotaur Horn]]         "item_minotaur_horn",
     --[[Spider Legs]]           "item_spider_legs",
-    --[[Unrelenting Eye]]       "item_unrelenting_eye",
+    -- --[[Unrelenting Eye]]       "item_unrelenting_eye",  -- moved to tier 3
+    --[[Divine Regalia]]        "item_divine_regalia",
+    --[[Dezun Bloodrite]]       "item_dezun_bloodrite",  -- moved from tier 4
+    --[[Riftshadow Prism]]      "item_riftshadow_prism",  -- new 7.40
 }
 
 local enhancements = {

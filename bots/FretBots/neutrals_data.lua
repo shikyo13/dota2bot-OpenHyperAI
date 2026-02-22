@@ -5,11 +5,11 @@
 local heroList = {
     ['npc_dota_hero_abaddon'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 40.11, ['item_dormant_curio'] = 21.75, ['item_sisters_shroud'] = 10.46, ['item_spark_of_courage'] = 8.54, ['item_kobold_cup'] = 7.12, ['item_polliwog_charm'] = 6.21, ['item_occult_bracelet'] = 4.56, ['item_rippers_lash'] = 1.27},
-           [2] = {['item_poor_mans_shield'] = 25.95, ['item_mana_draught'] = 20.91, ['item_misericorde'] = 20.31, ['item_searing_signet'] = 14.08, ['item_essence_ring'] = 12.86, ['item_pogo_stick'] = 5.88},
-           [3] = {['item_gunpowder_gauntlets'] = 39.25, ['item_gale_guard'] = 33.41, ['item_jidi_pollen_bag'] = 12.98, ['item_psychic_headband'] = 8.59, ['item_whisper_of_the_dread'] = 5.76},
-           [4] = {['item_giant_maul'] = 36.31, ['item_pyrrhic_cloak'] = 28.73, ['item_magnifying_monocle'] = 14.07, ['item_outworld_staff'] = 7.79, ['item_crippling_crossbow'] = 6.74, ['item_dezun_bloodrite'] = 6.34},
-           [5] = {['item_helm_of_the_undying'] = 26.41, ['item_desolator_2'] = 22.35, ['item_fallen_sky'] = 13.21, ['item_minotaur_horn'] = 11.43, ['item_unrelenting_eye'] = 10.45, ['item_demonicon'] = 9.02, ['item_spider_legs'] = 5.61, ['item_divine_regalia'] = 1.52},
+           [1] = {['item_chipped_vest'] = 42.75, ['item_dormant_curio'] = 23.18, ['item_kobold_cup'] = 7.59, ['item_polliwog_charm'] = 6.62, ['item_occult_bracelet'] = 4.86, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 30.94, ['item_mana_draught'] = 24.93, ['item_searing_signet'] = 16.79, ['item_essence_ring'] = 15.33, ['item_pogo_stick'] = 7.01, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 56.14, ['item_jidi_pollen_bag'] = 18.57, ['item_psychic_headband'] = 12.29, ['item_whisper_of_the_dread'] = 8.24, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 64.99, ['item_crippling_crossbow'] = 12.06, ['item_flayers_bota'] = 5.74, ['item_idol_of_screeauk'] = 5.74, ['item_metamorphic_mandible'] = 5.74, ['item_rattlecage'] = 5.74},
+           [5] = {['item_desolator_2'] = 31.61, ['item_fallen_sky'] = 18.68, ['item_minotaur_horn'] = 16.16, ['item_demonicon'] = 12.76, ['item_spider_legs'] = 7.93, ['item_divine_regalia'] = 2.15, ['item_dezun_bloodrite'] = 5.20, ['item_riftshadow_prism'] = 5.51},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 23.31, ['item_enhancement_alert'] = 23.16, ['item_enhancement_tough'] = 19.86, ['item_enhancement_mystical'] = 18.56, ['item_enhancement_quickened'] = 15.11},
@@ -21,11 +21,11 @@ local heroList = {
     },
     ['npc_dota_hero_abyssal_underlord'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 45.54, ['item_dormant_curio'] = 23.85, ['item_sisters_shroud'] = 10.04, ['item_spark_of_courage'] = 7.92, ['item_occult_bracelet'] = 4.33, ['item_kobold_cup'] = 3.78, ['item_polliwog_charm'] = 3.39, ['item_rippers_lash'] = 1.15},
-           [2] = {['item_searing_signet'] = 39.84, ['item_poor_mans_shield'] = 26.43, ['item_essence_ring'] = 12.37, ['item_misericorde'] = 9.53, ['item_mana_draught'] = 8.65, ['item_pogo_stick'] = 3.19},
-           [3] = {['item_gale_guard'] = 33.78, ['item_gunpowder_gauntlets'] = 31.9, ['item_whisper_of_the_dread'] = 15.95, ['item_jidi_pollen_bag'] = 12.95, ['item_psychic_headband'] = 5.41},
-           [4] = {['item_dezun_bloodrite'] = 31.65, ['item_giant_maul'] = 24.41, ['item_pyrrhic_cloak'] = 21, ['item_magnifying_monocle'] = 11.87, ['item_outworld_staff'] = 7.79, ['item_crippling_crossbow'] = 3.29},
-           [5] = {['item_helm_of_the_undying'] = 25.2, ['item_fallen_sky'] = 17.07, ['item_demonicon'] = 14.95, ['item_minotaur_horn'] = 13.43, ['item_unrelenting_eye'] = 11.29, ['item_desolator_2'] = 11.12, ['item_spider_legs'] = 6.25, ['item_divine_regalia'] = 0.69},
+           [1] = {['item_chipped_vest'] = 47.85, ['item_dormant_curio'] = 25.06, ['item_occult_bracelet'] = 4.55, ['item_kobold_cup'] = 3.97, ['item_polliwog_charm'] = 3.56, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 41.83, ['item_poor_mans_shield'] = 27.75, ['item_essence_ring'] = 12.99, ['item_mana_draught'] = 9.08, ['item_pogo_stick'] = 3.35, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 45.89, ['item_whisper_of_the_dread'] = 22.94, ['item_jidi_pollen_bag'] = 18.63, ['item_psychic_headband'] = 7.78, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 50.36, ['item_crippling_crossbow'] = 6.79, ['item_flayers_bota'] = 10.71, ['item_idol_of_screeauk'] = 10.71, ['item_metamorphic_mandible'] = 10.71, ['item_rattlecage'] = 10.71},
+           [5] = {['item_fallen_sky'] = 23.97, ['item_demonicon'] = 20.99, ['item_minotaur_horn'] = 18.86, ['item_desolator_2'] = 15.62, ['item_spider_legs'] = 8.78, ['item_divine_regalia'] = 0.97, ['item_dezun_bloodrite'] = 5.25, ['item_riftshadow_prism'] = 5.56},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 32.93, ['item_enhancement_mystical'] = 22.72, ['item_enhancement_tough'] = 19.32, ['item_enhancement_alert'] = 12.54, ['item_enhancement_quickened'] = 12.49},
@@ -37,11 +37,11 @@ local heroList = {
     },
     ['npc_dota_hero_alchemist'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 43.78, ['item_dormant_curio'] = 21.94, ['item_spark_of_courage'] = 12.78, ['item_sisters_shroud'] = 8.04, ['item_occult_bracelet'] = 5.17, ['item_polliwog_charm'] = 3, ['item_kobold_cup'] = 2.97, ['item_rippers_lash'] = 2.32},
-           [2] = {['item_misericorde'] = 32.09, ['item_poor_mans_shield'] = 26.67, ['item_mana_draught'] = 14.29, ['item_searing_signet'] = 12.31, ['item_essence_ring'] = 9.45, ['item_pogo_stick'] = 5.19},
-           [3] = {['item_gunpowder_gauntlets'] = 58.54, ['item_gale_guard'] = 21.97, ['item_jidi_pollen_bag'] = 9.77, ['item_whisper_of_the_dread'] = 5.6, ['item_psychic_headband'] = 4.13},
-           [4] = {['item_giant_maul'] = 42.54, ['item_pyrrhic_cloak'] = 20.12, ['item_dezun_bloodrite'] = 11.31, ['item_outworld_staff'] = 9.85, ['item_magnifying_monocle'] = 9.51, ['item_crippling_crossbow'] = 6.65},
-           [5] = {['item_desolator_2'] = 27.57, ['item_helm_of_the_undying'] = 26.24, ['item_fallen_sky'] = 10.86, ['item_minotaur_horn'] = 10.81, ['item_unrelenting_eye'] = 9.49, ['item_demonicon'] = 7.62, ['item_spider_legs'] = 5.7, ['item_divine_regalia'] = 1.71},
+           [1] = {['item_chipped_vest'] = 48.42, ['item_dormant_curio'] = 24.26, ['item_occult_bracelet'] = 5.72, ['item_polliwog_charm'] = 3.32, ['item_kobold_cup'] = 3.28, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 37.31, ['item_mana_draught'] = 19.99, ['item_searing_signet'] = 17.22, ['item_essence_ring'] = 13.22, ['item_pogo_stick'] = 7.26, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 71.44, ['item_jidi_pollen_bag'] = 11.92, ['item_whisper_of_the_dread'] = 6.83, ['item_psychic_headband'] = 5.04, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 65.20, ['item_crippling_crossbow'] = 10.19, ['item_flayers_bota'] = 6.15, ['item_idol_of_screeauk'] = 6.15, ['item_metamorphic_mandible'] = 6.15, ['item_rattlecage'] = 6.15},
+           [5] = {['item_desolator_2'] = 38.37, ['item_fallen_sky'] = 15.11, ['item_minotaur_horn'] = 15.04, ['item_demonicon'] = 10.60, ['item_spider_legs'] = 7.93, ['item_divine_regalia'] = 2.38, ['item_dezun_bloodrite'] = 5.13, ['item_riftshadow_prism'] = 5.43},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 33.92, ['item_enhancement_tough'] = 24.71, ['item_enhancement_brawny'] = 19.18, ['item_enhancement_quickened'] = 11.23, ['item_enhancement_mystical'] = 10.96},
@@ -53,11 +53,11 @@ local heroList = {
     },
     ['npc_dota_hero_ancient_apparition'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 43.07, ['item_sisters_shroud'] = 21.86, ['item_kobold_cup'] = 10.47, ['item_occult_bracelet'] = 7, ['item_polliwog_charm'] = 6.57, ['item_spark_of_courage'] = 5.46, ['item_chipped_vest'] = 4.11, ['item_rippers_lash'] = 1.45},
-           [2] = {['item_searing_signet'] = 55, ['item_mana_draught'] = 18.41, ['item_essence_ring'] = 8.96, ['item_pogo_stick'] = 7.23, ['item_misericorde'] = 6.64, ['item_poor_mans_shield'] = 3.76},
-           [3] = {['item_whisper_of_the_dread'] = 36.6, ['item_psychic_headband'] = 21.17, ['item_gale_guard'] = 19.29, ['item_gunpowder_gauntlets'] = 18.45, ['item_jidi_pollen_bag'] = 4.5},
-           [4] = {['item_magnifying_monocle'] = 36.26, ['item_dezun_bloodrite'] = 26.13, ['item_giant_maul'] = 15.57, ['item_outworld_staff'] = 13.59, ['item_crippling_crossbow'] = 5.91, ['item_pyrrhic_cloak'] = 2.54},
-           [5] = {['item_helm_of_the_undying'] = 27.34, ['item_desolator_2'] = 19.09, ['item_demonicon'] = 18.24, ['item_fallen_sky'] = 9.62, ['item_spider_legs'] = 8.44, ['item_minotaur_horn'] = 7.34, ['item_unrelenting_eye'] = 6.37, ['item_divine_regalia'] = 3.56},
+           [1] = {['item_dormant_curio'] = 51.40, ['item_kobold_cup'] = 12.50, ['item_occult_bracelet'] = 8.35, ['item_polliwog_charm'] = 7.84, ['item_chipped_vest'] = 4.91, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 55.97, ['item_mana_draught'] = 18.73, ['item_essence_ring'] = 9.12, ['item_pogo_stick'] = 7.36, ['item_poor_mans_shield'] = 3.83, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 43.18, ['item_psychic_headband'] = 24.98, ['item_gunpowder_gauntlets'] = 21.77, ['item_jidi_pollen_bag'] = 5.31, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 40.35, ['item_crippling_crossbow'] = 15.32, ['item_flayers_bota'] = 11.08, ['item_idol_of_screeauk'] = 11.08, ['item_metamorphic_mandible'] = 11.08, ['item_rattlecage'] = 11.08},
+           [5] = {['item_desolator_2'] = 25.88, ['item_demonicon'] = 24.73, ['item_fallen_sky'] = 13.04, ['item_spider_legs'] = 11.44, ['item_minotaur_horn'] = 9.95, ['item_divine_regalia'] = 4.83, ['item_dezun_bloodrite'] = 4.93, ['item_riftshadow_prism'] = 5.20},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 38.25, ['item_enhancement_quickened'] = 24.7, ['item_enhancement_alert'] = 20.61, ['item_enhancement_brawny'] = 12.14, ['item_enhancement_tough'] = 4.29},
@@ -69,11 +69,11 @@ local heroList = {
     },
     ['npc_dota_hero_antimage'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 27.85, ['item_spark_of_courage'] = 24.42, ['item_chipped_vest'] = 21.71, ['item_sisters_shroud'] = 13.36, ['item_polliwog_charm'] = 5.14, ['item_occult_bracelet'] = 3.23, ['item_rippers_lash'] = 2.94, ['item_kobold_cup'] = 1.35},
-           [2] = {['item_misericorde'] = 52.34, ['item_poor_mans_shield'] = 32.15, ['item_essence_ring'] = 8.51, ['item_searing_signet'] = 3.43, ['item_mana_draught'] = 1.82, ['item_pogo_stick'] = 1.74},
-           [3] = {['item_gunpowder_gauntlets'] = 71.68, ['item_gale_guard'] = 19.87, ['item_jidi_pollen_bag'] = 4.43, ['item_whisper_of_the_dread'] = 2.4, ['item_psychic_headband'] = 1.62},
-           [4] = {['item_giant_maul'] = 56.74, ['item_crippling_crossbow'] = 11.07, ['item_outworld_staff'] = 10.02, ['item_magnifying_monocle'] = 9.93, ['item_pyrrhic_cloak'] = 8.98, ['item_dezun_bloodrite'] = 3.25},
-           [5] = {['item_desolator_2'] = 33.73, ['item_helm_of_the_undying'] = 28.34, ['item_minotaur_horn'] = 12.41, ['item_unrelenting_eye'] = 9.07, ['item_fallen_sky'] = 6.51, ['item_spider_legs'] = 3.5, ['item_divine_regalia'] = 3.31, ['item_demonicon'] = 3.12},
+           [1] = {['item_dormant_curio'] = 39.93, ['item_chipped_vest'] = 31.13, ['item_polliwog_charm'] = 7.37, ['item_occult_bracelet'] = 4.63, ['item_kobold_cup'] = 1.94, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 64.10, ['item_essence_ring'] = 16.97, ['item_searing_signet'] = 6.84, ['item_mana_draught'] = 3.63, ['item_pogo_stick'] = 3.47, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 85.19, ['item_jidi_pollen_bag'] = 5.27, ['item_whisper_of_the_dread'] = 2.85, ['item_psychic_headband'] = 1.93, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 66.14, ['item_crippling_crossbow'] = 12.90, ['item_flayers_bota'] = 5.24, ['item_idol_of_screeauk'] = 5.24, ['item_metamorphic_mandible'] = 5.24, ['item_rattlecage'] = 5.24},
+           [5] = {['item_desolator_2'] = 48.22, ['item_minotaur_horn'] = 17.74, ['item_fallen_sky'] = 9.31, ['item_spider_legs'] = 5.00, ['item_divine_regalia'] = 4.73, ['item_demonicon'] = 4.46, ['item_dezun_bloodrite'] = 5.12, ['item_riftshadow_prism'] = 5.42},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 47.85, ['item_enhancement_tough'] = 25.17, ['item_enhancement_brawny'] = 16.68, ['item_enhancement_quickened'] = 5.77, ['item_enhancement_mystical'] = 4.54},
@@ -85,11 +85,11 @@ local heroList = {
     },
     ['npc_dota_hero_arc_warden'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 37.62, ['item_spark_of_courage'] = 21.98, ['item_sisters_shroud'] = 15.99, ['item_chipped_vest'] = 8.66, ['item_occult_bracelet'] = 5.28, ['item_rippers_lash'] = 4.75, ['item_kobold_cup'] = 3.53, ['item_polliwog_charm'] = 2.19},
-           [2] = {['item_misericorde'] = 40.28, ['item_searing_signet'] = 33.69, ['item_poor_mans_shield'] = 8.25, ['item_mana_draught'] = 7.88, ['item_pogo_stick'] = 5.2, ['item_essence_ring'] = 4.71},
-           [3] = {['item_gunpowder_gauntlets'] = 56.25, ['item_whisper_of_the_dread'] = 18.3, ['item_gale_guard'] = 13.36, ['item_psychic_headband'] = 8.97, ['item_jidi_pollen_bag'] = 3.12},
-           [4] = {['item_giant_maul'] = 43.77, ['item_magnifying_monocle'] = 23.68, ['item_crippling_crossbow'] = 12.28, ['item_outworld_staff'] = 7.97, ['item_dezun_bloodrite'] = 6.3, ['item_pyrrhic_cloak'] = 6.01},
-           [5] = {['item_desolator_2'] = 33.92, ['item_helm_of_the_undying'] = 24.66, ['item_demonicon'] = 10.97, ['item_fallen_sky'] = 9.87, ['item_minotaur_horn'] = 6.91, ['item_unrelenting_eye'] = 5.77, ['item_divine_regalia'] = 4.54, ['item_spider_legs'] = 3.37},
+           [1] = {['item_dormant_curio'] = 55.83, ['item_chipped_vest'] = 12.85, ['item_occult_bracelet'] = 7.84, ['item_kobold_cup'] = 5.24, ['item_polliwog_charm'] = 3.25, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 53.58, ['item_poor_mans_shield'] = 13.12, ['item_mana_draught'] = 12.53, ['item_pogo_stick'] = 8.27, ['item_essence_ring'] = 7.49, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 61.83, ['item_whisper_of_the_dread'] = 20.12, ['item_psychic_headband'] = 9.86, ['item_jidi_pollen_bag'] = 3.43, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 60.72, ['item_crippling_crossbow'] = 17.04, ['item_flayers_bota'] = 5.56, ['item_idol_of_screeauk'] = 5.56, ['item_metamorphic_mandible'] = 5.56, ['item_rattlecage'] = 5.56},
+           [5] = {['item_desolator_2'] = 43.87, ['item_demonicon'] = 14.19, ['item_fallen_sky'] = 12.77, ['item_minotaur_horn'] = 8.94, ['item_divine_regalia'] = 5.87, ['item_spider_legs'] = 4.36, ['item_dezun_bloodrite'] = 4.87, ['item_riftshadow_prism'] = 5.14},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 48.54, ['item_enhancement_tough'] = 20.03, ['item_enhancement_quickened'] = 12.54, ['item_enhancement_brawny'] = 9.8, ['item_enhancement_mystical'] = 9.08},
@@ -101,11 +101,11 @@ local heroList = {
     },
     ['npc_dota_hero_axe'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 70.65, ['item_dormant_curio'] = 9.63, ['item_spark_of_courage'] = 7.25, ['item_sisters_shroud'] = 5.08, ['item_polliwog_charm'] = 2.65, ['item_occult_bracelet'] = 2.6, ['item_kobold_cup'] = 1.54, ['item_rippers_lash'] = 0.6},
-           [2] = {['item_poor_mans_shield'] = 48.77, ['item_essence_ring'] = 17.11, ['item_mana_draught'] = 10.4, ['item_searing_signet'] = 9.52, ['item_misericorde'] = 8.07, ['item_pogo_stick'] = 6.12},
-           [3] = {['item_gale_guard'] = 43.09, ['item_gunpowder_gauntlets'] = 25.85, ['item_jidi_pollen_bag'] = 16.54, ['item_whisper_of_the_dread'] = 11.46, ['item_psychic_headband'] = 3.05},
-           [4] = {['item_pyrrhic_cloak'] = 35.68, ['item_dezun_bloodrite'] = 24.69, ['item_giant_maul'] = 20.7, ['item_outworld_staff'] = 8.79, ['item_magnifying_monocle'] = 7.74, ['item_crippling_crossbow'] = 2.41},
-           [5] = {['item_helm_of_the_undying'] = 32.09, ['item_minotaur_horn'] = 16.63, ['item_fallen_sky'] = 14.82, ['item_unrelenting_eye'] = 14.51, ['item_desolator_2'] = 8.26, ['item_demonicon'] = 6.64, ['item_spider_legs'] = 6.29, ['item_divine_regalia'] = 0.75},
+           [1] = {['item_chipped_vest'] = 68.97, ['item_dormant_curio'] = 9.40, ['item_polliwog_charm'] = 2.59, ['item_occult_bracelet'] = 2.54, ['item_kobold_cup'] = 1.50, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 50.40, ['item_essence_ring'] = 17.68, ['item_mana_draught'] = 10.75, ['item_searing_signet'] = 9.84, ['item_pogo_stick'] = 6.33, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 43.27, ['item_jidi_pollen_bag'] = 27.68, ['item_whisper_of_the_dread'] = 19.18, ['item_psychic_headband'] = 5.11, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 52.52, ['item_crippling_crossbow'] = 6.11, ['item_flayers_bota'] = 10.34, ['item_idol_of_screeauk'] = 10.34, ['item_metamorphic_mandible'] = 10.34, ['item_rattlecage'] = 10.34},
+           [5] = {['item_minotaur_horn'] = 27.53, ['item_fallen_sky'] = 24.54, ['item_desolator_2'] = 13.68, ['item_demonicon'] = 10.99, ['item_spider_legs'] = 10.41, ['item_divine_regalia'] = 1.24, ['item_dezun_bloodrite'] = 5.62, ['item_riftshadow_prism'] = 5.98},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 42.33, ['item_enhancement_tough'] = 26.32, ['item_enhancement_mystical'] = 17.68, ['item_enhancement_quickened'] = 10.46, ['item_enhancement_alert'] = 3.21},
@@ -117,11 +117,11 @@ local heroList = {
     },
     ['npc_dota_hero_bane'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 39.02, ['item_sisters_shroud'] = 25.75, ['item_kobold_cup'] = 12.37, ['item_occult_bracelet'] = 5.77, ['item_polliwog_charm'] = 5.35, ['item_chipped_vest'] = 5.02, ['item_spark_of_courage'] = 4.92, ['item_rippers_lash'] = 1.8},
-           [2] = {['item_searing_signet'] = 37.78, ['item_mana_draught'] = 19.16, ['item_pogo_stick'] = 18.53, ['item_essence_ring'] = 13.5, ['item_poor_mans_shield'] = 6.6, ['item_misericorde'] = 4.43},
-           [3] = {['item_whisper_of_the_dread'] = 33.47, ['item_psychic_headband'] = 26.92, ['item_gale_guard'] = 25.01, ['item_gunpowder_gauntlets'] = 8.54, ['item_jidi_pollen_bag'] = 6.06},
-           [4] = {['item_magnifying_monocle'] = 45.92, ['item_outworld_staff'] = 20.06, ['item_dezun_bloodrite'] = 16.2, ['item_giant_maul'] = 7.93, ['item_pyrrhic_cloak'] = 5.43, ['item_crippling_crossbow'] = 4.45},
-           [5] = {['item_helm_of_the_undying'] = 27.12, ['item_demonicon'] = 22.62, ['item_fallen_sky'] = 15.81, ['item_spider_legs'] = 9.92, ['item_minotaur_horn'] = 9.61, ['item_desolator_2'] = 6.79, ['item_unrelenting_eye'] = 6.47, ['item_divine_regalia'] = 1.65},
+           [1] = {['item_dormant_curio'] = 49.11, ['item_kobold_cup'] = 15.57, ['item_occult_bracelet'] = 7.26, ['item_polliwog_charm'] = 6.73, ['item_chipped_vest'] = 6.32, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 37.55, ['item_mana_draught'] = 19.05, ['item_pogo_stick'] = 18.42, ['item_essence_ring'] = 13.42, ['item_poor_mans_shield'] = 6.56, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 42.51, ['item_psychic_headband'] = 34.19, ['item_gunpowder_gauntlets'] = 10.85, ['item_jidi_pollen_bag'] = 7.70, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 34.48, ['item_crippling_crossbow'] = 19.35, ['item_flayers_bota'] = 11.54, ['item_idol_of_screeauk'] = 11.54, ['item_metamorphic_mandible'] = 11.54, ['item_rattlecage'] = 11.54},
+           [5] = {['item_demonicon'] = 30.61, ['item_fallen_sky'] = 21.40, ['item_spider_legs'] = 13.43, ['item_minotaur_horn'] = 13.01, ['item_desolator_2'] = 9.19, ['item_divine_regalia'] = 2.23, ['item_dezun_bloodrite'] = 4.93, ['item_riftshadow_prism'] = 5.20},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 40.85, ['item_enhancement_quickened'] = 31.61, ['item_enhancement_brawny'] = 14.37, ['item_enhancement_alert'] = 8.26, ['item_enhancement_tough'] = 4.92},
@@ -133,11 +133,11 @@ local heroList = {
     },
     ['npc_dota_hero_batrider'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 36.73, ['item_sisters_shroud'] = 19.28, ['item_kobold_cup'] = 18.41, ['item_chipped_vest'] = 8.48, ['item_spark_of_courage'] = 6.68, ['item_polliwog_charm'] = 4.22, ['item_occult_bracelet'] = 3.72, ['item_rippers_lash'] = 2.49},
-           [2] = {['item_searing_signet'] = 43.75, ['item_pogo_stick'] = 14.34, ['item_misericorde'] = 13.56, ['item_essence_ring'] = 12.64, ['item_poor_mans_shield'] = 9.07, ['item_mana_draught'] = 6.64},
-           [3] = {['item_whisper_of_the_dread'] = 26.51, ['item_gunpowder_gauntlets'] = 24.85, ['item_gale_guard'] = 23.7, ['item_psychic_headband'] = 13.84, ['item_jidi_pollen_bag'] = 11.1},
-           [4] = {['item_magnifying_monocle'] = 30.58, ['item_giant_maul'] = 22.62, ['item_outworld_staff'] = 16.52, ['item_dezun_bloodrite'] = 14.25, ['item_crippling_crossbow'] = 8.14, ['item_pyrrhic_cloak'] = 7.9},
-           [5] = {['item_helm_of_the_undying'] = 26.45, ['item_fallen_sky'] = 16.87, ['item_desolator_2'] = 14.49, ['item_demonicon'] = 12.32, ['item_minotaur_horn'] = 10.51, ['item_spider_legs'] = 10.15, ['item_unrelenting_eye'] = 7.77, ['item_divine_regalia'] = 1.44},
+           [1] = {['item_dormant_curio'] = 43.63, ['item_kobold_cup'] = 21.87, ['item_chipped_vest'] = 10.07, ['item_polliwog_charm'] = 5.01, ['item_occult_bracelet'] = 4.42, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 48.08, ['item_pogo_stick'] = 15.76, ['item_essence_ring'] = 13.89, ['item_poor_mans_shield'] = 9.97, ['item_mana_draught'] = 7.30, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 33.09, ['item_gunpowder_gauntlets'] = 31.02, ['item_psychic_headband'] = 17.28, ['item_jidi_pollen_bag'] = 13.86, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 52.02, ['item_crippling_crossbow'] = 18.72, ['item_flayers_bota'] = 7.32, ['item_idol_of_screeauk'] = 7.32, ['item_metamorphic_mandible'] = 7.32, ['item_rattlecage'] = 7.32},
+           [5] = {['item_fallen_sky'] = 23.00, ['item_desolator_2'] = 19.76, ['item_demonicon'] = 16.80, ['item_minotaur_horn'] = 14.33, ['item_spider_legs'] = 13.84, ['item_divine_regalia'] = 1.96, ['item_dezun_bloodrite'] = 5.01, ['item_riftshadow_prism'] = 5.29},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 31.37, ['item_enhancement_quickened'] = 29.44, ['item_enhancement_mystical'] = 16.69, ['item_enhancement_brawny'] = 14.82, ['item_enhancement_tough'] = 7.68},
@@ -149,11 +149,11 @@ local heroList = {
     },
     ['npc_dota_hero_beastmaster'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 34.95, ['item_dormant_curio'] = 17, ['item_spark_of_courage'] = 12.6, ['item_sisters_shroud'] = 12.26, ['item_kobold_cup'] = 9.18, ['item_rippers_lash'] = 5.93, ['item_occult_bracelet'] = 4.18, ['item_polliwog_charm'] = 3.9},
-           [2] = {['item_searing_signet'] = 29.36, ['item_poor_mans_shield'] = 24.26, ['item_misericorde'] = 20.25, ['item_essence_ring'] = 13.21, ['item_mana_draught'] = 7.35, ['item_pogo_stick'] = 5.57},
-           [3] = {['item_gunpowder_gauntlets'] = 42.23, ['item_gale_guard'] = 29.54, ['item_whisper_of_the_dread'] = 12.92, ['item_jidi_pollen_bag'] = 11.08, ['item_psychic_headband'] = 4.22},
-           [4] = {['item_giant_maul'] = 35.19, ['item_pyrrhic_cloak'] = 25.6, ['item_outworld_staff'] = 11.85, ['item_magnifying_monocle'] = 11.02, ['item_dezun_bloodrite'] = 10.7, ['item_crippling_crossbow'] = 5.63},
-           [5] = {['item_helm_of_the_undying'] = 26.95, ['item_demonicon'] = 17.8, ['item_desolator_2'] = 16.94, ['item_fallen_sky'] = 13.96, ['item_minotaur_horn'] = 10.64, ['item_unrelenting_eye'] = 8.08, ['item_spider_legs'] = 4.72, ['item_divine_regalia'] = 0.91},
+           [1] = {['item_chipped_vest'] = 42.92, ['item_dormant_curio'] = 20.88, ['item_kobold_cup'] = 11.27, ['item_occult_bracelet'] = 5.13, ['item_polliwog_charm'] = 4.79, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 34.97, ['item_poor_mans_shield'] = 28.90, ['item_essence_ring'] = 15.74, ['item_mana_draught'] = 8.76, ['item_pogo_stick'] = 6.64, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 57.09, ['item_whisper_of_the_dread'] = 17.47, ['item_jidi_pollen_bag'] = 14.98, ['item_psychic_headband'] = 5.70, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 64.44, ['item_crippling_crossbow'] = 10.31, ['item_flayers_bota'] = 6.31, ['item_idol_of_screeauk'] = 6.31, ['item_metamorphic_mandible'] = 6.31, ['item_rattlecage'] = 6.31},
+           [5] = {['item_demonicon'] = 24.56, ['item_desolator_2'] = 23.37, ['item_fallen_sky'] = 19.26, ['item_minotaur_horn'] = 14.68, ['item_spider_legs'] = 6.51, ['item_divine_regalia'] = 1.26, ['item_dezun_bloodrite'] = 5.04, ['item_riftshadow_prism'] = 5.32},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 26.17, ['item_enhancement_alert'] = 24.6, ['item_enhancement_tough'] = 24.38, ['item_enhancement_mystical'] = 13.98, ['item_enhancement_quickened'] = 10.88},
@@ -165,11 +165,11 @@ local heroList = {
     },
     ['npc_dota_hero_bloodseeker'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 36.85, ['item_dormant_curio'] = 20.64, ['item_spark_of_courage'] = 15.49, ['item_sisters_shroud'] = 11.67, ['item_occult_bracelet'] = 4.63, ['item_kobold_cup'] = 4.63, ['item_rippers_lash'] = 3.24, ['item_polliwog_charm'] = 2.84},
-           [2] = {['item_misericorde'] = 43.86, ['item_poor_mans_shield'] = 23.01, ['item_searing_signet'] = 14.26, ['item_mana_draught'] = 8.41, ['item_essence_ring'] = 7.56, ['item_pogo_stick'] = 2.89},
-           [3] = {['item_gunpowder_gauntlets'] = 53.34, ['item_gale_guard'] = 21.02, ['item_whisper_of_the_dread'] = 10.17, ['item_jidi_pollen_bag'] = 8.61, ['item_psychic_headband'] = 6.86},
-           [4] = {['item_giant_maul'] = 45.28, ['item_pyrrhic_cloak'] = 18.56, ['item_magnifying_monocle'] = 10.76, ['item_dezun_bloodrite'] = 10.37, ['item_crippling_crossbow'] = 7.62, ['item_outworld_staff'] = 7.42},
-           [5] = {['item_desolator_2'] = 28.31, ['item_helm_of_the_undying'] = 26.88, ['item_unrelenting_eye'] = 10.83, ['item_minotaur_horn'] = 10.75, ['item_fallen_sky'] = 8.93, ['item_spider_legs'] = 6.92, ['item_demonicon'] = 5.11, ['item_divine_regalia'] = 2.27},
+           [1] = {['item_chipped_vest'] = 45.01, ['item_dormant_curio'] = 25.21, ['item_occult_bracelet'] = 5.66, ['item_kobold_cup'] = 5.66, ['item_polliwog_charm'] = 3.47, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 38.94, ['item_searing_signet'] = 24.13, ['item_mana_draught'] = 14.23, ['item_essence_ring'] = 12.80, ['item_pogo_stick'] = 4.89, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 64.32, ['item_whisper_of_the_dread'] = 12.26, ['item_jidi_pollen_bag'] = 10.38, ['item_psychic_headband'] = 8.27, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 65.12, ['item_crippling_crossbow'] = 10.96, ['item_flayers_bota'] = 5.98, ['item_idol_of_screeauk'] = 5.98, ['item_metamorphic_mandible'] = 5.98, ['item_rattlecage'] = 5.98},
+           [5] = {['item_desolator_2'] = 40.55, ['item_minotaur_horn'] = 15.40, ['item_fallen_sky'] = 12.79, ['item_spider_legs'] = 9.91, ['item_demonicon'] = 7.32, ['item_divine_regalia'] = 3.25, ['item_dezun_bloodrite'] = 5.24, ['item_riftshadow_prism'] = 5.54},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 35.67, ['item_enhancement_tough'] = 24.14, ['item_enhancement_brawny'] = 17.79, ['item_enhancement_quickened'] = 11.61, ['item_enhancement_mystical'] = 10.79},
@@ -181,11 +181,11 @@ local heroList = {
     },
     ['npc_dota_hero_bounty_hunter'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 33.45, ['item_sisters_shroud'] = 17.84, ['item_chipped_vest'] = 13.38, ['item_spark_of_courage'] = 12.14, ['item_kobold_cup'] = 11.49, ['item_polliwog_charm'] = 4.9, ['item_occult_bracelet'] = 4.54, ['item_rippers_lash'] = 2.26},
-           [2] = {['item_searing_signet'] = 41.77, ['item_misericorde'] = 15.5, ['item_poor_mans_shield'] = 14.8, ['item_essence_ring'] = 12.06, ['item_mana_draught'] = 10.1, ['item_pogo_stick'] = 5.78},
-           [3] = {['item_gunpowder_gauntlets'] = 29.97, ['item_gale_guard'] = 25.23, ['item_whisper_of_the_dread'] = 21.31, ['item_psychic_headband'] = 14.75, ['item_jidi_pollen_bag'] = 8.74},
-           [4] = {['item_magnifying_monocle'] = 32.74, ['item_giant_maul'] = 28.88, ['item_outworld_staff'] = 13.06, ['item_pyrrhic_cloak'] = 9.19, ['item_dezun_bloodrite'] = 9.16, ['item_crippling_crossbow'] = 6.96},
-           [5] = {['item_helm_of_the_undying'] = 21.98, ['item_desolator_2'] = 20.75, ['item_demonicon'] = 14.77, ['item_fallen_sky'] = 12.9, ['item_minotaur_horn'] = 9.63, ['item_unrelenting_eye'] = 9.43, ['item_spider_legs'] = 8.67, ['item_divine_regalia'] = 1.87},
+           [1] = {['item_dormant_curio'] = 41.96, ['item_chipped_vest'] = 16.78, ['item_kobold_cup'] = 14.41, ['item_polliwog_charm'] = 6.15, ['item_occult_bracelet'] = 5.70, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 46.96, ['item_poor_mans_shield'] = 16.64, ['item_essence_ring'] = 13.56, ['item_mana_draught'] = 11.35, ['item_pogo_stick'] = 6.50, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 38.17, ['item_whisper_of_the_dread'] = 27.14, ['item_psychic_headband'] = 18.79, ['item_jidi_pollen_bag'] = 11.13, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 60.34, ['item_crippling_crossbow'] = 14.54, ['item_flayers_bota'] = 6.28, ['item_idol_of_screeauk'] = 6.28, ['item_metamorphic_mandible'] = 6.28, ['item_rattlecage'] = 6.28},
+           [5] = {['item_desolator_2'] = 27.08, ['item_demonicon'] = 19.28, ['item_fallen_sky'] = 16.84, ['item_minotaur_horn'] = 12.57, ['item_spider_legs'] = 11.32, ['item_divine_regalia'] = 2.44, ['item_dezun_bloodrite'] = 5.09, ['item_riftshadow_prism'] = 5.38},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_quickened'] = 26.07, ['item_enhancement_mystical'] = 23.41, ['item_enhancement_alert'] = 18.55, ['item_enhancement_brawny'] = 17.45, ['item_enhancement_tough'] = 14.51},
@@ -197,11 +197,11 @@ local heroList = {
     },
     ['npc_dota_hero_brewmaster'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 37.68, ['item_dormant_curio'] = 21.92, ['item_sisters_shroud'] = 13.7, ['item_spark_of_courage'] = 12, ['item_kobold_cup'] = 4.88, ['item_occult_bracelet'] = 4.18, ['item_polliwog_charm'] = 3.38, ['item_rippers_lash'] = 2.25},
-           [2] = {['item_searing_signet'] = 32.08, ['item_poor_mans_shield'] = 25.77, ['item_misericorde'] = 14.27, ['item_mana_draught'] = 11.7, ['item_essence_ring'] = 11.58, ['item_pogo_stick'] = 4.59},
-           [3] = {['item_gunpowder_gauntlets'] = 39.53, ['item_gale_guard'] = 31.19, ['item_jidi_pollen_bag'] = 16.77, ['item_whisper_of_the_dread'] = 10.01, ['item_psychic_headband'] = 2.5},
-           [4] = {['item_giant_maul'] = 36.25, ['item_pyrrhic_cloak'] = 26.71, ['item_outworld_staff'] = 13.12, ['item_dezun_bloodrite'] = 11.84, ['item_crippling_crossbow'] = 6.09, ['item_magnifying_monocle'] = 5.99},
-           [5] = {['item_helm_of_the_undying'] = 22.31, ['item_desolator_2'] = 19.34, ['item_fallen_sky'] = 16.16, ['item_minotaur_horn'] = 13.07, ['item_demonicon'] = 13.04, ['item_unrelenting_eye'] = 10.37, ['item_spider_legs'] = 4.42, ['item_divine_regalia'] = 1.29},
+           [1] = {['item_chipped_vest'] = 44.46, ['item_dormant_curio'] = 25.86, ['item_kobold_cup'] = 5.76, ['item_occult_bracelet'] = 4.93, ['item_polliwog_charm'] = 3.99, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 35.55, ['item_poor_mans_shield'] = 28.56, ['item_mana_draught'] = 12.97, ['item_essence_ring'] = 12.83, ['item_pogo_stick'] = 5.09, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 54.71, ['item_jidi_pollen_bag'] = 23.21, ['item_whisper_of_the_dread'] = 13.85, ['item_psychic_headband'] = 3.46, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 63.70, ['item_crippling_crossbow'] = 10.70, ['item_flayers_bota'] = 6.40, ['item_idol_of_screeauk'] = 6.40, ['item_metamorphic_mandible'] = 6.40, ['item_rattlecage'] = 6.40},
+           [5] = {['item_desolator_2'] = 25.68, ['item_fallen_sky'] = 21.46, ['item_minotaur_horn'] = 17.35, ['item_demonicon'] = 17.31, ['item_spider_legs'] = 5.87, ['item_divine_regalia'] = 1.71, ['item_dezun_bloodrite'] = 5.16, ['item_riftshadow_prism'] = 5.46},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 29.49, ['item_enhancement_tough'] = 23.04, ['item_enhancement_mystical'] = 17.41, ['item_enhancement_alert'] = 15.31, ['item_enhancement_quickened'] = 14.75},
@@ -213,11 +213,11 @@ local heroList = {
     },
     ['npc_dota_hero_bristleback'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 58.12, ['item_dormant_curio'] = 10.37, ['item_sisters_shroud'] = 9.6, ['item_spark_of_courage'] = 9.28, ['item_occult_bracelet'] = 5.2, ['item_polliwog_charm'] = 3.5, ['item_kobold_cup'] = 2.49, ['item_rippers_lash'] = 1.45},
-           [2] = {['item_poor_mans_shield'] = 43.91, ['item_essence_ring'] = 18.76, ['item_searing_signet'] = 11.59, ['item_misericorde'] = 11.43, ['item_mana_draught'] = 10.99, ['item_pogo_stick'] = 3.32},
-           [3] = {['item_gale_guard'] = 41.92, ['item_gunpowder_gauntlets'] = 31.24, ['item_jidi_pollen_bag'] = 14.28, ['item_whisper_of_the_dread'] = 9.09, ['item_psychic_headband'] = 3.47},
-           [4] = {['item_pyrrhic_cloak'] = 34.11, ['item_giant_maul'] = 29.43, ['item_dezun_bloodrite'] = 14.73, ['item_outworld_staff'] = 9.46, ['item_magnifying_monocle'] = 8.06, ['item_crippling_crossbow'] = 4.21},
-           [5] = {['item_helm_of_the_undying'] = 26.23, ['item_minotaur_horn'] = 17.14, ['item_unrelenting_eye'] = 16.15, ['item_desolator_2'] = 14.58, ['item_fallen_sky'] = 11.64, ['item_spider_legs'] = 6.66, ['item_demonicon'] = 6.15, ['item_divine_regalia'] = 1.46},
+           [1] = {['item_chipped_vest'] = 62.00, ['item_dormant_curio'] = 11.06, ['item_occult_bracelet'] = 5.55, ['item_polliwog_charm'] = 3.73, ['item_kobold_cup'] = 2.66, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 47.10, ['item_essence_ring'] = 20.12, ['item_searing_signet'] = 12.43, ['item_mana_draught'] = 11.79, ['item_pogo_stick'] = 3.56, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 51.23, ['item_jidi_pollen_bag'] = 23.42, ['item_whisper_of_the_dread'] = 14.91, ['item_psychic_headband'] = 5.69, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 62.33, ['item_crippling_crossbow'] = 8.92, ['item_flayers_bota'] = 7.19, ['item_idol_of_screeauk'] = 7.19, ['item_metamorphic_mandible'] = 7.19, ['item_rattlecage'] = 7.19},
+           [5] = {['item_minotaur_horn'] = 26.27, ['item_desolator_2'] = 22.35, ['item_fallen_sky'] = 17.84, ['item_spider_legs'] = 10.21, ['item_demonicon'] = 9.43, ['item_divine_regalia'] = 2.24, ['item_dezun_bloodrite'] = 5.65, ['item_riftshadow_prism'] = 6.02},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 41.17, ['item_enhancement_tough'] = 21.67, ['item_enhancement_mystical'] = 19.01, ['item_enhancement_quickened'] = 11.14, ['item_enhancement_alert'] = 7},
@@ -229,11 +229,11 @@ local heroList = {
     },
     ['npc_dota_hero_broodmother'] = {
        ['neutral'] = {
-           [1] = {['item_rippers_lash'] = 23.44, ['item_spark_of_courage'] = 22.1, ['item_dormant_curio'] = 15.84, ['item_chipped_vest'] = 14.21, ['item_sisters_shroud'] = 13.26, ['item_occult_bracelet'] = 5.51, ['item_kobold_cup'] = 4.1, ['item_polliwog_charm'] = 1.54},
-           [2] = {['item_misericorde'] = 45.6, ['item_mana_draught'] = 17.56, ['item_poor_mans_shield'] = 17.52, ['item_searing_signet'] = 10.11, ['item_essence_ring'] = 6.91, ['item_pogo_stick'] = 2.3},
-           [3] = {['item_gunpowder_gauntlets'] = 66.99, ['item_gale_guard'] = 19.97, ['item_jidi_pollen_bag'] = 6.89, ['item_whisper_of_the_dread'] = 3.57, ['item_psychic_headband'] = 2.58},
-           [4] = {['item_giant_maul'] = 54.34, ['item_pyrrhic_cloak'] = 14, ['item_crippling_crossbow'] = 10.84, ['item_outworld_staff'] = 9.02, ['item_magnifying_monocle'] = 8.53, ['item_dezun_bloodrite'] = 3.27},
-           [5] = {['item_desolator_2'] = 33.56, ['item_helm_of_the_undying'] = 29.13, ['item_minotaur_horn'] = 9.6, ['item_unrelenting_eye'] = 9.41, ['item_fallen_sky'] = 7.82, ['item_demonicon'] = 6.39, ['item_divine_regalia'] = 2.15, ['item_spider_legs'] = 1.95},
+           [1] = {['item_dormant_curio'] = 32.68, ['item_chipped_vest'] = 29.32, ['item_occult_bracelet'] = 11.37, ['item_kobold_cup'] = 8.46, ['item_polliwog_charm'] = 3.18, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_mana_draught'] = 30.67, ['item_poor_mans_shield'] = 30.60, ['item_searing_signet'] = 17.66, ['item_essence_ring'] = 12.07, ['item_pogo_stick'] = 4.02, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 79.72, ['item_jidi_pollen_bag'] = 8.20, ['item_whisper_of_the_dread'] = 4.25, ['item_psychic_headband'] = 3.07, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 65.86, ['item_crippling_crossbow'] = 13.14, ['item_flayers_bota'] = 5.25, ['item_idol_of_screeauk'] = 5.25, ['item_metamorphic_mandible'] = 5.25, ['item_rattlecage'] = 5.25},
+           [5] = {['item_desolator_2'] = 48.81, ['item_minotaur_horn'] = 13.96, ['item_fallen_sky'] = 11.37, ['item_demonicon'] = 9.29, ['item_divine_regalia'] = 3.13, ['item_spider_legs'] = 2.84, ['item_dezun_bloodrite'] = 5.15, ['item_riftshadow_prism'] = 5.45},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 42.96, ['item_enhancement_tough'] = 23.48, ['item_enhancement_brawny'] = 13.92, ['item_enhancement_mystical'] = 10.37, ['item_enhancement_quickened'] = 9.28},
@@ -245,11 +245,11 @@ local heroList = {
     },
     ['npc_dota_hero_centaur'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 69.55, ['item_dormant_curio'] = 10.01, ['item_spark_of_courage'] = 6.56, ['item_sisters_shroud'] = 5.88, ['item_polliwog_charm'] = 3.51, ['item_kobold_cup'] = 2.04, ['item_occult_bracelet'] = 1.9, ['item_rippers_lash'] = 0.55},
-           [2] = {['item_poor_mans_shield'] = 51.59, ['item_essence_ring'] = 20.6, ['item_searing_signet'] = 13.23, ['item_pogo_stick'] = 6.01, ['item_misericorde'] = 4.44, ['item_mana_draught'] = 4.12},
-           [3] = {['item_gale_guard'] = 47.96, ['item_gunpowder_gauntlets'] = 24.36, ['item_jidi_pollen_bag'] = 17.19, ['item_whisper_of_the_dread'] = 7.85, ['item_psychic_headband'] = 2.64},
-           [4] = {['item_pyrrhic_cloak'] = 42.44, ['item_giant_maul'] = 22.73, ['item_dezun_bloodrite'] = 16.34, ['item_outworld_staff'] = 10.23, ['item_magnifying_monocle'] = 4.87, ['item_crippling_crossbow'] = 3.39},
-           [5] = {['item_helm_of_the_undying'] = 24.92, ['item_minotaur_horn'] = 20.32, ['item_unrelenting_eye'] = 16.88, ['item_fallen_sky'] = 15.85, ['item_demonicon'] = 8.19, ['item_spider_legs'] = 7.43, ['item_desolator_2'] = 5.59, ['item_divine_regalia'] = 0.83},
+           [1] = {['item_chipped_vest'] = 67.94, ['item_dormant_curio'] = 9.78, ['item_polliwog_charm'] = 3.43, ['item_kobold_cup'] = 1.99, ['item_occult_bracelet'] = 1.86, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 51.29, ['item_essence_ring'] = 20.48, ['item_searing_signet'] = 13.15, ['item_pogo_stick'] = 5.98, ['item_mana_draught'] = 4.10, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 44.58, ['item_jidi_pollen_bag'] = 31.46, ['item_whisper_of_the_dread'] = 14.37, ['item_psychic_headband'] = 4.83, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 58.73, ['item_crippling_crossbow'] = 8.76, ['item_flayers_bota'] = 8.13, ['item_idol_of_screeauk'] = 8.13, ['item_metamorphic_mandible'] = 8.13, ['item_rattlecage'] = 8.13},
+           [5] = {['item_minotaur_horn'] = 30.81, ['item_fallen_sky'] = 24.03, ['item_demonicon'] = 12.42, ['item_spider_legs'] = 11.26, ['item_desolator_2'] = 8.47, ['item_divine_regalia'] = 1.26, ['item_dezun_bloodrite'] = 5.69, ['item_riftshadow_prism'] = 6.06},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 44.41, ['item_enhancement_tough'] = 24.59, ['item_enhancement_mystical'] = 15.35, ['item_enhancement_quickened'] = 13.86, ['item_enhancement_alert'] = 1.8},
@@ -261,11 +261,11 @@ local heroList = {
     },
     ['npc_dota_hero_chaos_knight'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 36.5, ['item_spark_of_courage'] = 20.32, ['item_dormant_curio'] = 19.2, ['item_sisters_shroud'] = 10.89, ['item_occult_bracelet'] = 4.33, ['item_kobold_cup'] = 3.46, ['item_rippers_lash'] = 2.65, ['item_polliwog_charm'] = 2.64},
-           [2] = {['item_misericorde'] = 47.19, ['item_poor_mans_shield'] = 26.82, ['item_searing_signet'] = 8.76, ['item_mana_draught'] = 6.77, ['item_essence_ring'] = 6.66, ['item_pogo_stick'] = 3.8},
-           [3] = {['item_gunpowder_gauntlets'] = 67.6, ['item_gale_guard'] = 18.41, ['item_jidi_pollen_bag'] = 7.38, ['item_psychic_headband'] = 3.8, ['item_whisper_of_the_dread'] = 2.81},
-           [4] = {['item_giant_maul'] = 51.29, ['item_pyrrhic_cloak'] = 16.42, ['item_magnifying_monocle'] = 14.33, ['item_crippling_crossbow'] = 7.61, ['item_outworld_staff'] = 6.12, ['item_dezun_bloodrite'] = 4.23},
-           [5] = {['item_desolator_2'] = 27.71, ['item_helm_of_the_undying'] = 21.05, ['item_fallen_sky'] = 12.66, ['item_minotaur_horn'] = 12.61, ['item_unrelenting_eye'] = 9.89, ['item_demonicon'] = 8.78, ['item_spider_legs'] = 5.42, ['item_divine_regalia'] = 1.88},
+           [1] = {['item_chipped_vest'] = 46.91, ['item_dormant_curio'] = 24.68, ['item_occult_bracelet'] = 5.57, ['item_kobold_cup'] = 4.45, ['item_polliwog_charm'] = 3.39, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 48.25, ['item_searing_signet'] = 15.76, ['item_mana_draught'] = 12.18, ['item_essence_ring'] = 11.98, ['item_pogo_stick'] = 6.84, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 78.91, ['item_jidi_pollen_bag'] = 8.61, ['item_psychic_headband'] = 4.44, ['item_whisper_of_the_dread'] = 3.28, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 68.41, ['item_crippling_crossbow'] = 10.15, ['item_flayers_bota'] = 5.36, ['item_idol_of_screeauk'] = 5.36, ['item_metamorphic_mandible'] = 5.36, ['item_rattlecage'] = 5.36},
+           [5] = {['item_desolator_2'] = 35.90, ['item_fallen_sky'] = 16.40, ['item_minotaur_horn'] = 16.34, ['item_demonicon'] = 11.38, ['item_spider_legs'] = 7.02, ['item_divine_regalia'] = 2.44, ['item_dezun_bloodrite'] = 5.11, ['item_riftshadow_prism'] = 5.41},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 34.69, ['item_enhancement_tough'] = 27.44, ['item_enhancement_brawny'] = 20.5, ['item_enhancement_mystical'] = 9.2, ['item_enhancement_quickened'] = 8.18},
@@ -277,11 +277,11 @@ local heroList = {
     },
     ['npc_dota_hero_chen'] = {
        ['neutral'] = {
-           [1] = {['item_kobold_cup'] = 34.62, ['item_dormant_curio'] = 22.45, ['item_sisters_shroud'] = 15.81, ['item_polliwog_charm'] = 7.11, ['item_rippers_lash'] = 7.05, ['item_spark_of_courage'] = 5.53, ['item_chipped_vest'] = 4.86, ['item_occult_bracelet'] = 2.58},
-           [2] = {['item_essence_ring'] = 23.25, ['item_poor_mans_shield'] = 21.11, ['item_mana_draught'] = 18.08, ['item_searing_signet'] = 15.41, ['item_pogo_stick'] = 12.54, ['item_misericorde'] = 9.61},
-           [3] = {['item_gale_guard'] = 39.45, ['item_psychic_headband'] = 21.59, ['item_gunpowder_gauntlets'] = 18.71, ['item_jidi_pollen_bag'] = 14.91, ['item_whisper_of_the_dread'] = 5.34},
-           [4] = {['item_magnifying_monocle'] = 27.29, ['item_outworld_staff'] = 21.96, ['item_giant_maul'] = 16.54, ['item_dezun_bloodrite'] = 13.08, ['item_pyrrhic_cloak'] = 12.05, ['item_crippling_crossbow'] = 9.08},
-           [5] = {['item_demonicon'] = 30.55, ['item_helm_of_the_undying'] = 19.33, ['item_fallen_sky'] = 15.88, ['item_desolator_2'] = 12.46, ['item_spider_legs'] = 8.1, ['item_minotaur_horn'] = 7.78, ['item_unrelenting_eye'] = 5.3, ['item_divine_regalia'] = 0.59},
+           [1] = {['item_kobold_cup'] = 41.09, ['item_dormant_curio'] = 26.64, ['item_polliwog_charm'] = 8.44, ['item_chipped_vest'] = 5.77, ['item_occult_bracelet'] = 3.06, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_essence_ring'] = 24.44, ['item_poor_mans_shield'] = 22.19, ['item_mana_draught'] = 19.00, ['item_searing_signet'] = 16.20, ['item_pogo_stick'] = 13.18, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_psychic_headband'] = 33.96, ['item_gunpowder_gauntlets'] = 29.43, ['item_jidi_pollen_bag'] = 23.45, ['item_whisper_of_the_dread'] = 8.40, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 45.06, ['item_crippling_crossbow'] = 24.73, ['item_flayers_bota'] = 7.55, ['item_idol_of_screeauk'] = 7.55, ['item_metamorphic_mandible'] = 7.55, ['item_rattlecage'] = 7.55},
+           [5] = {['item_demonicon'] = 36.52, ['item_fallen_sky'] = 18.99, ['item_desolator_2'] = 14.90, ['item_spider_legs'] = 9.68, ['item_minotaur_horn'] = 9.30, ['item_divine_regalia'] = 0.71, ['item_dezun_bloodrite'] = 4.82, ['item_riftshadow_prism'] = 5.08},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_quickened'] = 30.73, ['item_enhancement_brawny'] = 24.4, ['item_enhancement_mystical'] = 22.75, ['item_enhancement_alert'] = 11.96, ['item_enhancement_tough'] = 10.16},
@@ -293,11 +293,11 @@ local heroList = {
     },
     ['npc_dota_hero_clinkz'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 30.1, ['item_spark_of_courage'] = 29.87, ['item_sisters_shroud'] = 13.45, ['item_chipped_vest'] = 10.17, ['item_occult_bracelet'] = 5.78, ['item_rippers_lash'] = 5.33, ['item_kobold_cup'] = 2.78, ['item_polliwog_charm'] = 2.53},
-           [2] = {['item_misericorde'] = 53.65, ['item_searing_signet'] = 17.41, ['item_mana_draught'] = 15.09, ['item_poor_mans_shield'] = 8.42, ['item_essence_ring'] = 3.48, ['item_pogo_stick'] = 1.95},
-           [3] = {['item_gunpowder_gauntlets'] = 73.36, ['item_gale_guard'] = 12.92, ['item_psychic_headband'] = 5.47, ['item_jidi_pollen_bag'] = 4.16, ['item_whisper_of_the_dread'] = 4.09},
-           [4] = {['item_giant_maul'] = 49.08, ['item_magnifying_monocle'] = 22.56, ['item_crippling_crossbow'] = 15.06, ['item_outworld_staff'] = 6.26, ['item_pyrrhic_cloak'] = 3.72, ['item_dezun_bloodrite'] = 3.32},
-           [5] = {['item_desolator_2'] = 38.43, ['item_helm_of_the_undying'] = 28.04, ['item_unrelenting_eye'] = 8.16, ['item_minotaur_horn'] = 7.39, ['item_demonicon'] = 5.22, ['item_spider_legs'] = 4.7, ['item_fallen_sky'] = 4.53, ['item_divine_regalia'] = 3.54},
+           [1] = {['item_dormant_curio'] = 49.82, ['item_chipped_vest'] = 16.83, ['item_occult_bracelet'] = 9.57, ['item_kobold_cup'] = 4.60, ['item_polliwog_charm'] = 4.19, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 35.68, ['item_mana_draught'] = 30.93, ['item_poor_mans_shield'] = 17.26, ['item_essence_ring'] = 7.13, ['item_pogo_stick'] = 4.00, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 80.23, ['item_psychic_headband'] = 5.98, ['item_jidi_pollen_bag'] = 4.55, ['item_whisper_of_the_dread'] = 4.47, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 60.42, ['item_crippling_crossbow'] = 18.54, ['item_flayers_bota'] = 5.26, ['item_idol_of_screeauk'] = 5.26, ['item_metamorphic_mandible'] = 5.26, ['item_rattlecage'] = 5.26},
+           [5] = {['item_desolator_2'] = 53.97, ['item_minotaur_horn'] = 10.38, ['item_demonicon'] = 7.33, ['item_spider_legs'] = 6.60, ['item_fallen_sky'] = 6.36, ['item_divine_regalia'] = 4.97, ['item_dezun_bloodrite'] = 5.05, ['item_riftshadow_prism'] = 5.34},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 47.82, ['item_enhancement_tough'] = 23.45, ['item_enhancement_mystical'] = 10.64, ['item_enhancement_quickened'] = 10.35, ['item_enhancement_brawny'] = 7.74},
@@ -309,11 +309,11 @@ local heroList = {
     },
     ['npc_dota_hero_crystal_maiden'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 28.28, ['item_sisters_shroud'] = 27.75, ['item_kobold_cup'] = 13.29, ['item_occult_bracelet'] = 9.96, ['item_polliwog_charm'] = 6.99, ['item_chipped_vest'] = 6.63, ['item_spark_of_courage'] = 5.26, ['item_rippers_lash'] = 1.85},
-           [2] = {['item_searing_signet'] = 48.89, ['item_mana_draught'] = 19.41, ['item_essence_ring'] = 11.58, ['item_pogo_stick'] = 10.21, ['item_poor_mans_shield'] = 7.3, ['item_misericorde'] = 2.6},
-           [3] = {['item_whisper_of_the_dread'] = 35.37, ['item_gale_guard'] = 25.77, ['item_psychic_headband'] = 25.23, ['item_gunpowder_gauntlets'] = 7.5, ['item_jidi_pollen_bag'] = 6.14},
-           [4] = {['item_magnifying_monocle'] = 38.17, ['item_dezun_bloodrite'] = 29.21, ['item_outworld_staff'] = 15.79, ['item_giant_maul'] = 7.75, ['item_pyrrhic_cloak'] = 5.55, ['item_crippling_crossbow'] = 3.53},
-           [5] = {['item_helm_of_the_undying'] = 28.61, ['item_demonicon'] = 17.57, ['item_fallen_sky'] = 14.25, ['item_spider_legs'] = 10.04, ['item_desolator_2'] = 9.87, ['item_unrelenting_eye'] = 9.31, ['item_minotaur_horn'] = 8.92, ['item_divine_regalia'] = 1.44},
+           [1] = {['item_dormant_curio'] = 36.90, ['item_kobold_cup'] = 17.34, ['item_occult_bracelet'] = 12.99, ['item_polliwog_charm'] = 9.12, ['item_chipped_vest'] = 8.65, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 47.69, ['item_mana_draught'] = 18.93, ['item_essence_ring'] = 11.30, ['item_pogo_stick'] = 9.96, ['item_poor_mans_shield'] = 7.12, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 45.37, ['item_psychic_headband'] = 32.37, ['item_gunpowder_gauntlets'] = 9.62, ['item_jidi_pollen_bag'] = 7.88, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 28.21, ['item_crippling_crossbow'] = 12.85, ['item_flayers_bota'] = 14.74, ['item_idol_of_screeauk'] = 14.74, ['item_metamorphic_mandible'] = 14.74, ['item_rattlecage'] = 14.74},
+           [5] = {['item_demonicon'] = 25.30, ['item_fallen_sky'] = 20.52, ['item_spider_legs'] = 14.46, ['item_desolator_2'] = 14.21, ['item_minotaur_horn'] = 12.85, ['item_divine_regalia'] = 2.07, ['item_dezun_bloodrite'] = 5.14, ['item_riftshadow_prism'] = 5.44},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 38.74, ['item_enhancement_quickened'] = 31.68, ['item_enhancement_brawny'] = 19.2, ['item_enhancement_alert'] = 5.62, ['item_enhancement_tough'] = 4.77},
@@ -325,11 +325,11 @@ local heroList = {
     },
     ['npc_dota_hero_dark_seer'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 39.46, ['item_dormant_curio'] = 24.47, ['item_sisters_shroud'] = 13.79, ['item_kobold_cup'] = 5.88, ['item_spark_of_courage'] = 5.4, ['item_polliwog_charm'] = 5.23, ['item_occult_bracelet'] = 4.61, ['item_rippers_lash'] = 1.16},
-           [2] = {['item_poor_mans_shield'] = 30.05, ['item_searing_signet'] = 25.33, ['item_essence_ring'] = 22.03, ['item_mana_draught'] = 11.36, ['item_pogo_stick'] = 7.22, ['item_misericorde'] = 4.02},
-           [3] = {['item_gale_guard'] = 32.23, ['item_gunpowder_gauntlets'] = 30.88, ['item_whisper_of_the_dread'] = 14.95, ['item_jidi_pollen_bag'] = 13.72, ['item_psychic_headband'] = 8.22},
-           [4] = {['item_dezun_bloodrite'] = 32.26, ['item_giant_maul'] = 20.8, ['item_pyrrhic_cloak'] = 18.71, ['item_magnifying_monocle'] = 13.46, ['item_outworld_staff'] = 12.22, ['item_crippling_crossbow'] = 2.55},
-           [5] = {['item_helm_of_the_undying'] = 26.55, ['item_fallen_sky'] = 19.46, ['item_demonicon'] = 16.17, ['item_minotaur_horn'] = 12.69, ['item_unrelenting_eye'] = 10.36, ['item_desolator_2'] = 7.11, ['item_spider_legs'] = 6.9, ['item_divine_regalia'] = 0.76},
+           [1] = {['item_chipped_vest'] = 42.11, ['item_dormant_curio'] = 26.11, ['item_kobold_cup'] = 6.27, ['item_polliwog_charm'] = 5.58, ['item_occult_bracelet'] = 4.92, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 29.74, ['item_searing_signet'] = 25.07, ['item_essence_ring'] = 21.80, ['item_mana_draught'] = 11.24, ['item_pogo_stick'] = 7.15, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 43.40, ['item_whisper_of_the_dread'] = 21.01, ['item_jidi_pollen_bag'] = 19.28, ['item_psychic_headband'] = 11.55, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 46.65, ['item_crippling_crossbow'] = 5.72, ['item_flayers_bota'] = 11.91, ['item_idol_of_screeauk'] = 11.91, ['item_metamorphic_mandible'] = 11.91, ['item_rattlecage'] = 11.91},
+           [5] = {['item_fallen_sky'] = 27.54, ['item_demonicon'] = 22.89, ['item_minotaur_horn'] = 17.96, ['item_desolator_2'] = 10.06, ['item_spider_legs'] = 9.77, ['item_divine_regalia'] = 1.08, ['item_dezun_bloodrite'] = 5.20, ['item_riftshadow_prism'] = 5.50},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 35.6, ['item_enhancement_mystical'] = 26.72, ['item_enhancement_quickened'] = 18.21, ['item_enhancement_tough'] = 14.96, ['item_enhancement_alert'] = 4.51},
@@ -341,11 +341,11 @@ local heroList = {
     },
     ['npc_dota_hero_dark_willow'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 34.39, ['item_sisters_shroud'] = 24.63, ['item_kobold_cup'] = 11.06, ['item_spark_of_courage'] = 8.68, ['item_polliwog_charm'] = 7.36, ['item_chipped_vest'] = 5.84, ['item_occult_bracelet'] = 5.73, ['item_rippers_lash'] = 2.31},
-           [2] = {['item_searing_signet'] = 44.54, ['item_essence_ring'] = 14.54, ['item_misericorde'] = 14.12, ['item_mana_draught'] = 11.75, ['item_pogo_stick'] = 9.46, ['item_poor_mans_shield'] = 5.59},
-           [3] = {['item_gunpowder_gauntlets'] = 25.82, ['item_whisper_of_the_dread'] = 23.96, ['item_gale_guard'] = 23.62, ['item_psychic_headband'] = 19.84, ['item_jidi_pollen_bag'] = 6.77},
-           [4] = {['item_magnifying_monocle'] = 33.12, ['item_giant_maul'] = 24.24, ['item_dezun_bloodrite'] = 15.8, ['item_outworld_staff'] = 14.72, ['item_crippling_crossbow'] = 8.75, ['item_pyrrhic_cloak'] = 3.36},
-           [5] = {['item_desolator_2'] = 25.61, ['item_helm_of_the_undying'] = 25.34, ['item_demonicon'] = 13.11, ['item_fallen_sky'] = 10.77, ['item_minotaur_horn'] = 8.66, ['item_spider_legs'] = 7.21, ['item_unrelenting_eye'] = 6.36, ['item_divine_regalia'] = 2.94},
+           [1] = {['item_dormant_curio'] = 45.40, ['item_kobold_cup'] = 14.60, ['item_polliwog_charm'] = 9.72, ['item_chipped_vest'] = 7.71, ['item_occult_bracelet'] = 7.57, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 49.27, ['item_essence_ring'] = 16.08, ['item_mana_draught'] = 13.00, ['item_pogo_stick'] = 10.46, ['item_poor_mans_shield'] = 6.18, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 32.19, ['item_whisper_of_the_dread'] = 29.87, ['item_psychic_headband'] = 24.74, ['item_jidi_pollen_bag'] = 8.44, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 51.74, ['item_crippling_crossbow'] = 18.68, ['item_flayers_bota'] = 7.40, ['item_idol_of_screeauk'] = 7.40, ['item_metamorphic_mandible'] = 7.40, ['item_rattlecage'] = 7.40},
+           [5] = {['item_desolator_2'] = 33.71, ['item_demonicon'] = 17.26, ['item_fallen_sky'] = 14.18, ['item_minotaur_horn'] = 11.40, ['item_spider_legs'] = 9.49, ['item_divine_regalia'] = 3.87, ['item_dezun_bloodrite'] = 4.91, ['item_riftshadow_prism'] = 5.18},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 33.47, ['item_enhancement_mystical'] = 22.79, ['item_enhancement_quickened'] = 21.53, ['item_enhancement_brawny'] = 13.77, ['item_enhancement_tough'] = 8.45},
@@ -357,11 +357,11 @@ local heroList = {
     },
     ['npc_dota_hero_dawnbreaker'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 51.32, ['item_dormant_curio'] = 19.68, ['item_spark_of_courage'] = 11.64, ['item_sisters_shroud'] = 8.99, ['item_occult_bracelet'] = 3.49, ['item_kobold_cup'] = 2.01, ['item_polliwog_charm'] = 1.97, ['item_rippers_lash'] = 0.91},
-           [2] = {['item_poor_mans_shield'] = 27.51, ['item_misericorde'] = 23.75, ['item_searing_signet'] = 18.58, ['item_mana_draught'] = 14.45, ['item_essence_ring'] = 12.66, ['item_pogo_stick'] = 3.05},
-           [3] = {['item_gunpowder_gauntlets'] = 55.34, ['item_gale_guard'] = 28.57, ['item_jidi_pollen_bag'] = 9.92, ['item_whisper_of_the_dread'] = 4.26, ['item_psychic_headband'] = 1.92},
-           [4] = {['item_giant_maul'] = 40.01, ['item_pyrrhic_cloak'] = 24.9, ['item_dezun_bloodrite'] = 18.33, ['item_outworld_staff'] = 7.52, ['item_magnifying_monocle'] = 5.29, ['item_crippling_crossbow'] = 3.95},
-           [5] = {['item_helm_of_the_undying'] = 27.58, ['item_desolator_2'] = 25.73, ['item_fallen_sky'] = 14.77, ['item_minotaur_horn'] = 10.83, ['item_unrelenting_eye'] = 9.76, ['item_demonicon'] = 6.75, ['item_spider_legs'] = 3.62, ['item_divine_regalia'] = 0.96},
+           [1] = {['item_chipped_vest'] = 55.59, ['item_dormant_curio'] = 21.32, ['item_occult_bracelet'] = 3.78, ['item_kobold_cup'] = 2.18, ['item_polliwog_charm'] = 2.13, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 34.27, ['item_searing_signet'] = 23.15, ['item_mana_draught'] = 18.00, ['item_essence_ring'] = 15.77, ['item_pogo_stick'] = 3.80, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 73.78, ['item_jidi_pollen_bag'] = 13.22, ['item_whisper_of_the_dread'] = 5.68, ['item_psychic_headband'] = 2.56, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 65.22, ['item_crippling_crossbow'] = 6.44, ['item_flayers_bota'] = 7.08, ['item_idol_of_screeauk'] = 7.08, ['item_metamorphic_mandible'] = 7.08, ['item_rattlecage'] = 7.08},
+           [5] = {['item_desolator_2'] = 36.70, ['item_fallen_sky'] = 21.07, ['item_minotaur_horn'] = 15.45, ['item_demonicon'] = 9.63, ['item_spider_legs'] = 5.16, ['item_divine_regalia'] = 1.37, ['item_dezun_bloodrite'] = 5.16, ['item_riftshadow_prism'] = 5.46},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_tough'] = 32.7, ['item_enhancement_brawny'] = 29.95, ['item_enhancement_mystical'] = 16.54, ['item_enhancement_alert'] = 11.91, ['item_enhancement_quickened'] = 8.91},
@@ -373,11 +373,11 @@ local heroList = {
     },
     ['npc_dota_hero_dazzle'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 33.44, ['item_sisters_shroud'] = 26.82, ['item_kobold_cup'] = 12.62, ['item_polliwog_charm'] = 7.84, ['item_spark_of_courage'] = 6.46, ['item_occult_bracelet'] = 5.31, ['item_chipped_vest'] = 5.26, ['item_rippers_lash'] = 2.26},
-           [2] = {['item_searing_signet'] = 37.74, ['item_essence_ring'] = 15.37, ['item_mana_draught'] = 15.3, ['item_pogo_stick'] = 12.53, ['item_misericorde'] = 10.83, ['item_poor_mans_shield'] = 8.23},
-           [3] = {['item_psychic_headband'] = 26.36, ['item_gale_guard'] = 26.19, ['item_gunpowder_gauntlets'] = 20.73, ['item_whisper_of_the_dread'] = 17.64, ['item_jidi_pollen_bag'] = 9.08},
-           [4] = {['item_magnifying_monocle'] = 40.72, ['item_giant_maul'] = 16.78, ['item_outworld_staff'] = 15.72, ['item_dezun_bloodrite'] = 14.2, ['item_crippling_crossbow'] = 6.44, ['item_pyrrhic_cloak'] = 6.14},
-           [5] = {['item_helm_of_the_undying'] = 27.74, ['item_desolator_2'] = 19.13, ['item_demonicon'] = 18.24, ['item_fallen_sky'] = 12.31, ['item_spider_legs'] = 7.4, ['item_minotaur_horn'] = 7.31, ['item_unrelenting_eye'] = 6.53, ['item_divine_regalia'] = 1.34},
+           [1] = {['item_dormant_curio'] = 44.09, ['item_kobold_cup'] = 16.64, ['item_polliwog_charm'] = 10.34, ['item_occult_bracelet'] = 7.00, ['item_chipped_vest'] = 6.94, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 40.21, ['item_essence_ring'] = 16.37, ['item_mana_draught'] = 16.30, ['item_pogo_stick'] = 13.35, ['item_poor_mans_shield'] = 8.77, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_psychic_headband'] = 34.01, ['item_gunpowder_gauntlets'] = 26.75, ['item_whisper_of_the_dread'] = 22.76, ['item_jidi_pollen_bag'] = 11.72, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 48.97, ['item_crippling_crossbow'] = 18.80, ['item_flayers_bota'] = 8.06, ['item_idol_of_screeauk'] = 8.06, ['item_metamorphic_mandible'] = 8.06, ['item_rattlecage'] = 8.06},
+           [5] = {['item_desolator_2'] = 26.15, ['item_demonicon'] = 24.93, ['item_fallen_sky'] = 16.83, ['item_spider_legs'] = 10.12, ['item_minotaur_horn'] = 9.99, ['item_divine_regalia'] = 1.83, ['item_dezun_bloodrite'] = 4.94, ['item_riftshadow_prism'] = 5.21},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 29.37, ['item_enhancement_quickened'] = 27.6, ['item_enhancement_alert'] = 21.54, ['item_enhancement_brawny'] = 14.79, ['item_enhancement_tough'] = 6.7},
@@ -389,11 +389,11 @@ local heroList = {
     },
     ['npc_dota_hero_disruptor'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 33.23, ['item_sisters_shroud'] = 26.26, ['item_kobold_cup'] = 15.61, ['item_polliwog_charm'] = 9.6, ['item_occult_bracelet'] = 6.59, ['item_chipped_vest'] = 3.96, ['item_spark_of_courage'] = 3.25, ['item_rippers_lash'] = 1.5},
-           [2] = {['item_searing_signet'] = 49.91, ['item_mana_draught'] = 16.07, ['item_essence_ring'] = 15.06, ['item_pogo_stick'] = 12.77, ['item_poor_mans_shield'] = 5.19, ['item_misericorde'] = 1},
-           [3] = {['item_psychic_headband'] = 32.73, ['item_gale_guard'] = 29, ['item_whisper_of_the_dread'] = 27.99, ['item_jidi_pollen_bag'] = 5.8, ['item_gunpowder_gauntlets'] = 4.48},
-           [4] = {['item_magnifying_monocle'] = 41.04, ['item_dezun_bloodrite'] = 32.05, ['item_outworld_staff'] = 17.86, ['item_pyrrhic_cloak'] = 3.46, ['item_giant_maul'] = 3.36, ['item_crippling_crossbow'] = 2.23},
-           [5] = {['item_helm_of_the_undying'] = 27.81, ['item_demonicon'] = 25.96, ['item_fallen_sky'] = 15.64, ['item_spider_legs'] = 11.34, ['item_minotaur_horn'] = 8.85, ['item_unrelenting_eye'] = 7.01, ['item_desolator_2'] = 2.31, ['item_divine_regalia'] = 1.07},
+           [1] = {['item_dormant_curio'] = 40.94, ['item_kobold_cup'] = 19.23, ['item_polliwog_charm'] = 11.83, ['item_occult_bracelet'] = 8.12, ['item_chipped_vest'] = 4.88, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 47.89, ['item_mana_draught'] = 15.42, ['item_essence_ring'] = 14.45, ['item_pogo_stick'] = 12.25, ['item_poor_mans_shield'] = 4.98, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_psychic_headband'] = 43.90, ['item_whisper_of_the_dread'] = 37.55, ['item_jidi_pollen_bag'] = 7.78, ['item_gunpowder_gauntlets'] = 6.01, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 16.27, ['item_crippling_crossbow'] = 10.80, ['item_flayers_bota'] = 18.23, ['item_idol_of_screeauk'] = 18.23, ['item_metamorphic_mandible'] = 18.23, ['item_rattlecage'] = 18.23},
+           [5] = {['item_demonicon'] = 35.76, ['item_fallen_sky'] = 21.55, ['item_spider_legs'] = 15.62, ['item_minotaur_horn'] = 12.19, ['item_desolator_2'] = 3.18, ['item_divine_regalia'] = 1.47, ['item_dezun_bloodrite'] = 4.97, ['item_riftshadow_prism'] = 5.25},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 42.61, ['item_enhancement_quickened'] = 33.57, ['item_enhancement_brawny'] = 17.62, ['item_enhancement_alert'] = 3.13, ['item_enhancement_tough'] = 3.07},
@@ -405,11 +405,11 @@ local heroList = {
     },
     ['npc_dota_hero_death_prophet'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 27.63, ['item_dormant_curio'] = 26.69, ['item_sisters_shroud'] = 18.79, ['item_spark_of_courage'] = 7.61, ['item_occult_bracelet'] = 7.52, ['item_kobold_cup'] = 6.73, ['item_polliwog_charm'] = 3.41, ['item_rippers_lash'] = 1.61},
-           [2] = {['item_searing_signet'] = 47.92, ['item_essence_ring'] = 15.49, ['item_poor_mans_shield'] = 14.9, ['item_mana_draught'] = 11.42, ['item_misericorde'] = 6.04, ['item_pogo_stick'] = 4.23},
-           [3] = {['item_gale_guard'] = 32.95, ['item_whisper_of_the_dread'] = 30.83, ['item_gunpowder_gauntlets'] = 18.03, ['item_psychic_headband'] = 9.58, ['item_jidi_pollen_bag'] = 8.62},
-           [4] = {['item_dezun_bloodrite'] = 22.21, ['item_pyrrhic_cloak'] = 20.64, ['item_magnifying_monocle'] = 18.64, ['item_outworld_staff'] = 18.23, ['item_giant_maul'] = 15.87, ['item_crippling_crossbow'] = 4.4},
-           [5] = {['item_helm_of_the_undying'] = 27.7, ['item_fallen_sky'] = 15.73, ['item_unrelenting_eye'] = 12.54, ['item_minotaur_horn'] = 12.43, ['item_demonicon'] = 11.45, ['item_desolator_2'] = 9.33, ['item_spider_legs'] = 9.05, ['item_divine_regalia'] = 1.77},
+           [1] = {['item_chipped_vest'] = 32.63, ['item_dormant_curio'] = 31.52, ['item_occult_bracelet'] = 8.88, ['item_kobold_cup'] = 7.95, ['item_polliwog_charm'] = 4.03, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 48.45, ['item_essence_ring'] = 15.66, ['item_poor_mans_shield'] = 15.06, ['item_mana_draught'] = 11.55, ['item_pogo_stick'] = 4.28, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 43.78, ['item_gunpowder_gauntlets'] = 25.61, ['item_psychic_headband'] = 13.61, ['item_jidi_pollen_bag'] = 12.24, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 45.47, ['item_crippling_crossbow'] = 12.61, ['item_flayers_bota'] = 10.48, ['item_idol_of_screeauk'] = 10.48, ['item_metamorphic_mandible'] = 10.48, ['item_rattlecage'] = 10.48},
+           [5] = {['item_fallen_sky'] = 23.40, ['item_minotaur_horn'] = 18.49, ['item_demonicon'] = 17.04, ['item_desolator_2'] = 13.88, ['item_spider_legs'] = 13.47, ['item_divine_regalia'] = 2.63, ['item_dezun_bloodrite'] = 5.38, ['item_riftshadow_prism'] = 5.70},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 29.25, ['item_enhancement_mystical'] = 27.98, ['item_enhancement_quickened'] = 23.03, ['item_enhancement_tough'] = 11.48, ['item_enhancement_alert'] = 8.25},
@@ -421,11 +421,11 @@ local heroList = {
     },
     ['npc_dota_hero_doom_bringer'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 38.39, ['item_dormant_curio'] = 26.71, ['item_kobold_cup'] = 11.5, ['item_sisters_shroud'] = 9.24, ['item_spark_of_courage'] = 7.24, ['item_occult_bracelet'] = 3.08, ['item_polliwog_charm'] = 2.93, ['item_rippers_lash'] = 0.91},
-           [2] = {['item_searing_signet'] = 34.83, ['item_poor_mans_shield'] = 25.56, ['item_essence_ring'] = 12.89, ['item_misericorde'] = 10.78, ['item_mana_draught'] = 9.63, ['item_pogo_stick'] = 6.32},
-           [3] = {['item_gunpowder_gauntlets'] = 38.07, ['item_gale_guard'] = 30.13, ['item_whisper_of_the_dread'] = 16.17, ['item_jidi_pollen_bag'] = 11.8, ['item_psychic_headband'] = 3.83},
-           [4] = {['item_giant_maul'] = 33.85, ['item_pyrrhic_cloak'] = 21.27, ['item_dezun_bloodrite'] = 19.32, ['item_magnifying_monocle'] = 11.17, ['item_outworld_staff'] = 9.86, ['item_crippling_crossbow'] = 4.53},
-           [5] = {['item_helm_of_the_undying'] = 28.14, ['item_fallen_sky'] = 16.77, ['item_minotaur_horn'] = 12.75, ['item_desolator_2'] = 11.39, ['item_unrelenting_eye'] = 10.44, ['item_demonicon'] = 9.83, ['item_spider_legs'] = 9.6, ['item_divine_regalia'] = 1.08},
+           [1] = {['item_chipped_vest'] = 39.50, ['item_dormant_curio'] = 27.48, ['item_kobold_cup'] = 11.83, ['item_occult_bracelet'] = 3.17, ['item_polliwog_charm'] = 3.01, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 37.08, ['item_poor_mans_shield'] = 27.21, ['item_essence_ring'] = 13.72, ['item_mana_draught'] = 10.25, ['item_pogo_stick'] = 6.73, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 51.89, ['item_whisper_of_the_dread'] = 22.04, ['item_jidi_pollen_bag'] = 16.08, ['item_psychic_headband'] = 5.22, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 61.68, ['item_crippling_crossbow'] = 8.25, ['item_flayers_bota'] = 7.52, ['item_idol_of_screeauk'] = 7.52, ['item_metamorphic_mandible'] = 7.52, ['item_rattlecage'] = 7.52},
+           [5] = {['item_fallen_sky'] = 24.37, ['item_minotaur_horn'] = 18.53, ['item_desolator_2'] = 16.55, ['item_demonicon'] = 14.28, ['item_spider_legs'] = 13.95, ['item_divine_regalia'] = 1.57, ['item_dezun_bloodrite'] = 5.22, ['item_riftshadow_prism'] = 5.53},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 29.13, ['item_enhancement_quickened'] = 21.17, ['item_enhancement_tough'] = 20.06, ['item_enhancement_mystical'] = 18.58, ['item_enhancement_alert'] = 11.06},
@@ -437,11 +437,11 @@ local heroList = {
     },
     ['npc_dota_hero_dragon_knight'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 40.83, ['item_dormant_curio'] = 20, ['item_spark_of_courage'] = 17.95, ['item_sisters_shroud'] = 9.86, ['item_occult_bracelet'] = 4.38, ['item_kobold_cup'] = 2.56, ['item_polliwog_charm'] = 2.37, ['item_rippers_lash'] = 2.04},
-           [2] = {['item_misericorde'] = 43.66, ['item_poor_mans_shield'] = 26.48, ['item_searing_signet'] = 13, ['item_essence_ring'] = 7.67, ['item_mana_draught'] = 6.3, ['item_pogo_stick'] = 2.89},
-           [3] = {['item_gunpowder_gauntlets'] = 64.01, ['item_gale_guard'] = 23.8, ['item_jidi_pollen_bag'] = 6.81, ['item_whisper_of_the_dread'] = 2.7, ['item_psychic_headband'] = 2.67},
-           [4] = {['item_giant_maul'] = 47.65, ['item_pyrrhic_cloak'] = 17.46, ['item_magnifying_monocle'] = 15.03, ['item_crippling_crossbow'] = 10.06, ['item_outworld_staff'] = 5.3, ['item_dezun_bloodrite'] = 4.5},
-           [5] = {['item_desolator_2'] = 32.21, ['item_helm_of_the_undying'] = 26.1, ['item_unrelenting_eye'] = 11.71, ['item_minotaur_horn'] = 11.7, ['item_fallen_sky'] = 8.05, ['item_demonicon'] = 4.16, ['item_spider_legs'] = 3.75, ['item_divine_regalia'] = 2.31},
+           [1] = {['item_chipped_vest'] = 49.48, ['item_dormant_curio'] = 24.24, ['item_occult_bracelet'] = 5.31, ['item_kobold_cup'] = 3.10, ['item_polliwog_charm'] = 2.87, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 44.65, ['item_searing_signet'] = 21.92, ['item_essence_ring'] = 12.93, ['item_mana_draught'] = 10.62, ['item_pogo_stick'] = 4.87, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 80.01, ['item_jidi_pollen_bag'] = 8.51, ['item_whisper_of_the_dread'] = 3.38, ['item_psychic_headband'] = 3.34, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 64.77, ['item_crippling_crossbow'] = 13.67, ['item_flayers_bota'] = 5.39, ['item_idol_of_screeauk'] = 5.39, ['item_metamorphic_mandible'] = 5.39, ['item_rattlecage'] = 5.39},
+           [5] = {['item_desolator_2'] = 46.15, ['item_minotaur_horn'] = 16.76, ['item_fallen_sky'] = 11.53, ['item_demonicon'] = 5.96, ['item_spider_legs'] = 5.37, ['item_divine_regalia'] = 3.31, ['item_dezun_bloodrite'] = 5.29, ['item_riftshadow_prism'] = 5.61},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 39.18, ['item_enhancement_tough'] = 26.78, ['item_enhancement_brawny'] = 19.73, ['item_enhancement_mystical'] = 8.03, ['item_enhancement_quickened'] = 6.28},
@@ -453,11 +453,11 @@ local heroList = {
     },
     ['npc_dota_hero_drow_ranger'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 36.58, ['item_spark_of_courage'] = 28.83, ['item_sisters_shroud'] = 13.61, ['item_chipped_vest'] = 7.15, ['item_occult_bracelet'] = 5.09, ['item_polliwog_charm'] = 3.31, ['item_kobold_cup'] = 3.06, ['item_rippers_lash'] = 2.37},
-           [2] = {['item_misericorde'] = 58.79, ['item_mana_draught'] = 14.91, ['item_poor_mans_shield'] = 11.66, ['item_searing_signet'] = 5.47, ['item_pogo_stick'] = 4.77, ['item_essence_ring'] = 4.39},
-           [3] = {['item_gunpowder_gauntlets'] = 67.92, ['item_gale_guard'] = 18.25, ['item_psychic_headband'] = 9.27, ['item_whisper_of_the_dread'] = 2.39, ['item_jidi_pollen_bag'] = 2.16},
-           [4] = {['item_giant_maul'] = 46.5, ['item_magnifying_monocle'] = 24.93, ['item_crippling_crossbow'] = 16.37, ['item_outworld_staff'] = 7.84, ['item_pyrrhic_cloak'] = 2.38, ['item_dezun_bloodrite'] = 1.98},
-           [5] = {['item_desolator_2'] = 37.83, ['item_helm_of_the_undying'] = 28.38, ['item_minotaur_horn'] = 8.78, ['item_spider_legs'] = 7.51, ['item_unrelenting_eye'] = 7.31, ['item_divine_regalia'] = 4.54, ['item_fallen_sky'] = 3.38, ['item_demonicon'] = 2.28},
+           [1] = {['item_dormant_curio'] = 56.34, ['item_chipped_vest'] = 11.01, ['item_occult_bracelet'] = 7.84, ['item_polliwog_charm'] = 5.10, ['item_kobold_cup'] = 4.71, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_mana_draught'] = 34.38, ['item_poor_mans_shield'] = 26.89, ['item_searing_signet'] = 12.61, ['item_pogo_stick'] = 11.00, ['item_essence_ring'] = 10.12, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 79.14, ['item_psychic_headband'] = 10.80, ['item_whisper_of_the_dread'] = 2.78, ['item_jidi_pollen_bag'] = 2.52, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 58.70, ['item_crippling_crossbow'] = 20.67, ['item_flayers_bota'] = 5.16, ['item_idol_of_screeauk'] = 5.16, ['item_metamorphic_mandible'] = 5.16, ['item_rattlecage'] = 5.16},
+           [5] = {['item_desolator_2'] = 52.77, ['item_minotaur_horn'] = 12.25, ['item_spider_legs'] = 10.48, ['item_divine_regalia'] = 6.33, ['item_fallen_sky'] = 4.72, ['item_demonicon'] = 3.18, ['item_dezun_bloodrite'] = 5.00, ['item_riftshadow_prism'] = 5.27},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 56.9, ['item_enhancement_tough'] = 19.65, ['item_enhancement_quickened'] = 10.75, ['item_enhancement_mystical'] = 6.64, ['item_enhancement_brawny'] = 6.06},
@@ -469,11 +469,11 @@ local heroList = {
     },
     ['npc_dota_hero_earth_spirit'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 41.81, ['item_dormant_curio'] = 21.88, ['item_sisters_shroud'] = 14.56, ['item_spark_of_courage'] = 7.74, ['item_kobold_cup'] = 4.53, ['item_occult_bracelet'] = 4.22, ['item_polliwog_charm'] = 3.79, ['item_rippers_lash'] = 1.47},
-           [2] = {['item_searing_signet'] = 43.21, ['item_poor_mans_shield'] = 17.93, ['item_essence_ring'] = 17.45, ['item_mana_draught'] = 11.55, ['item_pogo_stick'] = 6.13, ['item_misericorde'] = 3.74},
-           [3] = {['item_whisper_of_the_dread'] = 31.42, ['item_gale_guard'] = 25.6, ['item_gunpowder_gauntlets'] = 18.13, ['item_jidi_pollen_bag'] = 14.7, ['item_psychic_headband'] = 10.16},
-           [4] = {['item_pyrrhic_cloak'] = 23.99, ['item_dezun_bloodrite'] = 19.84, ['item_outworld_staff'] = 19.55, ['item_magnifying_monocle'] = 17.01, ['item_giant_maul'] = 16.21, ['item_crippling_crossbow'] = 3.4},
-           [5] = {['item_helm_of_the_undying'] = 26.54, ['item_fallen_sky'] = 23.83, ['item_minotaur_horn'] = 14.04, ['item_demonicon'] = 13.76, ['item_unrelenting_eye'] = 9.59, ['item_desolator_2'] = 5.52, ['item_spider_legs'] = 5.36, ['item_divine_regalia'] = 1.36},
+           [1] = {['item_chipped_vest'] = 46.62, ['item_dormant_curio'] = 24.40, ['item_kobold_cup'] = 5.05, ['item_occult_bracelet'] = 4.71, ['item_polliwog_charm'] = 4.23, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 42.64, ['item_poor_mans_shield'] = 17.69, ['item_essence_ring'] = 17.22, ['item_mana_draught'] = 11.40, ['item_pogo_stick'] = 6.05, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 40.21, ['item_gunpowder_gauntlets'] = 23.20, ['item_jidi_pollen_bag'] = 18.81, ['item_psychic_headband'] = 13.00, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 49.40, ['item_crippling_crossbow'] = 10.36, ['item_flayers_bota'] = 10.06, ['item_idol_of_screeauk'] = 10.06, ['item_metamorphic_mandible'] = 10.06, ['item_rattlecage'] = 10.06},
+           [5] = {['item_fallen_sky'] = 33.36, ['item_minotaur_horn'] = 19.66, ['item_demonicon'] = 19.26, ['item_desolator_2'] = 7.73, ['item_spider_legs'] = 7.50, ['item_divine_regalia'] = 1.90, ['item_dezun_bloodrite'] = 5.14, ['item_riftshadow_prism'] = 5.44},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 37.04, ['item_enhancement_mystical'] = 28.34, ['item_enhancement_tough'] = 15.85, ['item_enhancement_quickened'] = 15.11, ['item_enhancement_alert'] = 3.66},
@@ -485,11 +485,11 @@ local heroList = {
     },
     ['npc_dota_hero_earthshaker'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 32.74, ['item_chipped_vest'] = 20.11, ['item_sisters_shroud'] = 15.63, ['item_spark_of_courage'] = 11.47, ['item_kobold_cup'] = 6.95, ['item_occult_bracelet'] = 6.59, ['item_polliwog_charm'] = 4.87, ['item_rippers_lash'] = 1.64},
-           [2] = {['item_searing_signet'] = 44.14, ['item_mana_draught'] = 17.46, ['item_poor_mans_shield'] = 11, ['item_pogo_stick'] = 9.97, ['item_misericorde'] = 8.97, ['item_essence_ring'] = 8.47},
-           [3] = {['item_whisper_of_the_dread'] = 35.07, ['item_gunpowder_gauntlets'] = 33.84, ['item_gale_guard'] = 16.44, ['item_psychic_headband'] = 9.37, ['item_jidi_pollen_bag'] = 5.29},
-           [4] = {['item_dezun_bloodrite'] = 32.15, ['item_giant_maul'] = 29.32, ['item_magnifying_monocle'] = 17.54, ['item_outworld_staff'] = 11.78, ['item_pyrrhic_cloak'] = 7.32, ['item_crippling_crossbow'] = 1.89},
-           [5] = {['item_helm_of_the_undying'] = 27.56, ['item_fallen_sky'] = 20.56, ['item_desolator_2'] = 12.84, ['item_minotaur_horn'] = 11.22, ['item_demonicon'] = 10.14, ['item_unrelenting_eye'] = 7.96, ['item_spider_legs'] = 7.37, ['item_divine_regalia'] = 2.36},
+           [1] = {['item_dormant_curio'] = 39.05, ['item_chipped_vest'] = 23.99, ['item_kobold_cup'] = 8.29, ['item_occult_bracelet'] = 7.86, ['item_polliwog_charm'] = 5.81, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 46.06, ['item_mana_draught'] = 18.22, ['item_poor_mans_shield'] = 11.48, ['item_pogo_stick'] = 10.40, ['item_essence_ring'] = 8.84, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 39.97, ['item_gunpowder_gauntlets'] = 38.56, ['item_psychic_headband'] = 10.68, ['item_jidi_pollen_bag'] = 6.03, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 55.80, ['item_crippling_crossbow'] = 3.60, ['item_flayers_bota'] = 10.15, ['item_idol_of_screeauk'] = 10.15, ['item_metamorphic_mandible'] = 10.15, ['item_rattlecage'] = 10.15},
+           [5] = {['item_fallen_sky'] = 28.58, ['item_desolator_2'] = 17.85, ['item_minotaur_horn'] = 15.60, ['item_demonicon'] = 14.10, ['item_spider_legs'] = 10.24, ['item_divine_regalia'] = 3.28, ['item_dezun_bloodrite'] = 5.04, ['item_riftshadow_prism'] = 5.32},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 29.44, ['item_enhancement_quickened'] = 22.75, ['item_enhancement_brawny'] = 22.23, ['item_enhancement_tough'] = 21.22, ['item_enhancement_alert'] = 4.36},
@@ -501,11 +501,11 @@ local heroList = {
     },
     ['npc_dota_hero_elder_titan'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 27.12, ['item_dormant_curio'] = 24.43, ['item_sisters_shroud'] = 14.57, ['item_kobold_cup'] = 13.09, ['item_spark_of_courage'] = 12.84, ['item_polliwog_charm'] = 3.12, ['item_occult_bracelet'] = 3.06, ['item_rippers_lash'] = 1.78},
-           [2] = {['item_misericorde'] = 27.98, ['item_poor_mans_shield'] = 24.36, ['item_searing_signet'] = 16.26, ['item_mana_draught'] = 12.42, ['item_essence_ring'] = 10.83, ['item_pogo_stick'] = 8.14},
-           [3] = {['item_gunpowder_gauntlets'] = 52.96, ['item_gale_guard'] = 21.85, ['item_whisper_of_the_dread'] = 11.28, ['item_jidi_pollen_bag'] = 8.11, ['item_psychic_headband'] = 5.79},
-           [4] = {['item_giant_maul'] = 41.99, ['item_dezun_bloodrite'] = 19.94, ['item_pyrrhic_cloak'] = 14.97, ['item_magnifying_monocle'] = 9.77, ['item_outworld_staff'] = 7.86, ['item_crippling_crossbow'] = 5.46},
-           [5] = {['item_helm_of_the_undying'] = 28.53, ['item_desolator_2'] = 27.19, ['item_fallen_sky'] = 10.71, ['item_minotaur_horn'] = 10.03, ['item_unrelenting_eye'] = 9.03, ['item_spider_legs'] = 6.32, ['item_demonicon'] = 6.23, ['item_divine_regalia'] = 1.95},
+           [1] = {['item_chipped_vest'] = 32.55, ['item_dormant_curio'] = 29.32, ['item_kobold_cup'] = 15.71, ['item_polliwog_charm'] = 3.74, ['item_occult_bracelet'] = 3.67, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 32.14, ['item_searing_signet'] = 21.45, ['item_mana_draught'] = 16.39, ['item_essence_ring'] = 14.29, ['item_pogo_stick'] = 10.74, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 64.55, ['item_whisper_of_the_dread'] = 13.75, ['item_jidi_pollen_bag'] = 9.88, ['item_psychic_headband'] = 7.06, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 63.35, ['item_crippling_crossbow'] = 8.24, ['item_flayers_bota'] = 7.10, ['item_idol_of_screeauk'] = 7.10, ['item_metamorphic_mandible'] = 7.10, ['item_rattlecage'] = 7.10},
+           [5] = {['item_desolator_2'] = 38.96, ['item_fallen_sky'] = 15.35, ['item_minotaur_horn'] = 14.37, ['item_spider_legs'] = 9.06, ['item_demonicon'] = 8.93, ['item_divine_regalia'] = 2.79, ['item_dezun_bloodrite'] = 5.12, ['item_riftshadow_prism'] = 5.41},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 30.37, ['item_enhancement_quickened'] = 20.61, ['item_enhancement_tough'] = 20.05, ['item_enhancement_brawny'] = 17.66, ['item_enhancement_mystical'] = 11.31},
@@ -517,11 +517,11 @@ local heroList = {
     },
     ['npc_dota_hero_ember_spirit'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 31.2, ['item_chipped_vest'] = 27.21, ['item_spark_of_courage'] = 15.1, ['item_sisters_shroud'] = 13.25, ['item_occult_bracelet'] = 6.69, ['item_polliwog_charm'] = 2.47, ['item_kobold_cup'] = 2.16, ['item_rippers_lash'] = 1.92},
-           [2] = {['item_searing_signet'] = 33.91, ['item_misericorde'] = 24.63, ['item_mana_draught'] = 15.47, ['item_poor_mans_shield'] = 14.52, ['item_essence_ring'] = 9.37, ['item_pogo_stick'] = 2.1},
-           [3] = {['item_gunpowder_gauntlets'] = 46.1, ['item_whisper_of_the_dread'] = 23.84, ['item_gale_guard'] = 20.43, ['item_jidi_pollen_bag'] = 7.25, ['item_psychic_headband'] = 2.37},
-           [4] = {['item_giant_maul'] = 39.77, ['item_dezun_bloodrite'] = 16.98, ['item_pyrrhic_cloak'] = 14.44, ['item_outworld_staff'] = 14.37, ['item_magnifying_monocle'] = 9.17, ['item_crippling_crossbow'] = 5.27},
-           [5] = {['item_desolator_2'] = 31.65, ['item_helm_of_the_undying'] = 21.56, ['item_fallen_sky'] = 14.65, ['item_minotaur_horn'] = 10.95, ['item_unrelenting_eye'] = 7.65, ['item_demonicon'] = 7.01, ['item_divine_regalia'] = 3.72, ['item_spider_legs'] = 2.82},
+           [1] = {['item_dormant_curio'] = 38.03, ['item_chipped_vest'] = 33.17, ['item_occult_bracelet'] = 8.16, ['item_polliwog_charm'] = 3.01, ['item_kobold_cup'] = 2.63, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 42.74, ['item_mana_draught'] = 19.50, ['item_poor_mans_shield'] = 18.30, ['item_essence_ring'] = 11.81, ['item_pogo_stick'] = 2.65, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 55.18, ['item_whisper_of_the_dread'] = 28.54, ['item_jidi_pollen_bag'] = 8.68, ['item_psychic_headband'] = 2.84, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 63.98, ['item_crippling_crossbow'] = 8.48, ['item_flayers_bota'] = 6.88, ['item_idol_of_screeauk'] = 6.88, ['item_metamorphic_mandible'] = 6.88, ['item_rattlecage'] = 6.88},
+           [5] = {['item_desolator_2'] = 40.13, ['item_fallen_sky'] = 18.58, ['item_minotaur_horn'] = 13.89, ['item_demonicon'] = 8.89, ['item_divine_regalia'] = 4.72, ['item_spider_legs'] = 3.58, ['item_dezun_bloodrite'] = 4.97, ['item_riftshadow_prism'] = 5.25},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_tough'] = 30.12, ['item_enhancement_mystical'] = 27.84, ['item_enhancement_brawny'] = 17.28, ['item_enhancement_quickened'] = 15.04, ['item_enhancement_alert'] = 9.72},
@@ -533,11 +533,11 @@ local heroList = {
     },
     ['npc_dota_hero_enchantress'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 28.21, ['item_sisters_shroud'] = 20.39, ['item_spark_of_courage'] = 16.27, ['item_chipped_vest'] = 13.06, ['item_kobold_cup'] = 8.06, ['item_occult_bracelet'] = 6.85, ['item_polliwog_charm'] = 4.3, ['item_rippers_lash'] = 2.87},
-           [2] = {['item_misericorde'] = 35.26, ['item_searing_signet'] = 18.07, ['item_mana_draught'] = 15.2, ['item_essence_ring'] = 12.34, ['item_poor_mans_shield'] = 12.01, ['item_pogo_stick'] = 7.13},
-           [3] = {['item_gunpowder_gauntlets'] = 44.9, ['item_gale_guard'] = 23.35, ['item_psychic_headband'] = 17.7, ['item_whisper_of_the_dread'] = 8.72, ['item_jidi_pollen_bag'] = 5.32},
-           [4] = {['item_giant_maul'] = 34.23, ['item_magnifying_monocle'] = 31.82, ['item_crippling_crossbow'] = 13.91, ['item_outworld_staff'] = 8.41, ['item_pyrrhic_cloak'] = 7.25, ['item_dezun_bloodrite'] = 4.38},
-           [5] = {['item_desolator_2'] = 30.15, ['item_helm_of_the_undying'] = 22.79, ['item_demonicon'] = 11.39, ['item_unrelenting_eye'] = 10.31, ['item_minotaur_horn'] = 8.51, ['item_fallen_sky'] = 7.15, ['item_spider_legs'] = 6.38, ['item_divine_regalia'] = 3.32},
+           [1] = {['item_dormant_curio'] = 39.65, ['item_chipped_vest'] = 18.36, ['item_kobold_cup'] = 11.33, ['item_occult_bracelet'] = 9.63, ['item_polliwog_charm'] = 6.04, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 26.51, ['item_mana_draught'] = 22.30, ['item_essence_ring'] = 18.11, ['item_poor_mans_shield'] = 17.62, ['item_pogo_stick'] = 10.46, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 55.80, ['item_psychic_headband'] = 22.00, ['item_whisper_of_the_dread'] = 10.84, ['item_jidi_pollen_bag'] = 6.61, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 55.59, ['item_crippling_crossbow'] = 22.59, ['item_flayers_bota'] = 5.45, ['item_idol_of_screeauk'] = 5.45, ['item_metamorphic_mandible'] = 5.45, ['item_rattlecage'] = 5.45},
+           [5] = {['item_desolator_2'] = 40.28, ['item_demonicon'] = 15.22, ['item_minotaur_horn'] = 11.37, ['item_fallen_sky'] = 9.55, ['item_spider_legs'] = 8.52, ['item_divine_regalia'] = 4.44, ['item_dezun_bloodrite'] = 5.16, ['item_riftshadow_prism'] = 5.46},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 40.64, ['item_enhancement_mystical'] = 17.52, ['item_enhancement_quickened'] = 16.91, ['item_enhancement_brawny'] = 13.07, ['item_enhancement_tough'] = 11.86},
@@ -549,11 +549,11 @@ local heroList = {
     },
     ['npc_dota_hero_enigma'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 37.58, ['item_sisters_shroud'] = 19.69, ['item_kobold_cup'] = 12.05, ['item_chipped_vest'] = 8.47, ['item_polliwog_charm'] = 6.38, ['item_occult_bracelet'] = 6.26, ['item_spark_of_courage'] = 5.52, ['item_rippers_lash'] = 4.05},
-           [2] = {['item_searing_signet'] = 46.1, ['item_mana_draught'] = 13.88, ['item_pogo_stick'] = 13.79, ['item_essence_ring'] = 12.68, ['item_poor_mans_shield'] = 10.27, ['item_misericorde'] = 3.28},
-           [3] = {['item_whisper_of_the_dread'] = 43.74, ['item_gale_guard'] = 21.04, ['item_psychic_headband'] = 18.12, ['item_jidi_pollen_bag'] = 9.91, ['item_gunpowder_gauntlets'] = 7.19},
-           [4] = {['item_dezun_bloodrite'] = 45.26, ['item_magnifying_monocle'] = 28.36, ['item_outworld_staff'] = 13.79, ['item_pyrrhic_cloak'] = 5.41, ['item_giant_maul'] = 5.36, ['item_crippling_crossbow'] = 1.81},
-           [5] = {['item_helm_of_the_undying'] = 30.61, ['item_demonicon'] = 19.92, ['item_fallen_sky'] = 19.07, ['item_spider_legs'] = 9.74, ['item_minotaur_horn'] = 8.63, ['item_unrelenting_eye'] = 6.98, ['item_desolator_2'] = 2.99, ['item_divine_regalia'] = 2.08},
+           [1] = {['item_dormant_curio'] = 45.16, ['item_kobold_cup'] = 14.48, ['item_chipped_vest'] = 10.18, ['item_polliwog_charm'] = 7.67, ['item_occult_bracelet'] = 7.52, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 45.28, ['item_mana_draught'] = 13.63, ['item_pogo_stick'] = 13.54, ['item_essence_ring'] = 12.45, ['item_poor_mans_shield'] = 10.09, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 52.76, ['item_psychic_headband'] = 21.86, ['item_jidi_pollen_bag'] = 11.95, ['item_gunpowder_gauntlets'] = 8.67, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 19.04, ['item_crippling_crossbow'] = 6.43, ['item_flayers_bota'] = 18.63, ['item_idol_of_screeauk'] = 18.63, ['item_metamorphic_mandible'] = 18.63, ['item_rattlecage'] = 18.63},
+           [5] = {['item_demonicon'] = 28.64, ['item_fallen_sky'] = 27.41, ['item_spider_legs'] = 14.00, ['item_minotaur_horn'] = 12.41, ['item_desolator_2'] = 4.30, ['item_divine_regalia'] = 2.99, ['item_dezun_bloodrite'] = 4.99, ['item_riftshadow_prism'] = 5.27},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 33.98, ['item_enhancement_quickened'] = 33.57, ['item_enhancement_brawny'] = 22.04, ['item_enhancement_tough'] = 6, ['item_enhancement_alert'] = 4.41},
@@ -565,11 +565,11 @@ local heroList = {
     },
     ['npc_dota_hero_faceless_void'] = {
        ['neutral'] = {
-           [1] = {['item_spark_of_courage'] = 27.52, ['item_dormant_curio'] = 27.36, ['item_chipped_vest'] = 18.67, ['item_sisters_shroud'] = 12.03, ['item_rippers_lash'] = 4.7, ['item_occult_bracelet'] = 4.45, ['item_polliwog_charm'] = 3.34, ['item_kobold_cup'] = 1.93},
-           [2] = {['item_misericorde'] = 57.74, ['item_poor_mans_shield'] = 22.49, ['item_searing_signet'] = 6.93, ['item_mana_draught'] = 5.51, ['item_essence_ring'] = 5.16, ['item_pogo_stick'] = 2.17},
-           [3] = {['item_gunpowder_gauntlets'] = 74.2, ['item_gale_guard'] = 15.05, ['item_jidi_pollen_bag'] = 6.59, ['item_whisper_of_the_dread'] = 2.21, ['item_psychic_headband'] = 1.95},
-           [4] = {['item_giant_maul'] = 54.4, ['item_dezun_bloodrite'] = 11.97, ['item_magnifying_monocle'] = 10.49, ['item_crippling_crossbow'] = 10, ['item_outworld_staff'] = 7.28, ['item_pyrrhic_cloak'] = 5.87},
-           [5] = {['item_desolator_2'] = 37.02, ['item_helm_of_the_undying'] = 27.26, ['item_minotaur_horn'] = 10.07, ['item_unrelenting_eye'] = 8.11, ['item_fallen_sky'] = 6.64, ['item_spider_legs'] = 4.28, ['item_divine_regalia'] = 4.1, ['item_demonicon'] = 2.53},
+           [1] = {['item_dormant_curio'] = 41.71, ['item_chipped_vest'] = 28.47, ['item_occult_bracelet'] = 6.78, ['item_polliwog_charm'] = 5.09, ['item_kobold_cup'] = 2.94, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 50.56, ['item_searing_signet'] = 15.58, ['item_mana_draught'] = 12.39, ['item_essence_ring'] = 11.60, ['item_pogo_stick'] = 4.88, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 83.19, ['item_jidi_pollen_bag'] = 7.39, ['item_whisper_of_the_dread'] = 2.48, ['item_psychic_headband'] = 2.19, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 64.44, ['item_crippling_crossbow'] = 11.85, ['item_flayers_bota'] = 5.93, ['item_idol_of_screeauk'] = 5.93, ['item_metamorphic_mandible'] = 5.93, ['item_rattlecage'] = 5.93},
+           [5] = {['item_desolator_2'] = 51.33, ['item_minotaur_horn'] = 13.96, ['item_fallen_sky'] = 9.21, ['item_spider_legs'] = 5.93, ['item_divine_regalia'] = 5.69, ['item_demonicon'] = 3.51, ['item_dezun_bloodrite'] = 5.04, ['item_riftshadow_prism'] = 5.33},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 50.17, ['item_enhancement_tough'] = 26.44, ['item_enhancement_brawny'] = 10.12, ['item_enhancement_quickened'] = 6.89, ['item_enhancement_mystical'] = 6.39},
@@ -581,11 +581,11 @@ local heroList = {
     },
     ['npc_dota_hero_furion'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 32.93, ['item_spark_of_courage'] = 21.17, ['item_chipped_vest'] = 17.57, ['item_sisters_shroud'] = 15.07, ['item_rippers_lash'] = 3.87, ['item_kobold_cup'] = 3.57, ['item_occult_bracelet'] = 3.2, ['item_polliwog_charm'] = 2.63},
-           [2] = {['item_misericorde'] = 41.16, ['item_searing_signet'] = 34.76, ['item_poor_mans_shield'] = 9.53, ['item_essence_ring'] = 7.68, ['item_mana_draught'] = 3.53, ['item_pogo_stick'] = 3.35},
-           [3] = {['item_gunpowder_gauntlets'] = 56.01, ['item_gale_guard'] = 18.46, ['item_whisper_of_the_dread'] = 10.81, ['item_psychic_headband'] = 7.76, ['item_jidi_pollen_bag'] = 6.95},
-           [4] = {['item_giant_maul'] = 42.79, ['item_magnifying_monocle'] = 20.38, ['item_crippling_crossbow'] = 13.54, ['item_outworld_staff'] = 10.82, ['item_pyrrhic_cloak'] = 8.65, ['item_dezun_bloodrite'] = 3.82},
-           [5] = {['item_desolator_2'] = 33.71, ['item_helm_of_the_undying'] = 25.78, ['item_demonicon'] = 13.76, ['item_fallen_sky'] = 7.85, ['item_minotaur_horn'] = 6.98, ['item_unrelenting_eye'] = 5.31, ['item_spider_legs'] = 4.36, ['item_divine_regalia'] = 2.23},
+           [1] = {['item_dormant_curio'] = 46.73, ['item_chipped_vest'] = 24.93, ['item_kobold_cup'] = 5.07, ['item_occult_bracelet'] = 4.54, ['item_polliwog_charm'] = 3.73, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 56.11, ['item_poor_mans_shield'] = 15.38, ['item_essence_ring'] = 12.40, ['item_mana_draught'] = 5.70, ['item_pogo_stick'] = 5.41, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 65.43, ['item_whisper_of_the_dread'] = 12.63, ['item_psychic_headband'] = 9.06, ['item_jidi_pollen_bag'] = 8.12, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 59.74, ['item_crippling_crossbow'] = 18.90, ['item_flayers_bota'] = 5.34, ['item_idol_of_screeauk'] = 5.34, ['item_metamorphic_mandible'] = 5.34, ['item_rattlecage'] = 5.34},
+           [5] = {['item_desolator_2'] = 44.06, ['item_demonicon'] = 17.98, ['item_fallen_sky'] = 10.26, ['item_minotaur_horn'] = 9.12, ['item_spider_legs'] = 5.70, ['item_divine_regalia'] = 2.91, ['item_dezun_bloodrite'] = 4.85, ['item_riftshadow_prism'] = 5.11},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 48.87, ['item_enhancement_tough'] = 25.24, ['item_enhancement_brawny'] = 11.41, ['item_enhancement_quickened'] = 8.16, ['item_enhancement_mystical'] = 6.32},
@@ -597,11 +597,11 @@ local heroList = {
     },
     ['npc_dota_hero_grimstroke'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 37.21, ['item_sisters_shroud'] = 24.27, ['item_kobold_cup'] = 13.83, ['item_polliwog_charm'] = 7.84, ['item_occult_bracelet'] = 6.91, ['item_chipped_vest'] = 4.3, ['item_spark_of_courage'] = 3.73, ['item_rippers_lash'] = 1.91},
-           [2] = {['item_searing_signet'] = 52.64, ['item_mana_draught'] = 18.47, ['item_essence_ring'] = 11.21, ['item_pogo_stick'] = 10.88, ['item_poor_mans_shield'] = 4.97, ['item_misericorde'] = 1.83},
-           [3] = {['item_whisper_of_the_dread'] = 36.92, ['item_psychic_headband'] = 27.89, ['item_gale_guard'] = 23.45, ['item_jidi_pollen_bag'] = 6.51, ['item_gunpowder_gauntlets'] = 5.22},
-           [4] = {['item_magnifying_monocle'] = 42.72, ['item_dezun_bloodrite'] = 25.77, ['item_outworld_staff'] = 18.38, ['item_pyrrhic_cloak'] = 4.81, ['item_giant_maul'] = 4.68, ['item_crippling_crossbow'] = 3.64},
-           [5] = {['item_helm_of_the_undying'] = 28.36, ['item_demonicon'] = 24.98, ['item_fallen_sky'] = 16.07, ['item_spider_legs'] = 9.42, ['item_minotaur_horn'] = 8.96, ['item_unrelenting_eye'] = 7.02, ['item_desolator_2'] = 3.3, ['item_divine_regalia'] = 1.88},
+           [1] = {['item_dormant_curio'] = 45.13, ['item_kobold_cup'] = 16.77, ['item_polliwog_charm'] = 9.51, ['item_occult_bracelet'] = 8.38, ['item_chipped_vest'] = 5.21, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 50.94, ['item_mana_draught'] = 17.87, ['item_essence_ring'] = 10.85, ['item_pogo_stick'] = 10.53, ['item_poor_mans_shield'] = 4.81, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 45.94, ['item_psychic_headband'] = 34.70, ['item_jidi_pollen_bag'] = 8.10, ['item_gunpowder_gauntlets'] = 6.50, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 21.32, ['item_crippling_crossbow'] = 16.58, ['item_flayers_bota'] = 15.53, ['item_idol_of_screeauk'] = 15.53, ['item_metamorphic_mandible'] = 15.53, ['item_rattlecage'] = 15.53},
+           [5] = {['item_demonicon'] = 34.71, ['item_fallen_sky'] = 22.33, ['item_spider_legs'] = 13.09, ['item_minotaur_horn'] = 12.45, ['item_desolator_2'] = 4.59, ['item_divine_regalia'] = 2.61, ['item_dezun_bloodrite'] = 4.98, ['item_riftshadow_prism'] = 5.25},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 44.23, ['item_enhancement_quickened'] = 32.48, ['item_enhancement_brawny'] = 16.11, ['item_enhancement_tough'] = 3.7, ['item_enhancement_alert'] = 3.47},
@@ -613,11 +613,11 @@ local heroList = {
     },
     ['npc_dota_hero_gyrocopter'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 34.8, ['item_spark_of_courage'] = 18.38, ['item_sisters_shroud'] = 14.95, ['item_chipped_vest'] = 12.29, ['item_kobold_cup'] = 6.81, ['item_polliwog_charm'] = 5.61, ['item_occult_bracelet'] = 4.97, ['item_rippers_lash'] = 2.19},
-           [2] = {['item_misericorde'] = 34.95, ['item_searing_signet'] = 27.07, ['item_poor_mans_shield'] = 13.93, ['item_essence_ring'] = 10.68, ['item_mana_draught'] = 8.85, ['item_pogo_stick'] = 4.51},
-           [3] = {['item_gunpowder_gauntlets'] = 44.47, ['item_gale_guard'] = 23.94, ['item_whisper_of_the_dread'] = 18.13, ['item_psychic_headband'] = 8.69, ['item_jidi_pollen_bag'] = 4.77},
-           [4] = {['item_giant_maul'] = 38.22, ['item_magnifying_monocle'] = 22.67, ['item_crippling_crossbow'] = 12.71, ['item_outworld_staff'] = 11.3, ['item_dezun_bloodrite'] = 8.31, ['item_pyrrhic_cloak'] = 6.8},
-           [5] = {['item_desolator_2'] = 29.07, ['item_helm_of_the_undying'] = 27.04, ['item_minotaur_horn'] = 10.35, ['item_fallen_sky'] = 8.15, ['item_unrelenting_eye'] = 7.61, ['item_spider_legs'] = 7.42, ['item_demonicon'] = 7.17, ['item_divine_regalia'] = 3.19},
+           [1] = {['item_dormant_curio'] = 45.87, ['item_chipped_vest'] = 16.20, ['item_kobold_cup'] = 8.98, ['item_polliwog_charm'] = 7.40, ['item_occult_bracelet'] = 6.55, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 39.54, ['item_poor_mans_shield'] = 20.35, ['item_essence_ring'] = 15.60, ['item_mana_draught'] = 12.93, ['item_pogo_stick'] = 6.59, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 55.68, ['item_whisper_of_the_dread'] = 22.70, ['item_psychic_headband'] = 10.88, ['item_jidi_pollen_bag'] = 5.97, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 57.59, ['item_crippling_crossbow'] = 19.15, ['item_flayers_bota'] = 5.82, ['item_idol_of_screeauk'] = 5.82, ['item_metamorphic_mandible'] = 5.82, ['item_rattlecage'] = 5.82},
+           [5] = {['item_desolator_2'] = 39.90, ['item_minotaur_horn'] = 14.21, ['item_fallen_sky'] = 11.19, ['item_spider_legs'] = 10.19, ['item_demonicon'] = 9.84, ['item_divine_regalia'] = 4.38, ['item_dezun_bloodrite'] = 5.01, ['item_riftshadow_prism'] = 5.29},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 34.77, ['item_enhancement_tough'] = 23.72, ['item_enhancement_brawny'] = 14.25, ['item_enhancement_quickened'] = 13.91, ['item_enhancement_mystical'] = 13.36},
@@ -629,11 +629,11 @@ local heroList = {
     },
     ['npc_dota_hero_hoodwink'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 34.63, ['item_sisters_shroud'] = 22.74, ['item_spark_of_courage'] = 12.53, ['item_kobold_cup'] = 9.32, ['item_polliwog_charm'] = 6.46, ['item_chipped_vest'] = 5.64, ['item_occult_bracelet'] = 5.63, ['item_rippers_lash'] = 3.04},
-           [2] = {['item_searing_signet'] = 43.86, ['item_mana_draught'] = 18.09, ['item_misericorde'] = 17.34, ['item_essence_ring'] = 7.96, ['item_pogo_stick'] = 7.46, ['item_poor_mans_shield'] = 5.29},
-           [3] = {['item_gunpowder_gauntlets'] = 33.11, ['item_whisper_of_the_dread'] = 29, ['item_psychic_headband'] = 17.13, ['item_gale_guard'] = 16.28, ['item_jidi_pollen_bag'] = 4.49},
-           [4] = {['item_magnifying_monocle'] = 31.01, ['item_giant_maul'] = 26.87, ['item_dezun_bloodrite'] = 18.19, ['item_outworld_staff'] = 11.04, ['item_crippling_crossbow'] = 9.83, ['item_pyrrhic_cloak'] = 3.05},
-           [5] = {['item_desolator_2'] = 28.77, ['item_helm_of_the_undying'] = 21.57, ['item_demonicon'] = 13.45, ['item_fallen_sky'] = 12.3, ['item_minotaur_horn'] = 7.49, ['item_unrelenting_eye'] = 6.69, ['item_spider_legs'] = 6.3, ['item_divine_regalia'] = 3.42},
+           [1] = {['item_dormant_curio'] = 47.72, ['item_kobold_cup'] = 12.84, ['item_polliwog_charm'] = 8.90, ['item_chipped_vest'] = 7.77, ['item_occult_bracelet'] = 7.76, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 50.41, ['item_mana_draught'] = 20.79, ['item_essence_ring'] = 9.15, ['item_pogo_stick'] = 8.57, ['item_poor_mans_shield'] = 6.08, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 37.66, ['item_whisper_of_the_dread'] = 32.99, ['item_psychic_headband'] = 19.48, ['item_jidi_pollen_bag'] = 5.11, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 51.31, ['item_crippling_crossbow'] = 18.77, ['item_flayers_bota'] = 7.48, ['item_idol_of_screeauk'] = 7.48, ['item_metamorphic_mandible'] = 7.48, ['item_rattlecage'] = 7.48},
+           [5] = {['item_desolator_2'] = 36.06, ['item_demonicon'] = 16.86, ['item_fallen_sky'] = 15.42, ['item_minotaur_horn'] = 9.39, ['item_spider_legs'] = 7.90, ['item_divine_regalia'] = 4.29, ['item_dezun_bloodrite'] = 4.91, ['item_riftshadow_prism'] = 5.18},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 28.26, ['item_enhancement_quickened'] = 24.01, ['item_enhancement_alert'] = 22.67, ['item_enhancement_tough'] = 12.95, ['item_enhancement_brawny'] = 12.11},
@@ -645,11 +645,11 @@ local heroList = {
     },
     ['npc_dota_hero_huskar'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 31.05, ['item_spark_of_courage'] = 23.12, ['item_dormant_curio'] = 18.11, ['item_sisters_shroud'] = 16.94, ['item_kobold_cup'] = 3.26, ['item_polliwog_charm'] = 3.21, ['item_rippers_lash'] = 2.24, ['item_occult_bracelet'] = 2.07},
-           [2] = {['item_misericorde'] = 34.81, ['item_poor_mans_shield'] = 22.6, ['item_essence_ring'] = 22.4, ['item_searing_signet'] = 15.29, ['item_pogo_stick'] = 4.46, ['item_mana_draught'] = 0.44},
-           [3] = {['item_gunpowder_gauntlets'] = 39.24, ['item_gale_guard'] = 38.07, ['item_whisper_of_the_dread'] = 8.92, ['item_jidi_pollen_bag'] = 8.83, ['item_psychic_headband'] = 4.94},
-           [4] = {['item_giant_maul'] = 33.81, ['item_pyrrhic_cloak'] = 25.08, ['item_magnifying_monocle'] = 14.19, ['item_outworld_staff'] = 12.27, ['item_crippling_crossbow'] = 7.93, ['item_dezun_bloodrite'] = 6.71},
-           [5] = {['item_helm_of_the_undying'] = 32.96, ['item_desolator_2'] = 19.86, ['item_minotaur_horn'] = 12.72, ['item_unrelenting_eye'] = 12.02, ['item_fallen_sky'] = 10.53, ['item_demonicon'] = 6.14, ['item_spider_legs'] = 4.64, ['item_divine_regalia'] = 1.12},
+           [1] = {['item_chipped_vest'] = 45.74, ['item_dormant_curio'] = 26.68, ['item_kobold_cup'] = 4.80, ['item_polliwog_charm'] = 4.73, ['item_occult_bracelet'] = 3.05, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 32.93, ['item_essence_ring'] = 32.64, ['item_searing_signet'] = 22.28, ['item_pogo_stick'] = 6.50, ['item_mana_draught'] = 0.64, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 60.34, ['item_whisper_of_the_dread'] = 13.72, ['item_jidi_pollen_bag'] = 13.58, ['item_psychic_headband'] = 7.60, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 62.19, ['item_crippling_crossbow'] = 14.59, ['item_flayers_bota'] = 5.80, ['item_idol_of_screeauk'] = 5.80, ['item_metamorphic_mandible'] = 5.80, ['item_rattlecage'] = 5.80},
+           [5] = {['item_desolator_2'] = 32.07, ['item_minotaur_horn'] = 20.54, ['item_fallen_sky'] = 17.01, ['item_demonicon'] = 9.92, ['item_spider_legs'] = 7.49, ['item_divine_regalia'] = 1.81, ['item_dezun_bloodrite'] = 5.41, ['item_riftshadow_prism'] = 5.74},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 33.07, ['item_enhancement_tough'] = 28.5, ['item_enhancement_alert'] = 25.5, ['item_enhancement_quickened'] = 6.84, ['item_enhancement_mystical'] = 6.08},
@@ -661,11 +661,11 @@ local heroList = {
     },
     ['npc_dota_hero_invoker'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 44.53, ['item_sisters_shroud'] = 21.01, ['item_occult_bracelet'] = 9.82, ['item_spark_of_courage'] = 7.28, ['item_kobold_cup'] = 7.27, ['item_chipped_vest'] = 4.29, ['item_polliwog_charm'] = 3.73, ['item_rippers_lash'] = 2.07},
-           [2] = {['item_searing_signet'] = 54, ['item_mana_draught'] = 21.15, ['item_pogo_stick'] = 7.39, ['item_essence_ring'] = 7.18, ['item_misericorde'] = 6.4, ['item_poor_mans_shield'] = 3.88},
-           [3] = {['item_whisper_of_the_dread'] = 51.31, ['item_gale_guard'] = 16.07, ['item_psychic_headband'] = 15.74, ['item_gunpowder_gauntlets'] = 13.43, ['item_jidi_pollen_bag'] = 3.45},
-           [4] = {['item_dezun_bloodrite'] = 39.28, ['item_magnifying_monocle'] = 23.45, ['item_outworld_staff'] = 18.18, ['item_giant_maul'] = 11.61, ['item_pyrrhic_cloak'] = 3.89, ['item_crippling_crossbow'] = 3.58},
-           [5] = {['item_helm_of_the_undying'] = 27.73, ['item_fallen_sky'] = 19.05, ['item_demonicon'] = 16.7, ['item_minotaur_horn'] = 9.97, ['item_desolator_2'] = 8.83, ['item_spider_legs'] = 7.02, ['item_unrelenting_eye'] = 6.94, ['item_divine_regalia'] = 3.76},
+           [1] = {['item_dormant_curio'] = 54.35, ['item_occult_bracelet'] = 11.99, ['item_kobold_cup'] = 8.87, ['item_chipped_vest'] = 5.24, ['item_polliwog_charm'] = 4.55, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 54.81, ['item_mana_draught'] = 21.47, ['item_pogo_stick'] = 7.50, ['item_essence_ring'] = 7.29, ['item_poor_mans_shield'] = 3.94, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 58.22, ['item_psychic_headband'] = 17.86, ['item_gunpowder_gauntlets'] = 15.24, ['item_jidi_pollen_bag'] = 3.91, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 31.40, ['item_crippling_crossbow'] = 9.68, ['item_flayers_bota'] = 14.73, ['item_idol_of_screeauk'] = 14.73, ['item_metamorphic_mandible'] = 14.73, ['item_rattlecage'] = 14.73},
+           [5] = {['item_fallen_sky'] = 26.18, ['item_demonicon'] = 22.95, ['item_minotaur_horn'] = 13.70, ['item_desolator_2'] = 12.14, ['item_spider_legs'] = 9.65, ['item_divine_regalia'] = 5.17, ['item_dezun_bloodrite'] = 4.97, ['item_riftshadow_prism'] = 5.24},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 39.13, ['item_enhancement_quickened'] = 32.8, ['item_enhancement_brawny'] = 11.06, ['item_enhancement_alert'] = 10.51, ['item_enhancement_tough'] = 6.5},
@@ -677,11 +677,11 @@ local heroList = {
     },
     ['npc_dota_hero_jakiro'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 32.04, ['item_sisters_shroud'] = 22.67, ['item_kobold_cup'] = 13.35, ['item_polliwog_charm'] = 8.64, ['item_occult_bracelet'] = 7.8, ['item_chipped_vest'] = 6.96, ['item_spark_of_courage'] = 6.06, ['item_rippers_lash'] = 2.48},
-           [2] = {['item_searing_signet'] = 52.56, ['item_mana_draught'] = 15.14, ['item_essence_ring'] = 10.62, ['item_pogo_stick'] = 9.13, ['item_misericorde'] = 6.89, ['item_poor_mans_shield'] = 5.65},
-           [3] = {['item_whisper_of_the_dread'] = 32.16, ['item_psychic_headband'] = 24.05, ['item_gale_guard'] = 21.2, ['item_gunpowder_gauntlets'] = 16.67, ['item_jidi_pollen_bag'] = 5.93},
-           [4] = {['item_magnifying_monocle'] = 36.52, ['item_dezun_bloodrite'] = 26.99, ['item_outworld_staff'] = 13.52, ['item_giant_maul'] = 13.24, ['item_crippling_crossbow'] = 5.26, ['item_pyrrhic_cloak'] = 4.47},
-           [5] = {['item_helm_of_the_undying'] = 27.03, ['item_demonicon'] = 19.68, ['item_fallen_sky'] = 13.23, ['item_desolator_2'] = 12.58, ['item_spider_legs'] = 9.3, ['item_minotaur_horn'] = 8.3, ['item_unrelenting_eye'] = 7.67, ['item_divine_regalia'] = 2.21},
+           [1] = {['item_dormant_curio'] = 39.59, ['item_kobold_cup'] = 16.50, ['item_polliwog_charm'] = 10.68, ['item_occult_bracelet'] = 9.64, ['item_chipped_vest'] = 8.60, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 53.63, ['item_mana_draught'] = 15.45, ['item_essence_ring'] = 10.84, ['item_pogo_stick'] = 9.32, ['item_poor_mans_shield'] = 5.77, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 38.86, ['item_psychic_headband'] = 29.06, ['item_gunpowder_gauntlets'] = 20.14, ['item_jidi_pollen_bag'] = 7.17, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 36.37, ['item_crippling_crossbow'] = 14.45, ['item_flayers_bota'] = 12.29, ['item_idol_of_screeauk'] = 12.29, ['item_metamorphic_mandible'] = 12.29, ['item_rattlecage'] = 12.29},
+           [5] = {['item_demonicon'] = 27.03, ['item_fallen_sky'] = 18.17, ['item_desolator_2'] = 17.28, ['item_spider_legs'] = 12.77, ['item_minotaur_horn'] = 11.40, ['item_divine_regalia'] = 3.04, ['item_dezun_bloodrite'] = 5.01, ['item_riftshadow_prism'] = 5.29},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 35.61, ['item_enhancement_quickened'] = 28.37, ['item_enhancement_brawny'] = 15.13, ['item_enhancement_alert'] = 15.08, ['item_enhancement_tough'] = 5.82},
@@ -693,11 +693,11 @@ local heroList = {
     },
     ['npc_dota_hero_juggernaut'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 31.61, ['item_spark_of_courage'] = 26.7, ['item_chipped_vest'] = 16.81, ['item_sisters_shroud'] = 11.05, ['item_occult_bracelet'] = 5.46, ['item_rippers_lash'] = 2.92, ['item_kobold_cup'] = 2.84, ['item_polliwog_charm'] = 2.61},
-           [2] = {['item_misericorde'] = 56.01, ['item_poor_mans_shield'] = 22.47, ['item_mana_draught'] = 7.74, ['item_searing_signet'] = 6.75, ['item_essence_ring'] = 3.87, ['item_pogo_stick'] = 3.16},
-           [3] = {['item_gunpowder_gauntlets'] = 73.97, ['item_gale_guard'] = 15.95, ['item_jidi_pollen_bag'] = 5.22, ['item_whisper_of_the_dread'] = 3.11, ['item_psychic_headband'] = 1.75},
-           [4] = {['item_giant_maul'] = 57.29, ['item_magnifying_monocle'] = 12.7, ['item_crippling_crossbow'] = 11.67, ['item_outworld_staff'] = 7.79, ['item_pyrrhic_cloak'] = 6.63, ['item_dezun_bloodrite'] = 3.93},
-           [5] = {['item_desolator_2'] = 36.29, ['item_helm_of_the_undying'] = 28.1, ['item_minotaur_horn'] = 10.08, ['item_unrelenting_eye'] = 8.4, ['item_fallen_sky'] = 6.15, ['item_spider_legs'] = 4.96, ['item_divine_regalia'] = 3.71, ['item_demonicon'] = 2.31},
+           [1] = {['item_dormant_curio'] = 45.29, ['item_chipped_vest'] = 24.08, ['item_occult_bracelet'] = 7.82, ['item_kobold_cup'] = 4.07, ['item_polliwog_charm'] = 3.74, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 48.53, ['item_mana_draught'] = 16.72, ['item_searing_signet'] = 14.58, ['item_essence_ring'] = 8.36, ['item_pogo_stick'] = 6.82, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 83.82, ['item_jidi_pollen_bag'] = 5.91, ['item_whisper_of_the_dread'] = 3.52, ['item_psychic_headband'] = 1.98, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 65.52, ['item_crippling_crossbow'] = 13.35, ['item_flayers_bota'] = 5.28, ['item_idol_of_screeauk'] = 5.28, ['item_metamorphic_mandible'] = 5.28, ['item_rattlecage'] = 5.28},
+           [5] = {['item_desolator_2'] = 51.19, ['item_minotaur_horn'] = 14.22, ['item_fallen_sky'] = 8.67, ['item_spider_legs'] = 7.00, ['item_divine_regalia'] = 5.23, ['item_demonicon'] = 3.26, ['item_dezun_bloodrite'] = 5.07, ['item_riftshadow_prism'] = 5.36},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 50.14, ['item_enhancement_tough'] = 24.61, ['item_enhancement_quickened'] = 10.01, ['item_enhancement_brawny'] = 9.67, ['item_enhancement_mystical'] = 5.57},
@@ -709,11 +709,11 @@ local heroList = {
     },
     ['npc_dota_hero_keeper_of_the_light'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 35.75, ['item_sisters_shroud'] = 25.95, ['item_kobold_cup'] = 16.24, ['item_occult_bracelet'] = 6.25, ['item_polliwog_charm'] = 5.29, ['item_chipped_vest'] = 4.61, ['item_spark_of_courage'] = 4.24, ['item_rippers_lash'] = 1.66},
-           [2] = {['item_searing_signet'] = 58.72, ['item_pogo_stick'] = 13.99, ['item_essence_ring'] = 12.1, ['item_mana_draught'] = 6.43, ['item_poor_mans_shield'] = 6.28, ['item_misericorde'] = 2.48},
-           [3] = {['item_whisper_of_the_dread'] = 48.62, ['item_psychic_headband'] = 23.11, ['item_gale_guard'] = 18.02, ['item_gunpowder_gauntlets'] = 5.62, ['item_jidi_pollen_bag'] = 4.64},
-           [4] = {['item_magnifying_monocle'] = 36.38, ['item_dezun_bloodrite'] = 31.62, ['item_outworld_staff'] = 18.71, ['item_giant_maul'] = 5.05, ['item_pyrrhic_cloak'] = 4.61, ['item_crippling_crossbow'] = 3.63},
-           [5] = {['item_demonicon'] = 22.05, ['item_fallen_sky'] = 21.21, ['item_helm_of_the_undying'] = 21.02, ['item_spider_legs'] = 10.64, ['item_minotaur_horn'] = 10, ['item_unrelenting_eye'] = 8.17, ['item_desolator_2'] = 3.51, ['item_divine_regalia'] = 3.41},
+           [1] = {['item_dormant_curio'] = 44.59, ['item_kobold_cup'] = 20.26, ['item_occult_bracelet'] = 7.80, ['item_polliwog_charm'] = 6.60, ['item_chipped_vest'] = 5.75, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 57.20, ['item_pogo_stick'] = 13.63, ['item_essence_ring'] = 11.79, ['item_mana_draught'] = 6.26, ['item_poor_mans_shield'] = 6.12, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 56.48, ['item_psychic_headband'] = 26.84, ['item_gunpowder_gauntlets'] = 6.53, ['item_jidi_pollen_bag'] = 5.39, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 20.36, ['item_crippling_crossbow'] = 14.64, ['item_flayers_bota'] = 16.25, ['item_idol_of_screeauk'] = 16.25, ['item_metamorphic_mandible'] = 16.25, ['item_rattlecage'] = 16.25},
+           [5] = {['item_demonicon'] = 27.93, ['item_fallen_sky'] = 26.87, ['item_spider_legs'] = 13.48, ['item_minotaur_horn'] = 12.67, ['item_desolator_2'] = 4.45, ['item_divine_regalia'] = 4.32, ['item_dezun_bloodrite'] = 5.00, ['item_riftshadow_prism'] = 5.28},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_quickened'] = 44.97, ['item_enhancement_mystical'] = 30.02, ['item_enhancement_brawny'] = 16.43, ['item_enhancement_tough'] = 4.36, ['item_enhancement_alert'] = 4.23},
@@ -725,11 +725,11 @@ local heroList = {
     },
     ['npc_dota_hero_kez'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 35.97, ['item_spark_of_courage'] = 24.13, ['item_chipped_vest'] = 14.4, ['item_sisters_shroud'] = 13.73, ['item_occult_bracelet'] = 4.11, ['item_polliwog_charm'] = 2.9, ['item_rippers_lash'] = 2.79, ['item_kobold_cup'] = 1.96},
-           [2] = {['item_misericorde'] = 52.08, ['item_poor_mans_shield'] = 21.1, ['item_mana_draught'] = 11.74, ['item_essence_ring'] = 7.01, ['item_searing_signet'] = 5.91, ['item_pogo_stick'] = 2.17},
-           [3] = {['item_gunpowder_gauntlets'] = 66.53, ['item_gale_guard'] = 18.13, ['item_whisper_of_the_dread'] = 7.77, ['item_jidi_pollen_bag'] = 6.08, ['item_psychic_headband'] = 1.49},
-           [4] = {['item_giant_maul'] = 54.52, ['item_outworld_staff'] = 9.8, ['item_magnifying_monocle'] = 9.55, ['item_pyrrhic_cloak'] = 9.4, ['item_dezun_bloodrite'] = 9.13, ['item_crippling_crossbow'] = 7.6},
-           [5] = {['item_desolator_2'] = 33.5, ['item_helm_of_the_undying'] = 30.24, ['item_minotaur_horn'] = 10.36, ['item_fallen_sky'] = 8.75, ['item_unrelenting_eye'] = 8.05, ['item_spider_legs'] = 3.79, ['item_demonicon'] = 3.04, ['item_divine_regalia'] = 2.28},
+           [1] = {['item_dormant_curio'] = 51.52, ['item_chipped_vest'] = 20.63, ['item_occult_bracelet'] = 5.89, ['item_polliwog_charm'] = 4.15, ['item_kobold_cup'] = 2.81, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 41.82, ['item_mana_draught'] = 23.27, ['item_essence_ring'] = 13.89, ['item_searing_signet'] = 11.71, ['item_pogo_stick'] = 4.30, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 77.39, ['item_whisper_of_the_dread'] = 9.04, ['item_jidi_pollen_bag'] = 7.07, ['item_psychic_headband'] = 1.73, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 67.63, ['item_crippling_crossbow'] = 9.43, ['item_flayers_bota'] = 5.73, ['item_idol_of_screeauk'] = 5.73, ['item_metamorphic_mandible'] = 5.73, ['item_rattlecage'] = 5.73},
+           [5] = {['item_desolator_2'] = 48.63, ['item_minotaur_horn'] = 15.04, ['item_fallen_sky'] = 12.70, ['item_spider_legs'] = 5.50, ['item_demonicon'] = 4.41, ['item_divine_regalia'] = 3.31, ['item_dezun_bloodrite'] = 5.06, ['item_riftshadow_prism'] = 5.35},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 34.68, ['item_enhancement_tough'] = 29.18, ['item_enhancement_brawny'] = 14.24, ['item_enhancement_mystical'] = 13.42, ['item_enhancement_quickened'] = 8.48},
@@ -741,11 +741,11 @@ local heroList = {
     },
     ['npc_dota_hero_kunkka'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 44.07, ['item_dormant_curio'] = 21.16, ['item_spark_of_courage'] = 14.66, ['item_sisters_shroud'] = 9.72, ['item_kobold_cup'] = 3.4, ['item_polliwog_charm'] = 3.23, ['item_occult_bracelet'] = 2.6, ['item_rippers_lash'] = 1.16},
-           [2] = {['item_poor_mans_shield'] = 29.82, ['item_misericorde'] = 29.74, ['item_essence_ring'] = 17.48, ['item_searing_signet'] = 12.59, ['item_pogo_stick'] = 5.29, ['item_mana_draught'] = 5.08},
-           [3] = {['item_gunpowder_gauntlets'] = 51.33, ['item_gale_guard'] = 28.11, ['item_jidi_pollen_bag'] = 8.73, ['item_whisper_of_the_dread'] = 8.31, ['item_psychic_headband'] = 3.52},
-           [4] = {['item_giant_maul'] = 39.57, ['item_dezun_bloodrite'] = 20.58, ['item_pyrrhic_cloak'] = 20.15, ['item_magnifying_monocle'] = 8.21, ['item_outworld_staff'] = 7.81, ['item_crippling_crossbow'] = 3.68},
-           [5] = {['item_helm_of_the_undying'] = 26.23, ['item_desolator_2'] = 21.17, ['item_fallen_sky'] = 14.36, ['item_minotaur_horn'] = 11.98, ['item_unrelenting_eye'] = 9.61, ['item_demonicon'] = 8.1, ['item_spider_legs'] = 5.84, ['item_divine_regalia'] = 2.7},
+           [1] = {['item_chipped_vest'] = 50.31, ['item_dormant_curio'] = 24.16, ['item_kobold_cup'] = 3.88, ['item_polliwog_charm'] = 3.69, ['item_occult_bracelet'] = 2.97, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 40.32, ['item_essence_ring'] = 23.64, ['item_searing_signet'] = 17.02, ['item_pogo_stick'] = 7.15, ['item_mana_draught'] = 6.87, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 68.00, ['item_jidi_pollen_bag'] = 11.57, ['item_whisper_of_the_dread'] = 11.01, ['item_psychic_headband'] = 4.66, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 64.49, ['item_crippling_crossbow'] = 6.00, ['item_flayers_bota'] = 7.38, ['item_idol_of_screeauk'] = 7.38, ['item_metamorphic_mandible'] = 7.38, ['item_rattlecage'] = 7.38},
+           [5] = {['item_desolator_2'] = 29.51, ['item_fallen_sky'] = 20.02, ['item_minotaur_horn'] = 16.70, ['item_demonicon'] = 11.29, ['item_spider_legs'] = 8.14, ['item_divine_regalia'] = 3.76, ['item_dezun_bloodrite'] = 5.14, ['item_riftshadow_prism'] = 5.44},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_tough'] = 35.6, ['item_enhancement_brawny'] = 30, ['item_enhancement_mystical'] = 13.37, ['item_enhancement_alert'] = 10.72, ['item_enhancement_quickened'] = 10.31},
@@ -757,11 +757,11 @@ local heroList = {
     },
     ['npc_dota_hero_legion_commander'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 60.33, ['item_spark_of_courage'] = 13.62, ['item_dormant_curio'] = 12.95, ['item_sisters_shroud'] = 5.7, ['item_occult_bracelet'] = 2.94, ['item_kobold_cup'] = 1.77, ['item_polliwog_charm'] = 1.49, ['item_rippers_lash'] = 1.2},
-           [2] = {['item_misericorde'] = 46.63, ['item_poor_mans_shield'] = 24.82, ['item_mana_draught'] = 9.66, ['item_searing_signet'] = 9.24, ['item_essence_ring'] = 5.9, ['item_pogo_stick'] = 3.75},
-           [3] = {['item_gunpowder_gauntlets'] = 70.27, ['item_gale_guard'] = 18.89, ['item_jidi_pollen_bag'] = 5.74, ['item_psychic_headband'] = 2.74, ['item_whisper_of_the_dread'] = 2.36},
-           [4] = {['item_giant_maul'] = 49.95, ['item_pyrrhic_cloak'] = 23.24, ['item_magnifying_monocle'] = 9.84, ['item_outworld_staff'] = 5.85, ['item_crippling_crossbow'] = 5.72, ['item_dezun_bloodrite'] = 5.4},
-           [5] = {['item_desolator_2'] = 31.76, ['item_helm_of_the_undying'] = 29.76, ['item_unrelenting_eye'] = 10.22, ['item_minotaur_horn'] = 10.09, ['item_fallen_sky'] = 7.97, ['item_spider_legs'] = 4.89, ['item_demonicon'] = 3.94, ['item_divine_regalia'] = 1.37},
+           [1] = {['item_chipped_vest'] = 64.52, ['item_dormant_curio'] = 13.85, ['item_occult_bracelet'] = 3.14, ['item_kobold_cup'] = 1.89, ['item_polliwog_charm'] = 1.59, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 44.18, ['item_mana_draught'] = 17.20, ['item_searing_signet'] = 16.45, ['item_essence_ring'] = 10.50, ['item_pogo_stick'] = 6.68, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 82.51, ['item_jidi_pollen_bag'] = 6.74, ['item_psychic_headband'] = 3.22, ['item_whisper_of_the_dread'] = 2.77, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 70.04, ['item_crippling_crossbow'] = 8.02, ['item_flayers_bota'] = 5.49, ['item_idol_of_screeauk'] = 5.49, ['item_metamorphic_mandible'] = 5.49, ['item_rattlecage'] = 5.49},
+           [5] = {['item_desolator_2'] = 47.23, ['item_minotaur_horn'] = 15.00, ['item_fallen_sky'] = 11.85, ['item_spider_legs'] = 7.27, ['item_demonicon'] = 5.86, ['item_divine_regalia'] = 2.04, ['item_dezun_bloodrite'] = 5.22, ['item_riftshadow_prism'] = 5.53},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 34.26, ['item_enhancement_tough'] = 31.12, ['item_enhancement_brawny'] = 17.93, ['item_enhancement_mystical'] = 9.1, ['item_enhancement_quickened'] = 7.59},
@@ -773,11 +773,11 @@ local heroList = {
     },
     ['npc_dota_hero_leshrac'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 45.64, ['item_sisters_shroud'] = 20.66, ['item_occult_bracelet'] = 10.38, ['item_chipped_vest'] = 8.21, ['item_kobold_cup'] = 6.94, ['item_polliwog_charm'] = 3.71, ['item_spark_of_courage'] = 3.5, ['item_rippers_lash'] = 0.95},
-           [2] = {['item_searing_signet'] = 51.53, ['item_mana_draught'] = 27.54, ['item_essence_ring'] = 10.24, ['item_pogo_stick'] = 4.99, ['item_poor_mans_shield'] = 4.79, ['item_misericorde'] = 0.91},
-           [3] = {['item_whisper_of_the_dread'] = 56.65, ['item_gale_guard'] = 24.19, ['item_psychic_headband'] = 9.65, ['item_jidi_pollen_bag'] = 6.38, ['item_gunpowder_gauntlets'] = 3.12},
-           [4] = {['item_dezun_bloodrite'] = 40.34, ['item_outworld_staff'] = 22.7, ['item_magnifying_monocle'] = 20.08, ['item_pyrrhic_cloak'] = 12.09, ['item_giant_maul'] = 2.94, ['item_crippling_crossbow'] = 1.85},
-           [5] = {['item_helm_of_the_undying'] = 32.47, ['item_fallen_sky'] = 22.22, ['item_minotaur_horn'] = 12.68, ['item_demonicon'] = 9.96, ['item_unrelenting_eye'] = 9.31, ['item_spider_legs'] = 8.87, ['item_divine_regalia'] = 3.11, ['item_desolator_2'] = 1.4},
+           [1] = {['item_dormant_curio'] = 51.81, ['item_occult_bracelet'] = 11.78, ['item_chipped_vest'] = 9.32, ['item_kobold_cup'] = 7.88, ['item_polliwog_charm'] = 4.21, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 49.40, ['item_mana_draught'] = 26.40, ['item_essence_ring'] = 9.82, ['item_pogo_stick'] = 4.78, ['item_poor_mans_shield'] = 4.59, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 71.18, ['item_psychic_headband'] = 12.12, ['item_jidi_pollen_bag'] = 8.02, ['item_gunpowder_gauntlets'] = 3.92, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 12.87, ['item_crippling_crossbow'] = 8.10, ['item_flayers_bota'] = 19.76, ['item_idol_of_screeauk'] = 19.76, ['item_metamorphic_mandible'] = 19.76, ['item_rattlecage'] = 19.76},
+           [5] = {['item_fallen_sky'] = 34.09, ['item_minotaur_horn'] = 19.45, ['item_demonicon'] = 15.28, ['item_spider_legs'] = 13.61, ['item_divine_regalia'] = 4.77, ['item_desolator_2'] = 2.15, ['item_dezun_bloodrite'] = 5.18, ['item_riftshadow_prism'] = 5.48},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 48.1, ['item_enhancement_quickened'] = 30.5, ['item_enhancement_brawny'] = 15.01, ['item_enhancement_tough'] = 5.08, ['item_enhancement_alert'] = 1.3},
@@ -789,11 +789,11 @@ local heroList = {
     },
     ['npc_dota_hero_lich'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 30.72, ['item_sisters_shroud'] = 29.09, ['item_kobold_cup'] = 13.76, ['item_polliwog_charm'] = 7.74, ['item_chipped_vest'] = 6.93, ['item_occult_bracelet'] = 5.58, ['item_spark_of_courage'] = 4.59, ['item_rippers_lash'] = 1.6},
-           [2] = {['item_searing_signet'] = 59.17, ['item_essence_ring'] = 14.82, ['item_pogo_stick'] = 10.92, ['item_poor_mans_shield'] = 8.31, ['item_mana_draught'] = 4.5, ['item_misericorde'] = 2.27},
-           [3] = {['item_whisper_of_the_dread'] = 40.85, ['item_gale_guard'] = 23.8, ['item_psychic_headband'] = 22.61, ['item_gunpowder_gauntlets'] = 6.88, ['item_jidi_pollen_bag'] = 5.86},
-           [4] = {['item_magnifying_monocle'] = 43.48, ['item_dezun_bloodrite'] = 26.35, ['item_outworld_staff'] = 16.3, ['item_giant_maul'] = 5.94, ['item_pyrrhic_cloak'] = 5.2, ['item_crippling_crossbow'] = 2.73},
-           [5] = {['item_helm_of_the_undying'] = 31.65, ['item_demonicon'] = 21.91, ['item_fallen_sky'] = 14.62, ['item_minotaur_horn'] = 8.92, ['item_spider_legs'] = 8.91, ['item_unrelenting_eye'] = 8.39, ['item_desolator_2'] = 4.22, ['item_divine_regalia'] = 1.39},
+           [1] = {['item_dormant_curio'] = 40.34, ['item_kobold_cup'] = 18.07, ['item_polliwog_charm'] = 10.16, ['item_chipped_vest'] = 9.10, ['item_occult_bracelet'] = 7.33, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 57.52, ['item_essence_ring'] = 14.41, ['item_pogo_stick'] = 10.62, ['item_poor_mans_shield'] = 8.08, ['item_mana_draught'] = 4.37, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 51.06, ['item_psychic_headband'] = 28.26, ['item_gunpowder_gauntlets'] = 8.60, ['item_jidi_pollen_bag'] = 7.32, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 26.19, ['item_crippling_crossbow'] = 12.04, ['item_flayers_bota'] = 15.44, ['item_idol_of_screeauk'] = 15.44, ['item_metamorphic_mandible'] = 15.44, ['item_rattlecage'] = 15.44},
+           [5] = {['item_demonicon'] = 32.70, ['item_fallen_sky'] = 21.82, ['item_minotaur_horn'] = 13.31, ['item_spider_legs'] = 13.30, ['item_desolator_2'] = 6.30, ['item_divine_regalia'] = 2.07, ['item_dezun_bloodrite'] = 5.10, ['item_riftshadow_prism'] = 5.39},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_quickened'] = 38.97, ['item_enhancement_mystical'] = 27.51, ['item_enhancement_brawny'] = 24.41, ['item_enhancement_tough'] = 5.25, ['item_enhancement_alert'] = 3.85},
@@ -805,11 +805,11 @@ local heroList = {
     },
     ['npc_dota_hero_life_stealer'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 32.87, ['item_dormant_curio'] = 25.45, ['item_spark_of_courage'] = 23.03, ['item_sisters_shroud'] = 8.95, ['item_rippers_lash'] = 3.03, ['item_occult_bracelet'] = 2.95, ['item_kobold_cup'] = 2.31, ['item_polliwog_charm'] = 1.42},
-           [2] = {['item_misericorde'] = 59.79, ['item_poor_mans_shield'] = 25.36, ['item_essence_ring'] = 4.58, ['item_searing_signet'] = 3.95, ['item_mana_draught'] = 3.2, ['item_pogo_stick'] = 3.12},
-           [3] = {['item_gunpowder_gauntlets'] = 74.54, ['item_gale_guard'] = 15.13, ['item_jidi_pollen_bag'] = 7.48, ['item_whisper_of_the_dread'] = 1.66, ['item_psychic_headband'] = 1.19},
-           [4] = {['item_giant_maul'] = 56.87, ['item_pyrrhic_cloak'] = 16.33, ['item_crippling_crossbow'] = 10.89, ['item_outworld_staff'] = 6.89, ['item_magnifying_monocle'] = 6.87, ['item_dezun_bloodrite'] = 2.16},
-           [5] = {['item_desolator_2'] = 36.13, ['item_helm_of_the_undying'] = 25.13, ['item_minotaur_horn'] = 10.47, ['item_unrelenting_eye'] = 10.31, ['item_fallen_sky'] = 7.26, ['item_spider_legs'] = 5.09, ['item_divine_regalia'] = 3.17, ['item_demonicon'] = 2.44},
+           [1] = {['item_chipped_vest'] = 42.98, ['item_dormant_curio'] = 33.28, ['item_occult_bracelet'] = 3.86, ['item_kobold_cup'] = 3.02, ['item_polliwog_charm'] = 1.86, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 59.92, ['item_essence_ring'] = 10.82, ['item_searing_signet'] = 9.33, ['item_mana_draught'] = 7.56, ['item_pogo_stick'] = 7.37, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 83.65, ['item_jidi_pollen_bag'] = 8.39, ['item_whisper_of_the_dread'] = 1.86, ['item_psychic_headband'] = 1.34, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 66.61, ['item_crippling_crossbow'] = 12.76, ['item_flayers_bota'] = 5.16, ['item_idol_of_screeauk'] = 5.16, ['item_metamorphic_mandible'] = 5.16, ['item_rattlecage'] = 5.16},
+           [5] = {['item_desolator_2'] = 50.00, ['item_minotaur_horn'] = 14.49, ['item_fallen_sky'] = 10.05, ['item_spider_legs'] = 7.04, ['item_divine_regalia'] = 4.39, ['item_demonicon'] = 3.38, ['item_dezun_bloodrite'] = 5.18, ['item_riftshadow_prism'] = 5.48},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 43.84, ['item_enhancement_tough'] = 29.47, ['item_enhancement_brawny'] = 14.09, ['item_enhancement_quickened'] = 8.27, ['item_enhancement_mystical'] = 4.33},
@@ -821,11 +821,11 @@ local heroList = {
     },
     ['npc_dota_hero_lina'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 35.94, ['item_sisters_shroud'] = 17.79, ['item_spark_of_courage'] = 16.4, ['item_occult_bracelet'] = 8.52, ['item_chipped_vest'] = 8.19, ['item_kobold_cup'] = 5.96, ['item_polliwog_charm'] = 4.35, ['item_rippers_lash'] = 2.86},
-           [2] = {['item_searing_signet'] = 43.72, ['item_misericorde'] = 26.42, ['item_mana_draught'] = 15.07, ['item_essence_ring'] = 5.28, ['item_pogo_stick'] = 4.85, ['item_poor_mans_shield'] = 4.66},
-           [3] = {['item_gunpowder_gauntlets'] = 35.69, ['item_whisper_of_the_dread'] = 32.66, ['item_psychic_headband'] = 15.16, ['item_gale_guard'] = 14.22, ['item_jidi_pollen_bag'] = 2.27},
-           [4] = {['item_giant_maul'] = 33.05, ['item_magnifying_monocle'] = 28.4, ['item_dezun_bloodrite'] = 14.65, ['item_outworld_staff'] = 10.53, ['item_crippling_crossbow'] = 9.81, ['item_pyrrhic_cloak'] = 3.55},
-           [5] = {['item_desolator_2'] = 30.62, ['item_helm_of_the_undying'] = 27.12, ['item_minotaur_horn'] = 9.01, ['item_fallen_sky'] = 8.92, ['item_unrelenting_eye'] = 7.55, ['item_demonicon'] = 6.77, ['item_spider_legs'] = 6.1, ['item_divine_regalia'] = 3.91},
+           [1] = {['item_dormant_curio'] = 48.52, ['item_occult_bracelet'] = 11.50, ['item_chipped_vest'] = 11.06, ['item_kobold_cup'] = 8.05, ['item_polliwog_charm'] = 5.87, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 56.45, ['item_mana_draught'] = 19.46, ['item_essence_ring'] = 6.82, ['item_pogo_stick'] = 6.26, ['item_poor_mans_shield'] = 6.02, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 39.63, ['item_whisper_of_the_dread'] = 36.26, ['item_psychic_headband'] = 16.83, ['item_jidi_pollen_bag'] = 2.52, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 56.42, ['item_crippling_crossbow'] = 16.75, ['item_flayers_bota'] = 6.71, ['item_idol_of_screeauk'] = 6.71, ['item_metamorphic_mandible'] = 6.71, ['item_rattlecage'] = 6.71},
+           [5] = {['item_desolator_2'] = 42.05, ['item_minotaur_horn'] = 12.37, ['item_fallen_sky'] = 12.25, ['item_demonicon'] = 9.30, ['item_spider_legs'] = 8.38, ['item_divine_regalia'] = 5.37, ['item_dezun_bloodrite'] = 5.00, ['item_riftshadow_prism'] = 5.28},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 33.86, ['item_enhancement_mystical'] = 22.61, ['item_enhancement_quickened'] = 18.93, ['item_enhancement_tough'] = 16.32, ['item_enhancement_brawny'] = 8.27},
@@ -837,11 +837,11 @@ local heroList = {
     },
     ['npc_dota_hero_lion'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 32.88, ['item_sisters_shroud'] = 27.12, ['item_kobold_cup'] = 14.08, ['item_polliwog_charm'] = 6.54, ['item_occult_bracelet'] = 6.49, ['item_chipped_vest'] = 5.8, ['item_spark_of_courage'] = 5.25, ['item_rippers_lash'] = 1.85},
-           [2] = {['item_searing_signet'] = 50.75, ['item_essence_ring'] = 14.94, ['item_pogo_stick'] = 14.93, ['item_mana_draught'] = 7.69, ['item_poor_mans_shield'] = 7.46, ['item_misericorde'] = 4.23},
-           [3] = {['item_whisper_of_the_dread'] = 37.38, ['item_psychic_headband'] = 25.07, ['item_gale_guard'] = 20.92, ['item_gunpowder_gauntlets'] = 12.33, ['item_jidi_pollen_bag'] = 4.29},
-           [4] = {['item_magnifying_monocle'] = 38.92, ['item_dezun_bloodrite'] = 23.95, ['item_outworld_staff'] = 18.19, ['item_giant_maul'] = 11.51, ['item_pyrrhic_cloak'] = 4.54, ['item_crippling_crossbow'] = 2.88},
-           [5] = {['item_helm_of_the_undying'] = 30.19, ['item_demonicon'] = 19.32, ['item_fallen_sky'] = 14.92, ['item_spider_legs'] = 9.65, ['item_minotaur_horn'] = 9.04, ['item_unrelenting_eye'] = 7.46, ['item_desolator_2'] = 7.29, ['item_divine_regalia'] = 2.14},
+           [1] = {['item_dormant_curio'] = 42.48, ['item_kobold_cup'] = 18.19, ['item_polliwog_charm'] = 8.45, ['item_occult_bracelet'] = 8.39, ['item_chipped_vest'] = 7.49, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 50.34, ['item_essence_ring'] = 14.82, ['item_pogo_stick'] = 14.81, ['item_mana_draught'] = 7.63, ['item_poor_mans_shield'] = 7.40, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 45.02, ['item_psychic_headband'] = 30.20, ['item_gunpowder_gauntlets'] = 14.85, ['item_jidi_pollen_bag'] = 5.17, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 38.72, ['item_crippling_crossbow'] = 9.69, ['item_flayers_bota'] = 12.90, ['item_idol_of_screeauk'] = 12.90, ['item_metamorphic_mandible'] = 12.90, ['item_rattlecage'] = 12.90},
+           [5] = {['item_demonicon'] = 27.78, ['item_fallen_sky'] = 21.46, ['item_spider_legs'] = 13.88, ['item_minotaur_horn'] = 13.00, ['item_desolator_2'] = 10.48, ['item_divine_regalia'] = 3.08, ['item_dezun_bloodrite'] = 5.02, ['item_riftshadow_prism'] = 5.30},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_quickened'] = 34.89, ['item_enhancement_mystical'] = 32.24, ['item_enhancement_brawny'] = 18.96, ['item_enhancement_alert'] = 7.75, ['item_enhancement_tough'] = 6.15},
@@ -851,13 +851,29 @@ local heroList = {
            [5] = {['item_enhancement_timeless'] = 43.24, ['item_enhancement_titanic'] = 5.26, ['item_enhancement_boundless'] = 21.39, ['item_enhancement_crude'] = 1.5, ['item_enhancement_feverish'] = 10.49, ['item_enhancement_fleetfooted'] = 6.11, ['item_enhancement_evolved'] = 5.87, ['item_enhancement_audacious'] = 3.38, ['item_enhancement_wise'] = 2.75},
         },
     },
+    ['npc_dota_hero_largo'] = {
+       ['neutral'] = {
+           [1] = {['item_kobold_cup'] = 25.00, ['item_occult_bracelet'] = 20.00, ['item_polliwog_charm'] = 15.00, ['item_dormant_curio'] = 12.50, ['item_chipped_vest'] = 7.50, ['item_ash_legion_shield'] = 7.50, ['item_weighted_dice'] = 7.50, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_essence_ring'] = 25.00, ['item_mana_draught'] = 20.00, ['item_pogo_stick'] = 17.00, ['item_defiant_shell'] = 15.00, ['item_searing_signet'] = 13.00, ['item_poor_mans_shield'] = 10.00},
+           [3] = {['item_psychic_headband'] = 25.00, ['item_whisper_of_the_dread'] = 22.00, ['item_jidi_pollen_bag'] = 18.00, ['item_unrelenting_eye'] = 15.00, ['item_gunpowder_gauntlets'] = 12.00, ['item_serrated_shiv'] = 8.00},
+           [4] = {['item_idol_of_screeauk'] = 25.00, ['item_rattlecage'] = 20.00, ['item_flayers_bota'] = 18.00, ['item_crippling_crossbow'] = 15.00, ['item_metamorphic_mandible'] = 12.00, ['item_giant_maul'] = 10.00},
+           [5] = {['item_demonicon'] = 20.00, ['item_fallen_sky'] = 15.00, ['item_minotaur_horn'] = 15.00, ['item_spider_legs'] = 13.00, ['item_dezun_bloodrite'] = 12.00, ['item_riftshadow_prism'] = 10.00, ['item_desolator_2'] = 8.00, ['item_divine_regalia'] = 7.00},
+        },
+       ['enhancement'] = {
+           [1] = {['item_enhancement_mystical'] = 25.00, ['item_enhancement_quickened'] = 22.00, ['item_enhancement_tough'] = 20.00, ['item_enhancement_brawny'] = 18.00, ['item_enhancement_alert'] = 15.00},
+           [2] = {['item_enhancement_vast'] = 16.00, ['item_enhancement_mystical'] = 14.00, ['item_enhancement_quickened'] = 13.00, ['item_enhancement_greedy'] = 12.00, ['item_enhancement_keen_eyed'] = 11.00, ['item_enhancement_tough'] = 10.00, ['item_enhancement_brawny'] = 9.00, ['item_enhancement_vampiric'] = 8.00, ['item_enhancement_alert'] = 7.00},
+           [3] = {['item_enhancement_vast'] = 16.00, ['item_enhancement_mystical'] = 14.00, ['item_enhancement_quickened'] = 13.00, ['item_enhancement_greedy'] = 12.00, ['item_enhancement_keen_eyed'] = 11.00, ['item_enhancement_tough'] = 10.00, ['item_enhancement_brawny'] = 9.00, ['item_enhancement_vampiric'] = 8.00, ['item_enhancement_alert'] = 7.00},
+           [4] = {['item_enhancement_timeless'] = 18.00, ['item_enhancement_mystical'] = 14.00, ['item_enhancement_quickened'] = 12.00, ['item_enhancement_tough'] = 11.00, ['item_enhancement_brawny'] = 10.00, ['item_enhancement_titanic'] = 10.00, ['item_enhancement_vampiric'] = 9.00, ['item_enhancement_crude'] = 8.00, ['item_enhancement_alert'] = 8.00},
+           [5] = {['item_enhancement_timeless'] = 16.00, ['item_enhancement_evolved'] = 14.00, ['item_enhancement_wise'] = 13.00, ['item_enhancement_titanic'] = 12.00, ['item_enhancement_boundless'] = 11.00, ['item_enhancement_audacious'] = 10.00, ['item_enhancement_crude'] = 9.00, ['item_enhancement_fleetfooted'] = 8.00, ['item_enhancement_feverish'] = 7.00},
+        },
+    },
     ['npc_dota_hero_lone_druid'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 27.98, ['item_spark_of_courage'] = 27.97, ['item_dormant_curio'] = 18.65, ['item_sisters_shroud'] = 10.93, ['item_rippers_lash'] = 5.5, ['item_kobold_cup'] = 5.42, ['item_occult_bracelet'] = 1.95, ['item_polliwog_charm'] = 1.59},
-           [2] = {['item_misericorde'] = 55.61, ['item_poor_mans_shield'] = 29.77, ['item_essence_ring'] = 6.83, ['item_searing_signet'] = 4.66, ['item_pogo_stick'] = 2.3, ['item_mana_draught'] = 0.84},
-           [3] = {['item_gunpowder_gauntlets'] = 75.21, ['item_gale_guard'] = 15.72, ['item_jidi_pollen_bag'] = 5.83, ['item_psychic_headband'] = 1.74, ['item_whisper_of_the_dread'] = 1.5},
-           [4] = {['item_giant_maul'] = 56.58, ['item_pyrrhic_cloak'] = 16.91, ['item_crippling_crossbow'] = 11.18, ['item_magnifying_monocle'] = 7.67, ['item_outworld_staff'] = 4.87, ['item_dezun_bloodrite'] = 2.79},
-           [5] = {['item_desolator_2'] = 35.8, ['item_helm_of_the_undying'] = 20.01, ['item_minotaur_horn'] = 9.58, ['item_unrelenting_eye'] = 9.55, ['item_demonicon'] = 8.31, ['item_fallen_sky'] = 7.84, ['item_spider_legs'] = 4.73, ['item_divine_regalia'] = 4.18},
+           [1] = {['item_chipped_vest'] = 42.78, ['item_dormant_curio'] = 28.52, ['item_kobold_cup'] = 8.29, ['item_occult_bracelet'] = 2.98, ['item_polliwog_charm'] = 2.43, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 63.70, ['item_essence_ring'] = 14.61, ['item_searing_signet'] = 9.97, ['item_pogo_stick'] = 4.92, ['item_mana_draught'] = 1.80, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 84.99, ['item_jidi_pollen_bag'] = 6.59, ['item_psychic_headband'] = 1.97, ['item_whisper_of_the_dread'] = 1.70, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 66.11, ['item_crippling_crossbow'] = 13.06, ['item_flayers_bota'] = 5.21, ['item_idol_of_screeauk'] = 5.21, ['item_metamorphic_mandible'] = 5.21, ['item_rattlecage'] = 5.21},
+           [5] = {['item_desolator_2'] = 45.51, ['item_minotaur_horn'] = 12.18, ['item_demonicon'] = 10.56, ['item_fallen_sky'] = 9.97, ['item_spider_legs'] = 6.01, ['item_divine_regalia'] = 5.31, ['item_dezun_bloodrite'] = 5.08, ['item_riftshadow_prism'] = 5.37},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 43.83, ['item_enhancement_tough'] = 29.97, ['item_enhancement_brawny'] = 14.89, ['item_enhancement_quickened'] = 8.91, ['item_enhancement_mystical'] = 2.41},
@@ -869,11 +885,11 @@ local heroList = {
     },
     ['npc_dota_hero_luna'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 32.97, ['item_spark_of_courage'] = 27.51, ['item_chipped_vest'] = 13.28, ['item_sisters_shroud'] = 12.61, ['item_occult_bracelet'] = 4.55, ['item_polliwog_charm'] = 3.54, ['item_kobold_cup'] = 2.92, ['item_rippers_lash'] = 2.61},
-           [2] = {['item_misericorde'] = 51.98, ['item_searing_signet'] = 17.86, ['item_poor_mans_shield'] = 16.19, ['item_essence_ring'] = 5.75, ['item_mana_draught'] = 4.41, ['item_pogo_stick'] = 3.81},
-           [3] = {['item_gunpowder_gauntlets'] = 55.78, ['item_gale_guard'] = 19.18, ['item_whisper_of_the_dread'] = 16.23, ['item_psychic_headband'] = 5.87, ['item_jidi_pollen_bag'] = 2.94},
-           [4] = {['item_giant_maul'] = 43.62, ['item_magnifying_monocle'] = 22.03, ['item_crippling_crossbow'] = 13.23, ['item_outworld_staff'] = 8.11, ['item_dezun_bloodrite'] = 7.62, ['item_pyrrhic_cloak'] = 5.39},
-           [5] = {['item_desolator_2'] = 32.79, ['item_helm_of_the_undying'] = 28.03, ['item_minotaur_horn'] = 9.52, ['item_unrelenting_eye'] = 7.82, ['item_spider_legs'] = 7.07, ['item_fallen_sky'] = 6.29, ['item_demonicon'] = 4.95, ['item_divine_regalia'] = 3.55},
+           [1] = {['item_dormant_curio'] = 48.94, ['item_chipped_vest'] = 19.71, ['item_occult_bracelet'] = 6.75, ['item_polliwog_charm'] = 5.25, ['item_kobold_cup'] = 4.33, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 35.33, ['item_poor_mans_shield'] = 32.03, ['item_essence_ring'] = 11.38, ['item_mana_draught'] = 8.72, ['item_pogo_stick'] = 7.54, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 65.73, ['item_whisper_of_the_dread'] = 19.13, ['item_psychic_headband'] = 6.92, ['item_jidi_pollen_bag'] = 3.46, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 59.33, ['item_crippling_crossbow'] = 17.99, ['item_flayers_bota'] = 5.67, ['item_idol_of_screeauk'] = 5.67, ['item_metamorphic_mandible'] = 5.67, ['item_rattlecage'] = 5.67},
+           [5] = {['item_desolator_2'] = 45.82, ['item_minotaur_horn'] = 13.30, ['item_spider_legs'] = 9.88, ['item_fallen_sky'] = 8.79, ['item_demonicon'] = 6.92, ['item_divine_regalia'] = 4.96, ['item_dezun_bloodrite'] = 5.03, ['item_riftshadow_prism'] = 5.31},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 51.49, ['item_enhancement_tough'] = 23.26, ['item_enhancement_quickened'] = 9.85, ['item_enhancement_brawny'] = 8.86, ['item_enhancement_mystical'] = 6.54},
@@ -885,11 +901,11 @@ local heroList = {
     },
     ['npc_dota_hero_lycan'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 29.73, ['item_dormant_curio'] = 24.28, ['item_spark_of_courage'] = 19.2, ['item_sisters_shroud'] = 10.71, ['item_rippers_lash'] = 6.16, ['item_kobold_cup'] = 5.7, ['item_occult_bracelet'] = 2.62, ['item_polliwog_charm'] = 1.61},
-           [2] = {['item_misericorde'] = 50.77, ['item_poor_mans_shield'] = 29.47, ['item_essence_ring'] = 8.69, ['item_mana_draught'] = 4.85, ['item_pogo_stick'] = 3.41, ['item_searing_signet'] = 2.81},
-           [3] = {['item_gunpowder_gauntlets'] = 68.71, ['item_gale_guard'] = 19.74, ['item_jidi_pollen_bag'] = 8.84, ['item_psychic_headband'] = 1.4, ['item_whisper_of_the_dread'] = 1.3},
-           [4] = {['item_giant_maul'] = 53.48, ['item_pyrrhic_cloak'] = 21.29, ['item_crippling_crossbow'] = 12.2, ['item_outworld_staff'] = 6.62, ['item_magnifying_monocle'] = 4.76, ['item_dezun_bloodrite'] = 1.66},
-           [5] = {['item_desolator_2'] = 29.33, ['item_helm_of_the_undying'] = 25.05, ['item_demonicon'] = 15.51, ['item_fallen_sky'] = 8.49, ['item_minotaur_horn'] = 8.38, ['item_unrelenting_eye'] = 7.41, ['item_spider_legs'] = 4.09, ['item_divine_regalia'] = 1.74},
+           [1] = {['item_chipped_vest'] = 39.52, ['item_dormant_curio'] = 32.28, ['item_kobold_cup'] = 7.58, ['item_occult_bracelet'] = 3.48, ['item_polliwog_charm'] = 2.14, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 56.87, ['item_essence_ring'] = 16.77, ['item_mana_draught'] = 9.36, ['item_pogo_stick'] = 6.58, ['item_searing_signet'] = 5.42, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 81.54, ['item_jidi_pollen_bag'] = 10.49, ['item_psychic_headband'] = 1.66, ['item_whisper_of_the_dread'] = 1.54, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 64.73, ['item_crippling_crossbow'] = 14.77, ['item_flayers_bota'] = 5.13, ['item_idol_of_screeauk'] = 5.13, ['item_metamorphic_mandible'] = 5.13, ['item_rattlecage'] = 5.13},
+           [5] = {['item_desolator_2'] = 38.98, ['item_demonicon'] = 20.61, ['item_fallen_sky'] = 11.28, ['item_minotaur_horn'] = 11.14, ['item_spider_legs'] = 5.44, ['item_divine_regalia'] = 2.31, ['item_dezun_bloodrite'] = 4.98, ['item_riftshadow_prism'] = 5.26},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 38.32, ['item_enhancement_tough'] = 30.25, ['item_enhancement_brawny'] = 19.13, ['item_enhancement_quickened'] = 7.18, ['item_enhancement_mystical'] = 5.12},
@@ -901,11 +917,11 @@ local heroList = {
     },
     ['npc_dota_hero_magnataur'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 31.95, ['item_chipped_vest'] = 25.87, ['item_sisters_shroud'] = 15.97, ['item_spark_of_courage'] = 8.43, ['item_kobold_cup'] = 6.87, ['item_polliwog_charm'] = 5.37, ['item_occult_bracelet'] = 4.16, ['item_rippers_lash'] = 1.37},
-           [2] = {['item_searing_signet'] = 31.12, ['item_pogo_stick'] = 18.55, ['item_poor_mans_shield'] = 16.41, ['item_essence_ring'] = 13.89, ['item_misericorde'] = 10.2, ['item_mana_draught'] = 9.83},
-           [3] = {['item_gunpowder_gauntlets'] = 28.84, ['item_gale_guard'] = 28.78, ['item_psychic_headband'] = 18.39, ['item_whisper_of_the_dread'] = 16.08, ['item_jidi_pollen_bag'] = 7.92},
-           [4] = {['item_dezun_bloodrite'] = 31.58, ['item_magnifying_monocle'] = 24.71, ['item_giant_maul'] = 18.52, ['item_outworld_staff'] = 14.48, ['item_pyrrhic_cloak'] = 8.61, ['item_crippling_crossbow'] = 2.1},
-           [5] = {['item_helm_of_the_undying'] = 27.44, ['item_fallen_sky'] = 23.31, ['item_spider_legs'] = 11.52, ['item_minotaur_horn'] = 11.32, ['item_demonicon'] = 10.59, ['item_desolator_2'] = 8.71, ['item_unrelenting_eye'] = 6.42, ['item_divine_regalia'] = 0.69},
+           [1] = {['item_dormant_curio'] = 36.59, ['item_chipped_vest'] = 29.63, ['item_kobold_cup'] = 7.87, ['item_polliwog_charm'] = 6.15, ['item_occult_bracelet'] = 4.76, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 32.92, ['item_pogo_stick'] = 19.62, ['item_poor_mans_shield'] = 17.36, ['item_essence_ring'] = 14.69, ['item_mana_draught'] = 10.40, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 38.56, ['item_psychic_headband'] = 24.59, ['item_whisper_of_the_dread'] = 21.50, ['item_jidi_pollen_bag'] = 10.59, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 44.63, ['item_crippling_crossbow'] = 5.06, ['item_flayers_bota'] = 12.58, ['item_idol_of_screeauk'] = 12.58, ['item_metamorphic_mandible'] = 12.58, ['item_rattlecage'] = 12.58},
+           [5] = {['item_fallen_sky'] = 31.67, ['item_spider_legs'] = 15.65, ['item_minotaur_horn'] = 15.38, ['item_demonicon'] = 14.39, ['item_desolator_2'] = 11.84, ['item_divine_regalia'] = 0.94, ['item_dezun_bloodrite'] = 4.93, ['item_riftshadow_prism'] = 5.20},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 25.98, ['item_enhancement_brawny'] = 24.61, ['item_enhancement_quickened'] = 21.35, ['item_enhancement_tough'] = 15.99, ['item_enhancement_alert'] = 12.06},
@@ -917,11 +933,11 @@ local heroList = {
     },
     ['npc_dota_hero_marci'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 24.14, ['item_chipped_vest'] = 23.93, ['item_spark_of_courage'] = 19.95, ['item_sisters_shroud'] = 16.27, ['item_kobold_cup'] = 5.97, ['item_rippers_lash'] = 3.59, ['item_occult_bracelet'] = 3.27, ['item_polliwog_charm'] = 2.88},
-           [2] = {['item_misericorde'] = 43.83, ['item_poor_mans_shield'] = 21.86, ['item_essence_ring'] = 11.06, ['item_searing_signet'] = 9.41, ['item_mana_draught'] = 8.14, ['item_pogo_stick'] = 5.7},
-           [3] = {['item_gunpowder_gauntlets'] = 61.14, ['item_gale_guard'] = 23.44, ['item_jidi_pollen_bag'] = 7.95, ['item_psychic_headband'] = 4.75, ['item_whisper_of_the_dread'] = 2.73},
-           [4] = {['item_giant_maul'] = 47.59, ['item_pyrrhic_cloak'] = 17.31, ['item_magnifying_monocle'] = 11.48, ['item_outworld_staff'] = 10.11, ['item_crippling_crossbow'] = 7.32, ['item_dezun_bloodrite'] = 6.19},
-           [5] = {['item_helm_of_the_undying'] = 30.45, ['item_desolator_2'] = 28.35, ['item_fallen_sky'] = 11.29, ['item_minotaur_horn'] = 9.88, ['item_unrelenting_eye'] = 7.96, ['item_demonicon'] = 6.37, ['item_spider_legs'] = 4.33, ['item_divine_regalia'] = 1.38},
+           [1] = {['item_dormant_curio'] = 34.09, ['item_chipped_vest'] = 33.79, ['item_kobold_cup'] = 8.43, ['item_occult_bracelet'] = 4.62, ['item_polliwog_charm'] = 4.07, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 36.97, ['item_essence_ring'] = 18.71, ['item_searing_signet'] = 15.92, ['item_mana_draught'] = 13.77, ['item_pogo_stick'] = 9.64, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 76.05, ['item_jidi_pollen_bag'] = 9.89, ['item_psychic_headband'] = 5.91, ['item_whisper_of_the_dread'] = 3.40, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 67.38, ['item_crippling_crossbow'] = 10.36, ['item_flayers_bota'] = 5.56, ['item_idol_of_screeauk'] = 5.56, ['item_metamorphic_mandible'] = 5.56, ['item_rattlecage'] = 5.56},
+           [5] = {['item_desolator_2'] = 41.24, ['item_fallen_sky'] = 16.42, ['item_minotaur_horn'] = 14.37, ['item_demonicon'] = 9.27, ['item_spider_legs'] = 6.30, ['item_divine_regalia'] = 2.01, ['item_dezun_bloodrite'] = 5.06, ['item_riftshadow_prism'] = 5.34},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_tough'] = 33.91, ['item_enhancement_alert'] = 21.14, ['item_enhancement_brawny'] = 20.53, ['item_enhancement_quickened'] = 12.79, ['item_enhancement_mystical'] = 11.63},
@@ -933,11 +949,11 @@ local heroList = {
     },
     ['npc_dota_hero_mars'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 46.39, ['item_dormant_curio'] = 17.34, ['item_spark_of_courage'] = 12.69, ['item_sisters_shroud'] = 10.86, ['item_occult_bracelet'] = 4.35, ['item_polliwog_charm'] = 3.76, ['item_kobold_cup'] = 3.34, ['item_rippers_lash'] = 1.26},
-           [2] = {['item_poor_mans_shield'] = 27.76, ['item_searing_signet'] = 18.04, ['item_essence_ring'] = 16.34, ['item_misericorde'] = 14.94, ['item_mana_draught'] = 14.8, ['item_pogo_stick'] = 8.12},
-           [3] = {['item_gunpowder_gauntlets'] = 44.06, ['item_gale_guard'] = 32.14, ['item_jidi_pollen_bag'] = 11.24, ['item_psychic_headband'] = 6.29, ['item_whisper_of_the_dread'] = 6.27},
-           [4] = {['item_giant_maul'] = 31.31, ['item_pyrrhic_cloak'] = 23.59, ['item_dezun_bloodrite'] = 20.41, ['item_outworld_staff'] = 12.2, ['item_magnifying_monocle'] = 9.39, ['item_crippling_crossbow'] = 3.09},
-           [5] = {['item_helm_of_the_undying'] = 25.38, ['item_desolator_2'] = 21.51, ['item_fallen_sky'] = 17.46, ['item_minotaur_horn'] = 12.01, ['item_unrelenting_eye'] = 8.96, ['item_demonicon'] = 7.79, ['item_spider_legs'] = 5.67, ['item_divine_regalia'] = 1.22},
+           [1] = {['item_chipped_vest'] = 52.45, ['item_dormant_curio'] = 19.60, ['item_occult_bracelet'] = 4.92, ['item_polliwog_charm'] = 4.25, ['item_kobold_cup'] = 3.78, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 31.00, ['item_searing_signet'] = 20.15, ['item_essence_ring'] = 18.25, ['item_mana_draught'] = 16.53, ['item_pogo_stick'] = 9.07, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 61.84, ['item_jidi_pollen_bag'] = 15.77, ['item_psychic_headband'] = 8.83, ['item_whisper_of_the_dread'] = 8.80, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 62.01, ['item_crippling_crossbow'] = 6.12, ['item_flayers_bota'] = 7.97, ['item_idol_of_screeauk'] = 7.97, ['item_metamorphic_mandible'] = 7.97, ['item_rattlecage'] = 7.97},
+           [5] = {['item_desolator_2'] = 29.33, ['item_fallen_sky'] = 23.81, ['item_minotaur_horn'] = 16.38, ['item_demonicon'] = 10.62, ['item_spider_legs'] = 7.73, ['item_divine_regalia'] = 1.66, ['item_dezun_bloodrite'] = 5.09, ['item_riftshadow_prism'] = 5.38},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 33.54, ['item_enhancement_tough'] = 28.83, ['item_enhancement_mystical'] = 20.17, ['item_enhancement_quickened'] = 13.23, ['item_enhancement_alert'] = 4.23},
@@ -949,11 +965,11 @@ local heroList = {
     },
     ['npc_dota_hero_medusa'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 45.64, ['item_occult_bracelet'] = 18.67, ['item_spark_of_courage'] = 12.93, ['item_sisters_shroud'] = 9.74, ['item_chipped_vest'] = 9.17, ['item_kobold_cup'] = 1.86, ['item_rippers_lash'] = 1.33, ['item_polliwog_charm'] = 0.66},
-           [2] = {['item_mana_draught'] = 36.37, ['item_misericorde'] = 34.98, ['item_searing_signet'] = 17.09, ['item_poor_mans_shield'] = 7.25, ['item_pogo_stick'] = 3.58, ['item_essence_ring'] = 0.73},
-           [3] = {['item_gunpowder_gauntlets'] = 60.26, ['item_gale_guard'] = 17.59, ['item_psychic_headband'] = 11.42, ['item_whisper_of_the_dread'] = 7.07, ['item_jidi_pollen_bag'] = 3.66},
-           [4] = {['item_giant_maul'] = 43.36, ['item_magnifying_monocle'] = 23.47, ['item_crippling_crossbow'] = 13.63, ['item_outworld_staff'] = 8.09, ['item_pyrrhic_cloak'] = 7.19, ['item_dezun_bloodrite'] = 4.26},
-           [5] = {['item_desolator_2'] = 36.58, ['item_helm_of_the_undying'] = 23.44, ['item_minotaur_horn'] = 9.51, ['item_divine_regalia'] = 7.19, ['item_fallen_sky'] = 6.97, ['item_unrelenting_eye'] = 6.64, ['item_spider_legs'] = 6.25, ['item_demonicon'] = 3.42},
+           [1] = {['item_dormant_curio'] = 51.04, ['item_occult_bracelet'] = 20.88, ['item_chipped_vest'] = 10.26, ['item_kobold_cup'] = 2.08, ['item_polliwog_charm'] = 0.74, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_mana_draught'] = 53.14, ['item_searing_signet'] = 24.97, ['item_poor_mans_shield'] = 10.59, ['item_pogo_stick'] = 5.23, ['item_essence_ring'] = 1.07, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 69.64, ['item_psychic_headband'] = 13.20, ['item_whisper_of_the_dread'] = 8.17, ['item_jidi_pollen_bag'] = 4.23, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 59.73, ['item_crippling_crossbow'] = 18.78, ['item_flayers_bota'] = 5.37, ['item_idol_of_screeauk'] = 5.37, ['item_metamorphic_mandible'] = 5.37, ['item_rattlecage'] = 5.37},
+           [5] = {['item_desolator_2'] = 47.03, ['item_minotaur_horn'] = 12.23, ['item_divine_regalia'] = 9.24, ['item_fallen_sky'] = 8.96, ['item_spider_legs'] = 8.03, ['item_demonicon'] = 4.40, ['item_dezun_bloodrite'] = 4.92, ['item_riftshadow_prism'] = 5.19},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 39.07, ['item_enhancement_mystical'] = 24.89, ['item_enhancement_quickened'] = 23.54, ['item_enhancement_tough'] = 10.86, ['item_enhancement_brawny'] = 1.63},
@@ -965,11 +981,11 @@ local heroList = {
     },
     ['npc_dota_hero_meepo'] = {
        ['neutral'] = {
-           [1] = {['item_rippers_lash'] = 23.36, ['item_dormant_curio'] = 22.02, ['item_spark_of_courage'] = 15.05, ['item_chipped_vest'] = 13.29, ['item_kobold_cup'] = 11.79, ['item_sisters_shroud'] = 8.14, ['item_occult_bracelet'] = 4.47, ['item_polliwog_charm'] = 1.88},
-           [2] = {['item_misericorde'] = 46.7, ['item_poor_mans_shield'] = 25.65, ['item_searing_signet'] = 16, ['item_essence_ring'] = 4.45, ['item_pogo_stick'] = 3.7, ['item_mana_draught'] = 3.5},
-           [3] = {['item_gunpowder_gauntlets'] = 66.64, ['item_gale_guard'] = 13.32, ['item_jidi_pollen_bag'] = 10.08, ['item_whisper_of_the_dread'] = 7.19, ['item_psychic_headband'] = 2.77},
-           [4] = {['item_giant_maul'] = 56.47, ['item_pyrrhic_cloak'] = 17.51, ['item_crippling_crossbow'] = 7.25, ['item_dezun_bloodrite'] = 7.24, ['item_magnifying_monocle'] = 6.05, ['item_outworld_staff'] = 5.47},
-           [5] = {['item_desolator_2'] = 36.58, ['item_helm_of_the_undying'] = 28.89, ['item_unrelenting_eye'] = 9.58, ['item_fallen_sky'] = 7.66, ['item_minotaur_horn'] = 7.58, ['item_demonicon'] = 5.37, ['item_spider_legs'] = 2.58, ['item_divine_regalia'] = 1.75},
+           [1] = {['item_dormant_curio'] = 35.02, ['item_chipped_vest'] = 21.13, ['item_kobold_cup'] = 18.75, ['item_occult_bracelet'] = 7.11, ['item_polliwog_charm'] = 2.99, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 45.72, ['item_searing_signet'] = 28.52, ['item_essence_ring'] = 7.93, ['item_pogo_stick'] = 6.59, ['item_mana_draught'] = 6.24, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 73.22, ['item_jidi_pollen_bag'] = 11.08, ['item_whisper_of_the_dread'] = 7.90, ['item_psychic_headband'] = 3.04, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 68.88, ['item_crippling_crossbow'] = 8.84, ['item_flayers_bota'] = 5.57, ['item_idol_of_screeauk'] = 5.57, ['item_metamorphic_mandible'] = 5.57, ['item_rattlecage'] = 5.57},
+           [5] = {['item_desolator_2'] = 53.14, ['item_fallen_sky'] = 11.13, ['item_minotaur_horn'] = 11.01, ['item_demonicon'] = 7.80, ['item_spider_legs'] = 3.75, ['item_divine_regalia'] = 2.54, ['item_dezun_bloodrite'] = 5.16, ['item_riftshadow_prism'] = 5.46},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 43.73, ['item_enhancement_tough'] = 24.19, ['item_enhancement_brawny'] = 18.7, ['item_enhancement_quickened'] = 7.59, ['item_enhancement_mystical'] = 5.8},
@@ -981,11 +997,11 @@ local heroList = {
     },
     ['npc_dota_hero_mirana'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 28.57, ['item_sisters_shroud'] = 22.15, ['item_spark_of_courage'] = 14.3, ['item_kobold_cup'] = 9.81, ['item_chipped_vest'] = 7.98, ['item_polliwog_charm'] = 7.35, ['item_occult_bracelet'] = 7.11, ['item_rippers_lash'] = 2.73},
-           [2] = {['item_searing_signet'] = 39.38, ['item_misericorde'] = 22.64, ['item_essence_ring'] = 11.9, ['item_mana_draught'] = 9.94, ['item_poor_mans_shield'] = 9.58, ['item_pogo_stick'] = 6.56},
-           [3] = {['item_gunpowder_gauntlets'] = 32.99, ['item_gale_guard'] = 23.93, ['item_whisper_of_the_dread'] = 21.86, ['item_psychic_headband'] = 14.3, ['item_jidi_pollen_bag'] = 6.92},
-           [4] = {['item_giant_maul'] = 31.4, ['item_magnifying_monocle'] = 23.95, ['item_crippling_crossbow'] = 15.9, ['item_outworld_staff'] = 14.12, ['item_dezun_bloodrite'] = 9.8, ['item_pyrrhic_cloak'] = 4.83},
-           [5] = {['item_desolator_2'] = 27.49, ['item_helm_of_the_undying'] = 21.13, ['item_demonicon'] = 14.84, ['item_fallen_sky'] = 10.84, ['item_minotaur_horn'] = 8.21, ['item_unrelenting_eye'] = 8.02, ['item_spider_legs'] = 6.33, ['item_divine_regalia'] = 3.15},
+           [1] = {['item_dormant_curio'] = 39.93, ['item_kobold_cup'] = 13.71, ['item_chipped_vest'] = 11.15, ['item_polliwog_charm'] = 10.27, ['item_occult_bracelet'] = 9.94, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 48.36, ['item_essence_ring'] = 14.61, ['item_mana_draught'] = 12.21, ['item_poor_mans_shield'] = 11.76, ['item_pogo_stick'] = 8.06, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 41.30, ['item_whisper_of_the_dread'] = 27.37, ['item_psychic_headband'] = 17.90, ['item_jidi_pollen_bag'] = 8.66, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 50.36, ['item_crippling_crossbow'] = 25.50, ['item_flayers_bota'] = 6.04, ['item_idol_of_screeauk'] = 6.04, ['item_metamorphic_mandible'] = 6.04, ['item_rattlecage'] = 6.04},
+           [5] = {['item_desolator_2'] = 34.81, ['item_demonicon'] = 18.79, ['item_fallen_sky'] = 13.73, ['item_minotaur_horn'] = 10.40, ['item_spider_legs'] = 8.02, ['item_divine_regalia'] = 3.99, ['item_dezun_bloodrite'] = 4.99, ['item_riftshadow_prism'] = 5.27},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 32, ['item_enhancement_quickened'] = 20.34, ['item_enhancement_mystical'] = 16.95, ['item_enhancement_tough'] = 15.59, ['item_enhancement_brawny'] = 15.12},
@@ -997,11 +1013,11 @@ local heroList = {
     },
     ['npc_dota_hero_morphling'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 35.86, ['item_spark_of_courage'] = 26.44, ['item_sisters_shroud'] = 13.08, ['item_chipped_vest'] = 10.53, ['item_occult_bracelet'] = 6.9, ['item_polliwog_charm'] = 3.11, ['item_rippers_lash'] = 2.81, ['item_kobold_cup'] = 1.26},
-           [2] = {['item_misericorde'] = 50.17, ['item_poor_mans_shield'] = 16.8, ['item_mana_draught'] = 11.52, ['item_searing_signet'] = 10.83, ['item_essence_ring'] = 7.57, ['item_pogo_stick'] = 3.11},
-           [3] = {['item_gunpowder_gauntlets'] = 66.28, ['item_gale_guard'] = 19.39, ['item_whisper_of_the_dread'] = 6.65, ['item_psychic_headband'] = 4.14, ['item_jidi_pollen_bag'] = 3.55},
-           [4] = {['item_giant_maul'] = 49.36, ['item_magnifying_monocle'] = 19.87, ['item_crippling_crossbow'] = 12.51, ['item_outworld_staff'] = 10.32, ['item_pyrrhic_cloak'] = 5.61, ['item_dezun_bloodrite'] = 2.33},
-           [5] = {['item_desolator_2'] = 33.27, ['item_helm_of_the_undying'] = 28.27, ['item_minotaur_horn'] = 11.07, ['item_fallen_sky'] = 8.37, ['item_unrelenting_eye'] = 7.02, ['item_spider_legs'] = 4.56, ['item_divine_regalia'] = 4.51, ['item_demonicon'] = 2.93},
+           [1] = {['item_dormant_curio'] = 52.86, ['item_chipped_vest'] = 15.52, ['item_occult_bracelet'] = 10.17, ['item_polliwog_charm'] = 4.58, ['item_kobold_cup'] = 1.86, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 32.03, ['item_mana_draught'] = 21.96, ['item_searing_signet'] = 20.65, ['item_essence_ring'] = 14.43, ['item_pogo_stick'] = 5.93, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 78.30, ['item_whisper_of_the_dread'] = 7.86, ['item_psychic_headband'] = 4.89, ['item_jidi_pollen_bag'] = 4.19, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 63.22, ['item_crippling_crossbow'] = 16.02, ['item_flayers_bota'] = 5.19, ['item_idol_of_screeauk'] = 5.19, ['item_metamorphic_mandible'] = 5.19, ['item_rattlecage'] = 5.19},
+           [5] = {['item_desolator_2'] = 46.16, ['item_minotaur_horn'] = 15.36, ['item_fallen_sky'] = 11.61, ['item_spider_legs'] = 6.33, ['item_divine_regalia'] = 6.26, ['item_demonicon'] = 4.06, ['item_dezun_bloodrite'] = 4.98, ['item_riftshadow_prism'] = 5.25},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 49.92, ['item_enhancement_tough'] = 20.67, ['item_enhancement_brawny'] = 11.44, ['item_enhancement_mystical'] = 10.74, ['item_enhancement_quickened'] = 7.23},
@@ -1013,11 +1029,11 @@ local heroList = {
     },
     ['npc_dota_hero_muerta'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 44.73, ['item_spark_of_courage'] = 20.7, ['item_sisters_shroud'] = 13.57, ['item_chipped_vest'] = 6.26, ['item_kobold_cup'] = 4.53, ['item_polliwog_charm'] = 3.9, ['item_occult_bracelet'] = 3.88, ['item_rippers_lash'] = 2.44},
-           [2] = {['item_misericorde'] = 41.56, ['item_searing_signet'] = 28.93, ['item_mana_draught'] = 9.14, ['item_poor_mans_shield'] = 7.74, ['item_essence_ring'] = 7.35, ['item_pogo_stick'] = 5.27},
-           [3] = {['item_gunpowder_gauntlets'] = 52.71, ['item_whisper_of_the_dread'] = 18.67, ['item_gale_guard'] = 15.85, ['item_psychic_headband'] = 9.87, ['item_jidi_pollen_bag'] = 2.9},
-           [4] = {['item_giant_maul'] = 42.48, ['item_magnifying_monocle'] = 26.04, ['item_crippling_crossbow'] = 12.54, ['item_outworld_staff'] = 9.14, ['item_dezun_bloodrite'] = 7.06, ['item_pyrrhic_cloak'] = 2.74},
-           [5] = {['item_desolator_2'] = 30.6, ['item_helm_of_the_undying'] = 30.28, ['item_minotaur_horn'] = 9.65, ['item_spider_legs'] = 7.39, ['item_fallen_sky'] = 7.12, ['item_unrelenting_eye'] = 5.96, ['item_demonicon'] = 4.9, ['item_divine_regalia'] = 4.11},
+           [1] = {['item_dormant_curio'] = 60.07, ['item_chipped_vest'] = 8.41, ['item_kobold_cup'] = 6.08, ['item_polliwog_charm'] = 5.24, ['item_occult_bracelet'] = 5.21, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 47.04, ['item_mana_draught'] = 14.86, ['item_poor_mans_shield'] = 12.58, ['item_essence_ring'] = 11.95, ['item_pogo_stick'] = 8.57, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 59.66, ['item_whisper_of_the_dread'] = 21.13, ['item_psychic_headband'] = 11.17, ['item_jidi_pollen_bag'] = 3.28, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 59.79, ['item_crippling_crossbow'] = 17.65, ['item_flayers_bota'] = 5.64, ['item_idol_of_screeauk'] = 5.64, ['item_metamorphic_mandible'] = 5.64, ['item_rattlecage'] = 5.64},
+           [5] = {['item_desolator_2'] = 43.14, ['item_minotaur_horn'] = 13.60, ['item_spider_legs'] = 10.42, ['item_fallen_sky'] = 10.04, ['item_demonicon'] = 6.91, ['item_divine_regalia'] = 5.79, ['item_dezun_bloodrite'] = 4.91, ['item_riftshadow_prism'] = 5.18},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 52.9, ['item_enhancement_tough'] = 16.74, ['item_enhancement_quickened'] = 11.43, ['item_enhancement_mystical'] = 10.49, ['item_enhancement_brawny'] = 8.43},
@@ -1029,11 +1045,11 @@ local heroList = {
     },
     ['npc_dota_hero_monkey_king'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 28.29, ['item_spark_of_courage'] = 22.73, ['item_chipped_vest'] = 17.95, ['item_sisters_shroud'] = 16.01, ['item_occult_bracelet'] = 4.53, ['item_kobold_cup'] = 3.67, ['item_rippers_lash'] = 3.64, ['item_polliwog_charm'] = 3.18},
-           [2] = {['item_misericorde'] = 46.53, ['item_poor_mans_shield'] = 24.18, ['item_searing_signet'] = 9.48, ['item_essence_ring'] = 9.15, ['item_mana_draught'] = 6.7, ['item_pogo_stick'] = 3.95},
-           [3] = {['item_gunpowder_gauntlets'] = 66.7, ['item_gale_guard'] = 21.37, ['item_jidi_pollen_bag'] = 6.18, ['item_whisper_of_the_dread'] = 3.03, ['item_psychic_headband'] = 2.72},
-           [4] = {['item_giant_maul'] = 49.99, ['item_outworld_staff'] = 11.29, ['item_magnifying_monocle'] = 10.83, ['item_dezun_bloodrite'] = 9.5, ['item_crippling_crossbow'] = 9.37, ['item_pyrrhic_cloak'] = 9.01},
-           [5] = {['item_desolator_2'] = 33.88, ['item_helm_of_the_undying'] = 27.09, ['item_minotaur_horn'] = 10.68, ['item_fallen_sky'] = 9.35, ['item_unrelenting_eye'] = 8.46, ['item_demonicon'] = 4.32, ['item_spider_legs'] = 3.73, ['item_divine_regalia'] = 2.48},
+           [1] = {['item_dormant_curio'] = 41.73, ['item_chipped_vest'] = 26.48, ['item_occult_bracelet'] = 6.68, ['item_kobold_cup'] = 5.41, ['item_polliwog_charm'] = 4.69, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 42.97, ['item_searing_signet'] = 16.85, ['item_essence_ring'] = 16.26, ['item_mana_draught'] = 11.91, ['item_pogo_stick'] = 7.02, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 80.79, ['item_jidi_pollen_bag'] = 7.49, ['item_whisper_of_the_dread'] = 3.67, ['item_psychic_headband'] = 3.29, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 64.67, ['item_crippling_crossbow'] = 12.12, ['item_flayers_bota'] = 5.80, ['item_idol_of_screeauk'] = 5.80, ['item_metamorphic_mandible'] = 5.80, ['item_rattlecage'] = 5.80},
+           [5] = {['item_desolator_2'] = 47.10, ['item_minotaur_horn'] = 14.85, ['item_fallen_sky'] = 13.00, ['item_demonicon'] = 6.01, ['item_spider_legs'] = 5.19, ['item_divine_regalia'] = 3.45, ['item_dezun_bloodrite'] = 5.07, ['item_riftshadow_prism'] = 5.35},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 45.72, ['item_enhancement_tough'] = 26.21, ['item_enhancement_brawny'] = 13.08, ['item_enhancement_mystical'] = 7.64, ['item_enhancement_quickened'] = 7.34},
@@ -1045,11 +1061,11 @@ local heroList = {
     },
     ['npc_dota_hero_naga_siren'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 25.8, ['item_chipped_vest'] = 20.42, ['item_sisters_shroud'] = 15.48, ['item_spark_of_courage'] = 13.38, ['item_kobold_cup'] = 9.61, ['item_rippers_lash'] = 5.6, ['item_occult_bracelet'] = 5.19, ['item_polliwog_charm'] = 4.52},
-           [2] = {['item_searing_signet'] = 28.16, ['item_misericorde'] = 26.21, ['item_poor_mans_shield'] = 19.41, ['item_mana_draught'] = 12.46, ['item_essence_ring'] = 7.79, ['item_pogo_stick'] = 5.97},
-           [3] = {['item_gunpowder_gauntlets'] = 46.87, ['item_gale_guard'] = 25.13, ['item_jidi_pollen_bag'] = 10.94, ['item_psychic_headband'] = 10.11, ['item_whisper_of_the_dread'] = 6.95},
-           [4] = {['item_giant_maul'] = 41.63, ['item_magnifying_monocle'] = 18.04, ['item_pyrrhic_cloak'] = 11.72, ['item_outworld_staff'] = 11.04, ['item_crippling_crossbow'] = 8.92, ['item_dezun_bloodrite'] = 8.64},
-           [5] = {['item_desolator_2'] = 29.11, ['item_helm_of_the_undying'] = 20.5, ['item_fallen_sky'] = 11.34, ['item_demonicon'] = 11.18, ['item_unrelenting_eye'] = 9.59, ['item_minotaur_horn'] = 9, ['item_spider_legs'] = 6.32, ['item_divine_regalia'] = 2.96},
+           [1] = {['item_dormant_curio'] = 33.46, ['item_chipped_vest'] = 26.48, ['item_kobold_cup'] = 12.46, ['item_occult_bracelet'] = 6.73, ['item_polliwog_charm'] = 5.86, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 36.25, ['item_poor_mans_shield'] = 24.99, ['item_mana_draught'] = 16.04, ['item_essence_ring'] = 10.03, ['item_pogo_stick'] = 7.69, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 59.62, ['item_jidi_pollen_bag'] = 13.92, ['item_psychic_headband'] = 12.86, ['item_whisper_of_the_dread'] = 8.84, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 63.07, ['item_crippling_crossbow'] = 13.51, ['item_flayers_bota'] = 5.86, ['item_idol_of_screeauk'] = 5.86, ['item_metamorphic_mandible'] = 5.86, ['item_rattlecage'] = 5.86},
+           [5] = {['item_desolator_2'] = 37.28, ['item_fallen_sky'] = 14.52, ['item_demonicon'] = 14.32, ['item_minotaur_horn'] = 11.53, ['item_spider_legs'] = 8.09, ['item_divine_regalia'] = 3.79, ['item_dezun_bloodrite'] = 5.09, ['item_riftshadow_prism'] = 5.38},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 31.1, ['item_enhancement_brawny'] = 19.93, ['item_enhancement_quickened'] = 17.48, ['item_enhancement_tough'] = 16.74, ['item_enhancement_mystical'] = 14.74},
@@ -1061,11 +1077,11 @@ local heroList = {
     },
     ['npc_dota_hero_necrolyte'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 36.08, ['item_dormant_curio'] = 29.88, ['item_sisters_shroud'] = 15.53, ['item_occult_bracelet'] = 5.72, ['item_spark_of_courage'] = 5.25, ['item_kobold_cup'] = 4.01, ['item_polliwog_charm'] = 2.7, ['item_rippers_lash'] = 0.82},
-           [2] = {['item_searing_signet'] = 55.59, ['item_essence_ring'] = 19.16, ['item_poor_mans_shield'] = 14.12, ['item_pogo_stick'] = 5.16, ['item_mana_draught'] = 3.64, ['item_misericorde'] = 2.33},
-           [3] = {['item_whisper_of_the_dread'] = 39.89, ['item_gale_guard'] = 29.94, ['item_jidi_pollen_bag'] = 12.99, ['item_gunpowder_gauntlets'] = 9.02, ['item_psychic_headband'] = 8.16},
-           [4] = {['item_dezun_bloodrite'] = 31.57, ['item_pyrrhic_cloak'] = 20.85, ['item_magnifying_monocle'] = 19.09, ['item_outworld_staff'] = 18.9, ['item_giant_maul'] = 7.46, ['item_crippling_crossbow'] = 2.13},
-           [5] = {['item_helm_of_the_undying'] = 29.75, ['item_fallen_sky'] = 18.66, ['item_minotaur_horn'] = 16.17, ['item_unrelenting_eye'] = 14.66, ['item_demonicon'] = 9.23, ['item_spider_legs'] = 6.6, ['item_desolator_2'] = 3.09, ['item_divine_regalia'] = 1.84},
+           [1] = {['item_chipped_vest'] = 39.12, ['item_dormant_curio'] = 32.40, ['item_occult_bracelet'] = 6.20, ['item_kobold_cup'] = 4.35, ['item_polliwog_charm'] = 2.93, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 54.07, ['item_essence_ring'] = 18.64, ['item_poor_mans_shield'] = 13.73, ['item_pogo_stick'] = 5.02, ['item_mana_draught'] = 3.54, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 54.23, ['item_jidi_pollen_bag'] = 17.66, ['item_gunpowder_gauntlets'] = 12.26, ['item_psychic_headband'] = 11.09, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 28.63, ['item_crippling_crossbow'] = 8.18, ['item_flayers_bota'] = 15.80, ['item_idol_of_screeauk'] = 15.80, ['item_metamorphic_mandible'] = 15.80, ['item_rattlecage'] = 15.80},
+           [5] = {['item_fallen_sky'] = 29.70, ['item_minotaur_horn'] = 25.73, ['item_demonicon'] = 14.69, ['item_spider_legs'] = 10.50, ['item_desolator_2'] = 4.92, ['item_divine_regalia'] = 2.93, ['item_dezun_bloodrite'] = 5.59, ['item_riftshadow_prism'] = 5.94},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 44.21, ['item_enhancement_mystical'] = 25.4, ['item_enhancement_quickened'] = 20.03, ['item_enhancement_tough'] = 8.61, ['item_enhancement_alert'] = 1.75},
@@ -1077,11 +1093,11 @@ local heroList = {
     },
     ['npc_dota_hero_nevermore'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 41.5, ['item_sisters_shroud'] = 18.77, ['item_spark_of_courage'] = 17, ['item_occult_bracelet'] = 7.45, ['item_chipped_vest'] = 6.26, ['item_kobold_cup'] = 4.46, ['item_polliwog_charm'] = 2.47, ['item_rippers_lash'] = 2.08},
-           [2] = {['item_searing_signet'] = 33.05, ['item_misericorde'] = 25.48, ['item_mana_draught'] = 17.68, ['item_pogo_stick'] = 10.62, ['item_poor_mans_shield'] = 6.92, ['item_essence_ring'] = 6.25},
-           [3] = {['item_whisper_of_the_dread'] = 41.67, ['item_gunpowder_gauntlets'] = 31.11, ['item_gale_guard'] = 16.56, ['item_psychic_headband'] = 8.13, ['item_jidi_pollen_bag'] = 2.52},
-           [4] = {['item_giant_maul'] = 31.06, ['item_dezun_bloodrite'] = 23.65, ['item_outworld_staff'] = 17.04, ['item_magnifying_monocle'] = 16.7, ['item_crippling_crossbow'] = 6.79, ['item_pyrrhic_cloak'] = 4.75},
-           [5] = {['item_helm_of_the_undying'] = 27.59, ['item_desolator_2'] = 22.81, ['item_fallen_sky'] = 17.55, ['item_minotaur_horn'] = 9.11, ['item_spider_legs'] = 7.71, ['item_unrelenting_eye'] = 6.56, ['item_demonicon'] = 5.15, ['item_divine_regalia'] = 3.52},
+           [1] = {['item_dormant_curio'] = 56.77, ['item_occult_bracelet'] = 10.19, ['item_chipped_vest'] = 8.56, ['item_kobold_cup'] = 6.10, ['item_polliwog_charm'] = 3.38, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 42.13, ['item_mana_draught'] = 22.54, ['item_pogo_stick'] = 13.54, ['item_poor_mans_shield'] = 8.82, ['item_essence_ring'] = 7.97, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 47.57, ['item_gunpowder_gauntlets'] = 35.51, ['item_psychic_headband'] = 9.28, ['item_jidi_pollen_bag'] = 2.88, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 55.39, ['item_crippling_crossbow'] = 12.11, ['item_flayers_bota'] = 8.12, ['item_idol_of_screeauk'] = 8.12, ['item_metamorphic_mandible'] = 8.12, ['item_rattlecage'] = 8.12},
+           [5] = {['item_desolator_2'] = 31.12, ['item_fallen_sky'] = 23.95, ['item_minotaur_horn'] = 12.43, ['item_spider_legs'] = 10.52, ['item_demonicon'] = 7.03, ['item_divine_regalia'] = 4.80, ['item_dezun_bloodrite'] = 4.94, ['item_riftshadow_prism'] = 5.21},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 30.01, ['item_enhancement_quickened'] = 26.72, ['item_enhancement_mystical'] = 19.26, ['item_enhancement_tough'] = 14.33, ['item_enhancement_brawny'] = 9.68},
@@ -1093,11 +1109,11 @@ local heroList = {
     },
     ['npc_dota_hero_night_stalker'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 37.21, ['item_dormant_curio'] = 20.31, ['item_spark_of_courage'] = 18.6, ['item_sisters_shroud'] = 11.3, ['item_kobold_cup'] = 3.83, ['item_occult_bracelet'] = 3.28, ['item_polliwog_charm'] = 3, ['item_rippers_lash'] = 2.47},
-           [2] = {['item_misericorde'] = 40.63, ['item_poor_mans_shield'] = 27.76, ['item_searing_signet'] = 12.9, ['item_essence_ring'] = 10.81, ['item_mana_draught'] = 4.9, ['item_pogo_stick'] = 3},
-           [3] = {['item_gunpowder_gauntlets'] = 59.43, ['item_gale_guard'] = 26.42, ['item_jidi_pollen_bag'] = 9.72, ['item_whisper_of_the_dread'] = 2.76, ['item_psychic_headband'] = 1.66},
-           [4] = {['item_giant_maul'] = 48.15, ['item_pyrrhic_cloak'] = 21.75, ['item_crippling_crossbow'] = 9.22, ['item_dezun_bloodrite'] = 7.62, ['item_magnifying_monocle'] = 6.63, ['item_outworld_staff'] = 6.63},
-           [5] = {['item_desolator_2'] = 28.51, ['item_helm_of_the_undying'] = 27.2, ['item_minotaur_horn'] = 11.82, ['item_unrelenting_eye'] = 11.45, ['item_fallen_sky'] = 10.05, ['item_demonicon'] = 5.99, ['item_spider_legs'] = 3.48, ['item_divine_regalia'] = 1.5},
+           [1] = {['item_chipped_vest'] = 46.77, ['item_dormant_curio'] = 25.53, ['item_kobold_cup'] = 4.81, ['item_occult_bracelet'] = 4.12, ['item_polliwog_charm'] = 3.77, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 44.42, ['item_searing_signet'] = 20.64, ['item_essence_ring'] = 17.30, ['item_mana_draught'] = 7.84, ['item_pogo_stick'] = 4.80, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 76.93, ['item_jidi_pollen_bag'] = 12.58, ['item_whisper_of_the_dread'] = 3.57, ['item_psychic_headband'] = 2.15, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 64.91, ['item_crippling_crossbow'] = 12.43, ['item_flayers_bota'] = 5.66, ['item_idol_of_screeauk'] = 5.66, ['item_metamorphic_mandible'] = 5.66, ['item_rattlecage'] = 5.66},
+           [5] = {['item_desolator_2'] = 41.41, ['item_minotaur_horn'] = 17.17, ['item_fallen_sky'] = 14.60, ['item_demonicon'] = 8.70, ['item_spider_legs'] = 5.05, ['item_divine_regalia'] = 2.18, ['item_dezun_bloodrite'] = 5.29, ['item_riftshadow_prism'] = 5.60},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 36.17, ['item_enhancement_tough'] = 25.94, ['item_enhancement_brawny'] = 20.84, ['item_enhancement_quickened'] = 9.36, ['item_enhancement_mystical'] = 7.68},
@@ -1109,11 +1125,11 @@ local heroList = {
     },
     ['npc_dota_hero_nyx_assassin'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 42.39, ['item_sisters_shroud'] = 16.18, ['item_chipped_vest'] = 14.26, ['item_spark_of_courage'] = 9.84, ['item_occult_bracelet'] = 5.95, ['item_kobold_cup'] = 5.56, ['item_polliwog_charm'] = 3.87, ['item_rippers_lash'] = 1.95},
-           [2] = {['item_searing_signet'] = 49.27, ['item_mana_draught'] = 15.58, ['item_misericorde'] = 13.05, ['item_essence_ring'] = 8.5, ['item_poor_mans_shield'] = 8.33, ['item_pogo_stick'] = 5.27},
-           [3] = {['item_whisper_of_the_dread'] = 39.31, ['item_gunpowder_gauntlets'] = 34.45, ['item_gale_guard'] = 12.1, ['item_psychic_headband'] = 9.35, ['item_jidi_pollen_bag'] = 4.79},
-           [4] = {['item_giant_maul'] = 32.2, ['item_magnifying_monocle'] = 26.53, ['item_dezun_bloodrite'] = 15.44, ['item_outworld_staff'] = 12.44, ['item_pyrrhic_cloak'] = 8.9, ['item_crippling_crossbow'] = 4.5},
-           [5] = {['item_helm_of_the_undying'] = 23.59, ['item_fallen_sky'] = 18.34, ['item_demonicon'] = 16.35, ['item_desolator_2'] = 13.47, ['item_minotaur_horn'] = 10.73, ['item_unrelenting_eye'] = 7.84, ['item_spider_legs'] = 6.21, ['item_divine_regalia'] = 3.47},
+           [1] = {['item_dormant_curio'] = 50.02, ['item_chipped_vest'] = 16.83, ['item_occult_bracelet'] = 7.02, ['item_kobold_cup'] = 6.56, ['item_polliwog_charm'] = 4.57, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 53.83, ['item_mana_draught'] = 17.02, ['item_essence_ring'] = 9.29, ['item_poor_mans_shield'] = 9.10, ['item_pogo_stick'] = 5.76, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 42.59, ['item_gunpowder_gauntlets'] = 37.33, ['item_psychic_headband'] = 10.13, ['item_jidi_pollen_bag'] = 5.19, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 62.81, ['item_crippling_crossbow'] = 8.78, ['item_flayers_bota'] = 7.10, ['item_idol_of_screeauk'] = 7.10, ['item_metamorphic_mandible'] = 7.10, ['item_rattlecage'] = 7.10},
+           [5] = {['item_fallen_sky'] = 24.00, ['item_demonicon'] = 21.39, ['item_desolator_2'] = 17.63, ['item_minotaur_horn'] = 14.04, ['item_spider_legs'] = 8.13, ['item_divine_regalia'] = 4.54, ['item_dezun_bloodrite'] = 5.00, ['item_riftshadow_prism'] = 5.28},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 36.33, ['item_enhancement_quickened'] = 28.03, ['item_enhancement_tough'] = 14.56, ['item_enhancement_brawny'] = 13.92, ['item_enhancement_alert'] = 7.16},
@@ -1125,11 +1141,11 @@ local heroList = {
     },
     ['npc_dota_hero_obsidian_destroyer'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 44.33, ['item_sisters_shroud'] = 22.54, ['item_spark_of_courage'] = 10.32, ['item_chipped_vest'] = 5.89, ['item_occult_bracelet'] = 5.34, ['item_kobold_cup'] = 5.23, ['item_polliwog_charm'] = 4.94, ['item_rippers_lash'] = 1.43},
-           [2] = {['item_searing_signet'] = 31.36, ['item_misericorde'] = 28.12, ['item_essence_ring'] = 21.15, ['item_pogo_stick'] = 9.83, ['item_poor_mans_shield'] = 7.41, ['item_mana_draught'] = 2.12},
-           [3] = {['item_gunpowder_gauntlets'] = 36.54, ['item_whisper_of_the_dread'] = 31.05, ['item_gale_guard'] = 17.61, ['item_psychic_headband'] = 13.18, ['item_jidi_pollen_bag'] = 1.62},
-           [4] = {['item_giant_maul'] = 32.46, ['item_magnifying_monocle'] = 30.83, ['item_outworld_staff'] = 13.63, ['item_dezun_bloodrite'] = 9.6, ['item_crippling_crossbow'] = 9.34, ['item_pyrrhic_cloak'] = 4.14},
-           [5] = {['item_helm_of_the_undying'] = 31.35, ['item_desolator_2'] = 18.53, ['item_fallen_sky'] = 12.43, ['item_minotaur_horn'] = 10.63, ['item_unrelenting_eye'] = 8.29, ['item_spider_legs'] = 7.5, ['item_demonicon'] = 6.71, ['item_divine_regalia'] = 4.56},
+           [1] = {['item_dormant_curio'] = 57.33, ['item_chipped_vest'] = 7.62, ['item_occult_bracelet'] = 6.91, ['item_kobold_cup'] = 6.76, ['item_polliwog_charm'] = 6.39, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 41.45, ['item_essence_ring'] = 27.96, ['item_pogo_stick'] = 12.99, ['item_poor_mans_shield'] = 9.79, ['item_mana_draught'] = 2.80, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 42.24, ['item_whisper_of_the_dread'] = 35.89, ['item_psychic_headband'] = 15.24, ['item_jidi_pollen_bag'] = 1.87, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 58.56, ['item_crippling_crossbow'] = 16.85, ['item_flayers_bota'] = 6.15, ['item_idol_of_screeauk'] = 6.15, ['item_metamorphic_mandible'] = 6.15, ['item_rattlecage'] = 6.15},
+           [5] = {['item_desolator_2'] = 27.48, ['item_fallen_sky'] = 18.44, ['item_minotaur_horn'] = 15.77, ['item_spider_legs'] = 11.12, ['item_demonicon'] = 9.95, ['item_divine_regalia'] = 6.76, ['item_dezun_bloodrite'] = 5.09, ['item_riftshadow_prism'] = 5.38},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 48.89, ['item_enhancement_quickened'] = 27.14, ['item_enhancement_mystical'] = 9.56, ['item_enhancement_brawny'] = 7.99, ['item_enhancement_tough'] = 6.42},
@@ -1141,11 +1157,11 @@ local heroList = {
     },
     ['npc_dota_hero_ogre_magi'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 28.56, ['item_dormant_curio'] = 28.16, ['item_sisters_shroud'] = 14.59, ['item_kobold_cup'] = 7.97, ['item_spark_of_courage'] = 7.28, ['item_occult_bracelet'] = 6.34, ['item_polliwog_charm'] = 5.66, ['item_rippers_lash'] = 1.45},
-           [2] = {['item_searing_signet'] = 54.85, ['item_poor_mans_shield'] = 14.44, ['item_mana_draught'] = 11.55, ['item_essence_ring'] = 9.33, ['item_pogo_stick'] = 5.91, ['item_misericorde'] = 3.91},
-           [3] = {['item_whisper_of_the_dread'] = 31.04, ['item_gale_guard'] = 22.86, ['item_gunpowder_gauntlets'] = 22.73, ['item_psychic_headband'] = 15.99, ['item_jidi_pollen_bag'] = 7.38},
-           [4] = {['item_magnifying_monocle'] = 33.74, ['item_giant_maul'] = 20.82, ['item_dezun_bloodrite'] = 15.42, ['item_pyrrhic_cloak'] = 15.28, ['item_outworld_staff'] = 11.46, ['item_crippling_crossbow'] = 3.28},
-           [5] = {['item_helm_of_the_undying'] = 28.85, ['item_demonicon'] = 14.53, ['item_fallen_sky'] = 14.36, ['item_minotaur_horn'] = 12.47, ['item_unrelenting_eye'] = 11.51, ['item_desolator_2'] = 9.83, ['item_spider_legs'] = 7.05, ['item_divine_regalia'] = 1.39},
+           [1] = {['item_chipped_vest'] = 31.66, ['item_dormant_curio'] = 31.21, ['item_kobold_cup'] = 8.83, ['item_occult_bracelet'] = 7.03, ['item_polliwog_charm'] = 6.27, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 54.23, ['item_poor_mans_shield'] = 14.28, ['item_mana_draught'] = 11.42, ['item_essence_ring'] = 9.23, ['item_pogo_stick'] = 5.84, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 38.32, ['item_gunpowder_gauntlets'] = 28.06, ['item_psychic_headband'] = 19.74, ['item_jidi_pollen_bag'] = 9.11, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 58.06, ['item_crippling_crossbow'] = 9.15, ['item_flayers_bota'] = 8.20, ['item_idol_of_screeauk'] = 8.20, ['item_metamorphic_mandible'] = 8.20, ['item_rattlecage'] = 8.20},
+           [5] = {['item_demonicon'] = 21.70, ['item_fallen_sky'] = 21.45, ['item_minotaur_horn'] = 18.62, ['item_desolator_2'] = 14.68, ['item_spider_legs'] = 10.53, ['item_divine_regalia'] = 2.08, ['item_dezun_bloodrite'] = 5.31, ['item_riftshadow_prism'] = 5.63},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 32.81, ['item_enhancement_brawny'] = 30.89, ['item_enhancement_quickened'] = 18.28, ['item_enhancement_tough'] = 11.17, ['item_enhancement_alert'] = 6.84},
@@ -1157,11 +1173,11 @@ local heroList = {
     },
     ['npc_dota_hero_omniknight'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 33.9, ['item_dormant_curio'] = 25.95, ['item_sisters_shroud'] = 11.77, ['item_spark_of_courage'] = 10.23, ['item_kobold_cup'] = 8.54, ['item_polliwog_charm'] = 4.42, ['item_occult_bracelet'] = 4.05, ['item_rippers_lash'] = 1.14},
-           [2] = {['item_poor_mans_shield'] = 29.95, ['item_misericorde'] = 19.43, ['item_mana_draught'] = 15.82, ['item_essence_ring'] = 14.33, ['item_searing_signet'] = 12.33, ['item_pogo_stick'] = 8.15},
-           [3] = {['item_gunpowder_gauntlets'] = 49.11, ['item_gale_guard'] = 26.98, ['item_jidi_pollen_bag'] = 9.78, ['item_whisper_of_the_dread'] = 7.65, ['item_psychic_headband'] = 6.49},
-           [4] = {['item_giant_maul'] = 41.11, ['item_pyrrhic_cloak'] = 21.75, ['item_magnifying_monocle'] = 11.93, ['item_dezun_bloodrite'] = 10.87, ['item_outworld_staff'] = 8.94, ['item_crippling_crossbow'] = 5.4},
-           [5] = {['item_helm_of_the_undying'] = 27.79, ['item_desolator_2'] = 16.37, ['item_fallen_sky'] = 16.02, ['item_minotaur_horn'] = 12.65, ['item_unrelenting_eye'] = 10.35, ['item_demonicon'] = 10.08, ['item_spider_legs'] = 5.56, ['item_divine_regalia'] = 1.17},
+           [1] = {['item_chipped_vest'] = 37.49, ['item_dormant_curio'] = 28.70, ['item_kobold_cup'] = 9.44, ['item_polliwog_charm'] = 4.89, ['item_occult_bracelet'] = 4.48, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 35.31, ['item_mana_draught'] = 18.65, ['item_essence_ring'] = 16.89, ['item_searing_signet'] = 14.54, ['item_pogo_stick'] = 9.61, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 64.04, ['item_jidi_pollen_bag'] = 12.75, ['item_whisper_of_the_dread'] = 9.98, ['item_psychic_headband'] = 8.46, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 66.58, ['item_crippling_crossbow'] = 8.75, ['item_flayers_bota'] = 6.17, ['item_idol_of_screeauk'] = 6.17, ['item_metamorphic_mandible'] = 6.17, ['item_rattlecage'] = 6.17},
+           [5] = {['item_desolator_2'] = 23.63, ['item_fallen_sky'] = 23.12, ['item_minotaur_horn'] = 18.26, ['item_demonicon'] = 14.55, ['item_spider_legs'] = 8.03, ['item_divine_regalia'] = 1.69, ['item_dezun_bloodrite'] = 5.21, ['item_riftshadow_prism'] = 5.52},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 27.15, ['item_enhancement_tough'] = 25.77, ['item_enhancement_mystical'] = 18.33, ['item_enhancement_quickened'] = 16.64, ['item_enhancement_alert'] = 12.11},
@@ -1173,11 +1189,11 @@ local heroList = {
     },
     ['npc_dota_hero_oracle'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 40.99, ['item_sisters_shroud'] = 23.55, ['item_kobold_cup'] = 13.83, ['item_polliwog_charm'] = 10.66, ['item_occult_bracelet'] = 5.35, ['item_spark_of_courage'] = 2.28, ['item_chipped_vest'] = 2.23, ['item_rippers_lash'] = 1.11},
-           [2] = {['item_searing_signet'] = 37.83, ['item_mana_draught'] = 29.43, ['item_essence_ring'] = 14.62, ['item_pogo_stick'] = 13.14, ['item_poor_mans_shield'] = 4.13, ['item_misericorde'] = 0.85},
-           [3] = {['item_psychic_headband'] = 33.38, ['item_gale_guard'] = 29.55, ['item_whisper_of_the_dread'] = 28.3, ['item_jidi_pollen_bag'] = 5.98, ['item_gunpowder_gauntlets'] = 2.78},
-           [4] = {['item_magnifying_monocle'] = 47.39, ['item_outworld_staff'] = 23.42, ['item_dezun_bloodrite'] = 18.72, ['item_pyrrhic_cloak'] = 4.93, ['item_crippling_crossbow'] = 2.98, ['item_giant_maul'] = 2.57},
-           [5] = {['item_helm_of_the_undying'] = 30.93, ['item_demonicon'] = 22.28, ['item_fallen_sky'] = 17.41, ['item_spider_legs'] = 10.8, ['item_minotaur_horn'] = 9.8, ['item_unrelenting_eye'] = 6.22, ['item_desolator_2'] = 1.58, ['item_divine_regalia'] = 0.97},
+           [1] = {['item_dormant_curio'] = 47.69, ['item_kobold_cup'] = 16.09, ['item_polliwog_charm'] = 12.40, ['item_occult_bracelet'] = 6.22, ['item_chipped_vest'] = 2.59, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 36.25, ['item_mana_draught'] = 28.20, ['item_essence_ring'] = 14.01, ['item_pogo_stick'] = 12.59, ['item_poor_mans_shield'] = 3.96, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_psychic_headband'] = 45.13, ['item_whisper_of_the_dread'] = 38.26, ['item_jidi_pollen_bag'] = 8.09, ['item_gunpowder_gauntlets'] = 3.76, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_crippling_crossbow'] = 19.53, ['item_giant_maul'] = 16.84, ['item_flayers_bota'] = 15.91, ['item_idol_of_screeauk'] = 15.91, ['item_metamorphic_mandible'] = 15.91, ['item_rattlecage'] = 15.91},
+           [5] = {['item_demonicon'] = 31.86, ['item_fallen_sky'] = 24.89, ['item_spider_legs'] = 15.44, ['item_minotaur_horn'] = 14.01, ['item_desolator_2'] = 2.26, ['item_divine_regalia'] = 1.39, ['item_dezun_bloodrite'] = 4.94, ['item_riftshadow_prism'] = 5.21},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 47.17, ['item_enhancement_quickened'] = 32.65, ['item_enhancement_brawny'] = 14.97, ['item_enhancement_tough'] = 2.8, ['item_enhancement_alert'] = 2.41},
@@ -1189,11 +1205,11 @@ local heroList = {
     },
     ['npc_dota_hero_pangolier'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 30.19, ['item_chipped_vest'] = 25.34, ['item_spark_of_courage'] = 14.6, ['item_sisters_shroud'] = 14.24, ['item_occult_bracelet'] = 5.88, ['item_polliwog_charm'] = 3.61, ['item_kobold_cup'] = 3.1, ['item_rippers_lash'] = 3.03},
-           [2] = {['item_misericorde'] = 38.22, ['item_poor_mans_shield'] = 19.41, ['item_mana_draught'] = 13.57, ['item_essence_ring'] = 11.94, ['item_searing_signet'] = 11.53, ['item_pogo_stick'] = 5.33},
-           [3] = {['item_gunpowder_gauntlets'] = 49.36, ['item_gale_guard'] = 30.88, ['item_jidi_pollen_bag'] = 9.12, ['item_whisper_of_the_dread'] = 7.32, ['item_psychic_headband'] = 3.32},
-           [4] = {['item_giant_maul'] = 37.3, ['item_dezun_bloodrite'] = 19.13, ['item_pyrrhic_cloak'] = 16.67, ['item_outworld_staff'] = 13.9, ['item_magnifying_monocle'] = 6.92, ['item_crippling_crossbow'] = 6.09},
-           [5] = {['item_desolator_2'] = 27.35, ['item_helm_of_the_undying'] = 19.97, ['item_fallen_sky'] = 19.37, ['item_minotaur_horn'] = 9.54, ['item_demonicon'] = 8.15, ['item_unrelenting_eye'] = 7.37, ['item_spider_legs'] = 6.16, ['item_divine_regalia'] = 2.1},
+           [1] = {['item_dormant_curio'] = 37.67, ['item_chipped_vest'] = 31.62, ['item_occult_bracelet'] = 7.34, ['item_polliwog_charm'] = 4.50, ['item_kobold_cup'] = 3.87, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 29.85, ['item_mana_draught'] = 20.87, ['item_essence_ring'] = 18.36, ['item_searing_signet'] = 17.73, ['item_pogo_stick'] = 8.20, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 68.01, ['item_jidi_pollen_bag'] = 12.57, ['item_whisper_of_the_dread'] = 10.09, ['item_psychic_headband'] = 4.57, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 61.19, ['item_crippling_crossbow'] = 9.99, ['item_flayers_bota'] = 7.20, ['item_idol_of_screeauk'] = 7.20, ['item_metamorphic_mandible'] = 7.20, ['item_rattlecage'] = 7.20},
+           [5] = {['item_desolator_2'] = 33.81, ['item_fallen_sky'] = 23.95, ['item_minotaur_horn'] = 11.79, ['item_demonicon'] = 10.07, ['item_spider_legs'] = 7.61, ['item_divine_regalia'] = 2.60, ['item_dezun_bloodrite'] = 4.95, ['item_riftshadow_prism'] = 5.22},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_tough'] = 31.87, ['item_enhancement_brawny'] = 24.19, ['item_enhancement_mystical'] = 20.71, ['item_enhancement_quickened'] = 12.76, ['item_enhancement_alert'] = 10.47},
@@ -1205,11 +1221,11 @@ local heroList = {
     },
     ['npc_dota_hero_phantom_lancer'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 26.05, ['item_spark_of_courage'] = 25.29, ['item_chipped_vest'] = 18.77, ['item_sisters_shroud'] = 12.01, ['item_rippers_lash'] = 8.99, ['item_occult_bracelet'] = 4.1, ['item_polliwog_charm'] = 3.07, ['item_kobold_cup'] = 1.73},
-           [2] = {['item_misericorde'] = 54.48, ['item_poor_mans_shield'] = 24.9, ['item_searing_signet'] = 8.13, ['item_essence_ring'] = 5.77, ['item_mana_draught'] = 4.91, ['item_pogo_stick'] = 1.81},
-           [3] = {['item_gunpowder_gauntlets'] = 73.88, ['item_gale_guard'] = 14.58, ['item_jidi_pollen_bag'] = 6.2, ['item_whisper_of_the_dread'] = 3.13, ['item_psychic_headband'] = 2.22},
-           [4] = {['item_giant_maul'] = 56.84, ['item_crippling_crossbow'] = 11.63, ['item_magnifying_monocle'] = 11.27, ['item_pyrrhic_cloak'] = 9.43, ['item_outworld_staff'] = 8.27, ['item_dezun_bloodrite'] = 2.56},
-           [5] = {['item_desolator_2'] = 35.46, ['item_helm_of_the_undying'] = 24.86, ['item_unrelenting_eye'] = 10.43, ['item_minotaur_horn'] = 10.32, ['item_fallen_sky'] = 7.62, ['item_divine_regalia'] = 4.38, ['item_spider_legs'] = 3.97, ['item_demonicon'] = 2.96},
+           [1] = {['item_dormant_curio'] = 41.22, ['item_chipped_vest'] = 29.70, ['item_occult_bracelet'] = 6.49, ['item_polliwog_charm'] = 4.86, ['item_kobold_cup'] = 2.74, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 51.97, ['item_searing_signet'] = 16.97, ['item_essence_ring'] = 12.04, ['item_mana_draught'] = 10.25, ['item_pogo_stick'] = 3.78, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 82.36, ['item_jidi_pollen_bag'] = 6.91, ['item_whisper_of_the_dread'] = 3.49, ['item_psychic_headband'] = 2.47, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 65.79, ['item_crippling_crossbow'] = 13.46, ['item_flayers_bota'] = 5.19, ['item_idol_of_screeauk'] = 5.19, ['item_metamorphic_mandible'] = 5.19, ['item_rattlecage'] = 5.19},
+           [5] = {['item_desolator_2'] = 48.95, ['item_minotaur_horn'] = 14.25, ['item_fallen_sky'] = 10.52, ['item_divine_regalia'] = 6.05, ['item_spider_legs'] = 5.48, ['item_demonicon'] = 4.09, ['item_dezun_bloodrite'] = 5.19, ['item_riftshadow_prism'] = 5.49},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 41.39, ['item_enhancement_tough'] = 23.55, ['item_enhancement_brawny'] = 22.2, ['item_enhancement_mystical'] = 6.48, ['item_enhancement_quickened'] = 6.38},
@@ -1221,11 +1237,11 @@ local heroList = {
     },
     ['npc_dota_hero_phantom_assassin'] = {
        ['neutral'] = {
-           [1] = {['item_spark_of_courage'] = 28.54, ['item_dormant_curio'] = 25.91, ['item_chipped_vest'] = 19.82, ['item_sisters_shroud'] = 12.7, ['item_occult_bracelet'] = 4.33, ['item_rippers_lash'] = 3.71, ['item_polliwog_charm'] = 2.88, ['item_kobold_cup'] = 2.11},
-           [2] = {['item_misericorde'] = 59.54, ['item_poor_mans_shield'] = 22.2, ['item_searing_signet'] = 6.46, ['item_essence_ring'] = 5.39, ['item_mana_draught'] = 4.55, ['item_pogo_stick'] = 1.86},
-           [3] = {['item_gunpowder_gauntlets'] = 74.23, ['item_gale_guard'] = 15.5, ['item_jidi_pollen_bag'] = 5.66, ['item_whisper_of_the_dread'] = 2.41, ['item_psychic_headband'] = 2.21},
-           [4] = {['item_giant_maul'] = 57.62, ['item_crippling_crossbow'] = 11.45, ['item_magnifying_monocle'] = 10.8, ['item_pyrrhic_cloak'] = 8.92, ['item_outworld_staff'] = 8.19, ['item_dezun_bloodrite'] = 3.02},
-           [5] = {['item_desolator_2'] = 37.82, ['item_helm_of_the_undying'] = 28.99, ['item_minotaur_horn'] = 10.27, ['item_unrelenting_eye'] = 8.79, ['item_fallen_sky'] = 4.79, ['item_spider_legs'] = 3.98, ['item_divine_regalia'] = 3.33, ['item_demonicon'] = 2.01},
+           [1] = {['item_dormant_curio'] = 40.01, ['item_chipped_vest'] = 30.60, ['item_occult_bracelet'] = 6.69, ['item_polliwog_charm'] = 4.45, ['item_kobold_cup'] = 3.26, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 52.13, ['item_searing_signet'] = 15.17, ['item_essence_ring'] = 12.66, ['item_mana_draught'] = 10.68, ['item_pogo_stick'] = 4.37, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 83.65, ['item_jidi_pollen_bag'] = 6.38, ['item_whisper_of_the_dread'] = 2.72, ['item_psychic_headband'] = 2.49, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 66.01, ['item_crippling_crossbow'] = 13.12, ['item_flayers_bota'] = 5.22, ['item_idol_of_screeauk'] = 5.22, ['item_metamorphic_mandible'] = 5.22, ['item_rattlecage'] = 5.22},
+           [5] = {['item_desolator_2'] = 54.41, ['item_minotaur_horn'] = 14.78, ['item_fallen_sky'] = 6.89, ['item_spider_legs'] = 5.73, ['item_divine_regalia'] = 4.79, ['item_demonicon'] = 2.89, ['item_dezun_bloodrite'] = 5.11, ['item_riftshadow_prism'] = 5.40},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 43.25, ['item_enhancement_tough'] = 32.14, ['item_enhancement_brawny'] = 13.42, ['item_enhancement_quickened'] = 6, ['item_enhancement_mystical'] = 5.19},
@@ -1237,11 +1253,11 @@ local heroList = {
     },
     ['npc_dota_hero_phoenix'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 33.68, ['item_sisters_shroud'] = 21.95, ['item_chipped_vest'] = 19.59, ['item_polliwog_charm'] = 6.81, ['item_kobold_cup'] = 6.63, ['item_spark_of_courage'] = 6.22, ['item_occult_bracelet'] = 3.71, ['item_rippers_lash'] = 1.4},
-           [2] = {['item_searing_signet'] = 53.77, ['item_essence_ring'] = 19.47, ['item_poor_mans_shield'] = 13.48, ['item_pogo_stick'] = 5.81, ['item_mana_draught'] = 5.44, ['item_misericorde'] = 2.03},
-           [3] = {['item_whisper_of_the_dread'] = 44.8, ['item_gale_guard'] = 22.53, ['item_jidi_pollen_bag'] = 16.51, ['item_psychic_headband'] = 8.87, ['item_gunpowder_gauntlets'] = 7.3},
-           [4] = {['item_dezun_bloodrite'] = 37.94, ['item_magnifying_monocle'] = 20.56, ['item_outworld_staff'] = 17.85, ['item_pyrrhic_cloak'] = 13.32, ['item_giant_maul'] = 7.17, ['item_crippling_crossbow'] = 3.15},
-           [5] = {['item_helm_of_the_undying'] = 26.26, ['item_fallen_sky'] = 22.68, ['item_demonicon'] = 18.73, ['item_minotaur_horn'] = 13.3, ['item_unrelenting_eye'] = 9.04, ['item_spider_legs'] = 5.03, ['item_desolator_2'] = 2.89, ['item_divine_regalia'] = 2.06},
+           [1] = {['item_dormant_curio'] = 40.65, ['item_chipped_vest'] = 23.65, ['item_polliwog_charm'] = 8.22, ['item_kobold_cup'] = 8.00, ['item_occult_bracelet'] = 4.48, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 52.14, ['item_essence_ring'] = 18.88, ['item_poor_mans_shield'] = 13.07, ['item_pogo_stick'] = 5.63, ['item_mana_draught'] = 5.28, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 55.07, ['item_jidi_pollen_bag'] = 20.29, ['item_psychic_headband'] = 10.90, ['item_gunpowder_gauntlets'] = 8.97, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 24.20, ['item_crippling_crossbow'] = 10.63, ['item_flayers_bota'] = 16.29, ['item_idol_of_screeauk'] = 16.29, ['item_metamorphic_mandible'] = 16.29, ['item_rattlecage'] = 16.29},
+           [5] = {['item_fallen_sky'] = 31.38, ['item_demonicon'] = 25.92, ['item_minotaur_horn'] = 18.40, ['item_spider_legs'] = 6.96, ['item_desolator_2'] = 4.00, ['item_divine_regalia'] = 2.85, ['item_dezun_bloodrite'] = 5.10, ['item_riftshadow_prism'] = 5.39},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 46.65, ['item_enhancement_mystical'] = 22.85, ['item_enhancement_quickened'] = 18.48, ['item_enhancement_tough'] = 9.54, ['item_enhancement_alert'] = 2.48},
@@ -1253,11 +1269,11 @@ local heroList = {
     },
     ['npc_dota_hero_primal_beast'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 51.27, ['item_dormant_curio'] = 15.34, ['item_sisters_shroud'] = 8.95, ['item_kobold_cup'] = 8.63, ['item_spark_of_courage'] = 8.1, ['item_occult_bracelet'] = 3.85, ['item_polliwog_charm'] = 2.78, ['item_rippers_lash'] = 1.09},
-           [2] = {['item_searing_signet'] = 31.91, ['item_poor_mans_shield'] = 30.33, ['item_essence_ring'] = 14.06, ['item_mana_draught'] = 12.62, ['item_pogo_stick'] = 6.14, ['item_misericorde'] = 4.94},
-           [3] = {['item_gale_guard'] = 36.13, ['item_whisper_of_the_dread'] = 27.51, ['item_gunpowder_gauntlets'] = 17.45, ['item_jidi_pollen_bag'] = 15.61, ['item_psychic_headband'] = 3.29},
-           [4] = {['item_dezun_bloodrite'] = 32.79, ['item_pyrrhic_cloak'] = 30.64, ['item_giant_maul'] = 15.84, ['item_outworld_staff'] = 10.02, ['item_magnifying_monocle'] = 7.69, ['item_crippling_crossbow'] = 3.01},
-           [5] = {['item_helm_of_the_undying'] = 27.95, ['item_fallen_sky'] = 18.02, ['item_minotaur_horn'] = 14.94, ['item_unrelenting_eye'] = 14.21, ['item_spider_legs'] = 12.17, ['item_demonicon'] = 6.98, ['item_desolator_2'] = 4.67, ['item_divine_regalia'] = 1.05},
+           [1] = {['item_chipped_vest'] = 53.23, ['item_dormant_curio'] = 15.93, ['item_kobold_cup'] = 8.96, ['item_occult_bracelet'] = 4.00, ['item_polliwog_charm'] = 2.89, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 31.89, ['item_poor_mans_shield'] = 30.31, ['item_essence_ring'] = 14.05, ['item_mana_draught'] = 12.61, ['item_pogo_stick'] = 6.14, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 41.03, ['item_gunpowder_gauntlets'] = 26.02, ['item_jidi_pollen_bag'] = 23.28, ['item_psychic_headband'] = 4.91, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 40.09, ['item_crippling_crossbow'] = 7.62, ['item_flayers_bota'] = 13.07, ['item_idol_of_screeauk'] = 13.07, ['item_metamorphic_mandible'] = 13.07, ['item_rattlecage'] = 13.07},
+           [5] = {['item_fallen_sky'] = 27.61, ['item_minotaur_horn'] = 22.89, ['item_spider_legs'] = 18.65, ['item_demonicon'] = 10.70, ['item_desolator_2'] = 7.16, ['item_divine_regalia'] = 1.61, ['item_dezun_bloodrite'] = 5.52, ['item_riftshadow_prism'] = 5.86},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 36, ['item_enhancement_quickened'] = 23.77, ['item_enhancement_tough'] = 19.82, ['item_enhancement_mystical'] = 18.09, ['item_enhancement_alert'] = 2.32},
@@ -1269,11 +1285,11 @@ local heroList = {
     },
     ['npc_dota_hero_puck'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 44.22, ['item_sisters_shroud'] = 21.1, ['item_spark_of_courage'] = 13.2, ['item_occult_bracelet'] = 8.58, ['item_chipped_vest'] = 4.16, ['item_polliwog_charm'] = 3.63, ['item_kobold_cup'] = 2.93, ['item_rippers_lash'] = 2.18},
-           [2] = {['item_searing_signet'] = 51.46, ['item_misericorde'] = 19.22, ['item_mana_draught'] = 13.08, ['item_essence_ring'] = 8.45, ['item_pogo_stick'] = 4.11, ['item_poor_mans_shield'] = 3.68},
-           [3] = {['item_gunpowder_gauntlets'] = 40.85, ['item_whisper_of_the_dread'] = 34.73, ['item_gale_guard'] = 12.3, ['item_psychic_headband'] = 8.78, ['item_jidi_pollen_bag'] = 3.34},
-           [4] = {['item_giant_maul'] = 36.24, ['item_magnifying_monocle'] = 19.91, ['item_dezun_bloodrite'] = 18.52, ['item_outworld_staff'] = 16.9, ['item_crippling_crossbow'] = 6.46, ['item_pyrrhic_cloak'] = 1.96},
-           [5] = {['item_desolator_2'] = 35.87, ['item_helm_of_the_undying'] = 21.11, ['item_fallen_sky'] = 15.1, ['item_minotaur_horn'] = 9.01, ['item_demonicon'] = 6.23, ['item_divine_regalia'] = 5.61, ['item_unrelenting_eye'] = 4.49, ['item_spider_legs'] = 2.57},
+           [1] = {['item_dormant_curio'] = 59.17, ['item_occult_bracelet'] = 11.48, ['item_chipped_vest'] = 5.57, ['item_polliwog_charm'] = 4.86, ['item_kobold_cup'] = 3.92, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 60.52, ['item_mana_draught'] = 15.38, ['item_essence_ring'] = 9.94, ['item_pogo_stick'] = 4.83, ['item_poor_mans_shield'] = 4.33, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 44.36, ['item_whisper_of_the_dread'] = 37.72, ['item_psychic_headband'] = 9.53, ['item_jidi_pollen_bag'] = 3.63, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 60.53, ['item_crippling_crossbow'] = 10.79, ['item_flayers_bota'] = 7.17, ['item_idol_of_screeauk'] = 7.17, ['item_metamorphic_mandible'] = 7.17, ['item_rattlecage'] = 7.17},
+           [5] = {['item_desolator_2'] = 43.49, ['item_fallen_sky'] = 18.31, ['item_minotaur_horn'] = 10.92, ['item_demonicon'] = 7.55, ['item_divine_regalia'] = 6.80, ['item_spider_legs'] = 3.12, ['item_dezun_bloodrite'] = 4.78, ['item_riftshadow_prism'] = 5.04},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 39.06, ['item_enhancement_mystical'] = 23.56, ['item_enhancement_tough'] = 14.88, ['item_enhancement_quickened'] = 12.77, ['item_enhancement_brawny'] = 9.73},
@@ -1285,11 +1301,11 @@ local heroList = {
     },
     ['npc_dota_hero_pudge'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 50.26, ['item_dormant_curio'] = 18.55, ['item_sisters_shroud'] = 11.45, ['item_spark_of_courage'] = 6.52, ['item_kobold_cup'] = 4.62, ['item_polliwog_charm'] = 4.22, ['item_occult_bracelet'] = 3.33, ['item_rippers_lash'] = 1.05},
-           [2] = {['item_poor_mans_shield'] = 34.12, ['item_essence_ring'] = 20.64, ['item_searing_signet'] = 19.76, ['item_pogo_stick'] = 11.87, ['item_mana_draught'] = 10, ['item_misericorde'] = 3.61},
-           [3] = {['item_gale_guard'] = 36.98, ['item_whisper_of_the_dread'] = 18.48, ['item_jidi_pollen_bag'] = 17.14, ['item_gunpowder_gauntlets'] = 14.27, ['item_psychic_headband'] = 13.13},
-           [4] = {['item_pyrrhic_cloak'] = 29.08, ['item_magnifying_monocle'] = 22.27, ['item_dezun_bloodrite'] = 19.31, ['item_outworld_staff'] = 13.47, ['item_giant_maul'] = 13.4, ['item_crippling_crossbow'] = 2.47},
-           [5] = {['item_helm_of_the_undying'] = 27.54, ['item_fallen_sky'] = 18.69, ['item_minotaur_horn'] = 15.43, ['item_unrelenting_eye'] = 13.16, ['item_demonicon'] = 11.82, ['item_spider_legs'] = 8.05, ['item_desolator_2'] = 4.46, ['item_divine_regalia'] = 0.85},
+           [1] = {['item_chipped_vest'] = 52.76, ['item_dormant_curio'] = 19.47, ['item_kobold_cup'] = 4.85, ['item_polliwog_charm'] = 4.43, ['item_occult_bracelet'] = 3.50, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 33.63, ['item_essence_ring'] = 20.34, ['item_searing_signet'] = 19.48, ['item_pogo_stick'] = 11.70, ['item_mana_draught'] = 9.86, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 27.93, ['item_jidi_pollen_bag'] = 25.90, ['item_gunpowder_gauntlets'] = 21.57, ['item_psychic_headband'] = 19.84, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 47.00, ['item_crippling_crossbow'] = 8.66, ['item_flayers_bota'] = 11.08, ['item_idol_of_screeauk'] = 11.08, ['item_metamorphic_mandible'] = 11.08, ['item_rattlecage'] = 11.08},
+           [5] = {['item_fallen_sky'] = 27.99, ['item_minotaur_horn'] = 23.11, ['item_demonicon'] = 17.70, ['item_spider_legs'] = 12.06, ['item_desolator_2'] = 6.68, ['item_divine_regalia'] = 1.27, ['item_dezun_bloodrite'] = 5.43, ['item_riftshadow_prism'] = 5.76},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 41.47, ['item_enhancement_mystical'] = 24.82, ['item_enhancement_tough'] = 16.82, ['item_enhancement_quickened'] = 14.32, ['item_enhancement_alert'] = 2.57},
@@ -1301,11 +1317,11 @@ local heroList = {
     },
     ['npc_dota_hero_pugna'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 38.6, ['item_sisters_shroud'] = 24.72, ['item_kobold_cup'] = 10.1, ['item_occult_bracelet'] = 8.63, ['item_chipped_vest'] = 6.45, ['item_polliwog_charm'] = 5.68, ['item_spark_of_courage'] = 4.45, ['item_rippers_lash'] = 1.37},
-           [2] = {['item_searing_signet'] = 50.33, ['item_mana_draught'] = 21.04, ['item_essence_ring'] = 13.37, ['item_pogo_stick'] = 8.18, ['item_poor_mans_shield'] = 5.48, ['item_misericorde'] = 1.61},
-           [3] = {['item_whisper_of_the_dread'] = 45.48, ['item_gale_guard'] = 22.87, ['item_psychic_headband'] = 22.2, ['item_jidi_pollen_bag'] = 4.97, ['item_gunpowder_gauntlets'] = 4.49},
-           [4] = {['item_magnifying_monocle'] = 43.82, ['item_dezun_bloodrite'] = 25.42, ['item_outworld_staff'] = 18.44, ['item_pyrrhic_cloak'] = 5.98, ['item_giant_maul'] = 3.87, ['item_crippling_crossbow'] = 2.47},
-           [5] = {['item_helm_of_the_undying'] = 26.96, ['item_demonicon'] = 23.5, ['item_fallen_sky'] = 17.05, ['item_minotaur_horn'] = 10.49, ['item_spider_legs'] = 9.66, ['item_unrelenting_eye'] = 7.95, ['item_desolator_2'] = 2.45, ['item_divine_regalia'] = 1.94},
+           [1] = {['item_dormant_curio'] = 47.24, ['item_kobold_cup'] = 12.36, ['item_occult_bracelet'] = 10.56, ['item_chipped_vest'] = 7.89, ['item_polliwog_charm'] = 6.95, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 48.59, ['item_mana_draught'] = 20.31, ['item_essence_ring'] = 12.91, ['item_pogo_stick'] = 7.90, ['item_poor_mans_shield'] = 5.29, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 56.15, ['item_psychic_headband'] = 27.41, ['item_jidi_pollen_bag'] = 6.14, ['item_gunpowder_gauntlets'] = 5.54, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 20.32, ['item_crippling_crossbow'] = 12.97, ['item_flayers_bota'] = 16.68, ['item_idol_of_screeauk'] = 16.68, ['item_metamorphic_mandible'] = 16.68, ['item_rattlecage'] = 16.68},
+           [5] = {['item_demonicon'] = 32.37, ['item_fallen_sky'] = 23.49, ['item_minotaur_horn'] = 14.45, ['item_spider_legs'] = 13.31, ['item_desolator_2'] = 3.37, ['item_divine_regalia'] = 2.67, ['item_dezun_bloodrite'] = 5.03, ['item_riftshadow_prism'] = 5.31},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 47.55, ['item_enhancement_quickened'] = 28.12, ['item_enhancement_brawny'] = 18.36, ['item_enhancement_tough'] = 3.39, ['item_enhancement_alert'] = 2.6},
@@ -1317,11 +1333,11 @@ local heroList = {
     },
     ['npc_dota_hero_queenofpain'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 37.19, ['item_chipped_vest'] = 26.54, ['item_sisters_shroud'] = 15.43, ['item_occult_bracelet'] = 7.08, ['item_spark_of_courage'] = 6.74, ['item_polliwog_charm'] = 3.38, ['item_kobold_cup'] = 2.28, ['item_rippers_lash'] = 1.37},
-           [2] = {['item_searing_signet'] = 55.01, ['item_mana_draught'] = 17.25, ['item_essence_ring'] = 10.68, ['item_misericorde'] = 9.55, ['item_poor_mans_shield'] = 5.28, ['item_pogo_stick'] = 2.23},
-           [3] = {['item_whisper_of_the_dread'] = 46.91, ['item_gunpowder_gauntlets'] = 19.95, ['item_gale_guard'] = 19.85, ['item_psychic_headband'] = 8.57, ['item_jidi_pollen_bag'] = 4.72},
-           [4] = {['item_dezun_bloodrite'] = 27.08, ['item_magnifying_monocle'] = 22.26, ['item_giant_maul'] = 18.14, ['item_outworld_staff'] = 16.24, ['item_pyrrhic_cloak'] = 12.26, ['item_crippling_crossbow'] = 4.01},
-           [5] = {['item_helm_of_the_undying'] = 28.67, ['item_fallen_sky'] = 16.23, ['item_desolator_2'] = 13.94, ['item_minotaur_horn'] = 12.88, ['item_demonicon'] = 11.4, ['item_unrelenting_eye'] = 8.55, ['item_divine_regalia'] = 4.43, ['item_spider_legs'] = 3.89},
+           [1] = {['item_dormant_curio'] = 41.34, ['item_chipped_vest'] = 29.50, ['item_occult_bracelet'] = 7.87, ['item_polliwog_charm'] = 3.76, ['item_kobold_cup'] = 2.53, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 57.78, ['item_mana_draught'] = 18.12, ['item_essence_ring'] = 11.22, ['item_poor_mans_shield'] = 5.55, ['item_pogo_stick'] = 2.34, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 55.74, ['item_gunpowder_gauntlets'] = 23.71, ['item_psychic_headband'] = 10.18, ['item_jidi_pollen_bag'] = 5.61, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 45.49, ['item_crippling_crossbow'] = 10.06, ['item_flayers_bota'] = 11.11, ['item_idol_of_screeauk'] = 11.11, ['item_metamorphic_mandible'] = 11.11, ['item_rattlecage'] = 11.11},
+           [5] = {['item_fallen_sky'] = 23.15, ['item_desolator_2'] = 19.88, ['item_minotaur_horn'] = 18.37, ['item_demonicon'] = 16.26, ['item_divine_regalia'] = 6.32, ['item_spider_legs'] = 5.55, ['item_dezun_bloodrite'] = 5.09, ['item_riftshadow_prism'] = 5.38},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 40.79, ['item_enhancement_brawny'] = 19.08, ['item_enhancement_quickened'] = 15.44, ['item_enhancement_alert'] = 13.93, ['item_enhancement_tough'] = 10.77},
@@ -1333,11 +1349,11 @@ local heroList = {
     },
     ['npc_dota_hero_rattletrap'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 55.78, ['item_dormant_curio'] = 15.18, ['item_sisters_shroud'] = 11.34, ['item_spark_of_courage'] = 6.28, ['item_kobold_cup'] = 4.69, ['item_polliwog_charm'] = 2.94, ['item_occult_bracelet'] = 2.75, ['item_rippers_lash'] = 1.03},
-           [2] = {['item_poor_mans_shield'] = 32.62, ['item_searing_signet'] = 26.65, ['item_essence_ring'] = 21.03, ['item_mana_draught'] = 9.26, ['item_pogo_stick'] = 7.67, ['item_misericorde'] = 2.77},
-           [3] = {['item_gale_guard'] = 44.51, ['item_jidi_pollen_bag'] = 21.57, ['item_gunpowder_gauntlets'] = 15.64, ['item_whisper_of_the_dread'] = 9.42, ['item_psychic_headband'] = 8.86},
-           [4] = {['item_pyrrhic_cloak'] = 37.44, ['item_outworld_staff'] = 18.58, ['item_giant_maul'] = 16.68, ['item_dezun_bloodrite'] = 15.04, ['item_magnifying_monocle'] = 8.15, ['item_crippling_crossbow'] = 4.11},
-           [5] = {['item_helm_of_the_undying'] = 24.47, ['item_fallen_sky'] = 20.5, ['item_demonicon'] = 15.34, ['item_minotaur_horn'] = 13.65, ['item_unrelenting_eye'] = 11.6, ['item_spider_legs'] = 7.4, ['item_desolator_2'] = 5.86, ['item_divine_regalia'] = 1.18},
+           [1] = {['item_chipped_vest'] = 58.29, ['item_dormant_curio'] = 15.86, ['item_kobold_cup'] = 4.90, ['item_polliwog_charm'] = 3.07, ['item_occult_bracelet'] = 2.87, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 31.87, ['item_searing_signet'] = 26.04, ['item_essence_ring'] = 20.55, ['item_mana_draught'] = 9.05, ['item_pogo_stick'] = 7.49, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_jidi_pollen_bag'] = 37.02, ['item_gunpowder_gauntlets'] = 26.84, ['item_whisper_of_the_dread'] = 16.17, ['item_psychic_headband'] = 15.21, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 52.58, ['item_crippling_crossbow'] = 12.96, ['item_flayers_bota'] = 8.62, ['item_idol_of_screeauk'] = 8.62, ['item_metamorphic_mandible'] = 8.62, ['item_rattlecage'] = 8.62},
+           [5] = {['item_fallen_sky'] = 28.59, ['item_demonicon'] = 21.39, ['item_minotaur_horn'] = 19.04, ['item_spider_legs'] = 10.32, ['item_desolator_2'] = 8.17, ['item_divine_regalia'] = 1.65, ['item_dezun_bloodrite'] = 5.27, ['item_riftshadow_prism'] = 5.58},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 37.3, ['item_enhancement_tough'] = 23.57, ['item_enhancement_mystical'] = 21.75, ['item_enhancement_quickened'] = 15, ['item_enhancement_alert'] = 2.37},
@@ -1349,11 +1365,11 @@ local heroList = {
     },
     ['npc_dota_hero_razor'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 35.07, ['item_dormant_curio'] = 21.03, ['item_sisters_shroud'] = 14.5, ['item_spark_of_courage'] = 12.94, ['item_occult_bracelet'] = 5.17, ['item_kobold_cup'] = 5.11, ['item_polliwog_charm'] = 3.59, ['item_rippers_lash'] = 2.59},
-           [2] = {['item_misericorde'] = 28.95, ['item_searing_signet'] = 28.18, ['item_poor_mans_shield'] = 19.6, ['item_essence_ring'] = 12.57, ['item_mana_draught'] = 7.43, ['item_pogo_stick'] = 3.27},
-           [3] = {['item_gunpowder_gauntlets'] = 39.37, ['item_gale_guard'] = 36.53, ['item_whisper_of_the_dread'] = 12.46, ['item_jidi_pollen_bag'] = 6.89, ['item_psychic_headband'] = 4.75},
-           [4] = {['item_giant_maul'] = 35.11, ['item_pyrrhic_cloak'] = 18.68, ['item_magnifying_monocle'] = 15.68, ['item_dezun_bloodrite'] = 12.02, ['item_crippling_crossbow'] = 9.5, ['item_outworld_staff'] = 9.01},
-           [5] = {['item_desolator_2'] = 26.19, ['item_helm_of_the_undying'] = 25.81, ['item_unrelenting_eye'] = 11.56, ['item_minotaur_horn'] = 11.23, ['item_fallen_sky'] = 9.8, ['item_spider_legs'] = 7.97, ['item_demonicon'] = 5.46, ['item_divine_regalia'] = 1.98},
+           [1] = {['item_chipped_vest'] = 42.60, ['item_dormant_curio'] = 25.55, ['item_occult_bracelet'] = 6.28, ['item_kobold_cup'] = 6.21, ['item_polliwog_charm'] = 4.36, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 37.68, ['item_poor_mans_shield'] = 26.21, ['item_essence_ring'] = 16.81, ['item_mana_draught'] = 9.93, ['item_pogo_stick'] = 4.37, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 59.08, ['item_whisper_of_the_dread'] = 18.70, ['item_jidi_pollen_bag'] = 10.34, ['item_psychic_headband'] = 7.13, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 58.72, ['item_crippling_crossbow'] = 15.89, ['item_flayers_bota'] = 6.35, ['item_idol_of_screeauk'] = 6.35, ['item_metamorphic_mandible'] = 6.35, ['item_rattlecage'] = 6.35},
+           [5] = {['item_desolator_2'] = 37.27, ['item_minotaur_horn'] = 15.98, ['item_fallen_sky'] = 13.95, ['item_spider_legs'] = 11.34, ['item_demonicon'] = 7.77, ['item_divine_regalia'] = 2.82, ['item_dezun_bloodrite'] = 5.28, ['item_riftshadow_prism'] = 5.59},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 28.44, ['item_enhancement_brawny'] = 21.24, ['item_enhancement_tough'] = 20.86, ['item_enhancement_quickened'] = 16.88, ['item_enhancement_mystical'] = 12.58},
@@ -1365,11 +1381,11 @@ local heroList = {
     },
     ['npc_dota_hero_riki'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 28.22, ['item_spark_of_courage'] = 25.13, ['item_sisters_shroud'] = 14.78, ['item_chipped_vest'] = 13.89, ['item_occult_bracelet'] = 5.62, ['item_kobold_cup'] = 4.43, ['item_rippers_lash'] = 3.96, ['item_polliwog_charm'] = 3.96},
-           [2] = {['item_misericorde'] = 51.35, ['item_poor_mans_shield'] = 18.66, ['item_searing_signet'] = 11.15, ['item_mana_draught'] = 10.26, ['item_essence_ring'] = 5.78, ['item_pogo_stick'] = 2.79},
-           [3] = {['item_gunpowder_gauntlets'] = 69.41, ['item_gale_guard'] = 14.84, ['item_jidi_pollen_bag'] = 8.47, ['item_psychic_headband'] = 3.95, ['item_whisper_of_the_dread'] = 3.33},
-           [4] = {['item_giant_maul'] = 52.15, ['item_magnifying_monocle'] = 13.64, ['item_dezun_bloodrite'] = 11.92, ['item_crippling_crossbow'] = 9.62, ['item_outworld_staff'] = 8.07, ['item_pyrrhic_cloak'] = 4.6},
-           [5] = {['item_desolator_2'] = 37.29, ['item_helm_of_the_undying'] = 24.54, ['item_minotaur_horn'] = 8.76, ['item_fallen_sky'] = 8.51, ['item_unrelenting_eye'] = 8.08, ['item_demonicon'] = 5.31, ['item_spider_legs'] = 4.08, ['item_divine_regalia'] = 3.42},
+           [1] = {['item_dormant_curio'] = 42.74, ['item_chipped_vest'] = 21.04, ['item_occult_bracelet'] = 8.51, ['item_kobold_cup'] = 6.71, ['item_polliwog_charm'] = 6.00, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 36.45, ['item_searing_signet'] = 21.78, ['item_mana_draught'] = 20.04, ['item_essence_ring'] = 11.29, ['item_pogo_stick'] = 5.45, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 77.62, ['item_jidi_pollen_bag'] = 9.47, ['item_psychic_headband'] = 4.42, ['item_whisper_of_the_dread'] = 3.72, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 64.28, ['item_crippling_crossbow'] = 11.86, ['item_flayers_bota'] = 5.96, ['item_idol_of_screeauk'] = 5.96, ['item_metamorphic_mandible'] = 5.96, ['item_rattlecage'] = 5.96},
+           [5] = {['item_desolator_2'] = 49.64, ['item_minotaur_horn'] = 11.66, ['item_fallen_sky'] = 11.33, ['item_demonicon'] = 7.07, ['item_spider_legs'] = 5.43, ['item_divine_regalia'] = 4.55, ['item_dezun_bloodrite'] = 5.02, ['item_riftshadow_prism'] = 5.30},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 36.68, ['item_enhancement_tough'] = 25.6, ['item_enhancement_brawny'] = 12.74, ['item_enhancement_mystical'] = 12.52, ['item_enhancement_quickened'] = 12.46},
@@ -1381,11 +1397,11 @@ local heroList = {
     },
     ['npc_dota_hero_ringmaster'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 36.28, ['item_sisters_shroud'] = 25.07, ['item_kobold_cup'] = 16.86, ['item_polliwog_charm'] = 8.75, ['item_occult_bracelet'] = 4.87, ['item_chipped_vest'] = 3.17, ['item_spark_of_courage'] = 2.77, ['item_rippers_lash'] = 2.24},
-           [2] = {['item_searing_signet'] = 46.11, ['item_mana_draught'] = 17.55, ['item_pogo_stick'] = 16.45, ['item_essence_ring'] = 14.51, ['item_poor_mans_shield'] = 4.19, ['item_misericorde'] = 1.18},
-           [3] = {['item_psychic_headband'] = 31.84, ['item_gale_guard'] = 28.93, ['item_whisper_of_the_dread'] = 27.24, ['item_jidi_pollen_bag'] = 7.67, ['item_gunpowder_gauntlets'] = 4.32},
-           [4] = {['item_magnifying_monocle'] = 38.38, ['item_dezun_bloodrite'] = 30.88, ['item_outworld_staff'] = 20.56, ['item_giant_maul'] = 3.5, ['item_pyrrhic_cloak'] = 3.45, ['item_crippling_crossbow'] = 3.25},
-           [5] = {['item_demonicon'] = 27.27, ['item_helm_of_the_undying'] = 25.83, ['item_fallen_sky'] = 17.91, ['item_spider_legs'] = 11.2, ['item_minotaur_horn'] = 8.44, ['item_unrelenting_eye'] = 6.04, ['item_desolator_2'] = 2.4, ['item_divine_regalia'] = 0.9},
+           [1] = {['item_dormant_curio'] = 44.10, ['item_kobold_cup'] = 20.49, ['item_polliwog_charm'] = 10.64, ['item_occult_bracelet'] = 5.92, ['item_chipped_vest'] = 3.85, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 44.33, ['item_mana_draught'] = 16.87, ['item_pogo_stick'] = 15.82, ['item_essence_ring'] = 13.95, ['item_poor_mans_shield'] = 4.03, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_psychic_headband'] = 42.67, ['item_whisper_of_the_dread'] = 36.50, ['item_jidi_pollen_bag'] = 10.28, ['item_gunpowder_gauntlets'] = 5.79, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 16.06, ['item_crippling_crossbow'] = 14.91, ['item_flayers_bota'] = 17.26, ['item_idol_of_screeauk'] = 17.26, ['item_metamorphic_mandible'] = 17.26, ['item_rattlecage'] = 17.26},
+           [5] = {['item_demonicon'] = 36.01, ['item_fallen_sky'] = 23.65, ['item_spider_legs'] = 14.79, ['item_minotaur_horn'] = 11.14, ['item_desolator_2'] = 3.17, ['item_divine_regalia'] = 1.19, ['item_dezun_bloodrite'] = 4.90, ['item_riftshadow_prism'] = 5.16},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 42.73, ['item_enhancement_quickened'] = 33.07, ['item_enhancement_brawny'] = 18.08, ['item_enhancement_tough'] = 3.29, ['item_enhancement_alert'] = 2.83},
@@ -1397,11 +1413,11 @@ local heroList = {
     },
     ['npc_dota_hero_rubick'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 48.79, ['item_sisters_shroud'] = 21.05, ['item_kobold_cup'] = 10.42, ['item_occult_bracelet'] = 6.72, ['item_polliwog_charm'] = 6.1, ['item_spark_of_courage'] = 2.95, ['item_chipped_vest'] = 2.7, ['item_rippers_lash'] = 1.27},
-           [2] = {['item_searing_signet'] = 55.14, ['item_mana_draught'] = 17.73, ['item_pogo_stick'] = 11.63, ['item_essence_ring'] = 11.38, ['item_poor_mans_shield'] = 3, ['item_misericorde'] = 1.12},
-           [3] = {['item_whisper_of_the_dread'] = 44.74, ['item_psychic_headband'] = 27.82, ['item_gale_guard'] = 19.75, ['item_gunpowder_gauntlets'] = 4.18, ['item_jidi_pollen_bag'] = 3.5},
-           [4] = {['item_magnifying_monocle'] = 43.19, ['item_dezun_bloodrite'] = 26.7, ['item_outworld_staff'] = 21.06, ['item_giant_maul'] = 3.54, ['item_pyrrhic_cloak'] = 3.2, ['item_crippling_crossbow'] = 2.29},
-           [5] = {['item_helm_of_the_undying'] = 24.54, ['item_demonicon'] = 22.82, ['item_fallen_sky'] = 22.12, ['item_spider_legs'] = 10.77, ['item_minotaur_horn'] = 9.75, ['item_unrelenting_eye'] = 5.43, ['item_divine_regalia'] = 2.48, ['item_desolator_2'] = 2.1},
+           [1] = {['item_dormant_curio'] = 55.50, ['item_kobold_cup'] = 11.85, ['item_occult_bracelet'] = 7.64, ['item_polliwog_charm'] = 6.94, ['item_chipped_vest'] = 3.07, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 52.98, ['item_mana_draught'] = 17.03, ['item_pogo_stick'] = 11.17, ['item_essence_ring'] = 10.93, ['item_poor_mans_shield'] = 2.88, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 53.10, ['item_psychic_headband'] = 33.02, ['item_gunpowder_gauntlets'] = 4.96, ['item_jidi_pollen_bag'] = 4.15, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 18.79, ['item_crippling_crossbow'] = 12.15, ['item_flayers_bota'] = 17.27, ['item_idol_of_screeauk'] = 17.27, ['item_metamorphic_mandible'] = 17.27, ['item_rattlecage'] = 17.27},
+           [5] = {['item_demonicon'] = 29.34, ['item_fallen_sky'] = 28.44, ['item_spider_legs'] = 13.85, ['item_minotaur_horn'] = 12.53, ['item_divine_regalia'] = 3.19, ['item_desolator_2'] = 2.70, ['item_dezun_bloodrite'] = 4.85, ['item_riftshadow_prism'] = 5.11},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 48.6, ['item_enhancement_quickened'] = 31.63, ['item_enhancement_brawny'] = 13.62, ['item_enhancement_alert'] = 3.13, ['item_enhancement_tough'] = 3.02},
@@ -1413,11 +1429,11 @@ local heroList = {
     },
     ['npc_dota_hero_sand_king'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 33.28, ['item_dormant_curio'] = 25.11, ['item_sisters_shroud'] = 14.35, ['item_spark_of_courage'] = 9.1, ['item_occult_bracelet'] = 6.14, ['item_polliwog_charm'] = 5.26, ['item_kobold_cup'] = 4.52, ['item_rippers_lash'] = 2.24},
-           [2] = {['item_searing_signet'] = 50.7, ['item_poor_mans_shield'] = 17.68, ['item_essence_ring'] = 11.56, ['item_mana_draught'] = 9.31, ['item_misericorde'] = 5.91, ['item_pogo_stick'] = 4.84},
-           [3] = {['item_whisper_of_the_dread'] = 32.95, ['item_gunpowder_gauntlets'] = 26.66, ['item_gale_guard'] = 19.52, ['item_jidi_pollen_bag'] = 13.99, ['item_psychic_headband'] = 6.88},
-           [4] = {['item_dezun_bloodrite'] = 36.96, ['item_giant_maul'] = 21, ['item_magnifying_monocle'] = 16.11, ['item_pyrrhic_cloak'] = 13.07, ['item_outworld_staff'] = 10.7, ['item_crippling_crossbow'] = 2.16},
-           [5] = {['item_helm_of_the_undying'] = 27.08, ['item_fallen_sky'] = 19.62, ['item_minotaur_horn'] = 12.58, ['item_desolator_2'] = 12.14, ['item_unrelenting_eye'] = 10.23, ['item_demonicon'] = 9.37, ['item_spider_legs'] = 6.41, ['item_divine_regalia'] = 2.58},
+           [1] = {['item_chipped_vest'] = 38.07, ['item_dormant_curio'] = 28.72, ['item_occult_bracelet'] = 7.02, ['item_polliwog_charm'] = 6.02, ['item_kobold_cup'] = 5.17, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 51.19, ['item_poor_mans_shield'] = 17.85, ['item_essence_ring'] = 11.67, ['item_mana_draught'] = 9.40, ['item_pogo_stick'] = 4.89, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 38.99, ['item_gunpowder_gauntlets'] = 31.55, ['item_jidi_pollen_bag'] = 16.56, ['item_psychic_headband'] = 8.14, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 44.48, ['item_crippling_crossbow'] = 4.58, ['item_flayers_bota'] = 12.74, ['item_idol_of_screeauk'] = 12.74, ['item_metamorphic_mandible'] = 12.74, ['item_rattlecage'] = 12.74},
+           [5] = {['item_fallen_sky'] = 27.95, ['item_minotaur_horn'] = 17.92, ['item_desolator_2'] = 17.29, ['item_demonicon'] = 13.35, ['item_spider_legs'] = 9.13, ['item_divine_regalia'] = 3.67, ['item_dezun_bloodrite'] = 5.19, ['item_riftshadow_prism'] = 5.50},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 35.1, ['item_enhancement_mystical'] = 28.75, ['item_enhancement_tough'] = 16.52, ['item_enhancement_quickened'] = 16.47, ['item_enhancement_alert'] = 3.16},
@@ -1429,11 +1445,11 @@ local heroList = {
     },
     ['npc_dota_hero_shadow_demon'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 39.21, ['item_sisters_shroud'] = 24.24, ['item_kobold_cup'] = 13.97, ['item_polliwog_charm'] = 7.27, ['item_occult_bracelet'] = 5.33, ['item_chipped_vest'] = 4.76, ['item_spark_of_courage'] = 3.36, ['item_rippers_lash'] = 1.86},
-           [2] = {['item_searing_signet'] = 48.87, ['item_mana_draught'] = 15.77, ['item_essence_ring'] = 14.49, ['item_pogo_stick'] = 13.8, ['item_poor_mans_shield'] = 5.4, ['item_misericorde'] = 1.67},
-           [3] = {['item_whisper_of_the_dread'] = 30.79, ['item_psychic_headband'] = 30.15, ['item_gale_guard'] = 28.09, ['item_jidi_pollen_bag'] = 6.66, ['item_gunpowder_gauntlets'] = 4.31},
-           [4] = {['item_magnifying_monocle'] = 44.03, ['item_outworld_staff'] = 22.57, ['item_dezun_bloodrite'] = 19.94, ['item_pyrrhic_cloak'] = 5.77, ['item_giant_maul'] = 3.96, ['item_crippling_crossbow'] = 3.73},
-           [5] = {['item_demonicon'] = 26.46, ['item_helm_of_the_undying'] = 25.75, ['item_fallen_sky'] = 17.07, ['item_spider_legs'] = 11.09, ['item_minotaur_horn'] = 9.16, ['item_unrelenting_eye'] = 6.35, ['item_desolator_2'] = 3.06, ['item_divine_regalia'] = 1.05},
+           [1] = {['item_dormant_curio'] = 47.25, ['item_kobold_cup'] = 16.83, ['item_polliwog_charm'] = 8.76, ['item_occult_bracelet'] = 6.42, ['item_chipped_vest'] = 5.74, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 47.21, ['item_mana_draught'] = 15.24, ['item_essence_ring'] = 14.00, ['item_pogo_stick'] = 13.33, ['item_poor_mans_shield'] = 5.22, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 40.78, ['item_psychic_headband'] = 39.93, ['item_jidi_pollen_bag'] = 8.82, ['item_gunpowder_gauntlets'] = 5.71, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 21.13, ['item_crippling_crossbow'] = 19.90, ['item_flayers_bota'] = 14.74, ['item_idol_of_screeauk'] = 14.74, ['item_metamorphic_mandible'] = 14.74, ['item_rattlecage'] = 14.74},
+           [5] = {['item_demonicon'] = 35.04, ['item_fallen_sky'] = 22.60, ['item_spider_legs'] = 14.69, ['item_minotaur_horn'] = 12.13, ['item_desolator_2'] = 4.05, ['item_divine_regalia'] = 1.39, ['item_dezun_bloodrite'] = 4.92, ['item_riftshadow_prism'] = 5.18},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 42.46, ['item_enhancement_quickened'] = 32.36, ['item_enhancement_brawny'] = 17.64, ['item_enhancement_tough'] = 3.82, ['item_enhancement_alert'] = 3.73},
@@ -1445,11 +1461,11 @@ local heroList = {
     },
     ['npc_dota_hero_shadow_shaman'] = {
        ['neutral'] = {
-           [1] = {['item_sisters_shroud'] = 29.46, ['item_dormant_curio'] = 29.3, ['item_kobold_cup'] = 13.76, ['item_polliwog_charm'] = 8.25, ['item_occult_bracelet'] = 7.31, ['item_chipped_vest'] = 5.67, ['item_spark_of_courage'] = 4.23, ['item_rippers_lash'] = 2.04},
-           [2] = {['item_searing_signet'] = 42.54, ['item_mana_draught'] = 18.55, ['item_pogo_stick'] = 15.48, ['item_essence_ring'] = 14.55, ['item_poor_mans_shield'] = 6.94, ['item_misericorde'] = 1.93},
-           [3] = {['item_psychic_headband'] = 33.3, ['item_gale_guard'] = 30.02, ['item_whisper_of_the_dread'] = 23.19, ['item_jidi_pollen_bag'] = 6.84, ['item_gunpowder_gauntlets'] = 6.64},
-           [4] = {['item_magnifying_monocle'] = 45.45, ['item_outworld_staff'] = 21.88, ['item_dezun_bloodrite'] = 17.95, ['item_pyrrhic_cloak'] = 5.82, ['item_giant_maul'] = 5.66, ['item_crippling_crossbow'] = 3.24},
-           [5] = {['item_helm_of_the_undying'] = 28.07, ['item_demonicon'] = 25.16, ['item_fallen_sky'] = 15.14, ['item_spider_legs'] = 10.46, ['item_minotaur_horn'] = 8.71, ['item_unrelenting_eye'] = 7.66, ['item_desolator_2'] = 4.04, ['item_divine_regalia'] = 0.75},
+           [1] = {['item_dormant_curio'] = 38.74, ['item_kobold_cup'] = 18.19, ['item_polliwog_charm'] = 10.91, ['item_occult_bracelet'] = 9.67, ['item_chipped_vest'] = 7.50, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 41.21, ['item_mana_draught'] = 17.97, ['item_pogo_stick'] = 15.00, ['item_essence_ring'] = 14.10, ['item_poor_mans_shield'] = 6.72, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_psychic_headband'] = 45.33, ['item_whisper_of_the_dread'] = 31.56, ['item_jidi_pollen_bag'] = 9.31, ['item_gunpowder_gauntlets'] = 9.04, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 28.82, ['item_crippling_crossbow'] = 16.50, ['item_flayers_bota'] = 13.67, ['item_idol_of_screeauk'] = 13.67, ['item_metamorphic_mandible'] = 13.67, ['item_rattlecage'] = 13.67},
+           [5] = {['item_demonicon'] = 35.11, ['item_fallen_sky'] = 21.13, ['item_spider_legs'] = 14.60, ['item_minotaur_horn'] = 12.16, ['item_desolator_2'] = 5.64, ['item_divine_regalia'] = 1.05, ['item_dezun_bloodrite'] = 5.02, ['item_riftshadow_prism'] = 5.30},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 40.36, ['item_enhancement_quickened'] = 33.43, ['item_enhancement_brawny'] = 18.15, ['item_enhancement_tough'] = 4.16, ['item_enhancement_alert'] = 3.9},
@@ -1461,11 +1477,11 @@ local heroList = {
     },
     ['npc_dota_hero_shredder'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 50.43, ['item_dormant_curio'] = 16.07, ['item_sisters_shroud'] = 11.51, ['item_occult_bracelet'] = 8.85, ['item_spark_of_courage'] = 6.43, ['item_polliwog_charm'] = 3.82, ['item_kobold_cup'] = 1.88, ['item_rippers_lash'] = 1},
-           [2] = {['item_poor_mans_shield'] = 26.96, ['item_mana_draught'] = 25.68, ['item_searing_signet'] = 21.44, ['item_essence_ring'] = 18.1, ['item_pogo_stick'] = 4.82, ['item_misericorde'] = 3},
-           [3] = {['item_gale_guard'] = 35.99, ['item_whisper_of_the_dread'] = 35.08, ['item_jidi_pollen_bag'] = 11.31, ['item_gunpowder_gauntlets'] = 10.55, ['item_psychic_headband'] = 7.06},
-           [4] = {['item_pyrrhic_cloak'] = 32.28, ['item_dezun_bloodrite'] = 26.85, ['item_outworld_staff'] = 16.07, ['item_magnifying_monocle'] = 11.63, ['item_giant_maul'] = 10.54, ['item_crippling_crossbow'] = 2.64},
-           [5] = {['item_helm_of_the_undying'] = 25.71, ['item_fallen_sky'] = 21.32, ['item_minotaur_horn'] = 19.06, ['item_unrelenting_eye'] = 13.71, ['item_demonicon'] = 9.97, ['item_spider_legs'] = 5.18, ['item_desolator_2'] = 3.45, ['item_divine_regalia'] = 1.59},
+           [1] = {['item_chipped_vest'] = 52.89, ['item_dormant_curio'] = 16.85, ['item_occult_bracelet'] = 9.28, ['item_polliwog_charm'] = 4.01, ['item_kobold_cup'] = 1.97, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 26.40, ['item_mana_draught'] = 25.15, ['item_searing_signet'] = 21.00, ['item_essence_ring'] = 17.73, ['item_pogo_stick'] = 4.72, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 52.20, ['item_jidi_pollen_bag'] = 16.83, ['item_gunpowder_gauntlets'] = 15.70, ['item_psychic_headband'] = 10.51, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 36.11, ['item_crippling_crossbow'] = 9.04, ['item_flayers_bota'] = 13.71, ['item_idol_of_screeauk'] = 13.71, ['item_metamorphic_mandible'] = 13.71, ['item_rattlecage'] = 13.71},
+           [5] = {['item_fallen_sky'] = 31.25, ['item_minotaur_horn'] = 27.94, ['item_demonicon'] = 14.61, ['item_spider_legs'] = 7.59, ['item_desolator_2'] = 5.06, ['item_divine_regalia'] = 2.33, ['item_dezun_bloodrite'] = 5.44, ['item_riftshadow_prism'] = 5.78},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 35.36, ['item_enhancement_mystical'] = 35.02, ['item_enhancement_tough'] = 14.46, ['item_enhancement_quickened'] = 13.63, ['item_enhancement_alert'] = 1.54},
@@ -1477,11 +1493,11 @@ local heroList = {
     },
     ['npc_dota_hero_silencer'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 45.74, ['item_sisters_shroud'] = 21.33, ['item_kobold_cup'] = 9.71, ['item_spark_of_courage'] = 7.31, ['item_occult_bracelet'] = 5.4, ['item_polliwog_charm'] = 5.02, ['item_chipped_vest'] = 4.25, ['item_rippers_lash'] = 1.24},
-           [2] = {['item_searing_signet'] = 55.47, ['item_mana_draught'] = 13.48, ['item_misericorde'] = 11.48, ['item_essence_ring'] = 8.59, ['item_pogo_stick'] = 6.65, ['item_poor_mans_shield'] = 4.34},
-           [3] = {['item_whisper_of_the_dread'] = 32.66, ['item_gunpowder_gauntlets'] = 22.55, ['item_gale_guard'] = 21.44, ['item_psychic_headband'] = 20.08, ['item_jidi_pollen_bag'] = 3.28},
-           [4] = {['item_magnifying_monocle'] = 35.66, ['item_giant_maul'] = 22.24, ['item_dezun_bloodrite'] = 15.24, ['item_outworld_staff'] = 15.18, ['item_crippling_crossbow'] = 8.81, ['item_pyrrhic_cloak'] = 2.87},
-           [5] = {['item_helm_of_the_undying'] = 30.23, ['item_desolator_2'] = 19.6, ['item_demonicon'] = 15.61, ['item_fallen_sky'] = 8.64, ['item_minotaur_horn'] = 8.5, ['item_spider_legs'] = 7.82, ['item_unrelenting_eye'] = 6.66, ['item_divine_regalia'] = 2.95},
+           [1] = {['item_dormant_curio'] = 55.45, ['item_kobold_cup'] = 11.77, ['item_occult_bracelet'] = 6.55, ['item_polliwog_charm'] = 6.09, ['item_chipped_vest'] = 5.15, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 59.52, ['item_mana_draught'] = 14.47, ['item_essence_ring'] = 9.22, ['item_pogo_stick'] = 7.14, ['item_poor_mans_shield'] = 4.66, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 39.59, ['item_gunpowder_gauntlets'] = 27.33, ['item_psychic_headband'] = 24.34, ['item_jidi_pollen_bag'] = 3.98, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 50.27, ['item_crippling_crossbow'] = 19.91, ['item_flayers_bota'] = 7.45, ['item_idol_of_screeauk'] = 7.45, ['item_metamorphic_mandible'] = 7.45, ['item_rattlecage'] = 7.45},
+           [5] = {['item_desolator_2'] = 27.88, ['item_demonicon'] = 22.21, ['item_fallen_sky'] = 12.29, ['item_minotaur_horn'] = 12.09, ['item_spider_legs'] = 11.13, ['item_divine_regalia'] = 4.20, ['item_dezun_bloodrite'] = 4.96, ['item_riftshadow_prism'] = 5.24},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 31.84, ['item_enhancement_mystical'] = 29.04, ['item_enhancement_quickened'] = 22.72, ['item_enhancement_brawny'] = 10.63, ['item_enhancement_tough'] = 5.77},
@@ -1493,11 +1509,11 @@ local heroList = {
     },
     ['npc_dota_hero_skeleton_king'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 46.95, ['item_dormant_curio'] = 18.96, ['item_spark_of_courage'] = 17.19, ['item_sisters_shroud'] = 8.2, ['item_occult_bracelet'] = 2.74, ['item_kobold_cup'] = 2.22, ['item_rippers_lash'] = 2.07, ['item_polliwog_charm'] = 1.66},
-           [2] = {['item_misericorde'] = 48.93, ['item_poor_mans_shield'] = 30.56, ['item_searing_signet'] = 6.77, ['item_essence_ring'] = 6.23, ['item_pogo_stick'] = 3.92, ['item_mana_draught'] = 3.59},
-           [3] = {['item_gunpowder_gauntlets'] = 72.67, ['item_gale_guard'] = 17.09, ['item_jidi_pollen_bag'] = 7.71, ['item_whisper_of_the_dread'] = 1.39, ['item_psychic_headband'] = 1.14},
-           [4] = {['item_giant_maul'] = 53.8, ['item_pyrrhic_cloak'] = 24.04, ['item_crippling_crossbow'] = 8.22, ['item_magnifying_monocle'] = 5.98, ['item_outworld_staff'] = 5.27, ['item_dezun_bloodrite'] = 2.7},
-           [5] = {['item_desolator_2'] = 34.82, ['item_helm_of_the_undying'] = 20.25, ['item_unrelenting_eye'] = 11.71, ['item_minotaur_horn'] = 10.92, ['item_fallen_sky'] = 9.18, ['item_demonicon'] = 5.86, ['item_spider_legs'] = 4.43, ['item_divine_regalia'] = 2.83},
+           [1] = {['item_chipped_vest'] = 55.02, ['item_dormant_curio'] = 22.22, ['item_occult_bracelet'] = 3.21, ['item_kobold_cup'] = 2.60, ['item_polliwog_charm'] = 1.95, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 56.85, ['item_searing_signet'] = 12.59, ['item_essence_ring'] = 11.59, ['item_pogo_stick'] = 7.29, ['item_mana_draught'] = 6.68, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 83.48, ['item_jidi_pollen_bag'] = 8.86, ['item_whisper_of_the_dread'] = 1.60, ['item_psychic_headband'] = 1.31, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 68.64, ['item_crippling_crossbow'] = 10.49, ['item_flayers_bota'] = 5.22, ['item_idol_of_screeauk'] = 5.22, ['item_metamorphic_mandible'] = 5.22, ['item_rattlecage'] = 5.22},
+           [5] = {['item_desolator_2'] = 45.67, ['item_minotaur_horn'] = 14.32, ['item_fallen_sky'] = 12.04, ['item_demonicon'] = 7.69, ['item_spider_legs'] = 5.81, ['item_divine_regalia'] = 3.71, ['item_dezun_bloodrite'] = 5.23, ['item_riftshadow_prism'] = 5.54},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 37.78, ['item_enhancement_tough'] = 30.53, ['item_enhancement_brawny'] = 18.72, ['item_enhancement_quickened'] = 7.94, ['item_enhancement_mystical'] = 5.02},
@@ -1509,11 +1525,11 @@ local heroList = {
     },
     ['npc_dota_hero_skywrath_mage'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 35.64, ['item_sisters_shroud'] = 23.44, ['item_occult_bracelet'] = 12.89, ['item_kobold_cup'] = 9.8, ['item_polliwog_charm'] = 6.69, ['item_chipped_vest'] = 5.16, ['item_spark_of_courage'] = 4.65, ['item_rippers_lash'] = 1.74},
-           [2] = {['item_searing_signet'] = 51.17, ['item_mana_draught'] = 29.57, ['item_pogo_stick'] = 6.58, ['item_essence_ring'] = 6.51, ['item_poor_mans_shield'] = 3.56, ['item_misericorde'] = 2.61},
-           [3] = {['item_whisper_of_the_dread'] = 51.63, ['item_psychic_headband'] = 21.47, ['item_gale_guard'] = 16.49, ['item_gunpowder_gauntlets'] = 7.35, ['item_jidi_pollen_bag'] = 3.06},
-           [4] = {['item_magnifying_monocle'] = 42.44, ['item_dezun_bloodrite'] = 25.89, ['item_outworld_staff'] = 17.06, ['item_giant_maul'] = 6.61, ['item_pyrrhic_cloak'] = 4.53, ['item_crippling_crossbow'] = 3.47},
-           [5] = {['item_helm_of_the_undying'] = 31.12, ['item_demonicon'] = 18.84, ['item_fallen_sky'] = 14.67, ['item_spider_legs'] = 9.1, ['item_minotaur_horn'] = 8.95, ['item_unrelenting_eye'] = 8.29, ['item_desolator_2'] = 5.02, ['item_divine_regalia'] = 4.03},
+           [1] = {['item_dormant_curio'] = 43.17, ['item_occult_bracelet'] = 15.61, ['item_kobold_cup'] = 11.87, ['item_polliwog_charm'] = 8.10, ['item_chipped_vest'] = 6.25, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 49.91, ['item_mana_draught'] = 28.84, ['item_pogo_stick'] = 6.42, ['item_essence_ring'] = 6.35, ['item_poor_mans_shield'] = 3.47, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 58.88, ['item_psychic_headband'] = 24.49, ['item_gunpowder_gauntlets'] = 8.38, ['item_jidi_pollen_bag'] = 3.49, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 27.01, ['item_crippling_crossbow'] = 14.18, ['item_flayers_bota'] = 14.70, ['item_idol_of_screeauk'] = 14.70, ['item_metamorphic_mandible'] = 14.70, ['item_rattlecage'] = 14.70},
+           [5] = {['item_demonicon'] = 27.83, ['item_fallen_sky'] = 21.67, ['item_spider_legs'] = 13.44, ['item_minotaur_horn'] = 13.22, ['item_desolator_2'] = 7.42, ['item_divine_regalia'] = 5.95, ['item_dezun_bloodrite'] = 5.09, ['item_riftshadow_prism'] = 5.38},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 49.92, ['item_enhancement_quickened'] = 31.73, ['item_enhancement_brawny'] = 10.98, ['item_enhancement_tough'] = 3.83, ['item_enhancement_alert'] = 3.54},
@@ -1525,11 +1541,11 @@ local heroList = {
     },
     ['npc_dota_hero_slardar'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 38.82, ['item_spark_of_courage'] = 18.19, ['item_dormant_curio'] = 17.14, ['item_sisters_shroud'] = 12.79, ['item_occult_bracelet'] = 3.92, ['item_kobold_cup'] = 3.7, ['item_polliwog_charm'] = 3.61, ['item_rippers_lash'] = 1.83},
-           [2] = {['item_misericorde'] = 39.59, ['item_poor_mans_shield'] = 31.16, ['item_essence_ring'] = 10.24, ['item_mana_draught'] = 8, ['item_searing_signet'] = 6.32, ['item_pogo_stick'] = 4.7},
-           [3] = {['item_gunpowder_gauntlets'] = 61.18, ['item_gale_guard'] = 26.96, ['item_jidi_pollen_bag'] = 7.11, ['item_whisper_of_the_dread'] = 2.67, ['item_psychic_headband'] = 2.08},
-           [4] = {['item_giant_maul'] = 47.87, ['item_pyrrhic_cloak'] = 20.04, ['item_dezun_bloodrite'] = 11.45, ['item_outworld_staff'] = 7.38, ['item_crippling_crossbow'] = 6.72, ['item_magnifying_monocle'] = 6.54},
-           [5] = {['item_desolator_2'] = 29.76, ['item_helm_of_the_undying'] = 26.96, ['item_minotaur_horn'] = 11.62, ['item_unrelenting_eye'] = 11.24, ['item_fallen_sky'] = 9.48, ['item_spider_legs'] = 5.33, ['item_demonicon'] = 4.32, ['item_divine_regalia'] = 1.3},
+           [1] = {['item_chipped_vest'] = 49.11, ['item_dormant_curio'] = 21.68, ['item_occult_bracelet'] = 4.96, ['item_kobold_cup'] = 4.68, ['item_polliwog_charm'] = 4.57, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 48.99, ['item_essence_ring'] = 16.10, ['item_mana_draught'] = 12.58, ['item_searing_signet'] = 9.94, ['item_pogo_stick'] = 7.39, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 79.77, ['item_jidi_pollen_bag'] = 9.27, ['item_whisper_of_the_dread'] = 3.48, ['item_psychic_headband'] = 2.71, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 66.47, ['item_crippling_crossbow'] = 9.33, ['item_flayers_bota'] = 6.05, ['item_idol_of_screeauk'] = 6.05, ['item_metamorphic_mandible'] = 6.05, ['item_rattlecage'] = 6.05},
+           [5] = {['item_desolator_2'] = 42.93, ['item_minotaur_horn'] = 16.76, ['item_fallen_sky'] = 13.67, ['item_spider_legs'] = 7.69, ['item_demonicon'] = 6.23, ['item_divine_regalia'] = 1.88, ['item_dezun_bloodrite'] = 5.27, ['item_riftshadow_prism'] = 5.58},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 36.2, ['item_enhancement_tough'] = 25.22, ['item_enhancement_brawny'] = 21.04, ['item_enhancement_quickened'] = 9.36, ['item_enhancement_mystical'] = 8.18},
@@ -1541,11 +1557,11 @@ local heroList = {
     },
     ['npc_dota_hero_slark'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 28.43, ['item_spark_of_courage'] = 21.27, ['item_chipped_vest'] = 17.01, ['item_sisters_shroud'] = 14.26, ['item_occult_bracelet'] = 9.7, ['item_kobold_cup'] = 3.66, ['item_rippers_lash'] = 3.59, ['item_polliwog_charm'] = 2.07},
-           [2] = {['item_misericorde'] = 46.33, ['item_poor_mans_shield'] = 23.25, ['item_mana_draught'] = 13.3, ['item_essence_ring'] = 7.54, ['item_searing_signet'] = 6.39, ['item_pogo_stick'] = 3.2},
-           [3] = {['item_gunpowder_gauntlets'] = 64.49, ['item_gale_guard'] = 22.82, ['item_jidi_pollen_bag'] = 7.99, ['item_psychic_headband'] = 2.37, ['item_whisper_of_the_dread'] = 2.34},
-           [4] = {['item_giant_maul'] = 53.03, ['item_crippling_crossbow'] = 14.07, ['item_outworld_staff'] = 11.15, ['item_magnifying_monocle'] = 10.17, ['item_pyrrhic_cloak'] = 7.9, ['item_dezun_bloodrite'] = 3.67},
-           [5] = {['item_desolator_2'] = 32.57, ['item_helm_of_the_undying'] = 24.54, ['item_minotaur_horn'] = 12.14, ['item_unrelenting_eye'] = 10.17, ['item_fallen_sky'] = 8.36, ['item_spider_legs'] = 5.85, ['item_demonicon'] = 3.76, ['item_divine_regalia'] = 2.61},
+           [1] = {['item_dormant_curio'] = 39.70, ['item_chipped_vest'] = 23.75, ['item_occult_bracelet'] = 13.55, ['item_kobold_cup'] = 5.11, ['item_polliwog_charm'] = 2.89, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 41.15, ['item_mana_draught'] = 23.54, ['item_essence_ring'] = 13.34, ['item_searing_signet'] = 11.31, ['item_pogo_stick'] = 5.66, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 79.57, ['item_jidi_pollen_bag'] = 9.86, ['item_psychic_headband'] = 2.92, ['item_whisper_of_the_dread'] = 2.89, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 62.36, ['item_crippling_crossbow'] = 16.55, ['item_flayers_bota'] = 5.27, ['item_idol_of_screeauk'] = 5.27, ['item_metamorphic_mandible'] = 5.27, ['item_rattlecage'] = 5.27},
+           [5] = {['item_desolator_2'] = 44.58, ['item_minotaur_horn'] = 16.62, ['item_fallen_sky'] = 11.44, ['item_spider_legs'] = 8.01, ['item_demonicon'] = 5.15, ['item_divine_regalia'] = 3.57, ['item_dezun_bloodrite'] = 5.16, ['item_riftshadow_prism'] = 5.46},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 45.71, ['item_enhancement_tough'] = 20.3, ['item_enhancement_mystical'] = 13.25, ['item_enhancement_brawny'] = 10.98, ['item_enhancement_quickened'] = 9.76},
@@ -1557,11 +1573,11 @@ local heroList = {
     },
     ['npc_dota_hero_snapfire'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 34.91, ['item_sisters_shroud'] = 19.01, ['item_spark_of_courage'] = 11.07, ['item_kobold_cup'] = 10.95, ['item_chipped_vest'] = 10.18, ['item_polliwog_charm'] = 6.46, ['item_occult_bracelet'] = 4.99, ['item_rippers_lash'] = 2.43},
-           [2] = {['item_searing_signet'] = 41.76, ['item_misericorde'] = 17.35, ['item_mana_draught'] = 13.98, ['item_pogo_stick'] = 10.22, ['item_essence_ring'] = 10.07, ['item_poor_mans_shield'] = 6.62},
-           [3] = {['item_gunpowder_gauntlets'] = 29.15, ['item_whisper_of_the_dread'] = 27.3, ['item_gale_guard'] = 20.65, ['item_psychic_headband'] = 18.4, ['item_jidi_pollen_bag'] = 4.5},
-           [4] = {['item_magnifying_monocle'] = 28.05, ['item_giant_maul'] = 26.77, ['item_dezun_bloodrite'] = 19.68, ['item_outworld_staff'] = 11.68, ['item_crippling_crossbow'] = 8.91, ['item_pyrrhic_cloak'] = 4.91},
-           [5] = {['item_desolator_2'] = 29.33, ['item_helm_of_the_undying'] = 23.55, ['item_demonicon'] = 11.72, ['item_fallen_sky'] = 10.53, ['item_spider_legs'] = 7.83, ['item_minotaur_horn'] = 7.61, ['item_unrelenting_eye'] = 5.79, ['item_divine_regalia'] = 3.65},
+           [1] = {['item_dormant_curio'] = 43.97, ['item_kobold_cup'] = 13.79, ['item_chipped_vest'] = 12.82, ['item_polliwog_charm'] = 8.14, ['item_occult_bracelet'] = 6.28, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 48.00, ['item_mana_draught'] = 16.07, ['item_pogo_stick'] = 11.75, ['item_essence_ring'] = 11.57, ['item_poor_mans_shield'] = 7.61, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 34.99, ['item_whisper_of_the_dread'] = 32.77, ['item_psychic_headband'] = 22.08, ['item_jidi_pollen_bag'] = 5.40, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 51.75, ['item_crippling_crossbow'] = 17.22, ['item_flayers_bota'] = 7.76, ['item_idol_of_screeauk'] = 7.76, ['item_metamorphic_mandible'] = 7.76, ['item_rattlecage'] = 7.76},
+           [5] = {['item_desolator_2'] = 37.35, ['item_demonicon'] = 14.93, ['item_fallen_sky'] = 13.41, ['item_spider_legs'] = 9.97, ['item_minotaur_horn'] = 9.69, ['item_divine_regalia'] = 4.65, ['item_dezun_bloodrite'] = 4.87, ['item_riftshadow_prism'] = 5.13},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 24.43, ['item_enhancement_quickened'] = 22.14, ['item_enhancement_alert'] = 20.94, ['item_enhancement_tough'] = 17.19, ['item_enhancement_brawny'] = 15.3},
@@ -1573,11 +1589,11 @@ local heroList = {
     },
     ['npc_dota_hero_sniper'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 34.83, ['item_spark_of_courage'] = 28.16, ['item_sisters_shroud'] = 13.81, ['item_chipped_vest'] = 8.46, ['item_kobold_cup'] = 4.73, ['item_occult_bracelet'] = 4.5, ['item_polliwog_charm'] = 3.22, ['item_rippers_lash'] = 2.29},
-           [2] = {['item_misericorde'] = 49.57, ['item_searing_signet'] = 26.07, ['item_poor_mans_shield'] = 8.23, ['item_mana_draught'] = 6.08, ['item_pogo_stick'] = 5.5, ['item_essence_ring'] = 4.54},
-           [3] = {['item_gunpowder_gauntlets'] = 62.78, ['item_whisper_of_the_dread'] = 13.16, ['item_gale_guard'] = 11.92, ['item_psychic_headband'] = 10.04, ['item_jidi_pollen_bag'] = 2.1},
-           [4] = {['item_giant_maul'] = 44.62, ['item_magnifying_monocle'] = 25.7, ['item_crippling_crossbow'] = 15.08, ['item_outworld_staff'] = 7.75, ['item_dezun_bloodrite'] = 4.24, ['item_pyrrhic_cloak'] = 2.62},
-           [5] = {['item_desolator_2'] = 40.19, ['item_helm_of_the_undying'] = 24.63, ['item_spider_legs'] = 7.82, ['item_minotaur_horn'] = 7.14, ['item_unrelenting_eye'] = 6.5, ['item_demonicon'] = 4.71, ['item_divine_regalia'] = 4.51, ['item_fallen_sky'] = 4.5},
+           [1] = {['item_dormant_curio'] = 53.11, ['item_chipped_vest'] = 12.90, ['item_kobold_cup'] = 7.21, ['item_occult_bracelet'] = 6.86, ['item_polliwog_charm'] = 4.91, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 49.12, ['item_poor_mans_shield'] = 15.51, ['item_mana_draught'] = 11.46, ['item_pogo_stick'] = 10.36, ['item_essence_ring'] = 8.55, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 67.88, ['item_whisper_of_the_dread'] = 14.23, ['item_psychic_headband'] = 10.86, ['item_jidi_pollen_bag'] = 2.27, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 58.73, ['item_crippling_crossbow'] = 19.85, ['item_flayers_bota'] = 5.35, ['item_idol_of_screeauk'] = 5.35, ['item_metamorphic_mandible'] = 5.35, ['item_rattlecage'] = 5.35},
+           [5] = {['item_desolator_2'] = 52.46, ['item_spider_legs'] = 10.21, ['item_minotaur_horn'] = 9.32, ['item_demonicon'] = 6.15, ['item_divine_regalia'] = 5.89, ['item_fallen_sky'] = 5.87, ['item_dezun_bloodrite'] = 4.92, ['item_riftshadow_prism'] = 5.19},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 52.08, ['item_enhancement_tough'] = 22.84, ['item_enhancement_quickened'] = 11.59, ['item_enhancement_brawny'] = 7.25, ['item_enhancement_mystical'] = 6.24},
@@ -1589,11 +1605,11 @@ local heroList = {
     },
     ['npc_dota_hero_spectre'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 51.11, ['item_dormant_curio'] = 19.14, ['item_spark_of_courage'] = 13.67, ['item_sisters_shroud'] = 7.41, ['item_occult_bracelet'] = 3.02, ['item_polliwog_charm'] = 2.46, ['item_rippers_lash'] = 2.07, ['item_kobold_cup'] = 1.13},
-           [2] = {['item_misericorde'] = 47.13, ['item_poor_mans_shield'] = 27.1, ['item_searing_signet'] = 10.62, ['item_mana_draught'] = 7.36, ['item_essence_ring'] = 6.41, ['item_pogo_stick'] = 1.4},
-           [3] = {['item_gunpowder_gauntlets'] = 71.27, ['item_gale_guard'] = 18.25, ['item_jidi_pollen_bag'] = 7.24, ['item_whisper_of_the_dread'] = 2.11, ['item_psychic_headband'] = 1.13},
-           [4] = {['item_giant_maul'] = 53.53, ['item_pyrrhic_cloak'] = 23.14, ['item_crippling_crossbow'] = 10.41, ['item_magnifying_monocle'] = 5.68, ['item_outworld_staff'] = 5.43, ['item_dezun_bloodrite'] = 1.8},
-           [5] = {['item_desolator_2'] = 34.7, ['item_helm_of_the_undying'] = 25.52, ['item_minotaur_horn'] = 12.04, ['item_unrelenting_eye'] = 10.98, ['item_fallen_sky'] = 5.95, ['item_divine_regalia'] = 3.86, ['item_spider_legs'] = 3.62, ['item_demonicon'] = 3.34},
+           [1] = {['item_chipped_vest'] = 56.52, ['item_dormant_curio'] = 21.17, ['item_occult_bracelet'] = 3.34, ['item_polliwog_charm'] = 2.72, ['item_kobold_cup'] = 1.25, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 48.68, ['item_searing_signet'] = 19.08, ['item_mana_draught'] = 13.22, ['item_essence_ring'] = 11.51, ['item_pogo_stick'] = 2.51, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 83.03, ['item_jidi_pollen_bag'] = 8.43, ['item_whisper_of_the_dread'] = 2.46, ['item_psychic_headband'] = 1.32, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 66.50, ['item_crippling_crossbow'] = 12.93, ['item_flayers_bota'] = 5.14, ['item_idol_of_screeauk'] = 5.14, ['item_metamorphic_mandible'] = 5.14, ['item_rattlecage'] = 5.14},
+           [5] = {['item_desolator_2'] = 48.75, ['item_minotaur_horn'] = 16.92, ['item_fallen_sky'] = 8.36, ['item_divine_regalia'] = 5.42, ['item_spider_legs'] = 5.09, ['item_demonicon'] = 4.69, ['item_dezun_bloodrite'] = 5.23, ['item_riftshadow_prism'] = 5.54},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 42.8, ['item_enhancement_tough'] = 24.22, ['item_enhancement_brawny'] = 20.2, ['item_enhancement_quickened'] = 6.81, ['item_enhancement_mystical'] = 5.98},
@@ -1605,11 +1621,11 @@ local heroList = {
     },
     ['npc_dota_hero_spirit_breaker'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 35.74, ['item_kobold_cup'] = 17.37, ['item_dormant_curio'] = 16.63, ['item_sisters_shroud'] = 11.9, ['item_spark_of_courage'] = 10.35, ['item_occult_bracelet'] = 3.22, ['item_polliwog_charm'] = 3.08, ['item_rippers_lash'] = 1.71},
-           [2] = {['item_poor_mans_shield'] = 30.59, ['item_searing_signet'] = 23.35, ['item_misericorde'] = 20.22, ['item_essence_ring'] = 14.01, ['item_mana_draught'] = 7.92, ['item_pogo_stick'] = 3.92},
-           [3] = {['item_gunpowder_gauntlets'] = 46.52, ['item_gale_guard'] = 27, ['item_whisper_of_the_dread'] = 13.09, ['item_jidi_pollen_bag'] = 9.94, ['item_psychic_headband'] = 3.46},
-           [4] = {['item_giant_maul'] = 42.28, ['item_pyrrhic_cloak'] = 25.44, ['item_outworld_staff'] = 11.86, ['item_dezun_bloodrite'] = 6.93, ['item_crippling_crossbow'] = 6.77, ['item_magnifying_monocle'] = 6.72},
-           [5] = {['item_helm_of_the_undying'] = 21.97, ['item_desolator_2'] = 17.09, ['item_unrelenting_eye'] = 12.93, ['item_spider_legs'] = 12.75, ['item_fallen_sky'] = 12.69, ['item_minotaur_horn'] = 11.97, ['item_demonicon'] = 9.31, ['item_divine_regalia'] = 1.29},
+           [1] = {['item_chipped_vest'] = 39.95, ['item_kobold_cup'] = 19.42, ['item_dormant_curio'] = 18.59, ['item_occult_bracelet'] = 3.60, ['item_polliwog_charm'] = 3.44, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 36.42, ['item_searing_signet'] = 27.80, ['item_essence_ring'] = 16.68, ['item_mana_draught'] = 9.43, ['item_pogo_stick'] = 4.67, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 60.68, ['item_whisper_of_the_dread'] = 17.08, ['item_jidi_pollen_bag'] = 12.97, ['item_psychic_headband'] = 4.51, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 66.52, ['item_crippling_crossbow'] = 10.65, ['item_flayers_bota'] = 5.71, ['item_idol_of_screeauk'] = 5.71, ['item_metamorphic_mandible'] = 5.71, ['item_rattlecage'] = 5.71},
+           [5] = {['item_desolator_2'] = 23.37, ['item_spider_legs'] = 17.43, ['item_fallen_sky'] = 17.35, ['item_minotaur_horn'] = 16.37, ['item_demonicon'] = 12.73, ['item_divine_regalia'] = 1.76, ['item_dezun_bloodrite'] = 5.33, ['item_riftshadow_prism'] = 5.65},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_quickened'] = 32.42, ['item_enhancement_alert'] = 20.6, ['item_enhancement_brawny'] = 19.94, ['item_enhancement_tough'] = 18.04, ['item_enhancement_mystical'] = 9},
@@ -1621,11 +1637,11 @@ local heroList = {
     },
     ['npc_dota_hero_storm_spirit'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 40.55, ['item_occult_bracelet'] = 22.83, ['item_sisters_shroud'] = 16.94, ['item_spark_of_courage'] = 7.71, ['item_chipped_vest'] = 4.8, ['item_polliwog_charm'] = 3.72, ['item_kobold_cup'] = 1.9, ['item_rippers_lash'] = 1.55},
-           [2] = {['item_mana_draught'] = 46.36, ['item_searing_signet'] = 35.45, ['item_misericorde'] = 7.95, ['item_essence_ring'] = 5.56, ['item_poor_mans_shield'] = 2.6, ['item_pogo_stick'] = 2.08},
-           [3] = {['item_whisper_of_the_dread'] = 42.16, ['item_gunpowder_gauntlets'] = 35.26, ['item_gale_guard'] = 12.84, ['item_psychic_headband'] = 7.32, ['item_jidi_pollen_bag'] = 2.43},
-           [4] = {['item_giant_maul'] = 34.97, ['item_magnifying_monocle'] = 19.99, ['item_outworld_staff'] = 18.04, ['item_dezun_bloodrite'] = 15.32, ['item_crippling_crossbow'] = 7.23, ['item_pyrrhic_cloak'] = 4.45},
-           [5] = {['item_helm_of_the_undying'] = 28.28, ['item_desolator_2'] = 21.31, ['item_fallen_sky'] = 14.03, ['item_minotaur_horn'] = 13.44, ['item_demonicon'] = 7.89, ['item_unrelenting_eye'] = 7.33, ['item_divine_regalia'] = 5.24, ['item_spider_legs'] = 2.48},
+           [1] = {['item_dormant_curio'] = 46.70, ['item_occult_bracelet'] = 26.29, ['item_chipped_vest'] = 5.53, ['item_polliwog_charm'] = 4.28, ['item_kobold_cup'] = 2.19, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_mana_draught'] = 47.85, ['item_searing_signet'] = 36.59, ['item_essence_ring'] = 5.74, ['item_poor_mans_shield'] = 2.68, ['item_pogo_stick'] = 2.15, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 46.06, ['item_gunpowder_gauntlets'] = 38.52, ['item_psychic_headband'] = 8.00, ['item_jidi_pollen_bag'] = 2.65, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 60.28, ['item_crippling_crossbow'] = 12.46, ['item_flayers_bota'] = 6.82, ['item_idol_of_screeauk'] = 6.82, ['item_metamorphic_mandible'] = 6.82, ['item_rattlecage'] = 6.82},
+           [5] = {['item_desolator_2'] = 29.70, ['item_fallen_sky'] = 19.55, ['item_minotaur_horn'] = 18.73, ['item_demonicon'] = 10.99, ['item_divine_regalia'] = 7.30, ['item_spider_legs'] = 3.46, ['item_dezun_bloodrite'] = 5.00, ['item_riftshadow_prism'] = 5.28},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 48.75, ['item_enhancement_quickened'] = 21.39, ['item_enhancement_alert'] = 15.56, ['item_enhancement_brawny'] = 7.69, ['item_enhancement_tough'] = 6.61},
@@ -1637,11 +1653,11 @@ local heroList = {
     },
     ['npc_dota_hero_sven'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 29, ['item_dormant_curio'] = 26.5, ['item_spark_of_courage'] = 23.07, ['item_sisters_shroud'] = 9.84, ['item_occult_bracelet'] = 3.36, ['item_kobold_cup'] = 3.1, ['item_polliwog_charm'] = 2.8, ['item_rippers_lash'] = 2.34},
-           [2] = {['item_misericorde'] = 56.78, ['item_poor_mans_shield'] = 23.79, ['item_mana_draught'] = 5.33, ['item_essence_ring'] = 5.1, ['item_pogo_stick'] = 5.08, ['item_searing_signet'] = 3.92},
-           [3] = {['item_gunpowder_gauntlets'] = 76.86, ['item_gale_guard'] = 16.05, ['item_jidi_pollen_bag'] = 4.13, ['item_whisper_of_the_dread'] = 1.5, ['item_psychic_headband'] = 1.46},
-           [4] = {['item_giant_maul'] = 59.08, ['item_pyrrhic_cloak'] = 12.29, ['item_magnifying_monocle'] = 9.12, ['item_crippling_crossbow'] = 8.64, ['item_outworld_staff'] = 7.44, ['item_dezun_bloodrite'] = 3.42},
-           [5] = {['item_desolator_2'] = 32.1, ['item_helm_of_the_undying'] = 30.19, ['item_minotaur_horn'] = 11.11, ['item_unrelenting_eye'] = 8.98, ['item_fallen_sky'] = 7.17, ['item_spider_legs'] = 5.59, ['item_divine_regalia'] = 2.76, ['item_demonicon'] = 2.1},
+           [1] = {['item_chipped_vest'] = 38.06, ['item_dormant_curio'] = 34.78, ['item_occult_bracelet'] = 4.41, ['item_kobold_cup'] = 4.07, ['item_polliwog_charm'] = 3.68, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 52.29, ['item_mana_draught'] = 11.72, ['item_essence_ring'] = 11.21, ['item_pogo_stick'] = 11.17, ['item_searing_signet'] = 8.62, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 87.19, ['item_jidi_pollen_bag'] = 4.69, ['item_whisper_of_the_dread'] = 1.70, ['item_psychic_headband'] = 1.66, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 68.91, ['item_crippling_crossbow'] = 10.08, ['item_flayers_bota'] = 5.25, ['item_idol_of_screeauk'] = 5.25, ['item_metamorphic_mandible'] = 5.25, ['item_rattlecage'] = 5.25},
+           [5] = {['item_desolator_2'] = 47.20, ['item_minotaur_horn'] = 16.34, ['item_fallen_sky'] = 10.54, ['item_spider_legs'] = 8.22, ['item_divine_regalia'] = 4.06, ['item_demonicon'] = 3.09, ['item_dezun_bloodrite'] = 5.13, ['item_riftshadow_prism'] = 5.43},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 44.5, ['item_enhancement_tough'] = 30.12, ['item_enhancement_brawny'] = 12.95, ['item_enhancement_quickened'] = 8.12, ['item_enhancement_mystical'] = 4.31},
@@ -1653,11 +1669,11 @@ local heroList = {
     },
     ['npc_dota_hero_techies'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 42.26, ['item_sisters_shroud'] = 18.85, ['item_occult_bracelet'] = 9.2, ['item_chipped_vest'] = 7.89, ['item_polliwog_charm'] = 7.24, ['item_kobold_cup'] = 7.15, ['item_spark_of_courage'] = 5.97, ['item_rippers_lash'] = 1.43},
-           [2] = {['item_searing_signet'] = 39.79, ['item_mana_draught'] = 36.98, ['item_essence_ring'] = 8.16, ['item_pogo_stick'] = 6.37, ['item_poor_mans_shield'] = 4.89, ['item_misericorde'] = 3.81},
-           [3] = {['item_whisper_of_the_dread'] = 48.12, ['item_psychic_headband'] = 18.67, ['item_gale_guard'] = 16.77, ['item_gunpowder_gauntlets'] = 10.25, ['item_jidi_pollen_bag'] = 6.19},
-           [4] = {['item_magnifying_monocle'] = 33.78, ['item_dezun_bloodrite'] = 29.26, ['item_outworld_staff'] = 14.97, ['item_giant_maul'] = 11.43, ['item_pyrrhic_cloak'] = 6.37, ['item_crippling_crossbow'] = 4.19},
-           [5] = {['item_helm_of_the_undying'] = 24.29, ['item_demonicon'] = 20, ['item_fallen_sky'] = 16.89, ['item_desolator_2'] = 13.84, ['item_minotaur_horn'] = 7.93, ['item_spider_legs'] = 7.69, ['item_unrelenting_eye'] = 6.23, ['item_divine_regalia'] = 3.12},
+           [1] = {['item_dormant_curio'] = 48.71, ['item_occult_bracelet'] = 10.60, ['item_chipped_vest'] = 9.09, ['item_polliwog_charm'] = 8.35, ['item_kobold_cup'] = 8.24, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 39.30, ['item_mana_draught'] = 36.52, ['item_essence_ring'] = 8.06, ['item_pogo_stick'] = 6.29, ['item_poor_mans_shield'] = 4.83, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 55.06, ['item_psychic_headband'] = 21.36, ['item_gunpowder_gauntlets'] = 11.73, ['item_jidi_pollen_bag'] = 7.08, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 34.05, ['item_crippling_crossbow'] = 12.48, ['item_flayers_bota'] = 13.37, ['item_idol_of_screeauk'] = 13.37, ['item_metamorphic_mandible'] = 13.37, ['item_rattlecage'] = 13.37},
+           [5] = {['item_demonicon'] = 25.89, ['item_fallen_sky'] = 21.86, ['item_desolator_2'] = 17.92, ['item_minotaur_horn'] = 10.27, ['item_spider_legs'] = 9.96, ['item_divine_regalia'] = 4.04, ['item_dezun_bloodrite'] = 4.90, ['item_riftshadow_prism'] = 5.17},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 42.47, ['item_enhancement_quickened'] = 23.69, ['item_enhancement_brawny'] = 18.42, ['item_enhancement_alert'] = 10.06, ['item_enhancement_tough'] = 5.36},
@@ -1669,11 +1685,11 @@ local heroList = {
     },
     ['npc_dota_hero_terrorblade'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 29.52, ['item_spark_of_courage'] = 24.27, ['item_chipped_vest'] = 16.12, ['item_sisters_shroud'] = 13.54, ['item_rippers_lash'] = 4.9, ['item_occult_bracelet'] = 4.81, ['item_kobold_cup'] = 3.67, ['item_polliwog_charm'] = 3.17},
-           [2] = {['item_misericorde'] = 49.04, ['item_poor_mans_shield'] = 21.37, ['item_mana_draught'] = 11.71, ['item_essence_ring'] = 7.94, ['item_pogo_stick'] = 5.18, ['item_searing_signet'] = 4.76},
-           [3] = {['item_gunpowder_gauntlets'] = 63.36, ['item_gale_guard'] = 23.3, ['item_psychic_headband'] = 5.88, ['item_jidi_pollen_bag'] = 4.54, ['item_whisper_of_the_dread'] = 2.93},
-           [4] = {['item_giant_maul'] = 48.28, ['item_magnifying_monocle'] = 20.01, ['item_crippling_crossbow'] = 12.02, ['item_outworld_staff'] = 10.36, ['item_pyrrhic_cloak'] = 6.52, ['item_dezun_bloodrite'] = 2.81},
-           [5] = {['item_desolator_2'] = 32.41, ['item_helm_of_the_undying'] = 28.39, ['item_minotaur_horn'] = 10.84, ['item_unrelenting_eye'] = 7.73, ['item_fallen_sky'] = 7.26, ['item_spider_legs'] = 6.22, ['item_demonicon'] = 4.2, ['item_divine_regalia'] = 2.94},
+           [1] = {['item_dormant_curio'] = 43.80, ['item_chipped_vest'] = 23.92, ['item_occult_bracelet'] = 7.14, ['item_kobold_cup'] = 5.45, ['item_polliwog_charm'] = 4.70, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 39.84, ['item_mana_draught'] = 21.83, ['item_essence_ring'] = 14.80, ['item_pogo_stick'] = 9.66, ['item_searing_signet'] = 8.87, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 78.66, ['item_psychic_headband'] = 7.30, ['item_jidi_pollen_bag'] = 5.64, ['item_whisper_of_the_dread'] = 3.64, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 63.31, ['item_crippling_crossbow'] = 15.76, ['item_flayers_bota'] = 5.23, ['item_idol_of_screeauk'] = 5.23, ['item_metamorphic_mandible'] = 5.23, ['item_rattlecage'] = 5.23},
+           [5] = {['item_desolator_2'] = 45.50, ['item_minotaur_horn'] = 15.22, ['item_fallen_sky'] = 10.19, ['item_spider_legs'] = 8.73, ['item_demonicon'] = 5.90, ['item_divine_regalia'] = 4.13, ['item_dezun_bloodrite'] = 5.03, ['item_riftshadow_prism'] = 5.31},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 47.91, ['item_enhancement_tough'] = 22.16, ['item_enhancement_brawny'] = 12.21, ['item_enhancement_quickened'] = 9.19, ['item_enhancement_mystical'] = 8.53},
@@ -1685,11 +1701,11 @@ local heroList = {
     },
     ['npc_dota_hero_templar_assassin'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 32.6, ['item_spark_of_courage'] = 31.61, ['item_sisters_shroud'] = 14.14, ['item_chipped_vest'] = 9.27, ['item_occult_bracelet'] = 5.41, ['item_rippers_lash'] = 2.9, ['item_kobold_cup'] = 2.2, ['item_polliwog_charm'] = 1.87},
-           [2] = {['item_misericorde'] = 58.72, ['item_mana_draught'] = 13.58, ['item_poor_mans_shield'] = 12.46, ['item_pogo_stick'] = 6.98, ['item_searing_signet'] = 4.62, ['item_essence_ring'] = 3.65},
-           [3] = {['item_gunpowder_gauntlets'] = 74.3, ['item_gale_guard'] = 15.39, ['item_psychic_headband'] = 5.38, ['item_jidi_pollen_bag'] = 3.08, ['item_whisper_of_the_dread'] = 1.85},
-           [4] = {['item_giant_maul'] = 51.07, ['item_magnifying_monocle'] = 20.57, ['item_crippling_crossbow'] = 13.71, ['item_outworld_staff'] = 9.05, ['item_pyrrhic_cloak'] = 3.95, ['item_dezun_bloodrite'] = 1.65},
-           [5] = {['item_desolator_2'] = 39.8, ['item_helm_of_the_undying'] = 26.79, ['item_minotaur_horn'] = 8.6, ['item_unrelenting_eye'] = 6.6, ['item_fallen_sky'] = 5.81, ['item_spider_legs'] = 5.55, ['item_divine_regalia'] = 4.06, ['item_demonicon'] = 2.79},
+           [1] = {['item_dormant_curio'] = 53.96, ['item_chipped_vest'] = 15.34, ['item_occult_bracelet'] = 8.96, ['item_kobold_cup'] = 3.64, ['item_polliwog_charm'] = 3.10, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_mana_draught'] = 31.25, ['item_poor_mans_shield'] = 28.67, ['item_pogo_stick'] = 16.06, ['item_searing_signet'] = 10.63, ['item_essence_ring'] = 8.40, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 83.63, ['item_psychic_headband'] = 6.06, ['item_jidi_pollen_bag'] = 3.47, ['item_whisper_of_the_dread'] = 2.08, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 62.67, ['item_crippling_crossbow'] = 16.82, ['item_flayers_bota'] = 5.13, ['item_idol_of_screeauk'] = 5.13, ['item_metamorphic_mandible'] = 5.13, ['item_rattlecage'] = 5.13},
+           [5] = {['item_desolator_2'] = 53.69, ['item_minotaur_horn'] = 11.60, ['item_fallen_sky'] = 7.84, ['item_spider_legs'] = 7.49, ['item_divine_regalia'] = 5.48, ['item_demonicon'] = 3.76, ['item_dezun_bloodrite'] = 4.94, ['item_riftshadow_prism'] = 5.21},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 52.89, ['item_enhancement_tough'] = 26.08, ['item_enhancement_quickened'] = 9.48, ['item_enhancement_brawny'] = 5.98, ['item_enhancement_mystical'] = 5.58},
@@ -1701,11 +1717,11 @@ local heroList = {
     },
     ['npc_dota_hero_tidehunter'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 54.59, ['item_dormant_curio'] = 14.89, ['item_sisters_shroud'] = 9.76, ['item_spark_of_courage'] = 9.12, ['item_occult_bracelet'] = 4.95, ['item_polliwog_charm'] = 2.97, ['item_kobold_cup'] = 2.68, ['item_rippers_lash'] = 1.05},
-           [2] = {['item_poor_mans_shield'] = 39.5, ['item_essence_ring'] = 15.45, ['item_searing_signet'] = 14.89, ['item_misericorde'] = 12.33, ['item_mana_draught'] = 11.9, ['item_pogo_stick'] = 5.93},
-           [3] = {['item_gunpowder_gauntlets'] = 39.41, ['item_gale_guard'] = 36.97, ['item_jidi_pollen_bag'] = 13.52, ['item_whisper_of_the_dread'] = 6.43, ['item_psychic_headband'] = 3.67},
-           [4] = {['item_giant_maul'] = 31.11, ['item_pyrrhic_cloak'] = 27.81, ['item_dezun_bloodrite'] = 21.09, ['item_magnifying_monocle'] = 8.7, ['item_outworld_staff'] = 7.74, ['item_crippling_crossbow'] = 3.55},
-           [5] = {['item_helm_of_the_undying'] = 24.54, ['item_desolator_2'] = 19.2, ['item_fallen_sky'] = 15.28, ['item_minotaur_horn'] = 14.66, ['item_unrelenting_eye'] = 11.58, ['item_demonicon'] = 7.91, ['item_spider_legs'] = 5.86, ['item_divine_regalia'] = 0.97},
+           [1] = {['item_chipped_vest'] = 57.94, ['item_dormant_curio'] = 15.81, ['item_occult_bracelet'] = 5.25, ['item_polliwog_charm'] = 3.15, ['item_kobold_cup'] = 2.84, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 42.80, ['item_essence_ring'] = 16.74, ['item_searing_signet'] = 16.13, ['item_mana_draught'] = 12.89, ['item_pogo_stick'] = 6.43, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 59.55, ['item_jidi_pollen_bag'] = 20.43, ['item_whisper_of_the_dread'] = 9.72, ['item_psychic_headband'] = 5.55, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 60.88, ['item_crippling_crossbow'] = 6.95, ['item_flayers_bota'] = 8.04, ['item_idol_of_screeauk'] = 8.04, ['item_metamorphic_mandible'] = 8.04, ['item_rattlecage'] = 8.04},
+           [5] = {['item_desolator_2'] = 26.80, ['item_fallen_sky'] = 21.33, ['item_minotaur_horn'] = 20.46, ['item_demonicon'] = 11.04, ['item_spider_legs'] = 8.18, ['item_divine_regalia'] = 1.35, ['item_dezun_bloodrite'] = 5.27, ['item_riftshadow_prism'] = 5.58},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 34.16, ['item_enhancement_tough'] = 25.03, ['item_enhancement_mystical'] = 20.87, ['item_enhancement_quickened'] = 13.05, ['item_enhancement_alert'] = 6.9},
@@ -1717,11 +1733,11 @@ local heroList = {
     },
     ['npc_dota_hero_tinker'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 53.44, ['item_sisters_shroud'] = 22.72, ['item_occult_bracelet'] = 10.31, ['item_chipped_vest'] = 4.04, ['item_kobold_cup'] = 3.3, ['item_spark_of_courage'] = 3.05, ['item_polliwog_charm'] = 2.27, ['item_rippers_lash'] = 0.87},
-           [2] = {['item_searing_signet'] = 48.12, ['item_mana_draught'] = 21.63, ['item_pogo_stick'] = 16.55, ['item_essence_ring'] = 7.78, ['item_poor_mans_shield'] = 4.27, ['item_misericorde'] = 1.65},
-           [3] = {['item_whisper_of_the_dread'] = 56.45, ['item_psychic_headband'] = 21.48, ['item_gale_guard'] = 17.29, ['item_gunpowder_gauntlets'] = 2.64, ['item_jidi_pollen_bag'] = 2.14},
-           [4] = {['item_magnifying_monocle'] = 47.02, ['item_dezun_bloodrite'] = 24.73, ['item_outworld_staff'] = 19.86, ['item_pyrrhic_cloak'] = 3.46, ['item_giant_maul'] = 3.2, ['item_crippling_crossbow'] = 1.74},
-           [5] = {['item_helm_of_the_undying'] = 28.16, ['item_fallen_sky'] = 26.41, ['item_demonicon'] = 15.45, ['item_minotaur_horn'] = 12.88, ['item_unrelenting_eye'] = 5.91, ['item_divine_regalia'] = 4.88, ['item_spider_legs'] = 4.58, ['item_desolator_2'] = 1.73},
+           [1] = {['item_dormant_curio'] = 61.92, ['item_occult_bracelet'] = 11.95, ['item_chipped_vest'] = 4.68, ['item_kobold_cup'] = 3.82, ['item_polliwog_charm'] = 2.63, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 46.48, ['item_mana_draught'] = 20.89, ['item_pogo_stick'] = 15.99, ['item_essence_ring'] = 7.51, ['item_poor_mans_shield'] = 4.12, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 65.00, ['item_psychic_headband'] = 24.73, ['item_gunpowder_gauntlets'] = 3.04, ['item_jidi_pollen_bag'] = 2.46, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 19.04, ['item_crippling_crossbow'] = 10.35, ['item_flayers_bota'] = 17.65, ['item_idol_of_screeauk'] = 17.65, ['item_metamorphic_mandible'] = 17.65, ['item_rattlecage'] = 17.65},
+           [5] = {['item_fallen_sky'] = 36.03, ['item_demonicon'] = 21.07, ['item_minotaur_horn'] = 17.57, ['item_divine_regalia'] = 6.66, ['item_spider_legs'] = 6.25, ['item_desolator_2'] = 2.36, ['item_dezun_bloodrite'] = 4.90, ['item_riftshadow_prism'] = 5.17},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 51.6, ['item_enhancement_quickened'] = 30.38, ['item_enhancement_brawny'] = 11.32, ['item_enhancement_tough'] = 3.78, ['item_enhancement_alert'] = 2.91},
@@ -1733,11 +1749,11 @@ local heroList = {
     },
     ['npc_dota_hero_tiny'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 28.16, ['item_dormant_curio'] = 27.21, ['item_sisters_shroud'] = 13.19, ['item_spark_of_courage'] = 13.08, ['item_occult_bracelet'] = 6.47, ['item_kobold_cup'] = 6.24, ['item_polliwog_charm'] = 3.84, ['item_rippers_lash'] = 1.82},
-           [2] = {['item_searing_signet'] = 31.06, ['item_misericorde'] = 21.01, ['item_mana_draught'] = 15.94, ['item_poor_mans_shield'] = 15.33, ['item_pogo_stick'] = 8.63, ['item_essence_ring'] = 8.04},
-           [3] = {['item_gunpowder_gauntlets'] = 48.74, ['item_gale_guard'] = 19.46, ['item_whisper_of_the_dread'] = 18.68, ['item_psychic_headband'] = 7.54, ['item_jidi_pollen_bag'] = 5.57},
-           [4] = {['item_giant_maul'] = 42.37, ['item_pyrrhic_cloak'] = 14.67, ['item_magnifying_monocle'] = 13.41, ['item_dezun_bloodrite'] = 13.37, ['item_outworld_staff'] = 10.89, ['item_crippling_crossbow'] = 5.3},
-           [5] = {['item_desolator_2'] = 25.02, ['item_helm_of_the_undying'] = 24.84, ['item_fallen_sky'] = 13.36, ['item_minotaur_horn'] = 11.21, ['item_unrelenting_eye'] = 8.86, ['item_spider_legs'] = 8.07, ['item_demonicon'] = 6.81, ['item_divine_regalia'] = 1.83},
+           [1] = {['item_chipped_vest'] = 33.28, ['item_dormant_curio'] = 32.16, ['item_occult_bracelet'] = 7.65, ['item_kobold_cup'] = 7.37, ['item_polliwog_charm'] = 4.54, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 37.35, ['item_mana_draught'] = 19.17, ['item_poor_mans_shield'] = 18.43, ['item_pogo_stick'] = 10.38, ['item_essence_ring'] = 9.67, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 57.64, ['item_whisper_of_the_dread'] = 22.09, ['item_psychic_headband'] = 8.92, ['item_jidi_pollen_bag'] = 6.59, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 66.12, ['item_crippling_crossbow'] = 8.27, ['item_flayers_bota'] = 6.40, ['item_idol_of_screeauk'] = 6.40, ['item_metamorphic_mandible'] = 6.40, ['item_rattlecage'] = 6.40},
+           [5] = {['item_desolator_2'] = 33.80, ['item_fallen_sky'] = 18.05, ['item_minotaur_horn'] = 15.14, ['item_spider_legs'] = 10.90, ['item_demonicon'] = 9.20, ['item_divine_regalia'] = 2.47, ['item_dezun_bloodrite'] = 5.08, ['item_riftshadow_prism'] = 5.36},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 31.04, ['item_enhancement_tough'] = 20.85, ['item_enhancement_mystical'] = 17.28, ['item_enhancement_quickened'] = 15.69, ['item_enhancement_brawny'] = 15.14},
@@ -1749,11 +1765,11 @@ local heroList = {
     },
     ['npc_dota_hero_treant'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 27.26, ['item_dormant_curio'] = 24.46, ['item_sisters_shroud'] = 14.04, ['item_kobold_cup'] = 10.95, ['item_spark_of_courage'] = 8.74, ['item_polliwog_charm'] = 7.24, ['item_occult_bracelet'] = 4.5, ['item_rippers_lash'] = 2.82},
-           [2] = {['item_searing_signet'] = 34.37, ['item_poor_mans_shield'] = 18.65, ['item_mana_draught'] = 18.19, ['item_pogo_stick'] = 10.92, ['item_essence_ring'] = 10.47, ['item_misericorde'] = 7.39},
-           [3] = {['item_gunpowder_gauntlets'] = 31.65, ['item_gale_guard'] = 24.73, ['item_jidi_pollen_bag'] = 16.16, ['item_whisper_of_the_dread'] = 15.21, ['item_psychic_headband'] = 12.26},
-           [4] = {['item_dezun_bloodrite'] = 28.07, ['item_giant_maul'] = 24.48, ['item_magnifying_monocle'] = 19.26, ['item_pyrrhic_cloak'] = 12.55, ['item_outworld_staff'] = 11.42, ['item_crippling_crossbow'] = 4.21},
-           [5] = {['item_helm_of_the_undying'] = 22.13, ['item_fallen_sky'] = 21.51, ['item_demonicon'] = 19.52, ['item_desolator_2'] = 10.89, ['item_minotaur_horn'] = 9.11, ['item_unrelenting_eye'] = 8.62, ['item_spider_legs'] = 6.85, ['item_divine_regalia'] = 1.37},
+           [1] = {['item_chipped_vest'] = 31.14, ['item_dormant_curio'] = 27.94, ['item_kobold_cup'] = 12.51, ['item_polliwog_charm'] = 8.27, ['item_occult_bracelet'] = 5.14, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 35.26, ['item_poor_mans_shield'] = 19.13, ['item_mana_draught'] = 18.66, ['item_pogo_stick'] = 11.20, ['item_essence_ring'] = 10.74, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 40.04, ['item_jidi_pollen_bag'] = 20.44, ['item_whisper_of_the_dread'] = 19.24, ['item_psychic_headband'] = 15.51, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 51.56, ['item_crippling_crossbow'] = 8.87, ['item_flayers_bota'] = 9.89, ['item_idol_of_screeauk'] = 9.89, ['item_metamorphic_mandible'] = 9.89, ['item_rattlecage'] = 9.89},
+           [5] = {['item_fallen_sky'] = 27.84, ['item_demonicon'] = 25.27, ['item_desolator_2'] = 14.10, ['item_minotaur_horn'] = 11.79, ['item_spider_legs'] = 8.87, ['item_divine_regalia'] = 1.77, ['item_dezun_bloodrite'] = 5.04, ['item_riftshadow_prism'] = 5.32},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_quickened'] = 25.36, ['item_enhancement_brawny'] = 24.28, ['item_enhancement_mystical'] = 24.1, ['item_enhancement_tough'] = 14.47, ['item_enhancement_alert'] = 11.79},
@@ -1765,11 +1781,11 @@ local heroList = {
     },
     ['npc_dota_hero_troll_warlord'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 27.07, ['item_spark_of_courage'] = 24.5, ['item_dormant_curio'] = 22.85, ['item_sisters_shroud'] = 12.25, ['item_occult_bracelet'] = 4.33, ['item_rippers_lash'] = 3.65, ['item_kobold_cup'] = 2.76, ['item_polliwog_charm'] = 2.58},
-           [2] = {['item_misericorde'] = 58.38, ['item_poor_mans_shield'] = 23.61, ['item_searing_signet'] = 6.7, ['item_essence_ring'] = 4.38, ['item_mana_draught'] = 4.1, ['item_pogo_stick'] = 2.83},
-           [3] = {['item_gunpowder_gauntlets'] = 73.64, ['item_gale_guard'] = 16.43, ['item_jidi_pollen_bag'] = 5.94, ['item_whisper_of_the_dread'] = 2.27, ['item_psychic_headband'] = 1.72},
-           [4] = {['item_giant_maul'] = 56.98, ['item_pyrrhic_cloak'] = 13.72, ['item_crippling_crossbow'] = 11.37, ['item_magnifying_monocle'] = 8.44, ['item_outworld_staff'] = 6.45, ['item_dezun_bloodrite'] = 3.03},
-           [5] = {['item_desolator_2'] = 33.34, ['item_helm_of_the_undying'] = 28.74, ['item_unrelenting_eye'] = 10.85, ['item_minotaur_horn'] = 10.35, ['item_fallen_sky'] = 6.44, ['item_spider_legs'] = 5.25, ['item_demonicon'] = 2.68, ['item_divine_regalia'] = 2.35},
+           [1] = {['item_chipped_vest'] = 38.61, ['item_dormant_curio'] = 32.59, ['item_occult_bracelet'] = 6.18, ['item_kobold_cup'] = 3.94, ['item_polliwog_charm'] = 3.68, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 53.89, ['item_searing_signet'] = 15.29, ['item_essence_ring'] = 10.00, ['item_mana_draught'] = 9.36, ['item_pogo_stick'] = 6.46, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 83.92, ['item_jidi_pollen_bag'] = 6.77, ['item_whisper_of_the_dread'] = 2.59, ['item_psychic_headband'] = 1.96, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 65.95, ['item_crippling_crossbow'] = 13.16, ['item_flayers_bota'] = 5.22, ['item_idol_of_screeauk'] = 5.22, ['item_metamorphic_mandible'] = 5.22, ['item_rattlecage'] = 5.22},
+           [5] = {['item_desolator_2'] = 49.21, ['item_minotaur_horn'] = 15.28, ['item_fallen_sky'] = 9.51, ['item_spider_legs'] = 7.75, ['item_demonicon'] = 3.96, ['item_divine_regalia'] = 3.47, ['item_dezun_bloodrite'] = 5.26, ['item_riftshadow_prism'] = 5.57},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 39.79, ['item_enhancement_tough'] = 30.41, ['item_enhancement_brawny'] = 14.05, ['item_enhancement_quickened'] = 10.88, ['item_enhancement_mystical'] = 4.87},
@@ -1781,11 +1797,11 @@ local heroList = {
     },
     ['npc_dota_hero_tusk'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 26.55, ['item_dormant_curio'] = 19.95, ['item_sisters_shroud'] = 19.19, ['item_spark_of_courage'] = 11.6, ['item_kobold_cup'] = 10.29, ['item_polliwog_charm'] = 5.41, ['item_occult_bracelet'] = 4.33, ['item_rippers_lash'] = 2.68},
-           [2] = {['item_essence_ring'] = 20.43, ['item_poor_mans_shield'] = 19.36, ['item_searing_signet'] = 16.27, ['item_pogo_stick'] = 15.2, ['item_mana_draught'] = 14.68, ['item_misericorde'] = 14.06},
-           [3] = {['item_gunpowder_gauntlets'] = 40.72, ['item_gale_guard'] = 30.34, ['item_psychic_headband'] = 14.58, ['item_jidi_pollen_bag'] = 8.92, ['item_whisper_of_the_dread'] = 5.44},
-           [4] = {['item_giant_maul'] = 30.4, ['item_outworld_staff'] = 20.43, ['item_magnifying_monocle'] = 20.13, ['item_pyrrhic_cloak'] = 16.64, ['item_dezun_bloodrite'] = 7.95, ['item_crippling_crossbow'] = 4.45},
-           [5] = {['item_helm_of_the_undying'] = 23.17, ['item_fallen_sky'] = 19.72, ['item_desolator_2'] = 16.22, ['item_demonicon'] = 13.01, ['item_minotaur_horn'] = 11.95, ['item_spider_legs'] = 8.13, ['item_unrelenting_eye'] = 7.1, ['item_divine_regalia'] = 0.7},
+           [1] = {['item_chipped_vest'] = 33.92, ['item_dormant_curio'] = 25.49, ['item_kobold_cup'] = 13.15, ['item_polliwog_charm'] = 6.91, ['item_occult_bracelet'] = 5.53, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_essence_ring'] = 22.58, ['item_poor_mans_shield'] = 21.40, ['item_searing_signet'] = 17.99, ['item_pogo_stick'] = 16.80, ['item_mana_draught'] = 16.23, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 55.67, ['item_psychic_headband'] = 19.93, ['item_jidi_pollen_bag'] = 12.20, ['item_whisper_of_the_dread'] = 7.44, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 65.80, ['item_crippling_crossbow'] = 9.63, ['item_flayers_bota'] = 6.14, ['item_idol_of_screeauk'] = 6.14, ['item_metamorphic_mandible'] = 6.14, ['item_rattlecage'] = 6.14},
+           [5] = {['item_fallen_sky'] = 25.40, ['item_desolator_2'] = 20.90, ['item_demonicon'] = 16.76, ['item_minotaur_horn'] = 15.39, ['item_spider_legs'] = 10.47, ['item_divine_regalia'] = 0.90, ['item_dezun_bloodrite'] = 4.95, ['item_riftshadow_prism'] = 5.22},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 27.37, ['item_enhancement_tough'] = 23.78, ['item_enhancement_mystical'] = 20.97, ['item_enhancement_quickened'] = 19.59, ['item_enhancement_alert'] = 8.29},
@@ -1797,11 +1813,11 @@ local heroList = {
     },
     ['npc_dota_hero_undying'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 54.98, ['item_dormant_curio'] = 15.15, ['item_sisters_shroud'] = 11.4, ['item_spark_of_courage'] = 6.32, ['item_kobold_cup'] = 4.54, ['item_polliwog_charm'] = 3.32, ['item_occult_bracelet'] = 3.19, ['item_rippers_lash'] = 1.12},
-           [2] = {['item_searing_signet'] = 33.91, ['item_poor_mans_shield'] = 29.24, ['item_essence_ring'] = 17.01, ['item_mana_draught'] = 11.06, ['item_pogo_stick'] = 4.59, ['item_misericorde'] = 4.2},
-           [3] = {['item_gale_guard'] = 39.91, ['item_gunpowder_gauntlets'] = 23.99, ['item_jidi_pollen_bag'] = 16.26, ['item_whisper_of_the_dread'] = 11.45, ['item_psychic_headband'] = 8.38},
-           [4] = {['item_pyrrhic_cloak'] = 29.73, ['item_giant_maul'] = 20.85, ['item_dezun_bloodrite'] = 20, ['item_magnifying_monocle'] = 14.52, ['item_outworld_staff'] = 11.74, ['item_crippling_crossbow'] = 3.16},
-           [5] = {['item_helm_of_the_undying'] = 29.96, ['item_fallen_sky'] = 15.64, ['item_demonicon'] = 13.84, ['item_minotaur_horn'] = 13.77, ['item_unrelenting_eye'] = 12.51, ['item_desolator_2'] = 8.02, ['item_spider_legs'] = 5.69, ['item_divine_regalia'] = 0.57},
+           [1] = {['item_chipped_vest'] = 57.57, ['item_dormant_curio'] = 15.86, ['item_kobold_cup'] = 4.75, ['item_polliwog_charm'] = 3.48, ['item_occult_bracelet'] = 3.34, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 33.62, ['item_poor_mans_shield'] = 28.99, ['item_essence_ring'] = 16.87, ['item_mana_draught'] = 10.97, ['item_pogo_stick'] = 4.55, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 38.03, ['item_jidi_pollen_bag'] = 25.78, ['item_whisper_of_the_dread'] = 18.15, ['item_psychic_headband'] = 13.28, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 55.00, ['item_crippling_crossbow'] = 8.34, ['item_flayers_bota'] = 9.16, ['item_idol_of_screeauk'] = 9.16, ['item_metamorphic_mandible'] = 9.16, ['item_rattlecage'] = 9.16},
+           [5] = {['item_fallen_sky'] = 24.16, ['item_demonicon'] = 21.38, ['item_minotaur_horn'] = 21.27, ['item_desolator_2'] = 12.39, ['item_spider_legs'] = 8.79, ['item_divine_regalia'] = 0.88, ['item_dezun_bloodrite'] = 5.41, ['item_riftshadow_prism'] = 5.74},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 39.49, ['item_enhancement_mystical'] = 23.07, ['item_enhancement_tough'] = 18.71, ['item_enhancement_quickened'] = 14.19, ['item_enhancement_alert'] = 4.55},
@@ -1813,11 +1829,11 @@ local heroList = {
     },
     ['npc_dota_hero_ursa'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 26.41, ['item_dormant_curio'] = 24.63, ['item_spark_of_courage'] = 21.25, ['item_sisters_shroud'] = 13.25, ['item_occult_bracelet'] = 4.44, ['item_kobold_cup'] = 3.86, ['item_polliwog_charm'] = 3.12, ['item_rippers_lash'] = 3.04},
-           [2] = {['item_misericorde'] = 53, ['item_poor_mans_shield'] = 23.3, ['item_pogo_stick'] = 7.24, ['item_essence_ring'] = 6.83, ['item_mana_draught'] = 6.11, ['item_searing_signet'] = 3.52},
-           [3] = {['item_gunpowder_gauntlets'] = 71.98, ['item_gale_guard'] = 19.64, ['item_jidi_pollen_bag'] = 5.44, ['item_psychic_headband'] = 1.47, ['item_whisper_of_the_dread'] = 1.46},
-           [4] = {['item_giant_maul'] = 54.89, ['item_pyrrhic_cloak'] = 14.94, ['item_crippling_crossbow'] = 9.8, ['item_outworld_staff'] = 9.63, ['item_magnifying_monocle'] = 7.76, ['item_dezun_bloodrite'] = 2.97},
-           [5] = {['item_desolator_2'] = 32.05, ['item_helm_of_the_undying'] = 27.29, ['item_minotaur_horn'] = 11.26, ['item_unrelenting_eye'] = 10.52, ['item_fallen_sky'] = 7.92, ['item_spider_legs'] = 6.25, ['item_divine_regalia'] = 2.48, ['item_demonicon'] = 2.25},
+           [1] = {['item_chipped_vest'] = 35.94, ['item_dormant_curio'] = 33.52, ['item_occult_bracelet'] = 6.04, ['item_kobold_cup'] = 5.25, ['item_polliwog_charm'] = 4.25, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_poor_mans_shield'] = 47.10, ['item_pogo_stick'] = 14.63, ['item_essence_ring'] = 13.81, ['item_mana_draught'] = 12.35, ['item_searing_signet'] = 7.11, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 85.32, ['item_jidi_pollen_bag'] = 6.45, ['item_psychic_headband'] = 1.74, ['item_whisper_of_the_dread'] = 1.73, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 67.10, ['item_crippling_crossbow'] = 11.98, ['item_flayers_bota'] = 5.23, ['item_idol_of_screeauk'] = 5.23, ['item_metamorphic_mandible'] = 5.23, ['item_rattlecage'] = 5.23},
+           [5] = {['item_desolator_2'] = 45.99, ['item_minotaur_horn'] = 16.16, ['item_fallen_sky'] = 11.36, ['item_spider_legs'] = 8.97, ['item_divine_regalia'] = 3.56, ['item_demonicon'] = 3.23, ['item_dezun_bloodrite'] = 5.22, ['item_riftshadow_prism'] = 5.52},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 32.65, ['item_enhancement_tough'] = 30.21, ['item_enhancement_brawny'] = 18.37, ['item_enhancement_quickened'] = 11.47, ['item_enhancement_mystical'] = 7.31},
@@ -1829,11 +1845,11 @@ local heroList = {
     },
     ['npc_dota_hero_vengefulspirit'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 33.38, ['item_sisters_shroud'] = 20.84, ['item_chipped_vest'] = 12.9, ['item_spark_of_courage'] = 12.31, ['item_kobold_cup'] = 9.84, ['item_polliwog_charm'] = 4.77, ['item_occult_bracelet'] = 4.16, ['item_rippers_lash'] = 1.8},
-           [2] = {['item_searing_signet'] = 33.58, ['item_misericorde'] = 23.18, ['item_poor_mans_shield'] = 14.38, ['item_essence_ring'] = 12.16, ['item_pogo_stick'] = 8.55, ['item_mana_draught'] = 8.15},
-           [3] = {['item_gunpowder_gauntlets'] = 36.05, ['item_gale_guard'] = 27.66, ['item_psychic_headband'] = 17.79, ['item_whisper_of_the_dread'] = 11.11, ['item_jidi_pollen_bag'] = 7.4},
-           [4] = {['item_magnifying_monocle'] = 32, ['item_giant_maul'] = 31.46, ['item_outworld_staff'] = 11.02, ['item_crippling_crossbow'] = 9.68, ['item_pyrrhic_cloak'] = 8.86, ['item_dezun_bloodrite'] = 6.99},
-           [5] = {['item_desolator_2'] = 26.94, ['item_helm_of_the_undying'] = 23.96, ['item_demonicon'] = 12.57, ['item_fallen_sky'] = 12.27, ['item_minotaur_horn'] = 8.98, ['item_unrelenting_eye'] = 8.42, ['item_spider_legs'] = 5.97, ['item_divine_regalia'] = 0.89},
+           [1] = {['item_dormant_curio'] = 43.62, ['item_chipped_vest'] = 16.86, ['item_kobold_cup'] = 12.86, ['item_polliwog_charm'] = 6.23, ['item_occult_bracelet'] = 5.44, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 41.53, ['item_poor_mans_shield'] = 17.78, ['item_essence_ring'] = 15.04, ['item_pogo_stick'] = 10.57, ['item_mana_draught'] = 10.08, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 47.45, ['item_psychic_headband'] = 23.42, ['item_whisper_of_the_dread'] = 14.62, ['item_jidi_pollen_bag'] = 9.74, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 58.58, ['item_crippling_crossbow'] = 18.02, ['item_flayers_bota'] = 5.85, ['item_idol_of_screeauk'] = 5.85, ['item_metamorphic_mandible'] = 5.85, ['item_rattlecage'] = 5.85},
+           [5] = {['item_desolator_2'] = 35.71, ['item_demonicon'] = 16.66, ['item_fallen_sky'] = 16.27, ['item_minotaur_horn'] = 11.90, ['item_spider_legs'] = 7.91, ['item_divine_regalia'] = 1.18, ['item_dezun_bloodrite'] = 5.04, ['item_riftshadow_prism'] = 5.32},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 33.46, ['item_enhancement_mystical'] = 18.49, ['item_enhancement_quickened'] = 17.47, ['item_enhancement_tough'] = 15.93, ['item_enhancement_brawny'] = 14.65},
@@ -1845,11 +1861,11 @@ local heroList = {
     },
     ['npc_dota_hero_venomancer'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 34.96, ['item_sisters_shroud'] = 20.73, ['item_kobold_cup'] = 10.93, ['item_chipped_vest'] = 9.6, ['item_spark_of_courage'] = 7.22, ['item_polliwog_charm'] = 7.04, ['item_occult_bracelet'] = 5.12, ['item_rippers_lash'] = 4.41},
-           [2] = {['item_searing_signet'] = 54.05, ['item_essence_ring'] = 11.82, ['item_misericorde'] = 9.55, ['item_mana_draught'] = 9.08, ['item_poor_mans_shield'] = 8.67, ['item_pogo_stick'] = 6.84},
-           [3] = {['item_whisper_of_the_dread'] = 27.39, ['item_gale_guard'] = 23.19, ['item_gunpowder_gauntlets'] = 17.09, ['item_psychic_headband'] = 16.64, ['item_jidi_pollen_bag'] = 15.69},
-           [4] = {['item_magnifying_monocle'] = 35.93, ['item_giant_maul'] = 17.89, ['item_dezun_bloodrite'] = 16.32, ['item_outworld_staff'] = 14.68, ['item_crippling_crossbow'] = 8.98, ['item_pyrrhic_cloak'] = 6.2},
-           [5] = {['item_helm_of_the_undying'] = 25.28, ['item_demonicon'] = 21, ['item_desolator_2'] = 15.68, ['item_fallen_sky'] = 12.02, ['item_spider_legs'] = 8.39, ['item_unrelenting_eye'] = 8.23, ['item_minotaur_horn'] = 7.81, ['item_divine_regalia'] = 1.6},
+           [1] = {['item_dormant_curio'] = 43.93, ['item_kobold_cup'] = 13.73, ['item_chipped_vest'] = 12.06, ['item_polliwog_charm'] = 8.85, ['item_occult_bracelet'] = 6.43, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 56.76, ['item_essence_ring'] = 12.41, ['item_mana_draught'] = 9.54, ['item_poor_mans_shield'] = 9.11, ['item_pogo_stick'] = 7.18, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 33.96, ['item_gunpowder_gauntlets'] = 21.19, ['item_psychic_headband'] = 20.63, ['item_jidi_pollen_bag'] = 19.45, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 45.18, ['item_crippling_crossbow'] = 22.68, ['item_flayers_bota'] = 8.04, ['item_idol_of_screeauk'] = 8.04, ['item_metamorphic_mandible'] = 8.04, ['item_rattlecage'] = 8.04},
+           [5] = {['item_demonicon'] = 28.31, ['item_desolator_2'] = 21.14, ['item_fallen_sky'] = 16.20, ['item_spider_legs'] = 11.31, ['item_minotaur_horn'] = 10.53, ['item_divine_regalia'] = 2.16, ['item_dezun_bloodrite'] = 5.04, ['item_riftshadow_prism'] = 5.32},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 28.82, ['item_enhancement_quickened'] = 25.33, ['item_enhancement_alert'] = 19.44, ['item_enhancement_brawny'] = 18.86, ['item_enhancement_tough'] = 7.55},
@@ -1861,11 +1877,11 @@ local heroList = {
     },
     ['npc_dota_hero_viper'] = {
        ['neutral'] = {
-           [1] = {['item_chipped_vest'] = 34.29, ['item_dormant_curio'] = 20.04, ['item_spark_of_courage'] = 14.89, ['item_sisters_shroud'] = 13.74, ['item_occult_bracelet'] = 5.91, ['item_kobold_cup'] = 4.24, ['item_polliwog_charm'] = 3.75, ['item_rippers_lash'] = 3.13},
-           [2] = {['item_misericorde'] = 33.53, ['item_searing_signet'] = 31.04, ['item_poor_mans_shield'] = 15.36, ['item_mana_draught'] = 8.44, ['item_essence_ring'] = 8.4, ['item_pogo_stick'] = 3.23},
-           [3] = {['item_gunpowder_gauntlets'] = 41.65, ['item_gale_guard'] = 24.89, ['item_whisper_of_the_dread'] = 16.44, ['item_jidi_pollen_bag'] = 9.31, ['item_psychic_headband'] = 7.71},
-           [4] = {['item_giant_maul'] = 34.73, ['item_magnifying_monocle'] = 22.44, ['item_crippling_crossbow'] = 13.1, ['item_pyrrhic_cloak'] = 12.95, ['item_dezun_bloodrite'] = 9.33, ['item_outworld_staff'] = 7.44},
-           [5] = {['item_desolator_2'] = 29.52, ['item_helm_of_the_undying'] = 26.03, ['item_unrelenting_eye'] = 11.17, ['item_minotaur_horn'] = 9.38, ['item_fallen_sky'] = 8.54, ['item_demonicon'] = 7.44, ['item_spider_legs'] = 6.07, ['item_divine_regalia'] = 1.86},
+           [1] = {['item_chipped_vest'] = 42.72, ['item_dormant_curio'] = 24.97, ['item_occult_bracelet'] = 7.36, ['item_kobold_cup'] = 5.28, ['item_polliwog_charm'] = 4.67, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 44.36, ['item_poor_mans_shield'] = 21.95, ['item_mana_draught'] = 12.06, ['item_essence_ring'] = 12.01, ['item_pogo_stick'] = 4.62, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 52.81, ['item_whisper_of_the_dread'] = 20.85, ['item_jidi_pollen_bag'] = 11.80, ['item_psychic_headband'] = 9.78, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 55.25, ['item_crippling_crossbow'] = 20.84, ['item_flayers_bota'] = 5.98, ['item_idol_of_screeauk'] = 5.98, ['item_metamorphic_mandible'] = 5.98, ['item_rattlecage'] = 5.98},
+           [5] = {['item_desolator_2'] = 41.92, ['item_minotaur_horn'] = 13.32, ['item_fallen_sky'] = 12.13, ['item_demonicon'] = 10.56, ['item_spider_legs'] = 8.62, ['item_divine_regalia'] = 2.64, ['item_dezun_bloodrite'] = 5.25, ['item_riftshadow_prism'] = 5.56},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 37.73, ['item_enhancement_tough'] = 17.62, ['item_enhancement_brawny'] = 17.46, ['item_enhancement_mystical'] = 13.86, ['item_enhancement_quickened'] = 13.33},
@@ -1877,11 +1893,11 @@ local heroList = {
     },
     ['npc_dota_hero_visage'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 22.33, ['item_sisters_shroud'] = 15.53, ['item_chipped_vest'] = 14.58, ['item_rippers_lash'] = 14.39, ['item_spark_of_courage'] = 13.21, ['item_kobold_cup'] = 12.95, ['item_occult_bracelet'] = 4.39, ['item_polliwog_charm'] = 2.61},
-           [2] = {['item_searing_signet'] = 32.25, ['item_misericorde'] = 28.85, ['item_poor_mans_shield'] = 16.98, ['item_essence_ring'] = 10.67, ['item_mana_draught'] = 7.58, ['item_pogo_stick'] = 3.67},
-           [3] = {['item_gunpowder_gauntlets'] = 37.62, ['item_gale_guard'] = 24.5, ['item_whisper_of_the_dread'] = 20.54, ['item_psychic_headband'] = 9.3, ['item_jidi_pollen_bag'] = 8.04},
-           [4] = {['item_giant_maul'] = 33.18, ['item_magnifying_monocle'] = 22.58, ['item_pyrrhic_cloak'] = 13.02, ['item_outworld_staff'] = 11.81, ['item_crippling_crossbow'] = 11.39, ['item_dezun_bloodrite'] = 8.01},
-           [5] = {['item_desolator_2'] = 30.97, ['item_helm_of_the_undying'] = 21.7, ['item_demonicon'] = 14.96, ['item_fallen_sky'] = 9.78, ['item_unrelenting_eye'] = 9.14, ['item_minotaur_horn'] = 8.73, ['item_spider_legs'] = 3.11, ['item_divine_regalia'] = 1.62},
+           [1] = {['item_dormant_curio'] = 33.38, ['item_chipped_vest'] = 21.80, ['item_kobold_cup'] = 19.36, ['item_occult_bracelet'] = 6.56, ['item_polliwog_charm'] = 3.90, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 43.06, ['item_poor_mans_shield'] = 22.67, ['item_essence_ring'] = 14.25, ['item_mana_draught'] = 10.12, ['item_pogo_stick'] = 4.90, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 47.46, ['item_whisper_of_the_dread'] = 25.91, ['item_psychic_headband'] = 11.73, ['item_jidi_pollen_bag'] = 10.14, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 56.88, ['item_crippling_crossbow'] = 19.53, ['item_flayers_bota'] = 5.90, ['item_idol_of_screeauk'] = 5.90, ['item_metamorphic_mandible'] = 5.90, ['item_rattlecage'] = 5.90},
+           [5] = {['item_desolator_2'] = 40.11, ['item_demonicon'] = 19.37, ['item_fallen_sky'] = 12.66, ['item_minotaur_horn'] = 11.31, ['item_spider_legs'] = 4.03, ['item_divine_regalia'] = 2.10, ['item_dezun_bloodrite'] = 5.07, ['item_riftshadow_prism'] = 5.36},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 28.25, ['item_enhancement_tough'] = 20.89, ['item_enhancement_quickened'] = 18, ['item_enhancement_brawny'] = 17.9, ['item_enhancement_mystical'] = 14.96},
@@ -1893,11 +1909,11 @@ local heroList = {
     },
     ['npc_dota_hero_void_spirit'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 37.86, ['item_chipped_vest'] = 15.94, ['item_spark_of_courage'] = 15.67, ['item_sisters_shroud'] = 14.75, ['item_occult_bracelet'] = 7.91, ['item_polliwog_charm'] = 2.92, ['item_kobold_cup'] = 2.75, ['item_rippers_lash'] = 2.21},
-           [2] = {['item_searing_signet'] = 42.36, ['item_misericorde'] = 22.78, ['item_mana_draught'] = 13.1, ['item_poor_mans_shield'] = 10.73, ['item_essence_ring'] = 8.47, ['item_pogo_stick'] = 2.56},
-           [3] = {['item_gunpowder_gauntlets'] = 44.31, ['item_whisper_of_the_dread'] = 29.48, ['item_gale_guard'] = 15.54, ['item_jidi_pollen_bag'] = 6.38, ['item_psychic_headband'] = 4.3},
-           [4] = {['item_giant_maul'] = 42.16, ['item_dezun_bloodrite'] = 16.64, ['item_outworld_staff'] = 14.08, ['item_magnifying_monocle'] = 13.79, ['item_pyrrhic_cloak'] = 7.89, ['item_crippling_crossbow'] = 5.43},
-           [5] = {['item_desolator_2'] = 30.33, ['item_helm_of_the_undying'] = 22.55, ['item_fallen_sky'] = 16.05, ['item_minotaur_horn'] = 10.15, ['item_unrelenting_eye'] = 7.03, ['item_demonicon'] = 6.55, ['item_divine_regalia'] = 4.29, ['item_spider_legs'] = 3.05},
+           [1] = {['item_dormant_curio'] = 47.76, ['item_chipped_vest'] = 20.11, ['item_occult_bracelet'] = 9.98, ['item_polliwog_charm'] = 3.68, ['item_kobold_cup'] = 3.47, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 52.11, ['item_mana_draught'] = 16.12, ['item_poor_mans_shield'] = 13.20, ['item_essence_ring'] = 10.42, ['item_pogo_stick'] = 3.15, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 49.96, ['item_whisper_of_the_dread'] = 33.24, ['item_jidi_pollen_bag'] = 7.19, ['item_psychic_headband'] = 4.85, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 64.67, ['item_crippling_crossbow'] = 8.33, ['item_flayers_bota'] = 6.75, ['item_idol_of_screeauk'] = 6.75, ['item_metamorphic_mandible'] = 6.75, ['item_rattlecage'] = 6.75},
+           [5] = {['item_desolator_2'] = 38.70, ['item_fallen_sky'] = 20.48, ['item_minotaur_horn'] = 12.95, ['item_demonicon'] = 8.36, ['item_divine_regalia'] = 5.47, ['item_spider_legs'] = 3.89, ['item_dezun_bloodrite'] = 4.94, ['item_riftshadow_prism'] = 5.21},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 27.63, ['item_enhancement_tough'] = 25.73, ['item_enhancement_alert'] = 19.87, ['item_enhancement_brawny'] = 14.05, ['item_enhancement_quickened'] = 12.73},
@@ -1909,11 +1925,11 @@ local heroList = {
     },
     ['npc_dota_hero_warlock'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 37.19, ['item_sisters_shroud'] = 22.35, ['item_kobold_cup'] = 13.7, ['item_polliwog_charm'] = 7.96, ['item_occult_bracelet'] = 7.25, ['item_chipped_vest'] = 6.21, ['item_spark_of_courage'] = 4.02, ['item_rippers_lash'] = 1.32},
-           [2] = {['item_searing_signet'] = 55.54, ['item_mana_draught'] = 20.2, ['item_essence_ring'] = 8.78, ['item_pogo_stick'] = 7.82, ['item_poor_mans_shield'] = 6.27, ['item_misericorde'] = 1.4},
-           [3] = {['item_whisper_of_the_dread'] = 37.4, ['item_psychic_headband'] = 26.55, ['item_gale_guard'] = 24.08, ['item_jidi_pollen_bag'] = 6.61, ['item_gunpowder_gauntlets'] = 5.36},
-           [4] = {['item_magnifying_monocle'] = 38.86, ['item_dezun_bloodrite'] = 35.66, ['item_outworld_staff'] = 13.74, ['item_pyrrhic_cloak'] = 5.03, ['item_giant_maul'] = 4.89, ['item_crippling_crossbow'] = 1.82},
-           [5] = {['item_demonicon'] = 30.48, ['item_helm_of_the_undying'] = 26.78, ['item_fallen_sky'] = 13.01, ['item_unrelenting_eye'] = 8.98, ['item_spider_legs'] = 8.25, ['item_minotaur_horn'] = 7.63, ['item_desolator_2'] = 3.08, ['item_divine_regalia'] = 1.78},
+           [1] = {['item_dormant_curio'] = 43.72, ['item_kobold_cup'] = 16.10, ['item_polliwog_charm'] = 9.36, ['item_occult_bracelet'] = 8.52, ['item_chipped_vest'] = 7.30, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 53.51, ['item_mana_draught'] = 19.46, ['item_essence_ring'] = 8.46, ['item_pogo_stick'] = 7.53, ['item_poor_mans_shield'] = 6.04, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 46.92, ['item_psychic_headband'] = 33.31, ['item_jidi_pollen_bag'] = 8.29, ['item_gunpowder_gauntlets'] = 6.72, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 20.67, ['item_crippling_crossbow'] = 7.69, ['item_flayers_bota'] = 17.91, ['item_idol_of_screeauk'] = 17.91, ['item_metamorphic_mandible'] = 17.91, ['item_rattlecage'] = 17.91},
+           [5] = {['item_demonicon'] = 42.47, ['item_fallen_sky'] = 18.13, ['item_spider_legs'] = 11.50, ['item_minotaur_horn'] = 10.63, ['item_desolator_2'] = 4.29, ['item_divine_regalia'] = 2.48, ['item_dezun_bloodrite'] = 5.10, ['item_riftshadow_prism'] = 5.39},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 42.86, ['item_enhancement_quickened'] = 27.76, ['item_enhancement_brawny'] = 23.22, ['item_enhancement_tough'] = 3.83, ['item_enhancement_alert'] = 2.34},
@@ -1925,11 +1941,11 @@ local heroList = {
     },
     ['npc_dota_hero_weaver'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 31.31, ['item_spark_of_courage'] = 23.35, ['item_sisters_shroud'] = 18.12, ['item_chipped_vest'] = 11.1, ['item_polliwog_charm'] = 4.94, ['item_occult_bracelet'] = 4.93, ['item_rippers_lash'] = 3.29, ['item_kobold_cup'] = 2.96},
-           [2] = {['item_misericorde'] = 42.88, ['item_searing_signet'] = 23.07, ['item_poor_mans_shield'] = 13.7, ['item_essence_ring'] = 10.31, ['item_mana_draught'] = 7.81, ['item_pogo_stick'] = 2.24},
-           [3] = {['item_gunpowder_gauntlets'] = 60.37, ['item_gale_guard'] = 22.06, ['item_jidi_pollen_bag'] = 8.08, ['item_psychic_headband'] = 5.92, ['item_whisper_of_the_dread'] = 3.57},
-           [4] = {['item_giant_maul'] = 45.98, ['item_magnifying_monocle'] = 19.38, ['item_crippling_crossbow'] = 15.22, ['item_outworld_staff'] = 11.01, ['item_pyrrhic_cloak'] = 5.25, ['item_dezun_bloodrite'] = 3.16},
-           [5] = {['item_desolator_2'] = 37, ['item_helm_of_the_undying'] = 25.12, ['item_minotaur_horn'] = 9.2, ['item_unrelenting_eye'] = 7.47, ['item_demonicon'] = 7.12, ['item_fallen_sky'] = 6.52, ['item_spider_legs'] = 4, ['item_divine_regalia'] = 3.57},
+           [1] = {['item_dormant_curio'] = 48.18, ['item_chipped_vest'] = 17.08, ['item_polliwog_charm'] = 7.60, ['item_occult_bracelet'] = 7.59, ['item_kobold_cup'] = 4.55, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 38.36, ['item_poor_mans_shield'] = 22.78, ['item_essence_ring'] = 17.14, ['item_mana_draught'] = 12.99, ['item_pogo_stick'] = 3.72, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 73.77, ['item_jidi_pollen_bag'] = 9.87, ['item_psychic_headband'] = 7.23, ['item_whisper_of_the_dread'] = 4.36, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 59.33, ['item_crippling_crossbow'] = 19.64, ['item_flayers_bota'] = 5.26, ['item_idol_of_screeauk'] = 5.26, ['item_metamorphic_mandible'] = 5.26, ['item_rattlecage'] = 5.26},
+           [5] = {['item_desolator_2'] = 49.26, ['item_minotaur_horn'] = 12.25, ['item_demonicon'] = 9.48, ['item_fallen_sky'] = 8.68, ['item_spider_legs'] = 5.33, ['item_divine_regalia'] = 4.75, ['item_dezun_bloodrite'] = 4.98, ['item_riftshadow_prism'] = 5.26},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 36.82, ['item_enhancement_tough'] = 23.82, ['item_enhancement_brawny'] = 18.12, ['item_enhancement_mystical'] = 10.87, ['item_enhancement_quickened'] = 10.38},
@@ -1941,11 +1957,11 @@ local heroList = {
     },
     ['npc_dota_hero_windrunner'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 31.56, ['item_spark_of_courage'] = 20.72, ['item_sisters_shroud'] = 17.96, ['item_chipped_vest'] = 8.73, ['item_rippers_lash'] = 5.86, ['item_occult_bracelet'] = 5.48, ['item_kobold_cup'] = 5.12, ['item_polliwog_charm'] = 4.57},
-           [2] = {['item_misericorde'] = 41.45, ['item_searing_signet'] = 28.81, ['item_mana_draught'] = 9.63, ['item_essence_ring'] = 8.62, ['item_poor_mans_shield'] = 7.14, ['item_pogo_stick'] = 4.35},
-           [3] = {['item_gunpowder_gauntlets'] = 47.37, ['item_gale_guard'] = 22.92, ['item_whisper_of_the_dread'] = 12.4, ['item_psychic_headband'] = 12.06, ['item_jidi_pollen_bag'] = 5.25},
-           [4] = {['item_giant_maul'] = 38.84, ['item_magnifying_monocle'] = 23.15, ['item_crippling_crossbow'] = 16.67, ['item_outworld_staff'] = 11.67, ['item_dezun_bloodrite'] = 5.01, ['item_pyrrhic_cloak'] = 4.65},
-           [5] = {['item_desolator_2'] = 34.55, ['item_helm_of_the_undying'] = 23.88, ['item_minotaur_horn'] = 8.41, ['item_demonicon'] = 8.39, ['item_fallen_sky'] = 7.83, ['item_unrelenting_eye'] = 7.35, ['item_spider_legs'] = 6.72, ['item_divine_regalia'] = 2.87},
+           [1] = {['item_dormant_curio'] = 48.37, ['item_chipped_vest'] = 13.38, ['item_occult_bracelet'] = 8.40, ['item_kobold_cup'] = 7.85, ['item_polliwog_charm'] = 7.00, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 46.75, ['item_mana_draught'] = 15.63, ['item_essence_ring'] = 13.99, ['item_poor_mans_shield'] = 11.58, ['item_pogo_stick'] = 7.06, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_gunpowder_gauntlets'] = 58.53, ['item_whisper_of_the_dread'] = 15.32, ['item_psychic_headband'] = 14.90, ['item_jidi_pollen_bag'] = 6.49, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 54.71, ['item_crippling_crossbow'] = 23.48, ['item_flayers_bota'] = 5.45, ['item_idol_of_screeauk'] = 5.45, ['item_metamorphic_mandible'] = 5.45, ['item_rattlecage'] = 5.45},
+           [5] = {['item_desolator_2'] = 45.11, ['item_minotaur_horn'] = 10.98, ['item_demonicon'] = 10.95, ['item_fallen_sky'] = 10.22, ['item_spider_legs'] = 8.77, ['item_divine_regalia'] = 3.75, ['item_dezun_bloodrite'] = 4.97, ['item_riftshadow_prism'] = 5.24},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_alert'] = 31.92, ['item_enhancement_tough'] = 24.39, ['item_enhancement_mystical'] = 15.25, ['item_enhancement_quickened'] = 14.92, ['item_enhancement_brawny'] = 13.53},
@@ -1957,11 +1973,11 @@ local heroList = {
     },
     ['npc_dota_hero_winter_wyvern'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 39.32, ['item_sisters_shroud'] = 21.94, ['item_kobold_cup'] = 11.99, ['item_occult_bracelet'] = 6.69, ['item_spark_of_courage'] = 6.42, ['item_polliwog_charm'] = 6.2, ['item_chipped_vest'] = 5.27, ['item_rippers_lash'] = 2.17},
-           [2] = {['item_searing_signet'] = 52.48, ['item_mana_draught'] = 16.98, ['item_essence_ring'] = 8.67, ['item_pogo_stick'] = 8.54, ['item_misericorde'] = 8.52, ['item_poor_mans_shield'] = 4.81},
-           [3] = {['item_whisper_of_the_dread'] = 28.31, ['item_psychic_headband'] = 25.39, ['item_gale_guard'] = 21.13, ['item_gunpowder_gauntlets'] = 19.54, ['item_jidi_pollen_bag'] = 5.63},
-           [4] = {['item_magnifying_monocle'] = 38.36, ['item_dezun_bloodrite'] = 25.29, ['item_giant_maul'] = 14.79, ['item_outworld_staff'] = 12.01, ['item_crippling_crossbow'] = 5.68, ['item_pyrrhic_cloak'] = 3.86},
-           [5] = {['item_helm_of_the_undying'] = 26.86, ['item_desolator_2'] = 19.83, ['item_demonicon'] = 16.8, ['item_fallen_sky'] = 11.49, ['item_minotaur_horn'] = 8.71, ['item_unrelenting_eye'] = 7.25, ['item_spider_legs'] = 6.56, ['item_divine_regalia'] = 2.51},
+           [1] = {['item_dormant_curio'] = 48.11, ['item_kobold_cup'] = 14.67, ['item_occult_bracelet'] = 8.19, ['item_polliwog_charm'] = 7.59, ['item_chipped_vest'] = 6.45, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 54.50, ['item_mana_draught'] = 17.63, ['item_essence_ring'] = 9.00, ['item_pogo_stick'] = 8.87, ['item_poor_mans_shield'] = 5.00, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 34.19, ['item_psychic_headband'] = 30.66, ['item_gunpowder_gauntlets'] = 23.60, ['item_jidi_pollen_bag'] = 6.80, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 39.95, ['item_crippling_crossbow'] = 15.34, ['item_flayers_bota'] = 11.18, ['item_idol_of_screeauk'] = 11.18, ['item_metamorphic_mandible'] = 11.18, ['item_rattlecage'] = 11.18},
+           [5] = {['item_desolator_2'] = 27.01, ['item_demonicon'] = 22.88, ['item_fallen_sky'] = 15.65, ['item_minotaur_horn'] = 11.86, ['item_spider_legs'] = 8.94, ['item_divine_regalia'] = 3.42, ['item_dezun_bloodrite'] = 4.98, ['item_riftshadow_prism'] = 5.26},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 36.85, ['item_enhancement_quickened'] = 27.87, ['item_enhancement_alert'] = 19.17, ['item_enhancement_brawny'] = 10.56, ['item_enhancement_tough'] = 5.55},
@@ -1973,11 +1989,11 @@ local heroList = {
     },
     ['npc_dota_hero_wisp'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 25.35, ['item_polliwog_charm'] = 23.51, ['item_sisters_shroud'] = 17.99, ['item_kobold_cup'] = 14.9, ['item_chipped_vest'] = 7.37, ['item_spark_of_courage'] = 4.33, ['item_occult_bracelet'] = 3.87, ['item_rippers_lash'] = 2.67},
-           [2] = {['item_mana_draught'] = 31.37, ['item_essence_ring'] = 28.25, ['item_poor_mans_shield'] = 21.65, ['item_searing_signet'] = 9.75, ['item_pogo_stick'] = 5.72, ['item_misericorde'] = 3.26},
-           [3] = {['item_gale_guard'] = 47.18, ['item_jidi_pollen_bag'] = 16.07, ['item_psychic_headband'] = 15.27, ['item_gunpowder_gauntlets'] = 12.23, ['item_whisper_of_the_dread'] = 9.26},
-           [4] = {['item_outworld_staff'] = 25.16, ['item_pyrrhic_cloak'] = 23.38, ['item_magnifying_monocle'] = 19.07, ['item_giant_maul'] = 16.6, ['item_crippling_crossbow'] = 8.16, ['item_dezun_bloodrite'] = 7.63},
-           [5] = {['item_helm_of_the_undying'] = 24.47, ['item_desolator_2'] = 22.5, ['item_demonicon'] = 15.25, ['item_fallen_sky'] = 11.97, ['item_minotaur_horn'] = 11.86, ['item_unrelenting_eye'] = 8.12, ['item_spider_legs'] = 4.76, ['item_divine_regalia'] = 1.07},
+           [1] = {['item_dormant_curio'] = 28.73, ['item_polliwog_charm'] = 26.64, ['item_kobold_cup'] = 16.89, ['item_chipped_vest'] = 8.35, ['item_occult_bracelet'] = 4.39, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_mana_draught'] = 30.81, ['item_essence_ring'] = 27.74, ['item_poor_mans_shield'] = 21.26, ['item_searing_signet'] = 9.57, ['item_pogo_stick'] = 5.62, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_jidi_pollen_bag'] = 28.97, ['item_psychic_headband'] = 27.53, ['item_gunpowder_gauntlets'] = 22.05, ['item_whisper_of_the_dread'] = 16.69, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 49.50, ['item_crippling_crossbow'] = 24.33, ['item_flayers_bota'] = 6.54, ['item_idol_of_screeauk'] = 6.54, ['item_metamorphic_mandible'] = 6.54, ['item_rattlecage'] = 6.54},
+           [5] = {['item_desolator_2'] = 29.93, ['item_demonicon'] = 20.29, ['item_fallen_sky'] = 15.92, ['item_minotaur_horn'] = 15.78, ['item_spider_legs'] = 6.33, ['item_divine_regalia'] = 1.42, ['item_dezun_bloodrite'] = 5.02, ['item_riftshadow_prism'] = 5.31},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_brawny'] = 46.7, ['item_enhancement_mystical'] = 26.09, ['item_enhancement_quickened'] = 14.52, ['item_enhancement_tough'] = 8.14, ['item_enhancement_alert'] = 4.55},
@@ -1989,11 +2005,11 @@ local heroList = {
     },
     ['npc_dota_hero_witch_doctor'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 33.71, ['item_sisters_shroud'] = 27.28, ['item_kobold_cup'] = 11.17, ['item_occult_bracelet'] = 7.94, ['item_polliwog_charm'] = 7.5, ['item_chipped_vest'] = 6.34, ['item_spark_of_courage'] = 4.54, ['item_rippers_lash'] = 1.52},
-           [2] = {['item_searing_signet'] = 52.59, ['item_mana_draught'] = 18.91, ['item_essence_ring'] = 10.17, ['item_pogo_stick'] = 9.53, ['item_poor_mans_shield'] = 6.73, ['item_misericorde'] = 2.07},
-           [3] = {['item_whisper_of_the_dread'] = 34.94, ['item_psychic_headband'] = 27.08, ['item_gale_guard'] = 23.23, ['item_gunpowder_gauntlets'] = 7.43, ['item_jidi_pollen_bag'] = 7.32},
-           [4] = {['item_magnifying_monocle'] = 43.78, ['item_dezun_bloodrite'] = 26.74, ['item_outworld_staff'] = 16.26, ['item_giant_maul'] = 5.95, ['item_pyrrhic_cloak'] = 4.78, ['item_crippling_crossbow'] = 2.49},
-           [5] = {['item_helm_of_the_undying'] = 32.14, ['item_demonicon'] = 21.38, ['item_fallen_sky'] = 13.9, ['item_minotaur_horn'] = 8.93, ['item_spider_legs'] = 8.59, ['item_unrelenting_eye'] = 8.23, ['item_desolator_2'] = 4.7, ['item_divine_regalia'] = 2.15},
+           [1] = {['item_dormant_curio'] = 42.98, ['item_kobold_cup'] = 14.24, ['item_occult_bracelet'] = 10.12, ['item_polliwog_charm'] = 9.56, ['item_chipped_vest'] = 8.08, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 51.02, ['item_mana_draught'] = 18.34, ['item_essence_ring'] = 9.87, ['item_pogo_stick'] = 9.24, ['item_poor_mans_shield'] = 6.53, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 43.35, ['item_psychic_headband'] = 33.59, ['item_gunpowder_gauntlets'] = 9.22, ['item_jidi_pollen_bag'] = 9.08, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 26.43, ['item_crippling_crossbow'] = 11.06, ['item_flayers_bota'] = 15.63, ['item_idol_of_screeauk'] = 15.63, ['item_metamorphic_mandible'] = 15.63, ['item_rattlecage'] = 15.63},
+           [5] = {['item_demonicon'] = 32.09, ['item_fallen_sky'] = 20.86, ['item_minotaur_horn'] = 13.40, ['item_spider_legs'] = 12.89, ['item_desolator_2'] = 7.05, ['item_divine_regalia'] = 3.23, ['item_dezun_bloodrite'] = 5.09, ['item_riftshadow_prism'] = 5.38},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 44.29, ['item_enhancement_quickened'] = 29.32, ['item_enhancement_brawny'] = 18.58, ['item_enhancement_tough'] = 4.35, ['item_enhancement_alert'] = 3.46},
@@ -2005,11 +2021,11 @@ local heroList = {
     },
     ['npc_dota_hero_zuus'] = {
        ['neutral'] = {
-           [1] = {['item_dormant_curio'] = 42.1, ['item_sisters_shroud'] = 19.54, ['item_occult_bracelet'] = 13.76, ['item_kobold_cup'] = 7.29, ['item_polliwog_charm'] = 5.89, ['item_spark_of_courage'] = 5.02, ['item_chipped_vest'] = 4.93, ['item_rippers_lash'] = 1.49},
-           [2] = {['item_searing_signet'] = 54.71, ['item_mana_draught'] = 28.22, ['item_pogo_stick'] = 6.2, ['item_essence_ring'] = 5.22, ['item_poor_mans_shield'] = 2.84, ['item_misericorde'] = 2.8},
-           [3] = {['item_whisper_of_the_dread'] = 57.55, ['item_psychic_headband'] = 18.93, ['item_gale_guard'] = 12.52, ['item_gunpowder_gauntlets'] = 8.98, ['item_jidi_pollen_bag'] = 2.02},
-           [4] = {['item_magnifying_monocle'] = 45.02, ['item_dezun_bloodrite'] = 20.94, ['item_outworld_staff'] = 16.28, ['item_giant_maul'] = 10.27, ['item_crippling_crossbow'] = 3.75, ['item_pyrrhic_cloak'] = 3.74},
-           [5] = {['item_helm_of_the_undying'] = 26.01, ['item_demonicon'] = 17.66, ['item_fallen_sky'] = 13.62, ['item_divine_regalia'] = 10.78, ['item_spider_legs'] = 9.29, ['item_minotaur_horn'] = 8.54, ['item_desolator_2'] = 7.52, ['item_unrelenting_eye'] = 6.58},
+           [1] = {['item_dormant_curio'] = 48.38, ['item_occult_bracelet'] = 15.81, ['item_kobold_cup'] = 8.38, ['item_polliwog_charm'] = 6.77, ['item_chipped_vest'] = 5.67, ['item_ash_legion_shield'] = 5.00, ['item_weighted_dice'] = 5.00, ['item_duelist_gloves'] = 5.00},
+           [2] = {['item_searing_signet'] = 53.48, ['item_mana_draught'] = 27.58, ['item_pogo_stick'] = 6.06, ['item_essence_ring'] = 5.10, ['item_poor_mans_shield'] = 2.78, ['item_defiant_shell'] = 5.00},
+           [3] = {['item_whisper_of_the_dread'] = 62.65, ['item_psychic_headband'] = 20.61, ['item_gunpowder_gauntlets'] = 9.78, ['item_jidi_pollen_bag'] = 2.20, ['item_unrelenting_eye'] = 4.76},
+           [4] = {['item_giant_maul'] = 36.72, ['item_crippling_crossbow'] = 13.41, ['item_flayers_bota'] = 12.47, ['item_idol_of_screeauk'] = 12.47, ['item_metamorphic_mandible'] = 12.47, ['item_rattlecage'] = 12.47},
+           [5] = {['item_demonicon'] = 23.54, ['item_fallen_sky'] = 18.16, ['item_divine_regalia'] = 14.37, ['item_spider_legs'] = 12.38, ['item_minotaur_horn'] = 11.38, ['item_desolator_2'] = 10.03, ['item_dezun_bloodrite'] = 4.93, ['item_riftshadow_prism'] = 5.20},
         },
        ['enhancement'] = {
            [1] = {['item_enhancement_mystical'] = 48.71, ['item_enhancement_quickened'] = 28.81, ['item_enhancement_brawny'] = 10.1, ['item_enhancement_alert'] = 8.77, ['item_enhancement_tough'] = 3.6},

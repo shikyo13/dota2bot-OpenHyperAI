@@ -555,17 +555,6 @@ export function GetDefendDesireHelper(bot: Unit, lane: Lane): BotModeDesire {
         if (lane !== threatenedLane) {
             return BotModeDesire.VeryLow;
         }
-    } else {
-        // Opportunistically use enemy lanefront ONLY if not in base threat
-        if (jmz.Utils.GetLocationToLocationDistance(jmz.Utils.GetTeamFountainTpPoint(), defendLoc) < 3000) {
-            const enemyLaneFront = GetLaneFrontLocation(GetOpposingTeam(), lane, 0);
-            const eNear = jmz.GetLastSeenEnemiesNearLoc(enemyLaneFront, 1600);
-            const aNear = jmz.GetAlliesNearLoc(enemyLaneFront, 1600);
-            if (GetUnitToLocationDistance(bot, enemyLaneFront) > bot.GetAttackRange() && eNear.length <= aNear.length + 1) {
-                defendLoc = enemyLaneFront;
-                bot.Action_AttackMove(defendLoc);
-            }
-        }
     }
 
     distanceToLane[lane] = GetUnitToLocationDistance(bot, defendLoc);
@@ -811,6 +800,19 @@ export function DefendThink(bot: Unit, lane: Lane) {
     }
 
     const dist = distanceToLane[lane] || GetUnitToLocationDistance(bot, hub);
+
+    // TP to defend: if far from threatened building and tower is taking damage
+    if (dist > 3500 && bld && IsValidBuildingTarget(bld) && bld.GetHealth() < bld.GetMaxHealth() * 0.9) {
+        let tp = jmz.GetItem2(bot, "item_tpscroll");
+        if (!tp) {
+            tp = jmz.GetItem2(bot, "item_travel_boots") || jmz.GetItem2(bot, "item_travel_boots_2");
+        }
+        if (tp && jmz.CanCastAbility(tp)) {
+            bot.Action_UseAbilityOnLocation(tp, hub);
+            return;
+        }
+    }
+
     if ((weAreStronger || nInRangeAlly.length >= nInRangeEnemy.length) && dist < SEARCH_RANGE_DEFAULT) {
         bot.Action_AttackMove(add(hub, jmz.RandomForwardVector(300)));
     } else if (dist > SEARCH_RANGE_DEFAULT * 1.7) {
