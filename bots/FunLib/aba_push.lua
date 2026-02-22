@@ -530,6 +530,9 @@ function ____exports.GetPushDesire(bot, lane)
         local cmd = Comms.GetCurrentCommand()
         if cmd ~= nil and cmd.type == "push" and Comms.IsCommandFresh(20) then
             if cmd.lane == nil or cmd.lane == lane then
+                if Comms.LogVerbose then
+                    Comms.LogVerbose(((bot:GetUnitName() .. " push desire=0.9 (push cmd, lane=") .. tostring(lane)) .. ")")
+                end
                 res = math.max(res, 0.9)
             end
         end

@@ -920,6 +920,9 @@ function ____exports.GetDefendDesire(bot, lane)
         local cmd = Comms.GetCurrentCommand()
         if cmd ~= nil and cmd.type == "defend" and Comms.IsCommandFresh(20) then
             if cmd.lane == nil or cmd.lane == lane then
+                if Comms.LogVerbose then
+                    Comms.LogVerbose(((bot:GetUnitName() .. " defend desire=0.95 (def cmd, lane=") .. tostring(lane)) .. ")")
+                end
                 res = math.max(res, 0.95)
             end
         end

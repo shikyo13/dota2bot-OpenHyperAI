@@ -16,6 +16,28 @@ local J     -- set lazily via X.Init()
 local W     -- ward utility, set lazily
 
 --------------------------------------------------------------------
+-- Logging
+--------------------------------------------------------------------
+X.LOG_ENABLED = true   -- set to false to silence all [COMMS] output
+X.LOG_VERBOSE = false  -- set to true for extra detail (desire values, ping data, etc.)
+
+local function Log(msg)
+	if X.LOG_ENABLED then
+		print("[COMMS] " .. tostring(msg))
+	end
+end
+
+local function LogVerbose(msg)
+	if X.LOG_ENABLED and X.LOG_VERBOSE then
+		print("[COMMS] " .. tostring(msg))
+	end
+end
+
+-- Expose so mode scripts can log through the same system
+function X.Log(msg) Log(msg) end
+function X.LogVerbose(msg) LogVerbose(msg) end
+
+--------------------------------------------------------------------
 -- Constants
 --------------------------------------------------------------------
 local COMMAND_EXPIRE_TIME     = 30      -- seconds before a command goes stale
@@ -167,6 +189,7 @@ local function OnChatMessage(tChat)
 	end
 
 	currentCommand = command
+	Log("Command received: '" .. msg .. "' → type=" .. cmdType .. (lane ~= nil and (", lane=" .. tostring(lane)) or ""))
 
 	-- Trigger ward/deward missions for supports
 	if cmdType == "ward_obs" or cmdType == "deward" then
@@ -235,6 +258,7 @@ local function InterpretPings()
 				time      = DotaTime(),
 				source    = "ping",
 			}
+			Log("Ping on enemy " .. pingOnEnemy:GetUnitName() .. " IN COMBAT → focus target")
 		else
 			-- GANK REQUEST — boost roam desire to that hero
 			currentCommand = {
@@ -245,6 +269,7 @@ local function InterpretPings()
 				time      = DotaTime(),
 				source    = "ping",
 			}
+			Log("Ping on enemy " .. pingOnEnemy:GetUnitName() .. " OUT OF COMBAT → gank request")
 		end
 		return
 	end
@@ -260,6 +285,7 @@ local function InterpretPings()
 			time      = DotaTime(),
 			source    = "ping",
 		}
+		Log("Ping near Roshan → roshan command")
 		return
 	end
 
@@ -280,6 +306,7 @@ function X.Init()
 
 	-- Install our chat callback
 	InstallChatCallback(function(tChat) OnChatMessage(tChat) end)
+	Log("Initialized — chat callback installed, LOG_VERBOSE=" .. tostring(X.LOG_VERBOSE))
 end
 
 --------------------------------------------------------------------
@@ -335,6 +362,7 @@ function X.StartWardingMission(bot)
 		spots     = spots,
 		spotIdx   = 1,
 	}
+	Log(bot:GetUnitName() .. " started WARD mission (" .. #spots .. " spots)")
 	X.Announce(bot, "warding", "Warding")
 end
 
@@ -352,6 +380,7 @@ function X.StartDewardingMission(bot)
 		spots     = spots,
 		spotIdx   = 1,
 	}
+	Log(bot:GetUnitName() .. " started DEWARD mission (" .. #spots .. " spots)")
 	X.Announce(bot, "warding", "Dewarding")
 end
 
@@ -393,6 +422,9 @@ function X.AdvanceMissionSpot(bot)
 	m.spotIdx = m.spotIdx + 1
 	if m.spotIdx > #m.spots then
 		m.active = false
+		Log(bot:GetUnitName() .. " completed " .. m.type .. " mission (all spots done)")
+	else
+		LogVerbose(bot:GetUnitName() .. " advancing to spot " .. m.spotIdx .. "/" .. #m.spots)
 	end
 end
 
@@ -422,6 +454,7 @@ function X.Announce(bot, announceType, message)
 
 	announceCooldowns[announceType] = now
 	bot:ActionImmediate_Chat(message, true)
+	LogVerbose(bot:GetUnitName() .. " announced: " .. message)
 	return true
 end
 
@@ -518,7 +551,7 @@ function X.ShouldTPToSave(bot, ally)
 		return false
 	end
 	bot.commsTPWaitStart = nil
-
+	Log(bot:GetUnitName() .. " TP rescue approved for " .. ally:GetUnitName() .. " (HP=" .. string.format("%.0f%%", J.GetHP(ally)*100) .. ")")
 	return true
 end
 

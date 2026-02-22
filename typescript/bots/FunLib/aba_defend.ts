@@ -464,6 +464,7 @@ export function GetDefendDesire(bot: Unit, lane: Lane): BotModeDesire {
         const cmd = Comms.GetCurrentCommand();
         if (cmd != null && cmd.type === "defend" && Comms.IsCommandFresh(20)) {
             if (cmd.lane == null || cmd.lane === lane) {
+                if (Comms.LogVerbose) Comms.LogVerbose(`${bot.GetUnitName()} defend desire=0.95 (def cmd, lane=${lane})`);
                 res = Math.max(res, 0.95);
             }
         }

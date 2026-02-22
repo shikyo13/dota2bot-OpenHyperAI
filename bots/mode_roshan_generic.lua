@@ -45,6 +45,7 @@ function GetDesireHelper()
 	if J.Comms ~= nil then
 		local cmd = J.Comms.GetCurrentCommand()
 		if cmd ~= nil and cmd.type == "roshan" and J.Comms.IsCommandFresh(25) then
+			J.Comms.LogVerbose(bot:GetUnitName() .. " roshan desire=HIGH (rosh cmd)")
 			return BOT_MODE_DESIRE_HIGH
 		end
 	end

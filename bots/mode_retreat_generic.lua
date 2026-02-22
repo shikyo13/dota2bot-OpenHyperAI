@@ -101,6 +101,7 @@ function GetDesireHelper()
     if J.Comms ~= nil then
         local cmd = J.Comms.GetCurrentCommand()
         if cmd ~= nil and cmd.type == "retreat" and J.Comms.IsCommandFresh(10) then
+            J.Comms.LogVerbose(bot:GetUnitName() .. " retreat desire=0.9 (back cmd)")
             return 0.9
         end
     end

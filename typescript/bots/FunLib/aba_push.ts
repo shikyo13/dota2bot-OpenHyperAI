@@ -67,6 +67,7 @@ export function GetPushDesire(bot: Unit, lane: Lane): BotModeDesire {
         const cmd = Comms.GetCurrentCommand();
         if (cmd != null && cmd.type === "push" && Comms.IsCommandFresh(20)) {
             if (cmd.lane == null || cmd.lane === lane) {
+                if (Comms.LogVerbose) Comms.LogVerbose(`${bot.GetUnitName()} push desire=0.9 (push cmd, lane=${lane})`);
                 res = Math.max(res, 0.9);
             }
         }

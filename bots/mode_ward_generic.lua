@@ -63,6 +63,7 @@ function GetDesireHelper()
 					end
 				end
 			end
+			J.Comms.LogVerbose(bot:GetUnitName() .. " ward desire=VERYHIGH (mission spot " .. tostring(J.Comms.GetMissionType(bot)) .. ")")
 			return BOT_MODE_DESIRE_VERYHIGH
 		else
 			J.Comms.EndMission(bot)

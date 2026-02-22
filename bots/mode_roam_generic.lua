@@ -120,10 +120,13 @@ function GetDesireHelper()
 		local cmd = J.Comms.GetCurrentCommand()
 		if cmd ~= nil and J.Comms.IsCommandFresh(20) then
 			if cmd.type == "gank" and (J.GetPosition(bot) == 2 or J.GetPosition(bot) == 4) then
+				J.Comms.LogVerbose(botName .. " roam desire=0.85 (gank cmd)")
 				return 0.85
 			elseif cmd.type == "smoke" and J.GetPosition(bot) >= 2 then
+				J.Comms.LogVerbose(botName .. " roam desire=0.85 (smoke cmd)")
 				return 0.85
 			elseif cmd.type == "focus" and J.IsInTeamFight(bot, 1600) then
+				J.Comms.LogVerbose(botName .. " roam desire=0.85 (focus cmd)")
 				return 0.85
 			end
 		end

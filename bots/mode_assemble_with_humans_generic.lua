@@ -51,6 +51,7 @@ function GetDesire()
 			local humanAlly = GetClosestHumanAlly()
 			if humanAlly ~= nil then
 				local dist = GetUnitToUnitDistance(bot, humanAlly)
+				J.Comms.LogVerbose(bot:GetUnitName() .. " assemble desire (help cmd, dist=" .. string.format("%.0f", dist) .. ")")
 				return RemapValClamped(dist, 500, 5000, BOT_MODE_DESIRE_VERYHIGH, BOT_MODE_DESIRE_MODERATE)
 			end
 		end
