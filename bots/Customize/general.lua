@@ -1,9 +1,9 @@
 --[[
-This is a place for you to customize the Open Hyper AI bots.
+This is a place for you to customize the Dota 2 AI bots.
 
 1. When modiftying this file, be VERY careful to the spelling, punctuation and variable names - it's very easy to cause 
    syntax errors and mess up the entire logic for all bots, and could be hard for you to debug.
-2. In the case you saw the bots having some random names or picks (heroes not what you have set or without "OHA" name suffix), 
+2. In the case you saw the bots having some random names or picks (heroes not what you have set),
    that means you had made some mistakes/errors while modifying this file. 
 3. In any case this file got messed up and caused the bots to malfunction, you can try to restore the file. Either you have a 
    copy to replace, or resubscribe the script, or download from github.
@@ -13,7 +13,7 @@ This is a place for you to customize the Open Hyper AI bots.
 5. Note there is a list of known to-be-improved (aka weak) heroes, check out [Appendix - 2] on the bottom of this file.
 
 - Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3246316298
-- Github: https://github.com/forest0xia/dota2bot-OpenHyperAI
+- Github: https://github.com/shikyo13/dota2bot-OpenHyperAI
 --]]
 
 
@@ -29,7 +29,7 @@ Customize.Enable = true
 Customize.Localization = "en"
 
 -- To ban some heroes for bots - Set the heroes you DO NOT want the bots to pick. Use hero internal names.
--- Hero name ref: https://github.com/forest0xia/dota2bot-OpenHyperAI/discussions/71
+-- Hero name ref: Check the Workshop page for the list of supported hero names.
 -- Please note that it is not 100% guaranteed that the banned hero will not be picked; for example if you banned too many heroes 
 -- like near 100% of the heroes, bots will need to randomly pick heroes regardless of the ban list to continue the game.
 Customize.Ban = {
@@ -38,7 +38,7 @@ Customize.Ban = {
 
 --[[
 1. To pick heroes for the Radiant bots. You have to use hero's internal name.
-2. Hero internal name ref: https://github.com/forest0xia/dota2bot-OpenHyperAI/discussions/71
+2. Hero internal name ref: Check the Workshop page for the list of supported hero names.
 3. Don't need to provide a value for all 5 bots, any empty/missing value will fallback to a Random value.
 4. The position is ranked by the order of the names you put in the below list, pos 1 - 5, from top to down.
 5. There are sample team picks in Appendix section below. 
@@ -108,7 +108,7 @@ Customize.Dire_Names = {
 Customize.Force_Group_Push_Level = 1
 
 -- The Enhanced Fretbots mode settings:
--- For more about Fretbots mode: https://github.com/forest0xia/dota2bot-OpenHyperAI/discussions/68
+-- For more about Fretbots mode: Check the Workshop page for details.
 -- Note: these settings below will override the pre-defind settings in Fretbots folder.
 Customize.Fretbots = {
     -- Default difficulty, a number between: [0, 10]
@@ -132,6 +132,20 @@ Customize.Fretbots = {
 -- When doing Local Host, you can potentially improve PC performance (FPS) by setting this to 1 to 10, which sacrifices some bot IQ/performance.
 -- This won't be very effective for FPS improvement because Valve has a lot of compute on their side that your PC have to handle for Local Hosting.
 Customize.ThinkLess = 1;
+
+-- Logging & debugging settings for bot AI console output.
+-- Level: 1=ERROR only, 2=WARN, 3=INFO (default), 4=DEBUG (verbose)
+-- Categories: per-category overrides, e.g. { COMMS = 4, WARD = 4 } to enable DEBUG for specific systems
+-- Chat_Echo: echo key bot events to in-game team chat (prefixed with [AI])
+-- Status_Dump: periodic bot state summary printed to console
+-- Status_Dump_Interval: minutes between status dumps
+Customize.Log = {
+    Level = 3,
+    Categories = {},
+    Chat_Echo = true,
+    Status_Dump = true,
+    Status_Dump_Interval = 5,
+}
 
 return Customize
 

@@ -25,6 +25,13 @@ function ____exports.GetPushDesireHelper(bot, lane)
     if bot.laneToPush == nil then
         bot.laneToPush = lane
     end
+    local Comms2 = jmz.Comms
+    if Comms2 ~= nil then
+        local cmd2 = Comms2.GetCurrentCommand()
+        if cmd2 ~= nil and cmd2.type == "push" and Comms2.IsCommandFresh(20) and cmd2.lane ~= nil and cmd2.lane ~= lane then
+            return BotModeDesire.None
+        end
+    end
     local nMaxDesire = 0.82
     local nSearchRange = 2000
     local botActiveMode = bot:GetActiveMode()
@@ -534,6 +541,15 @@ function ____exports.GetPushDesire(bot, lane)
                     Comms.LogVerbose(((bot:GetUnitName() .. " push desire=0.9 (push cmd, lane=") .. tostring(lane)) .. ")")
                 end
                 res = math.max(res, 0.9)
+            end
+        end
+    end
+    if jmz.GetObjectivePushDesireBonus then
+        local objBonus = jmz.GetObjectivePushDesireBonus(bot)
+        if objBonus > 0 then
+            res = math.min(res + objBonus, 0.95)
+            if Comms and Comms.LogVerbose then
+                Comms.LogVerbose(((bot:GetUnitName() .. " push bonus +") .. tostring(objBonus)) .. " (dead enemies)")
             end
         end
     end

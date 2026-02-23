@@ -26,6 +26,7 @@ do
 
 end
 
+J.Log = require( GetScriptDirectory()..'/FunLib/aba_log' )
 J.Site = require( GetScriptDirectory()..'/FunLib/aba_site' )
 J.Item = require( GetScriptDirectory()..'/FunLib/aba_item' )
 J.Buff = require( GetScriptDirectory()..'/FunLib/aba_buff' )
@@ -34,7 +35,10 @@ J.Skill = require( GetScriptDirectory()..'/FunLib/aba_skill' )
 J.Chat = require( GetScriptDirectory()..'/FunLib/aba_chat' )
 J.Utils = require( GetScriptDirectory()..'/FunLib/utils' )
 J.Customize = require(GetScriptDirectory()..'/FunLib/custom_loader')
+J.Log.LoadSettings(J.Customize)
+J.Log.SetGetPositionFn(J.GetPosition)
 J.Comms = require(GetScriptDirectory()..'/FunLib/aba_comms')
+J.Strategy = require(GetScriptDirectory()..'/FunLib/aba_strategy')
 
 
 function J.SetUserHeroInit( nAbilityBuildList, nTalentBuildList, sBuyList, sSellList )
@@ -42,10 +46,10 @@ function J.SetUserHeroInit( nAbilityBuildList, nTalentBuildList, sBuyList, sSell
 	local bot = GetBot()
 	local botName = bot:GetUnitName()
 	local sBotDir, tBotSet = "game/Customize/hero/" .. string.gsub(botName, "npc_dota_hero_", ""), nil
-	local status, _ = xpcall(function() tBotSet = require( sBotDir ) end, function( err ) print( '[WARN] When loading customized game file: '..err ) end )
+	local status, _ = xpcall(function() tBotSet = require( sBotDir ) end, function( err ) J.Log.Warn("GENERAL", 'When loading customized game file: '..err) end )
 	if not (status and tBotSet) then
 		sBotDir = GetScriptDirectory() .. "/Customize/hero/" .. string.gsub(botName, "npc_dota_hero_", "")
-		status, _ = xpcall(function() tBotSet = require( sBotDir ) end, function( err ) print( '[WARN] When loading customized file: '..err ) end )
+		status, _ = xpcall(function() tBotSet = require( sBotDir ) end, function( err ) J.Log.Warn("GENERAL", 'When loading customized file: '..err) end )
 	end
 	if status and tBotSet and tBotSet.Enable then
 		nAbilityBuildList = tBotSet.AbilityUpgrade
@@ -2028,12 +2032,34 @@ function J.IsNotAttackProjectileIncoming( bot, range )
 
 end
 
+-- Same as IsNotAttackProjectileIncoming but only triggers on hero-sourced projectiles
+function J.IsHeroAbilityProjectileIncoming( bot, range )
+
+	local incProj = bot:GetIncomingTrackingProjectiles()
+	for _, p in pairs( incProj )
+	do
+		if not p.is_attack
+			and GetUnitToLocationDistance( bot, p.location ) < range
+			and p.caster ~= nil
+			and p.caster:GetTeam() ~= bot:GetTeam()
+			and p.caster:IsHero()
+			and ( p.ability ~= nil
+					and ( p.ability:GetName() ~= "medusa_mystic_snake"
+							or p.caster:GetUnitName() == "npc_dota_hero_medusa" ) )
+		then
+			return true
+		end
+	end
+
+	return false
+
+end
+
 
 --以下可少算但不可多算
 function J.GetAttackProDelayTime( bot, nCreep )
 	if nCreep == nil then
-		print('[ERROR] nil creep target')
-		print("Stack Trace:", debug.traceback())
+		J.Log.Error("GENERAL", 'nil creep target\n' .. debug.traceback())
 		return 0
 	end
 
@@ -2265,7 +2291,7 @@ function J.IsStuck2( bot )
 		if DotaTime() > bot.stuckTime + 5.0 and GetUnitToLocationDistance( bot, bot.stuckLoc ) < 25
 			and bot:GetCurrentActionType() == BOT_ACTION_TYPE_MOVE_TO and EAd > 2200
 		then
-			print( bot:GetUnitName().." is stuck" )
+			J.Log.Warn("GENERAL", bot:GetUnitName().." is stuck")
 			--DebugPause()
 			return true
 		end
@@ -2290,7 +2316,7 @@ function J.IsStuck( bot )
 			and DotaTime() > bot.stuckTime + 5.0
 			and GetUnitToLocationDistance( bot, bot.stuckLoc ) < 25
 		then
-			print( bot:GetUnitName().." is stuck" )
+			J.Log.Warn("GENERAL", bot:GetUnitName().." is stuck")
 			return true
 		end
 	end
@@ -4165,6 +4191,11 @@ function J.IsEarlyGame()
 	if DotaTime() < (J.IsModeTurbo() and 8 * 60 or 15 * 60) then
 		return true
 	end
+	-- Dynamic phase check as secondary signal
+	if J.Strategy ~= nil then
+		local phase = J.Strategy.GetGamePhase()
+		if phase == "early" then return true end
+	end
 	return false
 end
 
@@ -4172,12 +4203,22 @@ function J.IsMidGame()
 	if DotaTime() > (J.IsModeTurbo() and 8 * 60 or 15 * 60) and DotaTime() < (J.IsModeTurbo() and 18 * 60 or 30 * 60) then
 		return true
 	end
+	-- Dynamic phase check as secondary signal
+	if J.Strategy ~= nil then
+		local phase = J.Strategy.GetGamePhase()
+		if phase == "mid" then return true end
+	end
 	return false
 end
 
 function J.IsLateGame()
 	if DotaTime() > (J.IsModeTurbo() and 18 * 60 or 30 * 60) then
 		return true
+	end
+	-- Dynamic phase check as secondary signal
+	if J.Strategy ~= nil then
+		local phase = J.Strategy.GetGamePhase()
+		if phase == "late" then return true end
 	end
 	return false
 end
@@ -5412,7 +5453,6 @@ function J.IsInLaningPhase()
 		(J.IsModeTurbo() and DotaTime() < 8 * 60)
 		or DotaTime() < 12 * 60
 	)
-	and GetBot():GetNetWorth() < 5000
 end
 
 function J.IsTormentor(nTarget)
@@ -6345,7 +6385,7 @@ function J.CheckBotIdleState()
 					if nActions > 0 then
 						for i=1, nActions do
 							local aType = bot:GetQueuedActionType(i)
-							print('Bot '..botName.." has enqueued actions i="..i..", type="..tostring(aType))
+							J.Log.Debug("GENERAL", 'Bot '..botName.." has enqueued actions i="..i..", type="..tostring(aType))
 						end
 					end
 					bot:Action_ClearActions(true);
@@ -6353,9 +6393,9 @@ function J.CheckBotIdleState()
 					-- Should send it to most desire farming lane, if in laning or send it to desire push lane.
 					local frontLoc = GetLaneFrontLocation(GetTeam(), bot:GetAssignedLane(), 0);
 					bot:ActionQueue_AttackMove(frontLoc)
-					print('[ERROR] Relocating the idle bot: '..botName..'. Sending it to the lane# it was originally assigned: '..tostring(bot:GetAssignedLane()))
+					J.Log.Error("GENERAL", 'Relocating the idle bot: '..botName..'. Sending it to the lane# it was originally assigned: '..tostring(bot:GetAssignedLane()))
 				else
-					print('Bot '..botName..' is in idle state for unknown reasons. N/A.')
+					J.Log.Warn("GENERAL", 'Bot '..botName..' is in idle state for unknown reasons. N/A.')
 				end
 				return true
 			else
@@ -6547,6 +6587,209 @@ function J.GetUltLoc(bot, target, nManaCost, nCastRange, s)
 	end
 
 	return dest
+end
+
+
+--------------------------------------------------------------------
+-- Enhanced Fight Evaluation
+--------------------------------------------------------------------
+function J.GetEffectiveTeamStrength(bot, radius)
+    radius = radius or 1200
+    local allies = bot:GetNearbyHeroes(radius, false, BOT_MODE_NONE)
+    local enemies = bot:GetNearbyHeroes(radius, true, BOT_MODE_NONE)
+
+    if allies == nil then allies = {} end
+    if enemies == nil then enemies = {} end
+
+    local allyStrength = 0
+    local enemyStrength = 0
+
+    for _, ally in pairs(allies) do
+        if J.IsValidHero(ally) and ally:IsAlive() and not ally:IsIllusion() then
+            local s = 1.0
+            -- Level scaling
+            s = s + (ally:GetLevel() - 10) * 0.05
+            -- HP penalty for low health
+            local hp = J.GetHP(ally)
+            if hp < 0.3 then s = s * 0.4
+            elseif hp < 0.5 then s = s * 0.7 end
+            -- Mana check: if caster with no mana, less useful
+            if J.GetMP(ally) < 0.15 then s = s * 0.8 end
+            -- Ultimate availability bonus
+            local ult = ally:GetAbilityInSlot(5)
+            if ult ~= nil and ult:IsFullyCastable() then
+                s = s + 0.25
+            end
+            -- BKB availability bonus
+            if J.HasItem(ally, 'item_black_king_bar') then
+                local bkbSlot = ally:FindItemSlot('item_black_king_bar')
+                if bkbSlot >= 0 then
+                    local bkb = ally:GetItemInSlot(bkbSlot)
+                    if bkb ~= nil and bkb:IsFullyCastable() then
+                        s = s + 0.2
+                    end
+                end
+            end
+            allyStrength = allyStrength + s
+        end
+    end
+
+    for _, enemy in pairs(enemies) do
+        if J.IsValidHero(enemy) and enemy:IsAlive() and not J.IsSuspiciousIllusion(enemy) then
+            local s = 1.0
+            s = s + (enemy:GetLevel() - 10) * 0.05
+            local hp = J.GetHP(enemy)
+            if hp < 0.3 then s = s * 0.4
+            elseif hp < 0.5 then s = s * 0.7 end
+            if J.GetMP(enemy) < 0.15 then s = s * 0.8 end
+            local ult = enemy:GetAbilityInSlot(5)
+            if ult ~= nil and ult:IsFullyCastable() then
+                s = s + 0.25
+            end
+            enemyStrength = enemyStrength + s
+        end
+    end
+
+    if J.Log.IsEnabled("STRATEGY", 4) then
+        J.Log.Debug("STRATEGY", "Strength: ally=" .. string.format("%.1f", allyStrength) .. " enemy=" .. string.format("%.1f", enemyStrength))
+    end
+    return allyStrength, enemyStrength
+end
+
+function J.WeAreStrongerEnhanced(bot, radius)
+    local ally, enemy = J.GetEffectiveTeamStrength(bot, radius or 1200)
+    local result = ally > enemy * 1.1  -- need 10% advantage to be considered "stronger"
+    if J.Log.IsEnabled("STRATEGY", 4) then
+        J.Log.Debug("STRATEGY", "WeAreStronger=" .. tostring(result))
+    end
+    return result
+end
+
+--------------------------------------------------------------------
+-- Objective Prioritization
+--------------------------------------------------------------------
+function J.ShouldTakeObjective(bot)
+    -- Check if we recently won a fight (2+ enemies dead)
+    -- Use GetTeamPlayers + IsHeroAlive for accurate count (visible unit list undercounts dead heroes)
+    local deadEnemyCount = 0
+    local enemyPlayers = GetTeamPlayers(GetOpposingTeam())
+    for _, id in pairs(enemyPlayers) do
+        if not IsHeroAlive(id) then
+            deadEnemyCount = deadEnemyCount + 1
+        end
+    end
+
+    if deadEnemyCount < 2 then return nil end
+
+    -- Count alive allies
+    local aliveAllyCount = 0
+    local allies = GetUnitList(UNIT_LIST_ALLIED_HEROES)
+    for _, ally in pairs(allies) do
+        if ally ~= nil and ally:IsAlive() and J.IsValidHero(ally) then
+            aliveAllyCount = aliveAllyCount + 1
+        end
+    end
+
+    if aliveAllyCount < 3 then return nil end  -- not enough to take objective
+
+    -- Priority 1: Roshan if enough alive, enemy carry is dead, and Roshan is up
+    if aliveAllyCount >= 4 and deadEnemyCount >= 2
+        and J.IsRoshanAlive ~= nil and J.IsRoshanAlive()
+    then
+        local roshanLoc = J.GetCurrentRoshanLocation and J.GetCurrentRoshanLocation()
+        if roshanLoc ~= nil then
+            J.Log.Info("STRATEGY", "Objective: roshan | dead=" .. deadEnemyCount .. " alive=" .. aliveAllyCount)
+            return { type = "roshan", location = roshanLoc }
+        end
+    end
+
+    -- Priority 2: Push tower if there's a creep wave
+    local bestLane = nil
+    local bestFront = 0
+    for _, lane in pairs({LANE_TOP, LANE_MID, LANE_BOT}) do
+        local front = GetLaneFrontAmount(GetTeam(), lane, false)
+        if front > bestFront then
+            bestFront = front
+            bestLane = lane
+        end
+    end
+
+    if bestLane ~= nil then
+        local pushLoc = GetLaneFrontLocation(GetTeam(), bestLane, 0)
+        J.Log.Info("STRATEGY", "Objective: push | dead=" .. deadEnemyCount .. " alive=" .. aliveAllyCount)
+        return { type = "push", location = pushLoc, lane = bestLane }
+    end
+
+    return nil
+end
+
+--------------------------------------------------------------------
+-- Count recently dead enemies (utility)
+--------------------------------------------------------------------
+function J.CountDeadEnemies()
+    local count = 0
+    local enemyPlayers = GetTeamPlayers(GetOpposingTeam())
+    for _, id in pairs(enemyPlayers) do
+        if not IsHeroAlive(id) then
+            count = count + 1
+        end
+    end
+    return count
+end
+
+--------------------------------------------------------------------
+-- Objective desire boost for mode scripts
+--------------------------------------------------------------------
+function J.GetObjectivePushDesireBonus(bot)
+    local deadEnemies = J.CountDeadEnemies()
+    local bonus = 0
+    if deadEnemies >= 3 then bonus = 0.4
+    elseif deadEnemies >= 2 then bonus = 0.25
+    elseif deadEnemies >= 1 then bonus = 0.1
+    end
+    if bonus > 0 and J.Log.IsEnabled("STRATEGY", 4) then
+        J.Log.Debug("STRATEGY", "Push bonus +" .. string.format("%.2f", bonus))
+    end
+    return bonus
+end
+
+--------------------------------------------------------------------
+-- Strategic Intelligence Wrappers
+--------------------------------------------------------------------
+function J.StrategyThink()
+    if J.Strategy ~= nil then
+        J.Strategy.Think()
+    end
+end
+
+function J.GetMissingHeroes()
+    if J.Strategy == nil then return {} end
+    return J.Strategy.GetMissingHeroes()
+end
+
+function J.GetLaneDangerLevel(lane)
+    if J.Strategy == nil then return 0 end
+    return J.Strategy.GetLaneDangerLevel(lane)
+end
+
+function J.GetTeamObjective()
+    if J.Strategy == nil then return { type = "farm" } end
+    return J.Strategy.GetTeamObjective()
+end
+
+function J.GetGamePhaseDynamic()
+    if J.Strategy == nil then return "mid" end
+    return J.Strategy.GetGamePhase()
+end
+
+function J.GetTeamPowerBalance()
+    if J.Strategy == nil then return { allyPower = 0, enemyPower = 0, ratio = 1, advantage = "even" } end
+    return J.Strategy.GetTeamPowerBalance()
+end
+
+function J.PredictGankTarget()
+    if J.Strategy == nil then return nil end
+    return J.Strategy.PredictGankTarget()
 end
 
 

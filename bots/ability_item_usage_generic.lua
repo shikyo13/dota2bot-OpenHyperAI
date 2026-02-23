@@ -132,8 +132,8 @@ local function AbilityLevelUpComplement()
 			if bot.kez_mode == 'sai' then
 				for i = 0, 6 do
 					local hAbility = bot:GetAbilityInSlot(i)
-					local sAbilityName = hAbility:GetName()
 					if hAbility ~= nil then
+					local sAbilityName = hAbility:GetName()
 						if sAbilityLevelUpList[1] == 'kez_echo_slash' and sAbilityName == 'kez_falcon_rush'
 						then
 							abilityToLevelup = hAbility
@@ -156,8 +156,8 @@ local function AbilityLevelUpComplement()
 			else
 				for i = 0, 6 do
 					local hAbility = bot:GetAbilityInSlot(i)
-					local sAbilityName = hAbility:GetName()
 					if hAbility ~= nil then
+					local sAbilityName = hAbility:GetName()
 						if sAbilityLevelUpList[1] == 'kez_falcon_rush' and sAbilityName == 'kez_echo_slash'
 						then
 							abilityToLevelup = hAbility
@@ -406,7 +406,21 @@ function X.SetReplyHumanTime( tChat )
 	local sChatString = tChat.string
 	local nChatID = tChat.player_id
 
-	if string.find(sChatString, "!sp") or string.find(sChatString, "!speak") then
+	if sChatString == nil then return end
+
+	-- Forward ! commands to comms system (!ward, !gank, !push, etc.)
+	-- but NOT !sp/!speak which are handled below
+	local sFirstWord = string.match(sChatString, "^(%S+)")
+	if sFirstWord ~= nil and string.sub(sFirstWord, 1, 1) == "!"
+		and sFirstWord ~= "!sp" and sFirstWord ~= "!speak"
+	then
+		if J.Comms ~= nil and J.Comms.HandleChat ~= nil then
+			J.Comms.HandleChat(tChat)
+		end
+		return
+	end
+
+	if sFirstWord == "!sp" or sFirstWord == "!speak" then
 		local action, target = J.Utils.TrimString(sChatString):match("^(%S+)%s+(.*)$")
 		print("Set to speak: ".. target)
 		J.Customize.Localization = target
@@ -889,6 +903,50 @@ local function ItemUsageComplement()
 
 	local nItemSlot = { 5, 4, 3, 2, 1, 0, 15, 16 }
 
+	-- Mana budget: reserve mana for abilities unless desperate
+	local nBotMana = bot:GetMana()
+	local nBotMaxMana = bot:GetMaxMana()
+	local nBotHP = bot:GetHealth()
+	local nBotMaxHP = bot:GetMaxHealth()
+	local isDesperateSituation = (nBotHP / nBotMaxHP < 0.25)
+
+	-- Items that should never be blocked by mana reservation
+	local tManaExemptItems = {
+		["item_black_king_bar"] = true,
+		["item_satanic"] = true,
+		["item_cheese"] = true,
+		["item_faerie_fire"] = true,
+		["item_magic_stick"] = true,
+		["item_magic_wand"] = true,
+		["item_holy_locket"] = true,
+		["item_guardian_greaves"] = true,
+		["item_mekansm"] = true,
+		["item_soul_ring"] = true,
+		["item_bottle"] = true,
+		["item_flask"] = true,
+		["item_tango"] = true,
+		["item_tango_single"] = true,
+		["item_enchanted_mango"] = true,
+		["item_clarity"] = true,
+		["item_tpscroll"] = true,
+		["item_dust"] = true,
+		["item_ghost"] = true,
+		["item_glimmer_cape"] = true,
+		["item_aeon_disk"] = true,
+	}
+
+	-- Estimate mana needed: sum of cheapest castable ability costs
+	local nKeepManaThreshold = 150
+	for i = 0, 5 do
+		local hAbility = bot:GetAbilityInSlot(i)
+		if hAbility ~= nil and not hAbility:IsHidden() and not hAbility:IsPassive()
+			and hAbility:IsTrained() and hAbility:GetManaCost() > 0
+		then
+			nKeepManaThreshold = hAbility:GetManaCost()
+			break
+		end
+	end
+
 	for _, nSlot in pairs( nItemSlot )
 	do
 		local hItem = bot:GetItemInSlot( nSlot )
@@ -902,18 +960,28 @@ local function ItemUsageComplement()
 
 				if nItemDesire > 0
 				then
-					if bDebugMode
-						and sMotive ~= nil
-					--	and J.Item.IsDebugItem( sItemName )
-						and J.Item.IsSpecifiedItem( sItemName )
+					-- Mana budget check: skip items that would leave us unable to cast abilities
+					local nItemManaCost = hItem:GetManaCost()
+					if nItemManaCost > 0
+						and not isDesperateSituation
+						and not tManaExemptItems[sItemName]
+						and (nBotMana - nItemManaCost) < nKeepManaThreshold
 					then
-						-- local sReportItemName = J.Chat.GetItemCnName( sItemName )
-						J.SetReportMotive( bDebugMode, sItemName..'→'..sMotive )
+						-- Skip this item, save mana for abilities
+					else
+						if bDebugMode
+							and sMotive ~= nil
+						--	and J.Item.IsDebugItem( sItemName )
+							and J.Item.IsSpecifiedItem( sItemName )
+						then
+							-- local sReportItemName = J.Chat.GetItemCnName( sItemName )
+							J.SetReportMotive( bDebugMode, sItemName..'→'..sMotive )
+						end
+
+						X.SetUseItem( hItem, hItemTarget, sCastType )
+
+						return nSlot + 1
 					end
-
-					X.SetUseItem( hItem, hItemTarget, sCastType )
-
-					return nSlot + 1
 				end
 			end
 		end
@@ -1073,6 +1141,45 @@ X.ConsiderItemDesire["item_abyssal_blade"] = function( hItem )
 			hEffectTarget = botTarget
 			sCastMotive = "进攻:"..J.Chat.GetNormName( hEffectTarget )
 			return BOT_ACTION_DESIRE_HIGH, hEffectTarget, sCastType, sCastMotive
+		end
+	end
+
+	-- Offensive: Lock down priority target in teamfight
+	if J.IsInTeamFight ~= nil and J.IsInTeamFight( bot, 1200 )
+	then
+		local attackTarget = bot:GetAttackTarget()
+		if attackTarget ~= nil and attackTarget:IsHero() and attackTarget:IsAlive()
+			and J.CanCastOnNonMagicImmune( attackTarget )
+			and X.IsWithoutSpellShield( attackTarget )
+			and not J.IsDisabled( attackTarget )
+		then
+			local targetHP = attackTarget:GetHealth() / attackTarget:GetMaxHealth()
+			if targetHP < 0.6 and GetUnitToUnitDistance( bot, attackTarget ) < nCastRange
+			then
+				hEffectTarget = attackTarget
+				sCastMotive = "团战锁定:"..J.Chat.GetNormName( hEffectTarget )
+				return BOT_ACTION_DESIRE_HIGH, hEffectTarget, sCastType, sCastMotive
+			end
+		end
+	end
+
+	-- Offensive: Initiate on isolated enemy when we have backup
+	for _, npcEnemy in pairs( nInRangeEnmyList )
+	do
+		if J.IsValid( npcEnemy )
+			and J.CanCastOnNonMagicImmune( npcEnemy )
+			and X.IsWithoutSpellShield( npcEnemy )
+			and not J.IsDisabled( npcEnemy )
+			and GetUnitToUnitDistance( bot, npcEnemy ) < nCastRange
+		then
+			local nNearbyAllies = bot:GetNearbyHeroes( 1200, false, BOT_MODE_NONE )
+			if nNearbyAllies ~= nil and #nNearbyAllies >= 2
+				and #nInRangeEnmyList == 1
+			then
+				hEffectTarget = npcEnemy
+				sCastMotive = "抓单:"..J.Chat.GetNormName( hEffectTarget )
+				return BOT_ACTION_DESIRE_HIGH, hEffectTarget, sCastType, sCastMotive
+			end
 		end
 	end
 
@@ -1250,7 +1357,8 @@ X.ConsiderItemDesire["item_black_king_bar"] = function( hItem )
 		and not bot:IsInvulnerable()
 		and not bot:HasModifier( 'modifier_item_lotus_orb_active' )
 		and not bot:HasModifier( 'modifier_antimage_spell_shield' )
-		and ( J.IsGoingOnSomeone( bot ) or J.IsRetreating( bot ) )
+		and hItem:GetCurrentCharges() >= 2
+		and ( J.IsGoingOnSomeone( bot ) or ( J.IsRetreating( bot ) and bot:WasRecentlyDamagedByAnyHero( 3.0 ) ) )
 	then
 		local nearEnemyCount = J.GetEnemyCount( bot, 600 )
 		if bot:IsRooted()
@@ -1447,19 +1555,14 @@ X.ConsiderItemDesire["item_blink"] = function( hItem )
 	end
 
 	if J.IsGoingOnSomeone(bot) then
-		-- for their queued spell combos
-		if  bot.shouldBlink ~= nil
-		and bot.shouldBlink
-		and (botName == 'npc_dota_hero_batrider'
-			or botName == 'npc_dota_hero_beastmaster'
-			or botName == 'npc_dota_hero_dark_seer'
-			or botName == 'npc_dota_hero_earthshaker'
-			or botName == 'npc_dota_hero_magnataur'
-			or botName == 'npc_dota_hero_rubick'
-			-- or botName == 'npc_dota_hero_tinker'
-			or botName == 'npc_dota_hero_tiny'
-			or botName == 'npc_dota_hero_treant')
-		then
+		-- Hero configs can set bot.shouldBlink to defer blink to hero-specific logic
+		if bot.shouldBlink ~= nil and bot.shouldBlink then
+			return BOT_ACTION_DESIRE_NONE
+		end
+
+		-- Hero configs can opt out of generic offensive blink
+		if bot.shouldNotBlinkOffensively then
+			-- Skip offensive blink, still allowed defensive above
 			return BOT_ACTION_DESIRE_NONE
 		end
 
@@ -3067,6 +3170,13 @@ X.ConsiderItemDesire["item_manta"] = function( hItem )
 		or bot:HasModifier( 'modifier_dragonknight_breathefire_reduction' )
 		or bot:HasModifier( 'modifier_slardar_amplify_damage' )
 		or bot:HasModifier( 'modifier_item_dustofappearance' )
+		or bot:HasModifier( 'modifier_bloodseeker_rupture' )
+		or bot:HasModifier( 'modifier_viper_viper_strike' )
+		or bot:HasModifier( 'modifier_venomancer_venomous_gale' )
+		or bot:HasModifier( 'modifier_rod_of_atos_debuff' )
+		or bot:HasModifier( 'modifier_spirit_breaker_charge_of_darkness_vision' )
+		or bot:HasModifier( 'modifier_orchid_malevolence_debuff' )
+		or bot:HasModifier( 'modifier_skywrath_mage_ancient_seal' )
 	then
 		hEffectTarget = bot
 		sCastMotive = '解Buff'
@@ -3077,7 +3187,8 @@ X.ConsiderItemDesire["item_manta"] = function( hItem )
 		and not bot:HasModifier( "modifier_antimage_spell_shield" )
 		and not bot:HasModifier( "modifier_item_sphere_target" )
 		and not bot:HasModifier( "modifier_item_lotus_orb_active" )
-		and J.IsNotAttackProjectileIncoming( bot, 70 )
+		and #nNearbyEnemyHeroes >= 1
+		and J.IsHeroAbilityProjectileIncoming( bot, 70 )
 	then
 		hEffectTarget = bot
 		sCastMotive = '躲弹道'
@@ -6383,10 +6494,7 @@ X.ConsiderItemDesire['item_smoke_of_deceit'] = function(item)
 	local nInRangeEnemy = J.GetNearbyHeroes(bot,nRadius, true, BOT_MODE_NONE)
 	local nInRangeTower = bot:GetNearbyTowers(nRadius, true)
 
-	if DotaTime() < 0 and DotaTime() > -60
-	then
-		return BOT_ACTION_DESIRE_HIGH, hEffectTarget, sCastType, sCastMotive
-	end
+	-- Pre-game smoke usage removed (I9): smoke should not be used before game starts
 
 	if (nInRangeEnemy ~= nil and #nInRangeEnemy == 0)
 	or (nInRangeTower ~= nil and #nInRangeTower == 0)
@@ -6416,9 +6524,15 @@ X.ConsiderItemDesire['item_smoke_of_deceit'] = function(item)
 
 		if #nInRangeAlly >= 2
 		and (nMode == BOT_MODE_ROAM
-			or nMode == BOT_MODE_GANK)
+			or nMode == BOT_MODE_GANK
+			or nMode == BOT_MODE_TEAM_ROAM
+			or nMode == BOT_MODE_ATTACK)
 		then
-			return BOT_ACTION_DESIRE_HIGH, hEffectTarget, sCastType, sCastMotive
+			-- During mid-game (8-35 min), smoke for rotations with grouped allies
+			local gameTime = DotaTime()
+			if gameTime >= 0 then
+				return BOT_ACTION_DESIRE_HIGH, hEffectTarget, sCastType, sCastMotive
+			end
 		end
 		
 		if (timeOfDay == 'day' and GetUnitToLocationDistance(bot, J.Utils.RadiantRoshanLoc) < 600)
@@ -6527,18 +6641,45 @@ X.ConsiderItemDesire['item_dust'] = function(item)
 		for _, enemyHero in pairs(nInRangeEnemy)
 		do
 			if J.IsValidTarget(enemyHero)
-			and J.IsUnitWillGoInvisible(enemyHero)
-			and J.IsClosestToDustLocation(bot, enemyHero:GetLocation())
-			and not J.HasInvisCounterBuff(enemyHero)
-			and not J.IsSuspiciousIllusion(enemyHero)
 			then
-				local nEnemyTowers = enemyHero:GetNearbyTowers(700, true)
-				if nEnemyTowers == nil or #nEnemyTowers == 0
+				-- Existing: about to go invisible
+				if J.IsUnitWillGoInvisible(enemyHero)
+				and J.IsClosestToDustLocation(bot, enemyHero:GetLocation())
+				and not J.HasInvisCounterBuff(enemyHero)
+				and not J.IsSuspiciousIllusion(enemyHero)
 				then
-					return BOT_ACTION_DESIRE_HIGH, bot, 'none', nil
+					local nEnemyTowers = enemyHero:GetNearbyTowers(700, true)
+					if nEnemyTowers == nil or #nEnemyTowers == 0
+					then
+						return BOT_ACTION_DESIRE_HIGH, bot, 'none', nil
+					end
 				end
-			end	
-		end	
+
+				-- Additional: enemy has known invis modifiers (windwalk, shadow dance, etc.)
+				if enemyHero:HasModifier("modifier_riki_permanent_invisibility")
+					or enemyHero:HasModifier("modifier_bounty_hunter_wind_walk")
+					or enemyHero:HasModifier("modifier_clinkz_wind_walk")
+					or enemyHero:HasModifier("modifier_weaver_shukuchi")
+					or enemyHero:HasModifier("modifier_nyx_assassin_vendetta")
+					or enemyHero:HasModifier("modifier_invoker_ghost_walk_self")
+					or enemyHero:HasModifier("modifier_mirana_moonlight_shadow")
+					or enemyHero:HasModifier("modifier_phantom_assassin_blur_active")
+					or enemyHero:HasModifier("modifier_treant_natures_guise_invis")
+				then
+					if not J.HasInvisCounterBuff(enemyHero) then
+						return BOT_ACTION_DESIRE_HIGH, bot, 'none', nil
+					end
+				end
+			end
+		end
+	end
+
+	-- Additional: we're being damaged by unseen hero (invis attacker)
+	if bot:WasRecentlyDamagedByAnyHero(2.0) then
+		local visibleEnemies = J.GetNearbyHeroes(bot, nRadius, true, BOT_MODE_NONE)
+		if visibleEnemies == nil or #visibleEnemies == 0 then
+			return BOT_ACTION_DESIRE_HIGH, bot, 'none', nil
+		end
 	end
 
 	return BOT_ACTION_DESIRE_NONE

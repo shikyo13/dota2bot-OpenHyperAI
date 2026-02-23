@@ -65,6 +65,9 @@ end
 function GetDesireHelper()
 	-- Utils.PrintPings(0.15)
 
+	-- Comms: ensure chat callback is installed, pings and missing tracking processed
+	if J.Comms ~= nil then J.Comms.Think(bot) end
+
 	if DotaTime() - CleanupCachedVarsTime > Utils.CachedVarsCleanTime then
 		Utils.CleanupCachedVars()
 		CleanupCachedVarsTime = DotaTime()
@@ -94,6 +97,23 @@ function GetDesireHelper()
 		return BOT_MODE_DESIRE_NONE
 	end
 
+	-- Strategic: reduce farm desire when team just won a fight (2+ enemies dead)
+	-- Bots should push objectives instead of farming
+	if J.CountDeadEnemies ~= nil then
+		local deadEnemies = J.CountDeadEnemies()
+		if deadEnemies >= 3 then
+			if J.Log ~= nil and J.Log.IsEnabled("MODE", 4) then
+				J.Log.Debug("MODE", botName .. " farm desire=NONE (3+ enemies dead)")
+			end
+			return BOT_MODE_DESIRE_NONE  -- Always leave farm for major objective
+		elseif deadEnemies >= 2 and J.IsCore(bot) then
+			if J.Log ~= nil and J.Log.IsEnabled("MODE", 4) then
+				J.Log.Debug("MODE", botName .. " farm desire reduced (2+ enemies dead)")
+			end
+			return 0.15  -- Very low farm desire, push/Roshan should win
+		end
+	end
+
 	if bot:IsAlive()
 	then
 		if runTime ~= 0
@@ -106,6 +126,7 @@ function GetDesireHelper()
 		end
 		
 		shouldRunTime = X.ShouldRun(bot);
+		shouldRunTime = math.min(shouldRunTime, 5.0)
 		if shouldRunTime ~= 0
 		then
 			if runTime == 0 then 
@@ -640,7 +661,7 @@ function Think()
 		end			
 	end
 	
-	bot:Action_MoveToLocation( ( RB + DB )/2 );
+	bot:Action_MoveToLocation( J.GetTeamFountain() );
 	return;
 end
 

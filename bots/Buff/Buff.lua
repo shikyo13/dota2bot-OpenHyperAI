@@ -117,5 +117,5 @@ function Buff:ColorString(msg, color)
 end
 
 Buff:Print('Buff mode initialized. Version: ' .. Version.number, Colors.good)
-Buff:Print("Bot link for any feedback: https://github.com/forest0xia/dota2bot-OpenHyperAI . Kudos to BeginnerAI, Fretbots, and ryndrb@; and thanks all for sharing your ideas.", Colors.consoleGood)
+Buff:Print("Buff mode initialized. Kudos to BeginnerAI, Fretbots, and ryndrb@; and thanks all for sharing your ideas.", Colors.consoleGood)
 Timers:CreateTimer(InitTimerName, {endTime = 1, callback = Buff['Init']} )

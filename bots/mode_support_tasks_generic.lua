@@ -1,0 +1,7 @@
+--------------------------------------------------------------------
+-- mode_support_tasks_generic.lua
+--
+-- NOTE: Support pull/stack/harass logic is integrated into
+-- mode_laning_generic.lua via aba_support.lua.
+-- This file exists as a placeholder but is not called by the engine.
+--------------------------------------------------------------------

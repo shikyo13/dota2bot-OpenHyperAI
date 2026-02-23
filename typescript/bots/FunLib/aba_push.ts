@@ -73,6 +73,17 @@ export function GetPushDesire(bot: Unit, lane: Lane): BotModeDesire {
         }
     }
 
+    // Objective awareness: boost push desire after winning fights
+    if ((jmz as any).GetObjectivePushDesireBonus) {
+        const objBonus = (jmz as any).GetObjectivePushDesireBonus(bot);
+        if (objBonus > 0) {
+            res = Math.min(res + objBonus, 0.95);
+            if (Comms && Comms.LogVerbose) {
+                Comms.LogVerbose(`${bot.GetUnitName()} push bonus +${objBonus} (dead enemies)`);
+            }
+        }
+    }
+
     jmz.Utils.SetCachedVars(cacheKey, res);
     (bot as any).pushDesire = res;
     return res;
@@ -84,6 +95,15 @@ export function GetPushDesire(bot: Unit, lane: Lane): BotModeDesire {
 export function GetPushDesireHelper(bot: Unit, lane: Lane): BotModeDesire {
     // Keep the intent: avoid pushing too early or when other team jobs override.
     if ((bot as any).laneToPush == null) (bot as any).laneToPush = lane;
+
+    // Comms: if a specific push lane is commanded, suppress other lanes
+    const Comms2 = (jmz as any).Comms;
+    if (Comms2 != null) {
+        const cmd2 = Comms2.GetCurrentCommand();
+        if (cmd2 != null && cmd2.type === "push" && Comms2.IsCommandFresh(20) && cmd2.lane != null && cmd2.lane !== lane) {
+            return BotModeDesire.None; // Don't push other lanes when specific lane commanded
+        }
+    }
 
     let nMaxDesire = 0.82;
     const nSearchRange = 2000;

@@ -143,6 +143,18 @@ function GetDesireHelper()
         return RemapValClamped(J.GetHP(bot), 0.3, 1, BOT_ACTION_DESIRE_VERYHIGH, BOT_ACTION_DESIRE_NONE)
     end
 
+    -- Strategic: boost team roam desire after winning fights to group for objectives
+    -- Placed after safety checks so ability-zone avoidance takes priority
+    if J.ShouldTakeObjective ~= nil then
+        local objective = J.ShouldTakeObjective(bot)
+        if objective ~= nil and J.GetHP(bot) > 0.4 then
+            if J.Log ~= nil then
+                J.Log.Info("MODE", botName .. " team_roam boosted: objective " .. tostring(objective.type))
+            end
+            return 0.85  -- Group for objective (capped below safety checks)
+        end
+    end
+
     if not J.IsFarming(bot) and not J.IsPushing(bot) and not J.IsDefending(bot)
     and not J.IsDoingRoshan(bot) and not J.IsDoingTormentor(bot)
     and bot:GetActiveMode() ~= BOT_MODE_RUNE
@@ -298,6 +310,10 @@ function Think()
     end
 
     if ShouldHelpAlly and J.Utils.IsValidUnit(targetUnit) then
+        -- Announce when moving to help an ally
+        if J.Comms ~= nil and GetUnitToUnitDistance(bot, targetUnit) > 800 then
+            J.Comms.AnnounceOnMyWay(bot, targetUnit:GetLocation())
+        end
         bot:Action_AttackUnit(targetUnit, false)
         return
     end

@@ -1,5 +1,5 @@
 --------------------------------------------------------------------
--- aba_comms.lua  –  Bot Intelligence & Communication System
+-- aba_comms.lua  -  Bot Intelligence & Communication System
 --
 -- Handles:
 --   1. Chat command parsing (!ward, !deward, !gank, !push, etc.)
@@ -16,20 +16,19 @@ local J     -- set lazily via X.Init()
 local W     -- ward utility, set lazily
 
 --------------------------------------------------------------------
--- Logging
+-- Logging (delegates to centralized J.Log when available)
 --------------------------------------------------------------------
-X.LOG_ENABLED = true   -- set to false to silence all [COMMS] output
-X.LOG_VERBOSE = false  -- set to true for extra detail (desire values, ping data, etc.)
-
 local function Log(msg)
-	if X.LOG_ENABLED then
+	if J ~= nil and J.Log ~= nil then
+		J.Log.Info("COMMS", msg)
+	else
 		print("[COMMS] " .. tostring(msg))
 	end
 end
 
 local function LogVerbose(msg)
-	if X.LOG_ENABLED and X.LOG_VERBOSE then
-		print("[COMMS] " .. tostring(msg))
+	if J ~= nil and J.Log ~= nil then
+		J.Log.Debug("COMMS", msg)
 	end
 end
 
@@ -42,7 +41,7 @@ function X.LogVerbose(msg) LogVerbose(msg) end
 --------------------------------------------------------------------
 local COMMAND_EXPIRE_TIME     = 30      -- seconds before a command goes stale
 local MISSION_TIMEOUT         = 60      -- warding mission hard timeout
-local PING_COMBAT_RADIUS      = 1600    -- if pinged enemy is within this of a teamfight → focus
+local PING_COMBAT_RADIUS      = 1600    -- if pinged enemy is within this of a teamfight -> focus
 local ANNOUNCE_COOLDOWNS = {
 	on_my_way  = 15,
 	missing    = 30,
@@ -51,17 +50,70 @@ local ANNOUNCE_COOLDOWNS = {
 	ganking    = 20,
 	warding    = 20,
 	back       = 10,
+	tp_rescue  = 15,
+	item       = 30,
+	danger     = 20,
 }
+
+local MISSING_THRESHOLD          = 18    -- seconds before announcing missing
+local MISSING_ANNOUNCE_COOLDOWN  = 30    -- per-lane cooldown (already in AnnounceMissing)
+local LANING_END_TIME            = 15 * 60  -- stop missing calls after 15 min
 
 --------------------------------------------------------------------
 -- State  (module-level, shared across all bots on the team)
 --------------------------------------------------------------------
 local bInitDone          = false
 local currentCommand     = nil    -- {type, lane, location, target_id, time, source}
-local announceCooldowns  = {}     -- ["on_my_way"] = last DotaTime()
+local announceCooldowns  = {}     -- ["pid_type"] = last DotaTime()
 local wardingMissions    = {}     -- [playerID] = {active, type, startTime, spots, spotIdx}
 local lastPingCheck      = -999
 local lastPingData       = nil
+local enemyLastSeen      = {}     -- [enemyPlayerID] = {time, location, lane}
+local lastMissingCheck   = -999
+local lastItemCounts     = {}     -- [playerID] = item count (for detecting new purchases)
+local pendingAnnouncements = {}  -- [playerID] = { {message, allChat, pingLoc, pingDanger}, ... }
+local tTPWaitStart = {}          -- [playerID] = DotaTime() when TP wait started
+
+--------------------------------------------------------------------
+-- Item display names for major item announcements (cost > 3000)
+--------------------------------------------------------------------
+local ITEM_DISPLAY_NAMES = {
+	item_blink                  = "Blink Dagger",
+	item_black_king_bar         = "BKB",
+	item_monkey_king_bar        = "MKB",
+	item_butterfly              = "Butterfly",
+	item_heart                  = "Heart",
+	item_satanic                = "Satanic",
+	item_rapier                 = "Divine Rapier",
+	item_assault                = "Assault Cuirass",
+	item_desolator              = "Desolator",
+	item_skadi                  = "Skadi",
+	item_sheepstick             = "Scythe of Vyse",
+	item_shivas_guard           = "Shiva's Guard",
+	item_radiance               = "Radiance",
+	item_manta                  = "Manta Style",
+	item_abyssal_blade          = "Abyssal Blade",
+	item_refresher              = "Refresher Orb",
+	item_sphere                 = "Linken's Sphere",
+	item_pipe                   = "Pipe of Insight",
+	item_guardian_greaves        = "Guardian Greaves",
+	item_bloodthorn             = "Bloodthorn",
+	item_nullifier              = "Nullifier",
+	item_silver_edge            = "Silver Edge",
+	item_ethereal_blade         = "Ethereal Blade",
+	item_dagon_5                = "Dagon 5",
+	item_octarine_core          = "Octarine Core",
+	item_aghanims_scepter       = "Aghanim's Scepter",
+	item_travel_boots            = "Boots of Travel",
+	item_travel_boots_2          = "Travels 2",
+	item_overwhelming_blink     = "Overwhelming Blink",
+	item_swift_blink            = "Swift Blink",
+	item_arcane_blink           = "Arcane Blink",
+	item_disperser              = "Disperser",
+	item_harpoon                = "Harpoon",
+	item_khanda                 = "Khanda",
+	item_parasma                = "Parasma",
+}
 
 --------------------------------------------------------------------
 -- Chat command dispatch table
@@ -113,8 +165,23 @@ local function IsGanker(bot)
 	return pos == 2 or pos == 4
 end
 
+local function GetLaneFromLocation(loc)
+	if loc == nil then return nil end
+	local x, y = loc.x or 0, loc.y or 0
+	-- Rough lane boundaries based on Dota 2 map geometry
+	if y > 2000 or (x < -4000 and y > -1000) then
+		return LANE_TOP
+	elseif y < -2000 or (x > 4000 and y < 1000) then
+		return LANE_BOT
+	else
+		return LANE_MID
+	end
+end
+
 local function GetHumanPlayer()
-	for i = 1, #GetTeamPlayers(GetTeam()) do
+	local teamPlayers = GetTeamPlayers(GetTeam())
+	if teamPlayers == nil then return nil end
+	for i = 1, #teamPlayers do
 		local member = GetTeamMember(i)
 		if member ~= nil and not member:IsBot() and member:IsAlive() then
 			return member
@@ -134,15 +201,55 @@ end
 
 local function ShouldBotRespondToCommand(bot, cmdType)
 	if cmdType == "ward_obs" or cmdType == "deward" then
-		return IsSupport(bot)
+		return true  -- any bot can ward when commanded
 	elseif cmdType == "gank" or cmdType == "smoke" then
 		return IsGanker(bot)
 	elseif cmdType == "help" then
 		-- nearest bots respond
 		return true
 	end
-	-- push, defend, roshan, retreat → all bots
+	-- push, defend, roshan, retreat -> all bots
 	return true
+end
+
+local function FindBestResponder(cmdType)
+	local team = GetTeamPlayers(GetTeam())
+	local bestBot = nil
+	local bestPriority = 999
+
+	for i = 1, #team do
+		local member = GetTeamMember(i)
+		if member ~= nil and member:IsBot() and member:IsAlive() then
+			local pos = 3  -- default mid priority
+			if J ~= nil then pos = J.GetPosition(member) or 3 end
+
+			local priority = 99
+			if cmdType == "gank" or cmdType == "smoke" then
+				-- Prefer pos 2 (mid ganker) or pos 4 (roamer)
+				if pos == 2 then priority = 1
+				elseif pos == 4 then priority = 2
+				elseif pos == 3 then priority = 3
+				else priority = 10 end
+			elseif cmdType == "ward_obs" or cmdType == "deward" then
+				-- Prefer pos 5, then pos 4, then anyone
+				if pos == 5 then priority = 1
+				elseif pos == 4 then priority = 2
+				elseif pos == 3 then priority = 5
+				elseif pos == 2 then priority = 6
+				else priority = 7 end
+			else
+				-- For push/defend/roshan/retreat/help: any alive bot, prefer cores
+				priority = pos  -- pos 1 = highest priority, pos 5 = lowest
+			end
+
+			if priority < bestPriority then
+				bestPriority = priority
+				bestBot = member
+			end
+		end
+	end
+
+	return bestBot
 end
 
 --------------------------------------------------------------------
@@ -150,7 +257,6 @@ end
 --------------------------------------------------------------------
 local function OnChatMessage(tChat)
 	if tChat == nil then return end
-	if tChat.team_only == false then return end  -- ignore all-chat
 
 	local senderId = tChat.player_id
 	if IsPlayerBot(senderId) then return end  -- ignore bot messages
@@ -158,7 +264,9 @@ local function OnChatMessage(tChat)
 	local msg = tChat.string
 	if msg == nil or string.sub(msg, 1, 1) ~= "!" then return end
 
-	-- Split message: "!gank top" → {"!gank", "top"}
+	-- Non-command all-chat is ignored; ! commands are processed from any channel
+
+	-- Split message: "!gank top" -> {"!gank", "top"}
 	local parts = {}
 	for word in string.gmatch(msg, "%S+") do
 		table.insert(parts, string.lower(word))
@@ -189,18 +297,56 @@ local function OnChatMessage(tChat)
 	end
 
 	currentCommand = command
-	Log("Command received: '" .. msg .. "' → type=" .. cmdType .. (lane ~= nil and (", lane=" .. tostring(lane)) or ""))
+	Log(">>> COMMAND RECEIVED: '" .. msg .. "' -> type=" .. cmdType .. (lane ~= nil and (", lane=" .. tostring(lane)) or ""))
 
-	-- Trigger ward/deward missions for supports
+	-- Acknowledge command to human player
 	if cmdType == "ward_obs" or cmdType == "deward" then
-		for i = 1, #GetTeamPlayers(GetTeam()) do
-			local member = GetTeamMember(i)
-			if member ~= nil and member:IsBot() and IsSupport(member) then
-				if cmdType == "ward_obs" then
-					X.StartWardingMission(member)
-				else
-					X.StartDewardingMission(member)
-				end
+		-- Acknowledgment -- mission announcements also fire below
+		local responder = FindBestResponder(cmdType)
+		if responder ~= nil then
+			local wardMsg = cmdType == "ward_obs" and "Warding!" or "Dewarding!"
+			X.Announce(responder, "warding", wardMsg)
+		end
+	else
+		local responder = FindBestResponder(cmdType)
+		if responder ~= nil then
+			local laneNames = {[LANE_TOP] = "top", [LANE_MID] = "mid", [LANE_BOT] = "bot"}
+			local laneName = lane and laneNames[lane] or ""
+
+			if cmdType == "gank" then
+				X.Announce(responder, "ganking", "Ganking " .. laneName .. "!")
+			elseif cmdType == "push" then
+				X.Announce(responder, "on_my_way", "Pushing " .. laneName .. "!")
+			elseif cmdType == "defend" then
+				X.Announce(responder, "on_my_way", "Defending " .. laneName .. "!")
+			elseif cmdType == "roshan" then
+				X.Announce(responder, "on_my_way", "Going Rosh!")
+			elseif cmdType == "retreat" then
+				X.Announce(responder, "back", "Falling back!")
+			elseif cmdType == "smoke" then
+				X.Announce(responder, "ganking", "Smoke gank!")
+			elseif cmdType == "help" then
+				X.Announce(responder, "on_my_way", "On my way!")
+			end
+		end
+	end
+
+	-- Chat echo the command acknowledgment
+	if J ~= nil and J.Log ~= nil then
+		local echoBot = FindBestResponder(cmdType)
+		if echoBot ~= nil then
+			J.Log.ChatEcho(echoBot, "Command received: " .. cmdType)
+		end
+	end
+
+	-- Trigger ward/deward mission: prefer support, fallback to any alive bot
+	if cmdType == "ward_obs" or cmdType == "deward" then
+		local missionBot = FindBestResponder(cmdType)
+		if missionBot ~= nil then
+			if cmdType == "ward_obs" then
+				X.StartWardingMission(missionBot)
+			else
+				X.StartDewardingMission(missionBot)
 			end
 		end
 	end
@@ -228,7 +374,7 @@ local function InterpretPings()
 	-- Only process recent pings (within 2 seconds)
 	if GameTime() - ping.time > 2.0 then return end
 
-	local pingLoc = Vector(ping.location_x, ping.location_y, 0)
+	local pingLoc = ping.location
 	local isNormalPing = ping.normal_ping
 	local isAlertPing = not isNormalPing
 
@@ -249,7 +395,7 @@ local function InterpretPings()
 		local inCombat = #nearbyAllies >= 2 and #nearbyEnemies >= 2
 
 		if inCombat then
-			-- FOCUS TARGET — set as priority attack target
+			-- FOCUS TARGET -- set as priority attack target
 			currentCommand = {
 				type      = "focus",
 				lane      = nil,
@@ -258,9 +404,9 @@ local function InterpretPings()
 				time      = DotaTime(),
 				source    = "ping",
 			}
-			Log("Ping on enemy " .. pingOnEnemy:GetUnitName() .. " IN COMBAT → focus target")
+			Log("Ping on enemy " .. pingOnEnemy:GetUnitName() .. " IN COMBAT -> focus target")
 		else
-			-- GANK REQUEST — boost roam desire to that hero
+			-- GANK REQUEST -- boost roam desire to that hero
 			currentCommand = {
 				type      = "gank",
 				lane      = nil,
@@ -269,7 +415,7 @@ local function InterpretPings()
 				time      = DotaTime(),
 				source    = "ping",
 			}
-			Log("Ping on enemy " .. pingOnEnemy:GetUnitName() .. " OUT OF COMBAT → gank request")
+			Log("Ping on enemy " .. pingOnEnemy:GetUnitName() .. " OUT OF COMBAT -> gank request")
 		end
 		return
 	end
@@ -285,7 +431,7 @@ local function InterpretPings()
 			time      = DotaTime(),
 			source    = "ping",
 		}
-		Log("Ping near Roshan → roshan command")
+		Log("Ping near Roshan -> roshan command")
 		return
 	end
 
@@ -298,23 +444,162 @@ end
 --------------------------------------------------------------------
 function X.Init()
 	if bInitDone then return end
-	bInitDone = true
 
-	-- Lazy-load J and W to avoid circular require issues
-	J = require(GetScriptDirectory()..'/FunLib/jmz_func')
-	W = require(GetScriptDirectory()..'/FunLib/aba_ward_utility')
+	-- No game-state gate needed: Think() is only called from mode scripts
+	-- which start during PRE_GAME. hero_selection.lua proves InstallChatCallback
+	-- works before GAME_IN_PROGRESS. We want !ward to work during pre-game.
 
-	-- Install our chat callback
-	InstallChatCallback(function(tChat) OnChatMessage(tChat) end)
-	Log("Initialized — chat callback installed, LOG_VERBOSE=" .. tostring(X.LOG_VERBOSE))
+	-- Use pcall so errors don't silently kill the init chain
+	local ok, err = pcall(function()
+		-- Lazy-load J and W to avoid circular require issues
+		J = require(GetScriptDirectory()..'/FunLib/jmz_func')
+		W = require(GetScriptDirectory()..'/FunLib/aba_ward_utility')
+		-- No InstallChatCallback here: SetReplyHumanTime (ability_item_usage_generic.lua)
+		-- is the surviving callback and forwards ! commands to X.HandleChat.
+	end)
+
+	if ok then
+		bInitDone = true
+		print("[COMMS] Comms system initialized -- ! commands forwarded via SetReplyHumanTime")
+	else
+		-- Print error but DON'T set bInitDone -- will retry next tick
+		print("[COMMS] *** INIT FAILED: " .. tostring(err) .. " -- will retry ***")
+	end
+end
+
+--------------------------------------------------------------------
+-- Missing Hero Tracking
+--------------------------------------------------------------------
+local function TrackMissingHeroes(bot)
+	local now = DotaTime()
+	local enemyTeam = GetOpposingTeam()
+	local enemyIDs = GetTeamPlayers(enemyTeam)
+	if enemyIDs == nil then return end
+
+	for _, enemyID in pairs(enemyIDs) do
+		local info = GetHeroLastSeenInfo(enemyID)
+		if info ~= nil and info[1] ~= nil then
+			local dInfo = info[1]
+			local timeSinceSeen = dInfo.time_since_seen or 0
+			local lastLoc = dInfo.location
+
+			-- Update tracking
+			if timeSinceSeen < 2 and lastLoc ~= nil then
+				-- Enemy is visible, update last-seen
+				enemyLastSeen[enemyID] = {
+					time = now,
+					location = lastLoc,
+					lane = GetLaneFromLocation(lastLoc),
+				}
+			end
+
+			-- Check for missing announcement
+			local tracked = enemyLastSeen[enemyID]
+			if tracked ~= nil and tracked.lane ~= nil then
+				local elapsed = now - tracked.time
+				if elapsed > MISSING_THRESHOLD and elapsed < MISSING_THRESHOLD + 10 then
+					-- Only announce from a bot assigned to that lane
+					local assignedLane = bot:GetAssignedLane()
+					if assignedLane == tracked.lane then
+						X.AnnounceMissing(bot, tracked.lane)
+					end
+				end
+			end
+		end
+	end
+end
+
+--------------------------------------------------------------------
+-- Danger Warning (2+ enemies missing heading toward a lane)
+--------------------------------------------------------------------
+local function CheckDangerWarnings(bot)
+	local now = DotaTime()
+
+	-- Count missing enemies per lane they were last seen in
+	local missingPerLane = { [LANE_TOP] = 0, [LANE_MID] = 0, [LANE_BOT] = 0 }
+	for _, data in pairs(enemyLastSeen) do
+		if data.lane ~= nil and (now - data.time) > MISSING_THRESHOLD then
+			missingPerLane[data.lane] = (missingPerLane[data.lane] or 0) + 1
+		end
+	end
+
+	-- If 2+ enemies missing from one lane, warn the OTHER lanes
+	for lane, count in pairs(missingPerLane) do
+		if count >= 2 then
+			local botLane = bot:GetAssignedLane()
+			-- Warn if bot is NOT in the lane they disappeared from
+			if botLane ~= nil and botLane ~= lane then
+				local laneNames = { [LANE_TOP] = "top", [LANE_MID] = "mid", [LANE_BOT] = "bot" }
+				local fromName = laneNames[lane] or "somewhere"
+				local dangerKey = bot:GetPlayerID() .. "_danger_" .. tostring(botLane)
+				local lastWarn = announceCooldowns[dangerKey] or -999
+				if now - lastWarn >= 20 then
+					announceCooldowns[dangerKey] = now
+					X.Announce(bot, "danger", count .. " missing " .. fromName .. "! Care!")
+				end
+			end
+		end
+	end
+end
+
+--------------------------------------------------------------------
+-- Flush queued announcements (only for GetBot(), one per tick)
+--------------------------------------------------------------------
+function X.FlushAnnouncements()
+	local bot = GetBot()
+	if bot == nil then return end
+	local pid = bot:GetPlayerID()
+	local queue = pendingAnnouncements[pid]
+	if queue == nil or #queue == 0 then return end
+
+	-- Process one announcement per tick to avoid spam
+	local entry = table.remove(queue, 1)
+	bot:ActionImmediate_Chat(entry.message, entry.allChat)
+	if entry.pingLoc ~= nil then
+		bot:ActionImmediate_Ping(entry.pingLoc.x, entry.pingLoc.y, entry.pingDanger or false)
+	end
 end
 
 --------------------------------------------------------------------
 -- Think (called from mode scripts, cached at 0.2s)
 --------------------------------------------------------------------
-function X.Think()
+function X.Think(bot)
 	if not bInitDone then X.Init() end
+
+	X.FlushAnnouncements()
+
 	InterpretPings()
+
+	-- The rest requires a valid bot and the game to be running
+	if bot == nil or J == nil then return end
+	local now = DotaTime()
+	if now < 30 then return end  -- skip pre-game
+
+	-- Throttle per-bot thinking to every 1s
+	local thinkKey = bot:GetPlayerID() .. "_think"
+	local lastThink = announceCooldowns[thinkKey] or -999
+	if now - lastThink < 1.0 then return end
+	announceCooldowns[thinkKey] = now
+
+	-- === Missing hero tracking (laning phase only) ===
+	if now < LANING_END_TIME then
+		local ok2, err2 = pcall(function()
+			TrackMissingHeroes(bot)
+		end)
+		if not ok2 then
+			LogVerbose("TrackMissingHeroes error: " .. tostring(err2))
+		end
+	end
+
+	-- === Danger warning: 2+ enemies missing from same lane ===
+	if now < LANING_END_TIME then
+		local ok3, err3 = pcall(function()
+			CheckDangerWarnings(bot)
+		end)
+		if not ok3 then
+			LogVerbose("CheckDangerWarnings error: " .. tostring(err3))
+		end
+	end
 end
 
 --------------------------------------------------------------------
@@ -391,6 +676,7 @@ function X.IsOnWardingMission(bot)
 	-- Timeout check
 	if DotaTime() - m.startTime > MISSION_TIMEOUT then
 		m.active = false
+		Log(bot:GetUnitName() .. " ward mission timed out after " .. MISSION_TIMEOUT .. "s")
 		return false
 	end
 	return true
@@ -423,6 +709,7 @@ function X.AdvanceMissionSpot(bot)
 	if m.spotIdx > #m.spots then
 		m.active = false
 		Log(bot:GetUnitName() .. " completed " .. m.type .. " mission (all spots done)")
+		X.AnnounceWardingComplete(bot)
 	else
 		LogVerbose(bot:GetUnitName() .. " advancing to spot " .. m.spotIdx .. "/" .. #m.spots)
 	end
@@ -448,20 +735,34 @@ end
 function X.Announce(bot, announceType, message)
 	local now = DotaTime()
 	local cd = ANNOUNCE_COOLDOWNS[announceType] or 15
-	local lastTime = announceCooldowns[announceType] or -999
+	local key = bot:GetPlayerID() .. "_" .. announceType
+	local lastTime = announceCooldowns[key] or -999
 
 	if now - lastTime < cd then return false end
 
-	announceCooldowns[announceType] = now
-	bot:ActionImmediate_Chat(message, true)
-	LogVerbose(bot:GetUnitName() .. " announced: " .. message)
+	announceCooldowns[key] = now
+
+	local pid = bot:GetPlayerID()
+	if pendingAnnouncements[pid] == nil then pendingAnnouncements[pid] = {} end
+	table.insert(pendingAnnouncements[pid], {
+		message = message,
+		allChat = true,
+		pingLoc = nil,
+		pingDanger = false,
+	})
+	LogVerbose(bot:GetUnitName() .. " queued: " .. message)
 	return true
 end
 
 function X.AnnounceOnMyWay(bot, dest)
 	if X.Announce(bot, "on_my_way", "On my way!") then
 		if dest ~= nil then
-			bot:ActionImmediate_Ping(dest.x, dest.y, false)
+			local pid = bot:GetPlayerID()
+			local q = pendingAnnouncements[pid]
+			if q and #q > 0 then
+				q[#q].pingLoc = dest
+				q[#q].pingDanger = false
+			end
 		end
 		return true
 	end
@@ -477,14 +778,27 @@ function X.AnnounceMissing(bot, lane)
 	local lastTime = announceCooldowns[key] or -999
 	if now - lastTime < 30 then return false end
 	announceCooldowns[key] = now
-	bot:ActionImmediate_Chat(laneName .. " missing!", true)
+
+	local pid = bot:GetPlayerID()
+	if pendingAnnouncements[pid] == nil then pendingAnnouncements[pid] = {} end
+	table.insert(pendingAnnouncements[pid], {
+		message = laneName .. " missing!",
+		allChat = true,
+		pingLoc = nil,
+		pingDanger = false,
+	})
 	return true
 end
 
 function X.AnnounceRetreat(bot, loc)
 	if X.Announce(bot, "retreat", "Back!") then
 		if loc ~= nil then
-			bot:ActionImmediate_Ping(loc.x, loc.y, true)
+			local pid = bot:GetPlayerID()
+			local q = pendingAnnouncements[pid]
+			if q and #q > 0 then
+				q[#q].pingLoc = loc
+				q[#q].pingDanger = true
+			end
 		end
 		return true
 	end
@@ -494,7 +808,12 @@ end
 function X.AnnounceNeedHelp(bot)
 	local loc = bot:GetLocation()
 	if X.Announce(bot, "need_help", "Help!") then
-		bot:ActionImmediate_Ping(loc.x, loc.y, true)
+		local pid = bot:GetPlayerID()
+		local q = pendingAnnouncements[pid]
+		if q and #q > 0 then
+			q[#q].pingLoc = loc
+			q[#q].pingDanger = true
+		end
 		return true
 	end
 	return false
@@ -508,6 +827,52 @@ end
 
 function X.AnnounceWarding(bot)
 	return X.Announce(bot, "warding", "Going to ward")
+end
+
+function X.AnnounceTPRescue(bot, ally)
+	local allyName = "ally"
+	if ally ~= nil and ally.GetUnitName then
+		allyName = string.gsub(ally:GetUnitName(), "npc_dota_hero_", "")
+	end
+	return X.Announce(bot, "on_my_way", "TP to save " .. allyName .. "!")
+end
+
+function X.AnnounceDefending(bot, lane)
+	local laneNames = { [LANE_TOP] = "top", [LANE_MID] = "mid", [LANE_BOT] = "bot" }
+	local laneName = laneNames[lane] or ""
+	return X.Announce(bot, "on_my_way", "Defending " .. laneName)
+end
+
+function X.AnnounceWardingComplete(bot)
+	return X.Announce(bot, "warding", "Warding done!")
+end
+
+function X.AnnounceObjective(bot, objType)
+	if objType == "roshan" then
+		return X.Announce(bot, "on_my_way", "Let's Rosh!")
+	elseif objType == "tower" then
+		return X.Announce(bot, "on_my_way", "Push now!")
+	end
+	return false
+end
+
+function X.AnnounceDanger(bot, message)
+	return X.Announce(bot, "danger", message or "Danger!")
+end
+
+function X.AnnounceItemPurchase(bot, itemName)
+	if bot == nil or itemName == nil then return false end
+	-- Only announce items with a display name (major items)
+	local displayName = ITEM_DISPLAY_NAMES[itemName]
+	if displayName == nil then return false end
+	local msg = "Got " .. displayName .. "!"
+	if X.Announce(bot, "item", msg) then
+		if J ~= nil and J.Log ~= nil then
+			J.Log.ChatEcho(bot, msg)
+		end
+		return true
+	end
+	return false
 end
 
 --------------------------------------------------------------------
@@ -544,13 +909,14 @@ function X.ShouldTPToSave(bot, ally)
 	end
 
 	-- Check if we haven't already been waiting to TP
-	if bot.commsTPWaitStart == nil then
-		bot.commsTPWaitStart = DotaTime()
+	local pid = bot:GetPlayerID()
+	if tTPWaitStart[pid] == nil then
+		tTPWaitStart[pid] = DotaTime()
 	end
-	if DotaTime() - bot.commsTPWaitStart < roleDelay then
+	if DotaTime() - tTPWaitStart[pid] < roleDelay then
 		return false
 	end
-	bot.commsTPWaitStart = nil
+	tTPWaitStart[pid] = nil
 	Log(bot:GetUnitName() .. " TP rescue approved for " .. ally:GetUnitName() .. " (HP=" .. string.format("%.0f%%", J.GetHP(ally)*100) .. ")")
 	return true
 end
@@ -612,7 +978,7 @@ function X.GetBestGankTarget(bot, radius)
 		for _, enemy in pairs(enemies) do
 			if J.IsValidHero(enemy) and J.CanBeAttacked(enemy) then
 				local hp = J.GetHP(enemy)
-				local distFromFountain = J.GetDistanceFromAncient(enemy, false)
+				local distFromFountain = J.GetDistanceFromAncient(enemy, true)
 				-- Lower HP + farther from safety = better target
 				local score = (1 - hp) * 5 + (distFromFountain / 3000)
 				if score > bestScore then
@@ -632,7 +998,12 @@ end
 function X.GetFocusTarget(bot)
 	local cmd = X.GetCurrentCommand()
 	if cmd == nil or cmd.type ~= "focus" then return nil end
-	if DotaTime() - cmd.time > 8 then return nil end  -- focus expires quickly
+	-- Extend focus to 15s during active combat, 8s otherwise
+	local maxAge = 8
+	if J ~= nil and J.IsInTeamFight ~= nil and J.IsInTeamFight(bot, 1500) then
+		maxAge = 15
+	end
+	if DotaTime() - cmd.time > maxAge then return nil end
 
 	local enemies = GetUnitList(UNIT_LIST_ENEMY_HEROES)
 	for _, enemy in pairs(enemies) do
@@ -643,6 +1014,11 @@ function X.GetFocusTarget(bot)
 		end
 	end
 	return nil
+end
+
+-- Expose the chat handler so other scripts can forward messages
+function X.HandleChat(tChat)
+	OnChatMessage(tChat)
 end
 
 return X

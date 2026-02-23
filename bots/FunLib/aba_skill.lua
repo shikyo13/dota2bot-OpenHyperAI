@@ -1,4 +1,12 @@
 local Utils = require( GetScriptDirectory()..'/FunLib/utils' )
+local Log  -- lazy loaded
+
+local function EnsureLog()
+	if Log ~= nil then return true end
+	local ok, mod = pcall(require, GetScriptDirectory()..'/FunLib/aba_log')
+	if ok then Log = mod end
+	return Log ~= nil
+end
 
 local X = {}
 
@@ -95,14 +103,14 @@ function X.GetAbilityList( bot )
 					--print('[WARN] The ability '..name..' on slot '..slot..' cannot be accessed for hero: '..unitName)
 					table.insert(sAbilityList, generic_hidden)
 				else
-					print('[WARN] The ability '..name..' on slot '..slot..' does not make sense. Check if there is anything wrong with this hero: '..unitName)
+					if EnsureLog() then Log.Warn('GENERAL', 'Ability '..name..' on slot '..slot..' does not make sense for hero: '..unitName) end
 				end
 			elseif Utils.AbilityBehaviorHasFlag(ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE) and ability:IsHidden() then
 				--print('[WARN] The ability '..name..' on slot '..slot..' is not learnable (e.g. innate like) for hero: '..unitName)
 			elseif ability:IsUltimate() and slot >= 4 then
 				-- print('[INFO] The ability '..name..' on slot '..slot..' is the ultimate for hero: '..unitName)
 				if Utils.AbilityBehaviorHasFlag(ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE) or ability:IsHidden() then
-					print('[WARN] The ability '..name..' on slot '..slot..' seems to be an ultimate for hero: '..unitName..'. But it is not learnable OR hidden. Check if there is anything wrong with this hero.')
+					if EnsureLog() then Log.Warn('GENERAL', 'Ability '..name..' on slot '..slot..' is an unlearnable/hidden ultimate for hero: '..unitName) end
 				else
 					sAbilityList[6] = name
 					--print(unitName..' loaded ultimate ability with name= '..name..', at idx= '..slot)
@@ -114,10 +122,10 @@ function X.GetAbilityList( bot )
 				table.insert(sAbilityList, name)
 				--print(unitName..' loaded ability with name= '..name..', at idx= '..slot)
 			else
-				print(unitName..' failed to load ability with name= '..name..', at idx= '..slot)
+				if EnsureLog() then Log.Warn('GENERAL', unitName..' failed to load ability '..name..' at slot '..slot) end
 			end
 		else
-			print('[WARN] It seems there is no ability on slot '..slot..' for '..unitName)
+			if EnsureLog() then Log.Warn('GENERAL', 'No ability on slot '..slot..' for '..unitName) end
 		end
 	end
 

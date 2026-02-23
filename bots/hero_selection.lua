@@ -174,7 +174,8 @@ local function ShouldPickDurableOrOtherSupports(name, position, minCount)
 end
 
 -- Build a weighted/screened list for a position, then cut to top-k
-local function GetPositionedPool(heroPosMap, position)
+local function GetPositionedPool(heroPosMap, position, depth)
+    depth = depth or 0
     local heroList = {}
 	-- Pick from weighted options for the pos first.
     for heroName, roleWeights in pairs(heroPosMap) do
@@ -205,9 +206,9 @@ local function GetPositionedPool(heroPosMap, position)
 		end
     end
 
-	-- In case pool is small (rare), re-merge another pass
-	if #sortedHeroNames < 6 then
-		sortedHeroNames = Utils.CombineTablesUnique(sortedHeroNames, GetPositionedPool(heroPosMap, position))
+	-- In case pool is small (rare), re-merge another pass (guard against infinite recursion)
+	if #sortedHeroNames < 6 and depth < 1 then
+		sortedHeroNames = Utils.CombineTablesUnique(sortedHeroNames, GetPositionedPool(heroPosMap, position, depth + 1))
 	end
     return sortedHeroNames
 end
@@ -641,7 +642,7 @@ local function PickHeroForBotSlot(i, id)
 	local pick = preselect
 
 	-- Use matchup data most of the time unless user forced picks
-	if not X.IsInCustomizedPicks(preselect) and RandomInt(1, 5) >= 1 then
+	if not X.IsInCustomizedPicks(preselect) and RandomInt(1, 5) >= 2 then
 		local enemyNames = GetEnemyHeroNames()
 		local scored = ScoreCandidatesForTeam(team, rolePool, enemyNames)
 
@@ -765,7 +766,7 @@ local function handleCommand(inputStr, PlayerID, bTeamOnly)
 				end
 				userSwitchedRole = true
 			else
-				print("Hero name not found or not supported! See: https://github.com/forest0xia/dota2bot-OpenHyperAI/discussions/71");
+				print("Hero name not found or not supported! Check the Workshop page for the list of supported hero names.");
 			end
 
 		elseif subKey == "!ban" and GetGameState() == GAME_STATE_HERO_SELECTION then
@@ -780,7 +781,7 @@ local function handleCommand(inputStr, PlayerID, bTeamOnly)
 				print("Banned hero " .. hero.. '. Banned list:')
 				Utils.PrintTable(sBanList)
 			else
-				print("Hero name not found or not supported! See: https://github.com/forest0xia/dota2bot-OpenHyperAI/discussions/71");
+				print("Hero name not found or not supported! Check the Workshop page for the list of supported hero names.");
 			end
 
 		elseif subKey == "!pos" and GetGameState() == GAME_STATE_PRE_GAME then
@@ -877,7 +878,7 @@ local function InitPickScheduleOnce()
 
 	-- Tweak these three to taste:
 	local base  = GameTime() + 2          -- when the *first* bot may pick
-	local step  = GetTeam() * 3           -- spacing between slots
+	local step  = 3                        -- spacing between slots (fixed for symmetric scheduling)
 	local jitter_min, jitter_max = 1, 3   -- small variability per slot
 
 	local teamPlayers = GetTeamPlayers(GetTeam(), true)

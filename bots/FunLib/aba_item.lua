@@ -527,6 +527,75 @@ local tSmallItemList = {
 
 }
 
+-- Neutral items by tier (1-5)
+local tNeutralItemLevelList = {
+	-- Tier 1
+	["item_arcane_ring"] = 1,
+	["item_broom_handle"] = 1,
+	["item_faded_broach"] = 1,
+	["item_fairys_trinket"] = 1,
+	["item_lance_of_pursuit"] = 1,
+	["item_mysterious_hat"] = 1,
+	["item_occult_bracelet"] = 1,
+	["item_pig_pole"] = 1,
+	["item_safety_bubble"] = 1,
+	["item_seeds_of_serenity"] = 1,
+	["item_spark_of_courage"] = 1,
+	["item_trusty_shovel"] = 1,
+	["item_duelist_gloves"] = 1,
+	-- Tier 2
+	["item_aquila"] = 2,
+	["item_bullwhip"] = 2,
+	["item_dragon_scale"] = 2,
+	["item_eye_of_the_vizier"] = 2,
+	["item_grove_bow"] = 2,
+	["item_nether_shawl"] = 2,
+	["item_orb_of_destruction"] = 2,
+	["item_philosophers_stone"] = 2,
+	["item_pupils_gift"] = 2,
+	["item_ring_of_aquila"] = 2,
+	["item_specialists_array"] = 2,
+	["item_vambrace"] = 2,
+	["item_vampire_fangs"] = 2,
+	-- Tier 3
+	["item_ceremonial_robe"] = 3,
+	["item_cloak_of_flames"] = 3,
+	["item_elven_tunic"] = 3,
+	["item_enchanted_quiver"] = 3,
+	["item_ninja_gear"] = 3,
+	["item_ogre_seal_totem"] = 3,
+	["item_paladin_sword"] = 3,
+	["item_psychic_headband"] = 3,
+	["item_quickening_charm"] = 3,
+	["item_spider_legs"] = 3,
+	["item_titan_sliver"] = 3,
+	["item_vindicators_axe"] = 3,
+	-- Tier 4
+	["item_ascetic_cap"] = 4,
+	["item_havoc_hammer"] = 4,
+	["item_illusionsts_cape"] = 4,
+	["item_martyr_plate"] = 4,
+	["item_mind_breaker"] = 4,
+	["item_minotaur_horn"] = 4,
+	["item_rattlecage"] = 4,
+	["item_spell_prism"] = 4,
+	["item_stormcrafter"] = 4,
+	["item_trickster_cloak"] = 4,
+	["item_witch_blade"] = 4,
+	-- Tier 5
+	["item_apex"] = 5,
+	["item_book_of_shadows"] = 5,
+	["item_desolator_2"] = 5,
+	["item_ex_machina"] = 5,
+	["item_fallen_sky"] = 5,
+	["item_flicker"] = 5,
+	["item_force_boots"] = 5,
+	["item_mirror_shield"] = 5,
+	["item_pirate_hat"] = 5,
+	["item_seer_stone"] = 5,
+	["item_woodland_striders"] = 5,
+}
+
 
 function Item.GetComponentList( itemName )
 
@@ -1411,7 +1480,7 @@ function Item.HasBuyBoots( bot )
 end
 
 
-function Item.HasBootsInMainSolt( bot )
+function Item.HasBootsInMainSlot( bot )
 
 	local bootsSlot = - 1
 
@@ -1609,18 +1678,20 @@ function Item.MergeLists(list1, list2)
     return merged
 end
 
--- remove l2 from l1
+-- remove l2 from l1 (count-based: 2x "item_branch" - 1x "item_branch" = 1x "item_branch")
 function Item.RemoveIntersectedItems(list1, list2)
-    -- Build a lookup table for elements in list2
-    local set2 = {}
+    -- Build a count table for elements in list2
+    local counts2 = {}
     for _, value in ipairs(list2) do
-        set2[value] = true
+        counts2[value] = (counts2[value] or 0) + 1
     end
 
     local result = {}
-    -- Add elements from list1 only if they are not in list2
+    -- Add elements from list1, subtracting counts from list2
     for _, value in ipairs(list1) do
-        if not set2[value] then
+        if counts2[value] and counts2[value] > 0 then
+            counts2[value] = counts2[value] - 1
+        else
             table.insert(result, value)
         end
     end

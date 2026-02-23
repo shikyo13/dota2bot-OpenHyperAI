@@ -97,7 +97,6 @@ end
 function OnEnd()
 	ClosestOutpost = nil
 	ClosestOutpostDist = 10000
-	ShouldWaitInBaseToHeal = false
 end
 
 function Think()

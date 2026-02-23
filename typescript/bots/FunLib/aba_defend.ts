@@ -479,6 +479,15 @@ export function GetDefendDesireHelper(bot: Unit, lane: Lane): BotModeDesire {
     if ((bot as any).laneToDefend == null) (bot as any).laneToDefend = lane;
     if ((bot as any).DefendLaneDesire == null) (bot as any).DefendLaneDesire = [0, 0, 0];
 
+    // Comms: if a specific defend lane is commanded, suppress other lanes
+    const Comms2 = (jmz as any).Comms;
+    if (Comms2 != null) {
+        const cmd2 = Comms2.GetCurrentCommand();
+        if (cmd2 != null && cmd2.type === "defend" && Comms2.IsCommandFresh(20) && cmd2.lane != null && cmd2.lane !== lane) {
+            return BotModeDesire.None; // Don't defend other lanes when specific lane commanded
+        }
+    }
+
     currentTime = DotaTime();
     if (GetGameMode() === 23) currentTime = currentTime * 1.65;
 

@@ -61,7 +61,7 @@ function GetDesireHelper()
     if enemiesAtAncient >= 1 then
         return BOT_MODE_DESIRE_NONE
     end
-	if J.IsFarming(bot) and J.IsPushing(bot) and J.IsDefending(bot) then
+	if J.IsFarming(bot) or J.IsPushing(bot) or J.IsDefending(bot) then
 		return BOT_MODE_DESIRE_NONE
 	end
 
@@ -582,15 +582,22 @@ end
 
 function X.GetGoOutLocation()
 	local nLane = bot:GetAssignedLane()
-	local vLocation = J.Site.GetXUnitsTowardsLocation(GetTower(GetTeam(),TOWER_MID_2),GetTower(GetTeam(),TOWER_MID_1):GetLocation(),300)
+	local towerT2 = GetTower(GetTeam(), TOWER_MID_2)
+	local towerT1 = GetTower(GetTeam(), TOWER_MID_1)
 
 	if nLane == LANE_BOT then
-		vLocation = J.Site.GetXUnitsTowardsLocation(GetTower(GetTeam(),TOWER_BOT_2),GetTower(GetTeam(),TOWER_BOT_1):GetLocation(),300)
+		towerT2 = GetTower(GetTeam(), TOWER_BOT_2)
+		towerT1 = GetTower(GetTeam(), TOWER_BOT_1)
 	elseif nLane == LANE_TOP then
-		vLocation = J.Site.GetXUnitsTowardsLocation(GetTower(GetTeam(),TOWER_TOP_2),GetTower(GetTeam(),TOWER_TOP_1):GetLocation(),300)
+		towerT2 = GetTower(GetTeam(), TOWER_TOP_2)
+		towerT1 = GetTower(GetTeam(), TOWER_TOP_1)
 	end
 
-	return vLocation
+	if towerT2 == nil or towerT1 == nil then
+		return bot:GetLocation()
+	end
+
+	return J.Site.GetXUnitsTowardsLocation(towerT2, towerT1:GetLocation(), 300)
 end
 
 function X.CouldBlink(vLocation)

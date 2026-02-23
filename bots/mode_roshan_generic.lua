@@ -30,6 +30,7 @@ function GetDesire()
 end
 function GetDesireHelper()
 	if bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return BOT_MODE_DESIRE_NONE end
+    if not J.Utils.IsValidUnit(Roshan) then Roshan = nil end
     if Roshan == nil then
         local nCreeps = bot:GetNearbyNeutralCreeps(700)
         for _, creepOrRoshan in pairs(nCreeps)
@@ -88,7 +89,7 @@ function GetDesireHelper()
     if J.Utils.IsValidUnit(Roshan) then
         local roshHP = Roshan:GetHealth() / Roshan:GetMaxHealth()
         if roshHP < 0.5 and #lEnemyHeroesAroundLoc == 0 then
-            return RemapValClamped(roshHP, 100, 0, BOT_MODE_DESIRE_MODERATE, BOT_MODE_DESIRE_ABSOLUTE )
+            return RemapValClamped(roshHP, 1.0, 0, BOT_MODE_DESIRE_MODERATE, BOT_MODE_DESIRE_ABSOLUTE )
         end
     end
 

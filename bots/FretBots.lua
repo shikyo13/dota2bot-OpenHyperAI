@@ -7,7 +7,7 @@ if GetScriptDirectory == nil then GetScriptDirectory = function() return "bots" 
 -- Version information
 local Version = require 'bots.FunLib.version'
 -- Print version to console
-print('Open Hyper AI (OHA). Starting Fretbots mode: ' .. Version.number)
+print('Dota 2 AI Bots. Starting Fretbots mode: ' .. Version.number)
 -- Dependencies
 -- global debug flag
 require 'bots.FretBots.Debug'
@@ -137,7 +137,7 @@ if not Flags.isFretBotsInitialized then
 	local teamNames = require 'bots.FunLib.aba_team_names'
 	if teamNames.maxTeamSize ~= 12 then return end
 	-- Welcome Message
-	Utilities:Print('Welcome to Open Hyper AI (OHA)! FretBots enabled: ' .. Version.number, MSG_GOOD, MATCH_READY)
+	Utilities:Print('Welcome to Dota 2 AI Bots! FretBots enabled: ' .. Version.number, MSG_GOOD, MATCH_READY)
 	-- Register the listener that will run Initialize() once the game starts
 	Utilities:RegsiterGameStateListener(FretBots, 'Initialize', DOTA_GAMERULES_STATE_PRE_GAME )
 	Flags.isFretBotsInitialized = true

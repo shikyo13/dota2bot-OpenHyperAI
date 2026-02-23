@@ -114,9 +114,9 @@ function GetDesireHelper()
 		end
 	end
 
-	-- Comms: gank/smoke/focus commands
+	-- Comms: gank/smoke/focus commands + missing tracking
 	if J.Comms ~= nil then
-		J.Comms.Think()
+		J.Comms.Think(bot)
 		local cmd = J.Comms.GetCurrentCommand()
 		if cmd ~= nil and J.Comms.IsCommandFresh(20) then
 			if cmd.type == "gank" and (J.GetPosition(bot) == 2 or J.GetPosition(bot) == 4) then
@@ -184,7 +184,11 @@ function Think()
 			if tp ~= nil and tp:IsFullyCastable() then
 				local allyTowers = tpTarget:GetNearbyTowers(2500, false)
 				if allyTowers ~= nil and #allyTowers >= 1 then
-					J.Comms.AnnounceOnMyWay(bot, tpTarget:GetLocation())
+					if J.Comms.AnnounceTPRescue then
+						J.Comms.AnnounceTPRescue(bot, tpTarget)
+					else
+						J.Comms.AnnounceOnMyWay(bot, tpTarget:GetLocation())
+					end
 					bot:Action_UseAbilityOnLocation(tp, allyTowers[1]:GetLocation())
 					return
 				end
@@ -1002,6 +1006,12 @@ function ThinkActualGankingInLanes()
 	if laneToGank ~= nil then
 		local targetLoc = GetLaneFrontLocation(GetTeam(), laneToGank, -300)
 		local distanceToGankLoc = GetUnitToLocationDistance(bot, targetLoc)
+
+		-- Announce when starting to move toward gank target
+		if J.Comms ~= nil and distanceToGankLoc > 1500 then
+			J.Comms.AnnounceOnMyWay(bot, targetLoc)
+		end
+
 		if distanceToGankLoc > 5000 then
 			if J.GetPosition(bot) > 3
 			and targetGate ~= nil

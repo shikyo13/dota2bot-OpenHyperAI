@@ -6,6 +6,18 @@ local Item = require( GetScriptDirectory()..'/FunLib/aba_item' )
 local Role = require( GetScriptDirectory()..'/FunLib/aba_role' )
 local J = require( GetScriptDirectory()..'/FunLib/jmz_func')
 local Utils = require( GetScriptDirectory()..'/FunLib/utils')
+local ItemCounter = require( GetScriptDirectory()..'/FunLib/aba_item_counter' )
+
+local Deward = nil
+local bDewardLoaded = false
+local function EnsureDeward()
+	if not bDewardLoaded then
+		local ok, mod = pcall(require, GetScriptDirectory()..'/FunLib/aba_deward')
+		if ok and mod then Deward = mod end
+		bDewardLoaded = true
+	end
+	return Deward ~= nil
+end
 
 local X = {}
 
@@ -27,6 +39,7 @@ bot.currBuyingBasicItemList = {}
 bot.currBuyingBasicItemRefList = {}
 bot.rebuildCount = 0
 bot.SecretShop = false
+bot.SecretShopStartTime = 0
 
 local sPurchaseList = BotBuild['sBuyList']
 local sItemSellList = BotBuild['sSellList']
@@ -34,8 +47,11 @@ local sItemSellList = BotBuild['sSellList']
 bot.componentBuyGuard = bot.componentBuyGuard or {}  -- name -> last purchase time (sec)
 
 if sPurchaseList == nil then
-	print("[ERROR] Can't load purchase list for: " .. botName)
-	print("Stack Trace:", debug.traceback())
+	if J ~= nil and J.Log ~= nil then
+		J.Log.Error("ITEMS", "Can't load purchase list for: " .. botName .. "\n" .. debug.traceback())
+	else
+		print("[ERROR][ITEMS] Can't load purchase list for: " .. botName)
+	end
 	return
 end
 
@@ -51,7 +67,7 @@ bot.countInvCheck = 0
 
 bot.lastItemToBuy = nil
 bot.bPurchaseFromSecret = false
-bot.hasBuyShard = true
+bot.hasBuyShard = false
 local itemCost = 0
 local courier = nil
 local t3AlreadyDamaged = false
@@ -130,7 +146,7 @@ local function BuildRequirementMapFor(itemName)
 end
 
 local function TryRecoverDroppedNeeded(bot, neededSet)
-    -- Walk to and pick up owned dropped components if they’re nearby
+    -- Walk to and pick up owned dropped components if they're nearby
     local drops = GetDroppedItemList()
     for _, d in pairs(drops) do
         local it = d.item
@@ -151,7 +167,7 @@ local function TryRecoverDroppedNeeded(bot, neededSet)
     return false
 end
 
--- For quick “is this basic still required for current target?” checks.
+-- For quick "is this basic still required for current target?" checks.
 local function NeedsMoreOf(bot, basicName)
     if not bot.currReqMap then return true end
     local need = bot.currReqMap[basicName]
@@ -206,12 +222,40 @@ local function GeneralPurchase()
 		return
 	end
 
+	-- Prevent purchasing a second pair of boots (double boots prevention)
+	local tAllBootItems = {
+		item_boots = true, item_phase_boots = true, item_power_treads = true,
+		item_tranquil_boots = true, item_arcane_boots = true,
+		item_travel_boots = true, item_travel_boots_2 = true,
+		item_boots_of_bearing = true, item_guardian_greaves = true,
+	}
+	if tAllBootItems[bot.currBuyingItemInPurchaseList]
+		and bot.currBuyingItemInPurchaseList ~= 'item_travel_boots'
+		and bot.currBuyingItemInPurchaseList ~= 'item_travel_boots_2'
+		and bot.currBuyingItemInPurchaseList ~= 'item_boots_of_bearing'
+		and bot.currBuyingItemInPurchaseList ~= 'item_guardian_greaves'
+	then
+		-- Check if we already own a different upgraded boot
+		for bootName, _ in pairs(tAllBootItems) do
+			if bootName ~= 'item_boots' and bootName ~= bot.currBuyingItemInPurchaseList then
+				if bot:FindItemSlot(bootName) >= 0 then
+					-- Already have different upgraded boots, skip this purchase
+					bot.currBuyingItemInPurchaseList = nil
+					bot.purchaseListInReverseOrder[#bot.purchaseListInReverseOrder] = nil
+					bot.currReqMap = nil
+					ClearCurrBuyingBasicItemList()
+					return
+				end
+			end
+		end
+	end
+
 	local cost = itemCost
 
 
 	if bot.lastItemToBuy == 'item_boots'
 		and bot.currBuyingItemInPurchaseList == 'item_travel_boots'
-		and Item.HasBootsInMainSolt( bot )
+		and Item.HasBootsInMainSlot( bot )
 	then
 		cost = GetItemCost( 'item_travel_boots' )
 	end
@@ -321,11 +365,20 @@ local function GeneralPurchase()
 			end
 		end
 
+		-- Secret shop timeout: if stuck trying to reach secret shop for 30s, skip item
+		if bot.SecretShop and DotaTime() - (bot.SecretShopStartTime or 0) > 30 then
+			bot.SecretShop = false
+			bot.SecretShopStartTime = 0
+			ClearCurrBuyingBasicItemList()
+			return
+		end
+
 		--决定是否在神秘购物
 		if bot.bPurchaseFromSecret
 			and bot:DistanceFromSecretShop() > 0
 		then
 			bot.SecretShop = true
+			if bot.SecretShopStartTime == 0 then bot.SecretShopStartTime = DotaTime() end
 		else
 			if Utils.CountBackpackEmptySpace(bot) > 0 -- has empty slot
 			or bot:DistanceFromSecretShop() > 700
@@ -374,7 +427,9 @@ local function GeneralPurchase()
 						ClearCurrBuyingBasicItemList()
 						bot.SecretShop = false
 					else
-						print( botName.." 未能购买物品 "..bot.currBuyingBasicItem.." : "..tostring( bot:ActionImmediate_PurchaseItem( bot.currBuyingBasicItem ) ) )
+						if J ~= nil and J.Log ~= nil then
+							J.Log.Warn("ITEMS", botName.." failed to purchase "..bot.currBuyingBasicItem)
+						end
 					end
 				end
 			end
@@ -419,7 +474,7 @@ local function TurboModeGeneralPurchase()
 
 	if bot.lastItemToBuy == 'item_boots'
 		and bot.currBuyingItemInPurchaseList == 'item_travel_boots'
-		and Item.HasBootsInMainSolt( bot )
+		and Item.HasBootsInMainSlot( bot )
 	then
 		cost = GetItemCost( 'item_travel_boots' )
 	end
@@ -505,6 +560,37 @@ function ItemPurchaseThink()
 
 	if ( GetGameState() ~= GAME_STATE_PRE_GAME and GetGameState() ~= GAME_STATE_GAME_IN_PROGRESS )
 	then return	end
+
+	-- Counter-item re-evaluation: check every 10 minutes after 10:00
+	local lastCounterInjectTime = bot.lastCounterInjectTime or -1
+	if currentTime > 10 * 60 and currentTime - lastCounterInjectTime > 10 * 60 then
+		bot.lastCounterInjectTime = currentTime
+		local position = J.GetPosition(bot) or 3
+		local counterItems = ItemCounter.GetCounterItems(bot, position, bot.purchaseListInReverseOrder)
+		if #counterItems > 0 then
+			-- Filter out items already in the buy list to prevent duplicates on re-eval
+			local existingItems = {}
+			for _, item in ipairs(bot.purchaseListInReverseOrder) do
+				existingItems[item] = true
+			end
+			local newItems = {}
+			for _, item in ipairs(counterItems) do
+				if not existingItems[item] then
+					table.insert(newItems, item)
+				end
+			end
+			if #newItems > 0 then
+				local injectPos = math.max(1, math.floor(#bot.purchaseListInReverseOrder * 0.4))
+				for i, item in ipairs(newItems) do
+					table.insert(bot.purchaseListInReverseOrder, injectPos + i - 1, item)
+				end
+				if J ~= nil and J.Log ~= nil then
+				J.Log.Info("ITEMS", botName .. " injecting " .. #newItems .. " counter items (re-eval at " .. string.format("%.0f", currentTime/60) .. " min)")
+				J.Log.ChatEcho(bot, string.gsub(botName, "npc_dota_hero_", "") .. " buying counter items")
+			end
+			end
+		end
+	end
 
 	if bot:IsIllusion()
 	or bot:HasModifier( 'modifier_arc_warden_tempest_double' )
@@ -609,16 +695,17 @@ function ItemPurchaseThink()
 		then
 			bot.hasBuyClarity = true
 			bot:ActionImmediate_PurchaseItem( "item_clarity" )
-		elseif botLevel >= 5
-			and Role['invisEnemyExist'] == true
+		elseif Role['invisEnemyExist'] == true
 			and buyBootsStatus == true
 			and botGold >= GetItemCost( "item_dust" )
 			and Item.GetEmptyInventoryAmount( bot ) >= 2
 			and Item.GetItemCharges( bot, "item_dust" ) <= 0
 			and botCourierValue == 0
-			and not J.HasItem(bot, 'item_ward_sentry')
 		then
-			bot:ActionImmediate_PurchaseItem( "item_dust" )
+			-- Buy dust vs invis: after 10 min always carry dust, earlier only if level 5+
+			if botLevel >= 5 or currentTime > 10 * 60 then
+				bot:ActionImmediate_PurchaseItem( "item_dust" )
+			end
 		end
 	end
 
@@ -712,22 +799,47 @@ function ItemPurchaseThink()
 	end
 
 	-- Observer and Sentry Wards
-	if J.GetPosition(bot) == 4 and DotaTime() > 300 and botWorth < 25000
-	then
-		local wardType = 'item_ward_sentry'
+	local botPosition = J.GetPosition(bot)
 
-		if GetItemStockCount(wardType) > 1
-		and botGold >= GetItemCost(wardType)
+	-- Sentry wards: improved with deward awareness
+	if botPosition >= 4 and currentTime > 300 and botWorth < 25000 then
+		local sentryCharges = Item.GetItemCharges(bot, 'item_ward_sentry')
+		local maxSentries = 2  -- don't overbuy
+
+		-- Determine if we have a deward need
+		local hasDewardNeed = false
+		if EnsureDeward() then
+			local knownWards = Deward.GetKnownEnemyWards()
+			if knownWards ~= nil and #knownWards > 0 then
+				hasDewardNeed = true
+			end
+		end
+
+		-- Also check for active deward command
+		if J.Comms ~= nil then
+			local cmd = J.Comms.GetCurrentCommand()
+			if cmd ~= nil and cmd.type == "deward" and J.Comms.IsCommandFresh(30) then
+				hasDewardNeed = true
+			end
+		end
+
+		-- Buy sentries: always keep 1 after 5 min, 2 if active deward need
+		local desiredSentries = 1
+		if hasDewardNeed then desiredSentries = 2 end
+
+		if sentryCharges < desiredSentries
+		and sentryCharges < maxSentries
+		and GetItemStockCount('item_ward_sentry') > 0
+		and botGold >= GetItemCost('item_ward_sentry')
 		and Item.GetEmptyInventoryAmount(bot) >= 2
-		and Item.GetItemCharges(bot, wardType) < 1
 		and botCourierValue == 0
 		then
-			bot:ActionImmediate_PurchaseItem(wardType)
+			bot:ActionImmediate_PurchaseItem('item_ward_sentry')
 		end
 	end
 
-	if J.GetPosition(bot) == 5 and botWorth < 25000
-	then
+	-- Observer wards: pos 5 primary, pos 4 backup
+	if botPosition == 5 and botWorth < 25000 then
 		local wardType = 'item_ward_observer'
 
 		if GetItemStockCount(wardType) > 1
@@ -738,13 +850,38 @@ function ItemPurchaseThink()
 		then
 			bot:ActionImmediate_PurchaseItem(wardType)
 		end
+	elseif botPosition == 4 and botWorth < 25000 and currentTime > 600 then
+		-- Pos 4 buys observers if pos 5 isn't carrying any and stock is available
+		local wardType = 'item_ward_observer'
+		-- Check if pos 5 on the same team already has observers
+		local pos5HasObs = false
+		local nTeamPlayerIDs = GetTeamPlayers( GetTeam() )
+		for i = 1, #nTeamPlayerIDs do
+			local member = GetTeamMember( i )
+			if member ~= nil and member ~= bot and J.GetPosition(member) == 5 then
+				if Item.GetItemCharges(member, wardType) >= 1 then
+					pos5HasObs = true
+					break
+				end
+			end
+		end
+		if not pos5HasObs
+		and GetItemStockCount(wardType) > 1
+		and botGold >= GetItemCost(wardType)
+		and Item.GetEmptyInventoryAmount(bot) >= 2
+		and Item.GetItemCharges(bot, wardType) < 1
+		and botCourierValue == 0
+		then
+			bot:ActionImmediate_PurchaseItem(wardType)
+		end
 	end
 
 	-- Comms: reactive ward buying on !ward / !deward command
-	if J.Comms ~= nil and J.GetPosition(bot) >= 4 then
+	if J.Comms ~= nil then
 		local cmd = J.Comms.GetCurrentCommand()
 		if cmd ~= nil and J.Comms.IsCommandFresh(30) then
 			if cmd.type == "ward_obs"
+			and J.Comms.IsOnWardingMission(bot)
 			and Item.GetItemCharges(bot, 'item_ward_observer') < 1
 			and GetItemStockCount('item_ward_observer') > 0
 			and botGold >= GetItemCost('item_ward_observer')
@@ -753,6 +890,7 @@ function ItemPurchaseThink()
 				bot:ActionImmediate_PurchaseItem('item_ward_observer')
 			end
 			if cmd.type == "deward"
+			and J.Comms.IsOnWardingMission(bot)
 			and Item.GetItemCharges(bot, 'item_ward_sentry') < 1
 			and GetItemStockCount('item_ward_sentry') > 0
 			and botGold >= GetItemCost('item_ward_sentry')
@@ -764,7 +902,7 @@ function ItemPurchaseThink()
 	end
 
 	-- Smoke of Deceit
-	if J.GetPosition(bot) == 5 and botWorth < 10000
+	if J.GetPosition(bot) == 5 and botWorth < 20000
 	and Utils.CountBackpackEmptySpace(bot) >= 2
 	and GetItemStockCount('item_smoke_of_deceit') > 1
 	and botGold >= GetItemCost('item_smoke_of_deceit')
@@ -806,7 +944,7 @@ function ItemPurchaseThink()
 	and botGold >= GetItemCost('item_blood_grenade')
 	and Item.GetEmptyInventoryAmount(bot) >= 3
 	and Item.GetItemCharges(bot, 'item_blood_grenade') == 0
-	and botStashValue > 0
+	and botStashValue == 0
 	then
 		bot:ActionImmediate_PurchaseItem('item_blood_grenade')
 	end
@@ -853,9 +991,6 @@ function ItemPurchaseThink()
 		if bot:HasModifier("modifier_teleporting") then tCharges = tCharges - 1 end
 		if tCharges <= 0 or ( botLevel >= 18 and tCharges <= 1 )
 		then
-			if botGold >= tpCost * 2 and currentTime > 25 * 60 then
-				bot:ActionImmediate_PurchaseItem( "item_tpscroll" )
-			end
 			bot:ActionImmediate_PurchaseItem( "item_tpscroll" )
 		end
 	end
@@ -866,7 +1001,7 @@ function ItemPurchaseThink()
 		and botLevel > 6
 		and J.GetPosition(bot) >= 4
 		and botGold < ( GetItemCost( "item_dust" )  + botWorth / 40 )
-		and botHP < 0.06
+		and botHP < 0.15
 		and bot:WasRecentlyDamagedByAnyHero( 3.1 )
 		and Item.GetItemCharges( bot, 'item_dust' ) <= 1
 		and Utils.CountBackpackEmptySpace(bot) >= 2

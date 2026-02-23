@@ -128,7 +128,7 @@ function GetDesireHelper()
 
     if botName == 'npc_dota_hero_lone_druid'
     and botActiveMode == BOT_MODE_ITEM
-    and GetUnitToLocationDistance(bot, vRoshanLocation)
+    and GetUnitToLocationDistance(bot, vRoshanLocation) < 2000
     and IsLocationVisible(vRoshanLocation)
     then
         for _, droppedItem in pairs(GetDroppedItemList()) do
@@ -145,7 +145,7 @@ function GetDesireHelper()
     -- when roshan dies, every desire sometimes drops to 0 somehow and it lingers in Roshan mode (which is also 0)
     if botActiveMode == BOT_MODE_ROSHAN
     and not J.IsRoshanAlive()
-    and GetUnitToLocationDistance(bot, vRoshanLocation)
+    and GetUnitToLocationDistance(bot, vRoshanLocation) < 2000
     and IsLocationVisible(vRoshanLocation)
     then
         local bAegisNearby = false

@@ -9,7 +9,7 @@
 
 ## Usage, Windows
 
-1. In Dota2, subscribe to the bot script "Open Hyper AI", make sure to wait for the script be fully downloaded.
+1. In Dota2, subscribe to the bot script, make sure to wait for the script be fully downloaded.
 1. Go to folder: `Steam\steamapps\workshop\content\570\3246316298\Install-to-vscript`, and double click the file `quick-install-oha.bat` to install.
 1. Double click on the `quick-install-oha.bat` file to finish installation.
 1. If you don't know where the Steam folder is, right click `Dota2` in Steam `Library`, select `Properties` > `Installed Files` > `Browse`. It will open the folder: `Steam\steamapps\common\dota 2 beta`, now replace the path text `common\dota 2 beta` in the address to be `workshop\content\570\3246316298\Install-to-vscript`, hit Enter to open the correct folder.
@@ -23,4 +23,4 @@
 
 By doing this, any new updates to the script content will automatically available as your Local dev script. Alternatively, you can choose to create a symbolic link yourself, check out Appendix below.
 
-If you need more detailed guides. Check: https://github.com/forest0xia/dota2bot-OpenHyperAI/discussions
+If you need more detailed guides. Check: https://github.com/shikyo13/dota2bot-OpenHyperAI/discussions

@@ -610,6 +610,13 @@ function ____exports.GetDefendDesireHelper(bot, lane)
     if bot.DefendLaneDesire == nil then
         bot.DefendLaneDesire = {0, 0, 0}
     end
+    local Comms2 = jmz.Comms
+    if Comms2 ~= nil then
+        local cmd2 = Comms2.GetCurrentCommand()
+        if cmd2 ~= nil and cmd2.type == "defend" and Comms2.IsCommandFresh(20) and cmd2.lane ~= nil and cmd2.lane ~= lane then
+            return BotModeDesire.None
+        end
+    end
     currentTime = DotaTime()
     if GetGameMode() == 23 then
         currentTime = currentTime * 1.65
