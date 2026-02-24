@@ -7,7 +7,8 @@
 
 local X = {}
 
-local J  -- set lazily
+local J   -- set lazily
+local Log -- set lazily (direct ref to avoid circular dep)
 
 --------------------------------------------------------------------
 -- Constants
@@ -101,6 +102,18 @@ local function EnsureJ()
         if ok then J = mod end
     end
     return J ~= nil
+end
+
+local function EnsureLog()
+    if Log == nil then
+        local ok, mod = pcall(require, GetScriptDirectory()..'/FunLib/aba_log')
+        if ok then Log = mod end
+    end
+    return Log ~= nil
+end
+
+local function Trace(bot, msg)
+    if EnsureLog() then Log.Trace("SUPPORT", bot, msg) end
 end
 
 local function GetGameSeconds()
@@ -268,20 +281,28 @@ function X.ShouldPullCamp(bot)
     local team = GetTeam()
 
     -- Check if lane is pushed
-    if not IsLanePushed(bot, lane) then return false end
+    if not IsLanePushed(bot, lane) then
+        local front = GetLaneFrontAmount(GetTeam(), lane, false)
+        Trace(bot, "pull_skip reason=lane_not_pushed front=" .. string.format("%.2f", front))
+        return false
+    end
 
     -- Must have a pull camp defined for this lane
     local camps = PULL_CAMPS[team]
     if camps == nil or camps[lane] == nil then return false end
 
     -- Need a carry nearby to not leave them alone
-    if not HasAllyCarryInLane(bot, 2000) then return false end
+    if not HasAllyCarryInLane(bot, 2000) then
+        Trace(bot, "pull_skip reason=no_carry_nearby")
+        return false
+    end
 
     -- Check timing: pull at :13-:17 or :43-:47
     local secs = GetGameSeconds()
     local pullTime = camps[lane].attack_time
     if not ((secs >= pullTime - 3 and secs <= pullTime + 2)
         or (secs >= pullTime + 30 - 3 and secs <= pullTime + 30 + 2)) then
+        Trace(bot, "pull_skip reason=bad_timing secs=" .. string.format("%.0f", secs))
         return false
     end
 
@@ -293,7 +314,7 @@ function X.ShouldPullCamp(bot)
             if enemy ~= nil and enemy:IsAlive() then
                 local enemyToCamp = GetUnitToLocationDistance(enemy, campLoc)
                 if enemyToCamp < 800 then
-                    -- Enemy is near our pull camp, too risky
+                    Trace(bot, "pull_skip reason=enemy_near_camp dist=" .. string.format("%.0f", enemyToCamp))
                     return false
                 end
             end
@@ -316,7 +337,10 @@ function X.ShouldStackCamp(bot)
     if gameTime > 25 * 60 then return false end
     if not J.IsInLaningPhase() then
         -- Post-laning stacking: only if not in danger (covers ~8-25 min)
-        if HasEnemyNearby(bot, 1500) then return false end
+        if HasEnemyNearby(bot, 1500) then
+            Trace(bot, "stack_skip reason=enemy_nearby_postlaning")
+            return false
+        end
     end
     if not bot:IsAlive() then return false end
 
@@ -324,7 +348,10 @@ function X.ShouldStackCamp(bot)
     if secs < STACK_WINDOW_START or secs > STACK_WINDOW_END then return false end
 
     -- Don't stack if in danger
-    if HasEnemyNearby(bot, 1000) then return false end
+    if HasEnemyNearby(bot, 1000) then
+        Trace(bot, "stack_skip reason=enemy_nearby dist=1000")
+        return false
+    end
 
     return true
 end
@@ -536,7 +563,7 @@ end
 -- Main Think (called from mode_laning_generic.lua for supports)
 --------------------------------------------------------------------
 function X.Think(bot)
-    if not EnsureJ() then return end
+    if not EnsureJ() then return false end
 
     local state = GetState(bot)
 
@@ -546,23 +573,23 @@ function X.Think(bot)
     if state.task == "roaming" then timeout = 20 end
     if state.task ~= "idle" and DotaTime() - state.startTime > timeout then
         SetState(bot, "idle")
-        return
+        return false
     end
 
     -- Execute active tasks
     if state.task == "roaming" then
         ExecuteRoam(bot)
-        return
+        return true
     end
 
     if state.task == "pulling" then
         ExecutePull(bot)
-        return
+        return true
     end
 
     if state.task == "stacking" then
         ExecuteStack(bot)
-        return
+        return true
     end
 
     -- Check if we should roam to help another lane (before pull/stack)
@@ -573,7 +600,7 @@ function X.Think(bot)
         end
         SetState(bot, "roaming", 0, { location = roamTarget })
         ExecuteRoam(bot)
-        return
+        return true
     end
 
     -- Decide what to do
@@ -588,7 +615,7 @@ function X.Think(bot)
             end
             SetState(bot, "pulling", 0, camp)
             ExecutePull(bot)
-            return
+            return true
         end
     end
 
@@ -601,9 +628,11 @@ function X.Think(bot)
             end
             SetState(bot, "stacking", 0, camp)
             ExecuteStack(bot)
-            return
+            return true
         end
     end
+
+    return false
 end
 
 --------------------------------------------------------------------
@@ -614,25 +643,32 @@ function X.GetDesireValue(bot)
 
     local pos = J.GetPosition(bot)
     if pos == nil or pos < 4 then return 0 end
-    if not J.IsInLaningPhase() then return 0 end
     if not bot:IsAlive() then return 0 end
 
-    -- Pull camp desire (high during laning when lane is pushed)
-    if X.ShouldPullCamp(bot) then
-        return 0.75  -- BOT_MODE_DESIRE_HIGH
+    local inLaning = J.IsInLaningPhase()
+    local gameTime = DotaTime()
+
+    -- Pull and roam are laning-phase only
+    if inLaning then
+        -- Pull camp desire (high during laning when lane is pushed)
+        if X.ShouldPullCamp(bot) then
+            return 0.75  -- BOT_MODE_DESIRE_HIGH
+        end
+
+        -- Roam desire (moderate-high, helps other lanes)
+        local shouldRoam, _ = X.ShouldRoamFromLane(bot)
+        if shouldRoam then
+            return 0.65  -- BOT_MODE_DESIRE_MODERATE_HIGH
+        end
     end
 
-    -- Roam desire (moderate-high, helps other lanes)
-    local shouldRoam, _ = X.ShouldRoamFromLane(bot)
-    if shouldRoam then
-        return 0.65  -- BOT_MODE_DESIRE_MODERATE_HIGH
-    end
-
-    -- Stack camp desire (moderate, time-sensitive)
-    if X.ShouldStackCamp(bot) then
-        local camp = X.GetBestStackTarget(bot)
-        if camp ~= nil then
-            return 0.5  -- BOT_MODE_DESIRE_MODERATE
+    -- Stack camp desire (moderate, time-sensitive) - works up to 25 min
+    if gameTime >= 0 and gameTime <= 1500 then
+        if X.ShouldStackCamp(bot) then
+            local camp = X.GetBestStackTarget(bot)
+            if camp ~= nil then
+                return 0.5  -- BOT_MODE_DESIRE_MODERATE
+            end
         end
     end
 

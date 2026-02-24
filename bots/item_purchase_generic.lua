@@ -545,7 +545,8 @@ local function TurboModeGeneralPurchase()
 				-- print( botName.." failed to purchase item - "..bot.currBuyingBasicItem.." : out of stock.")
 				ClearCurrBuyingBasicItemList()
 			else
-				print( botName.." 未能购买物品 "..bot.currBuyingBasicItem.." : "..tostring( bot:ActionImmediate_PurchaseItem( bot.currBuyingBasicItem ) ) )
+				local purchaseResult = bot:ActionImmediate_PurchaseItem( bot.currBuyingBasicItem )
+				print( botName.." failed to purchase "..bot.currBuyingBasicItem.." : "..tostring( purchaseResult ) )
 			end
 		end
 	end
@@ -971,7 +972,7 @@ function ItemPurchaseThink()
 		and bot:IsAlive()
 		and botGold < ( tpCost + botWorth / 40 )
 		and botHP < 0.08
-		and botHP >= 1
+		and botHP > 0
 		and bot:WasRecentlyDamagedByAnyHero( 3.1 )
 		and not HasSufficientTp()
 		and Item.GetItemCharges( bot, 'item_tpscroll' ) <= 2

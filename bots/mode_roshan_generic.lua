@@ -1,6 +1,7 @@
 local bot = GetBot()
+if bot == nil then return end
 local botName = bot:GetUnitName();
-if bot == nil or bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return end
+if bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return end
 
 local J = require( GetScriptDirectory()..'/FunLib/jmz_func' )
 local Customize = require( GetScriptDirectory()..'/Customize/general' )
@@ -69,20 +70,20 @@ function GetDesireHelper()
         and GetUnitToLocationDistance(bot, J.Utils.RadiantRoshanLoc) < 1600
         and GetUnitToLocationDistance(bot, nTeamFightLocation) < 2000
         then
-            return BOT_ACTION_DESIRE_NONE
+            return BOT_MODE_DESIRE_NONE
         else
             if timeOfDay == 'night'
             and GetUnitToLocationDistance(bot, J.Utils.DireRoshanLoc) < 1600
             and GetUnitToLocationDistance(bot, nTeamFightLocation) < 2000
             then
-                return BOT_ACTION_DESIRE_NONE
+                return BOT_MODE_DESIRE_NONE
             end
         end
     end
 
     local lEnemyHeroesAroundLoc = J.GetLastSeenEnemiesNearLoc(bot:GetLocation(), 1200)
     if #lEnemyHeroesAroundLoc >= 2 then
-        return BOT_ACTION_DESIRE_NONE
+        return BOT_MODE_DESIRE_NONE
     end
 
     -- if Roshan is about to get killed, kill it unless there are other absolute actions.
@@ -98,7 +99,7 @@ function GetDesireHelper()
     local hasSameOrMoreHero = aliveAlly >= aliveEnemy
 
     if not hasSameOrMoreHero then
-        return BOT_ACTION_DESIRE_NONE
+        return BOT_MODE_DESIRE_NONE
     end
 
     local nCoreWithNoEmptySlot = 0
@@ -112,7 +113,7 @@ function GetDesireHelper()
 
             -- do not take rosh if the cores do not have any empty slot, it may get dropped on ground.
             if nCoreWithNoEmptySlot >= 2 then
-                return BOT_ACTION_DESIRE_NONE
+                return BOT_MODE_DESIRE_NONE
             end
             table.insert(aliveHeroesList, h)
         end
@@ -142,17 +143,17 @@ function GetDesireHelper()
     then
         local botTarget = J.GetProperTarget(bot)
         if J.IsRoshan(botTarget) then
-            return RemapValClamped(J.GetHP(botTarget), 1, 0, BOT_ACTION_DESIRE_NONE, BOT_ACTION_DESIRE_VERYHIGH )
+            return RemapValClamped(J.GetHP(botTarget), 1, 0, BOT_MODE_DESIRE_NONE, BOT_MODE_DESIRE_VERYHIGH )
         end
         if not J.IsValid(botTarget) or not J.IsRoshan(botTarget) then
-            return BOT_ACTION_DESIRE_NONE
+            return BOT_MODE_DESIRE_NONE
         end
     end
 
     local nEnemyHeroes = J.GetEnemiesNearLoc(bot:GetLocation(), 1300)
     if nEnemyHeroes ~= nil and #nEnemyHeroes > 0
     then
-        return BOT_ACTION_DESIRE_NONE
+        return BOT_MODE_DESIRE_NONE
     end
 
     if shouldKillRoshan
@@ -178,5 +179,5 @@ function GetDesireHelper()
         end
     end
 
-    return BOT_ACTION_DESIRE_NONE
+    return BOT_MODE_DESIRE_NONE
 end

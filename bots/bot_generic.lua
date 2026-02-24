@@ -4,12 +4,22 @@ local botName = bot:GetUnitName()
 if bot:IsInvulnerable() or not bot:IsHero() or not string.find(botName, "hero") or bot:IsIllusion() then return end
 
 local Utils = require( GetScriptDirectory()..'/FunLib/utils' )
-local BotBuild = dofile(GetScriptDirectory() .. "/BotLib/" .. string.gsub(botName, "npc_dota_", ""));
+
+local ok_build, BotBuild = pcall(dofile, GetScriptDirectory() .. "/BotLib/" .. string.gsub(botName, "npc_dota_", ""))
+if not ok_build then
+	local ok_log, Log = pcall(require, GetScriptDirectory()..'/FunLib/aba_log')
+	if ok_log and Log then
+		Log.Error("INIT", 'FAILED to load hero config for ' .. botName .. ': ' .. tostring(BotBuild))
+	else
+		print('[ERROR][INIT] FAILED to load hero config for ' .. botName .. ': ' .. tostring(BotBuild))
+	end
+	BotBuild = nil
+end
 
 if BotBuild == nil
 then
-	local ok, Log = pcall(require, GetScriptDirectory()..'/FunLib/aba_log')
-	if ok and Log then
+	local ok_log, Log = pcall(require, GetScriptDirectory()..'/FunLib/aba_log')
+	if ok_log and Log then
 		Log.Error("GENERAL", 'No build config file found for bot: '..botName)
 	else
 		print('[ERROR][GENERAL] No build config file found for bot: '..botName)

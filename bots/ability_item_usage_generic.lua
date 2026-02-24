@@ -181,14 +181,18 @@ local function AbilityLevelUpComplement()
 		end
 
 		-- fix phoenix_fire_spirits can't upgrade bug.
+		local phoenixFireSpirit = bot:GetAbilityByName('phoenix_launch_fire_spirit')
 		if abilityName == 'phoenix_fire_spirits'
-		and not bot:GetAbilityByName('phoenix_launch_fire_spirit'):IsHidden() then
+		and phoenixFireSpirit ~= nil
+		and not phoenixFireSpirit:IsHidden() then
 			return
 		end
 
 		-- fix 'alchemist_unstable_concoction can't upgrade bug.
+		local alchConcoction = bot:GetAbilityByName('alchemist_unstable_concoction_throw')
 		if abilityName == 'alchemist_unstable_concoction'
-		and not bot:GetAbilityByName('alchemist_unstable_concoction_throw'):IsHidden() then
+		and alchConcoction ~= nil
+		and not alchConcoction:IsHidden() then
 			return
 		end
 
@@ -1568,7 +1572,7 @@ X.ConsiderItemDesire["item_blink"] = function( hItem )
 
 		if botName == 'npc_dota_hero_nevermore' then
 			local RequiemOfSouls = bot:GetAbilityByName('nevermore_requiem')
-			if J.CanCastAbility(RequiemOfSouls) then
+			if RequiemOfSouls ~= nil and J.CanCastAbility(RequiemOfSouls) then
 				return BOT_ACTION_DESIRE_NONE
 			end
 		end
@@ -6497,7 +6501,7 @@ X.ConsiderItemDesire['item_smoke_of_deceit'] = function(item)
 	-- Pre-game smoke usage removed (I9): smoke should not be used before game starts
 
 	if (nInRangeEnemy ~= nil and #nInRangeEnemy == 0)
-	or (nInRangeTower ~= nil and #nInRangeTower == 0)
+	and (nInRangeTower ~= nil and #nInRangeTower == 0)
 	then
 		for _, allyHero in pairs(nInRangeAlly)
 		do
@@ -6693,7 +6697,8 @@ end
 
 -- Trusty Shovel
 X.ConsiderItemDesire["item_trusty_shovel"] = function(hItem)
-	if GetTeamMember(1):IsBot() then return BOT_ACTION_DESIRE_NONE end
+	local member1 = GetTeamMember(1)
+	if member1 == nil or member1:IsBot() then return BOT_ACTION_DESIRE_NONE end
 
 	local nInRangeEnemy = J.GetEnemiesNearLoc(bot:GetLocation(), 1000)
 
@@ -7841,13 +7846,17 @@ end
 
 local function UseGlyph()
 
+	local m2 = GetTeamMember( 2 )
+	local m3 = GetTeamMember( 3 )
+	local m4 = GetTeamMember( 4 )
+	local m5 = GetTeamMember( 5 )
 	if GetGlyphCooldown( ) > 0
 		or DotaTime() < 60
 		or bot ~= GetTeamMember( 1 )
-		or not GetTeamMember( 2 ):IsBot()
-		or not GetTeamMember( 3 ):IsBot()
-		or not GetTeamMember( 4 ):IsBot()
-		or not GetTeamMember( 5 ):IsBot()
+		or m2 == nil or not m2:IsBot()
+		or m3 == nil or not m3:IsBot()
+		or m4 == nil or not m4:IsBot()
+		or m5 == nil or not m5:IsBot()
 	then
 		return
 	end

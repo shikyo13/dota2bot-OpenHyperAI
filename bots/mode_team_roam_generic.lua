@@ -1,6 +1,7 @@
 local bot = GetBot()
+if bot == nil then return end
 local botName = bot:GetUnitName()
-if bot == nil or bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return end
+if bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return end
 
 local Utils = require(GetScriptDirectory()..'/FunLib/utils')
 local EnemyRoles = require(GetScriptDirectory()..'/FunLib/enemy_role_estimation')
@@ -135,12 +136,12 @@ function GetDesireHelper()
 
     if J.IsInLaningPhase() and bot:HasModifier('modifier_warlock_upheaval') then
         IsAvoidingAbilityZone = true
-        return BOT_ACTION_DESIRE_VERYHIGH + 0.1
+        return BOT_MODE_DESIRE_VERYHIGH + 0.1
     end
 
     if HasModifierThatNeedToAvoidEffects() then
         IsAvoidingAbilityZone = true
-        return RemapValClamped(J.GetHP(bot), 0.3, 1, BOT_ACTION_DESIRE_VERYHIGH, BOT_ACTION_DESIRE_NONE)
+        return RemapValClamped(J.GetHP(bot), 0.3, 1, BOT_MODE_DESIRE_VERYHIGH, BOT_MODE_DESIRE_NONE)
     end
 
     -- Strategic: boost team roam desire after winning fights to group for objectives
@@ -164,7 +165,7 @@ function GetDesireHelper()
     and bot:GetActiveMode() ~= BOT_MODE_ATTACK
     and bot:GetActiveMode() ~= BOT_MODE_DEFEND_ALLY
     and bot:GetActiveMode() ~= BOT_MODE_ROAM then
-        return BOT_ACTION_DESIRE_NONE
+        return BOT_MODE_DESIRE_NONE
     elseif #nearbyAllies >= #nearbyEnemies then
         if IsHeroCore then
             local botTarget, targetDesire = X.CarryFindTarget()
@@ -1450,7 +1451,7 @@ function ItemOpsDesire()
                     end
                     if PickedItem ~= nil and GetItemCost(itemName) > minPickItemCost then
                         return RemapValClamped(J.Utils.GetLocationToLocationDistance(droppedItem.location, bot:GetLocation()),
-                            5000, 0, BOT_ACTION_DESIRE_NONE, BOT_ACTION_DESIRE_VERYHIGH)
+                            5000, 0, BOT_MODE_DESIRE_NONE, BOT_MODE_DESIRE_VERYHIGH)
                     end
                 end
             end

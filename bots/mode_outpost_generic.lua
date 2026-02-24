@@ -1,6 +1,7 @@
 local bot = GetBot()
+if bot == nil then return end
 local botName = bot:GetUnitName()
-if bot == nil or bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return end
+if bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return end
 
 local J = require( GetScriptDirectory()..'/FunLib/jmz_func')
 local Customize = require( GetScriptDirectory()..'/Customize/general' )
@@ -53,11 +54,11 @@ function GetDesireHelper()
 	-- Outpost
 	----------
 
-	if not IsEnemyTier2Down then return BOT_ACTION_DESIRE_NONE end
+	if not IsEnemyTier2Down then return BOT_MODE_DESIRE_NONE end
 
 	if not DidWeGetOutpost
 	then
-		if botName == 'npc_dota_hero_invoker' then return BOT_ACTION_DESIRE_NONE end
+		if botName == 'npc_dota_hero_invoker' then return BOT_MODE_DESIRE_NONE end
 		for _, unit in pairs(GetUnitList(UNIT_LIST_ALL))
 		do
 			if unit:GetUnitName() == '#DOTA_OutpostName_North'
@@ -80,14 +81,14 @@ function GetDesireHelper()
 			local nInRangeEnemy = J.GetEnemiesNearLoc(bot:GetLocation(), bot:GetCurrentVisionRange())
 			if nInRangeEnemy ~= nil and #nInRangeEnemy >= 1
 			then
-				return BOT_ACTION_DESIRE_NONE
+				return BOT_MODE_DESIRE_NONE
 			end
 		end
 
-		return RemapValClamped(GetUnitToUnitDistance(bot, ClosestOutpost), 3000, 0, BOT_ACTION_DESIRE_VERYLOW, BOT_ACTION_DESIRE_HIGH )
+		return RemapValClamped(GetUnitToUnitDistance(bot, ClosestOutpost), 3000, 0, BOT_MODE_DESIRE_VERYLOW, BOT_MODE_DESIRE_HIGH )
 	end
 
-	return BOT_ACTION_DESIRE_NONE
+	return BOT_MODE_DESIRE_NONE
 end
 
 function OnStart()

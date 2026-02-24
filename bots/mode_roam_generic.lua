@@ -2,9 +2,10 @@ local J = require( GetScriptDirectory()..'/FunLib/jmz_func')
 local Customize = require( GetScriptDirectory()..'/Customize/general' )
 
 local bot = GetBot()
+if bot == nil then return end
 local botName = bot:GetUnitName()
 
-if bot == nil or bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return end
+if bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return end
 
 local cAbility = nil
 local TinkerShouldWaitInBaseToHeal = false
@@ -85,7 +86,7 @@ function GetDesireHelper()
 	TinkerShouldWaitInBaseToHeal = TinkerWaitInBaseAndHeal()
 	if TinkerShouldWaitInBaseToHeal
 	then
-		return BOT_ACTION_DESIRE_ABSOLUTE
+		return BOT_MODE_DESIRE_ABSOLUTE
 	end
 
 	if DotaTime() > 0 and DotaTime() - ShouldMoveOutsideFountainCheckTime < 2 then
@@ -1064,7 +1065,7 @@ function CheckLaneToGank(botPosition)
 	end
 
 	if DotaTime() - lastGankDecisionTime <= gankDecisionHoldTime and laneToGank ~= nil then
-		return BOT_ACTION_DESIRE_VERYHIGH
+		return BOT_MODE_DESIRE_VERYHIGH
 	end
 
 	local botLvlTooLow = (J.GetPosition(bot) == 1 and botLevel < 6) or
@@ -1100,13 +1101,13 @@ function CheckLaneToGank(botPosition)
 					if enemyCountInLane >= #nInRangeAlly
 					then
 						laneToGank = lane[1]
-						return RemapValClamped(GetUnitToUnitDistance(bot, targetGate), 5000, 600, BOT_ACTION_DESIRE_HIGH, BOT_ACTION_DESIRE_ABSOLUTE )
+						return RemapValClamped(GetUnitToUnitDistance(bot, targetGate), 5000, 600, BOT_MODE_DESIRE_HIGH, BOT_MODE_DESIRE_ABSOLUTE )
 					end
 				end
 
 				if enemyCountInLane >= 1 then
 					laneToGank = lane[1]
-					return RemapValClamped(laneFrontToT1Dist, 5000, 600, BOT_ACTION_DESIRE_HIGH, BOT_ACTION_DESIRE_ABSOLUTE * 0.96 )
+					return RemapValClamped(laneFrontToT1Dist, 5000, 600, BOT_MODE_DESIRE_HIGH, BOT_MODE_DESIRE_ABSOLUTE * 0.96 )
 				end
 			end
 
@@ -1316,13 +1317,13 @@ function ConsiderGeneralRoamingInConditions()
 
 	if bot:HasModifier("modifier_item_mask_of_madness_berserk") then
 		if J.IsValid(botTarget) and J.GetHP(bot) > 0.3 then
-			return BOT_ACTION_DESIRE_ABSOLUTE
+			return BOT_MODE_DESIRE_ABSOLUTE
 		end
 	end
 
 	if J.GetModifierTime(bot, "modifier_flask_healing") >= 1.5 then
 		if #nInCloseRangeEnemy >= 1 and J.GetHP(bot) < 0.8 then
-			return BOT_ACTION_DESIRE_ABSOLUTE
+			return BOT_MODE_DESIRE_ABSOLUTE
 		end
 	end
 
@@ -1332,7 +1333,7 @@ function ConsiderGeneralRoamingInConditions()
 		end
 		if J.IsValidHero(botTarget) then
 			bot:SetTarget( botTarget )
-			return BOT_ACTION_DESIRE_ABSOLUTE * 2
+			return BOT_MODE_DESIRE_ABSOLUTE * 2
 		end
 	end
 
@@ -1341,7 +1342,7 @@ function ConsiderGeneralRoamingInConditions()
 		if staticLinkDebuffStack > lastStaticLinkDebuffStack then
 			local enemy = GetTargetEnemy("npc_dota_hero_razor")
 			if enemy ~= nil and J.GetHP(bot) - 0.2 < J.GetHP(enemy) and GetUnitToUnitDistance(bot, enemy) <= 850 then
-				return BOT_ACTION_DESIRE_ABSOLUTE * 1.1
+				return BOT_MODE_DESIRE_ABSOLUTE * 1.1
 			end
 		end
 	end
@@ -1371,7 +1372,7 @@ function ConsiderGeneralRoamingInConditions()
 		and J.GetHP(bot) < J.GetHP(enemy) + 0.2
 		and GetUnitToUnitDistance(bot, enemy) <= 900
 		and GetUnitToLocationDistance(bot, J.GetTeamFountain()) > 1000 then
-			return RemapValClamped(quillSparyStack / J.GetHP(bot), 10, 50, BOT_ACTION_DESIRE_LOW, BOT_ACTION_DESIRE_ABSOLUTE)
+			return RemapValClamped(quillSparyStack / J.GetHP(bot), 10, 50, BOT_MODE_DESIRE_LOW, BOT_MODE_DESIRE_ABSOLUTE)
 		end
 	end
 
@@ -1379,7 +1380,7 @@ function ConsiderGeneralRoamingInConditions()
 		local enemy = GetTargetEnemy("npc_dota_hero_primal_beast")
 		local distanceToEnemy =  GetUnitToUnitDistance(bot, enemy)
 		if enemy ~= nil and J.GetHP(bot) - 0.2 < J.GetHP(enemy) and distanceToEnemy <= 500 and distanceToEnemy > 250 then
-			return BOT_ACTION_DESIRE_ABSOLUTE
+			return BOT_MODE_DESIRE_ABSOLUTE
 		end
 	end
 
@@ -1426,7 +1427,7 @@ function ConsiderGeneralRoamingInConditions()
             and droppedItem.item:GetName() == 'item_aegis'
             and GetUnitToLocationDistance(bot, droppedItem.location) < 300
             then
-                return BOT_ACTION_DESIRE_ABSOLUTE
+                return BOT_MODE_DESIRE_ABSOLUTE
             end
         end
 	end
@@ -1454,41 +1455,41 @@ function ConsiderGeneralRoamingInConditions()
 			or (J.GetHP(bot) < 0.22 or (J.GetHP(bot) < 0.3 and J.GetMP(bot) < 0.22))
 		) then
 			shouldGoBackToFountain = true
-			return BOT_ACTION_DESIRE_ABSOLUTE * 1.5
+			return BOT_MODE_DESIRE_ABSOLUTE * 1.5
 		end
 
 		if J.GetModifierCount(bot, "modifier_nevermore_shadowraze_debuff") >= 2 then -- 7s
 			local enemy = GetTargetEnemy("npc_dota_hero_nevermore")
 			if enemy ~= nil and J.GetHP(bot) < J.GetHP(enemy) and GetUnitToUnitDistance(bot, enemy) <= 1200 then
-				return BOT_ACTION_DESIRE_VERYHIGH * 1.2
+				return BOT_MODE_DESIRE_VERYHIGH * 1.2
 			end
 		end
 
 		if J.GetModifierCount(bot, "modifier_monkey_king_quadruple_tap_counter") >= 2 then -- 7 - 10s
 			local enemy = GetTargetEnemy("npc_dota_hero_monkey_king")
 			if enemy ~= nil and J.GetHP(bot) < J.GetHP(enemy) and GetUnitToUnitDistance(bot, enemy) <= enemy:GetAttackRange() * 3 then
-				return BOT_ACTION_DESIRE_VERYHIGH * 1.2
+				return BOT_MODE_DESIRE_VERYHIGH * 1.2
 			end
 		end
 
 		if J.GetModifierCount(bot, "modifier_viper_poison_attack_slow") >= 2 then -- 4s
 			local enemy = GetTargetEnemy("npc_dota_hero_viper")
 			if enemy ~= nil and J.GetHP(bot) < J.GetHP(enemy) and GetUnitToUnitDistance(bot, enemy) <= enemy:GetAttackRange() * 2 then
-				return BOT_ACTION_DESIRE_VERYHIGH * 1.2
+				return BOT_MODE_DESIRE_VERYHIGH * 1.2
 			end
 		end
 
 		if J.GetModifierCount(bot, "modifier_huskar_burning_spear_debuff") >= 3 then -- 9s
 			local enemy = GetTargetEnemy("npc_dota_hero_huskar")
 			if enemy ~= nil and J.GetHP(bot) < J.GetHP(enemy) + 0.2 and GetUnitToUnitDistance(bot, enemy) <= enemy:GetAttackRange() * 2 then
-				return BOT_ACTION_DESIRE_VERYHIGH * 1.2
+				return BOT_MODE_DESIRE_VERYHIGH * 1.2
 			end
 		end
 
 		if J.GetModifierCount(bot, "modifier_batrider_sticky_napalm") >= 3 then -- 6s
 			local enemy = GetTargetEnemy("npc_dota_hero_batrider")
 			if enemy ~= nil and J.GetHP(bot) < J.GetHP(enemy) + 0.2 and GetUnitToUnitDistance(bot, enemy) <= enemy:GetAttackRange() * 3 then
-				return BOT_ACTION_DESIRE_VERYHIGH * 1.2
+				return BOT_MODE_DESIRE_VERYHIGH * 1.2
 			end
 		end
 
@@ -1502,7 +1503,7 @@ function ConsiderGeneralRoamingInConditions()
 				if J.GetHP(bot) < 0.8
 				and ((J.IsValid(enemy) and GetUnitToUnitDistance(enemy, bot) < 1200) or (DotaTime() - cachedTombstoneZombieSlowState < 3))
 				and J.IsValidHero(nInRangeEnemy[1]) and J.GetHP(nInRangeEnemy) > 0.35 then
-					return BOT_ACTION_DESIRE_VERYHIGH * 1.2
+					return BOT_MODE_DESIRE_VERYHIGH * 1.2
 				end
 			end
 		end
@@ -1512,35 +1513,35 @@ function ConsiderGeneralRoamingInConditions()
 			if J.GetModifierCount(bot, "modifier_slark_essence_shift_debuff_counter") >= 2 then -- 20 - 80s
 				local enemy = GetTargetEnemy("npc_dota_hero_slark")
 				if enemy ~= nil and J.GetHP(bot) < J.GetHP(enemy) + 0.1 and GetUnitToUnitDistance(bot, enemy) <= 750 then
-					return BOT_ACTION_DESIRE_ABSOLUTE * 1.1
+					return BOT_MODE_DESIRE_ABSOLUTE * 1.1
 				end
 			end
 
 			if J.GetModifierCount(bot, "modifier_silencer_glaives_of_wisdom_debuff_counter") >= 2 then -- 20 - 35s
 				local enemy = GetTargetEnemy("npc_dota_hero_silencer")
 				if enemy ~= nil and J.GetHP(bot) < 0.5 and J.GetHP(bot) < J.GetHP(enemy) + 0.1 and GetUnitToUnitDistance(bot, enemy) <= enemy:GetAttackRange() * 2.5 then
-					return BOT_ACTION_DESIRE_HIGH
+					return BOT_MODE_DESIRE_HIGH
 				end
 			end
 
 			if J.GetModifierCount(bot, "modifier_ursa_fury_swipes_damage_increase") >= 2 then -- 8 - 20s
 				local enemy = GetTargetEnemy("npc_dota_hero_ursa")
 				if enemy ~= nil and J.GetHP(bot) < J.GetHP(enemy) + 0.1 and GetUnitToUnitDistance(bot, enemy) <= 450 then
-					return BOT_ACTION_DESIRE_VERYHIGH
+					return BOT_MODE_DESIRE_VERYHIGH
 				end
 			end
 
 			if bot:HasModifier("modifier_dazzle_poison_touch") then -- 5s - forever
 				local enemy = GetTargetEnemy("npc_dota_hero_dazzle")
 				if enemy ~= nil and J.GetHP(bot) < 0.6 and J.GetHP(bot) < J.GetHP(enemy) + 0.1 and GetUnitToUnitDistance(bot, enemy) <= enemy:GetAttackRange() * 2 then
-					return BOT_ACTION_DESIRE_VERYHIGH
+					return BOT_MODE_DESIRE_VERYHIGH
 				end
 			end
 
 			if bot:HasModifier("modifier_maledict") then -- 5s - forever
 				local enemy = GetTargetEnemy("npc_dota_hero_witch_doctor")
 				if enemy ~= nil and J.GetHP(bot) < 0.6 and J.GetHP(bot) < J.GetHP(enemy) + 0.1 and GetUnitToUnitDistance(bot, enemy) <= enemy:GetAttackRange() * 2 then
-					return BOT_ACTION_DESIRE_VERYHIGH * 1.2
+					return BOT_MODE_DESIRE_VERYHIGH * 1.2
 				end
 			end
 		end
@@ -1560,7 +1561,7 @@ function ConsiderGeneralRoamingInConditions()
 					and J.GetHP(bot) < 0.75 and J.GetHP(bot) > 0.3 -- don't block real retreat action
 					then
 						trySeduce = true
-						return BOT_ACTION_DESIRE_VERYHIGH
+						return BOT_MODE_DESIRE_VERYHIGH
 					end
 				end
 			end
@@ -1583,7 +1584,7 @@ function ConsiderGeneralRoamingInConditions()
 	-- 	lastGankDecisionTime = DotaTime()
 	-- 	return actualGankingDesire
 	-- end
-	return BOT_ACTION_DESIRE_NONE
+	return BOT_MODE_DESIRE_NONE
 end
 
 function GetTargetEnemy(unitName)

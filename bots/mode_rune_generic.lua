@@ -3,6 +3,7 @@ local J = require(GetScriptDirectory()..'/FunLib/jmz_func')
 local Customize = require(GetScriptDirectory()..'/Customize/general')
 Customize.ThinkLess = Customize.Enable and Customize.ThinkLess or 1
 local bot = GetBot()
+if bot == nil then return end
 
 local MAX_DIST = 2000
 local minute = 0

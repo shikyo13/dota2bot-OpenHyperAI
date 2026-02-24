@@ -26,19 +26,35 @@ do
 
 end
 
+-- aba_log loads first, unprotected (it IS the error reporter)
 J.Log = require( GetScriptDirectory()..'/FunLib/aba_log' )
-J.Site = require( GetScriptDirectory()..'/FunLib/aba_site' )
-J.Item = require( GetScriptDirectory()..'/FunLib/aba_item' )
-J.Buff = require( GetScriptDirectory()..'/FunLib/aba_buff' )
-J.Role = require( GetScriptDirectory()..'/FunLib/aba_role' )
-J.Skill = require( GetScriptDirectory()..'/FunLib/aba_skill' )
-J.Chat = require( GetScriptDirectory()..'/FunLib/aba_chat' )
-J.Utils = require( GetScriptDirectory()..'/FunLib/utils' )
-J.Customize = require(GetScriptDirectory()..'/FunLib/custom_loader')
+
+local function SafeRequire(field, path, label)
+    local ok, mod = xpcall(
+        function() return require(path) end,
+        function(err)
+            J.Log.Error("INIT", "FAILED to load " .. label .. ": " .. tostring(err))
+        end
+    )
+    if ok and mod then
+        J[field] = mod
+    else
+        J[field] = {}  -- empty table prevents nil-index cascades
+    end
+end
+
+SafeRequire("Site",      GetScriptDirectory()..'/FunLib/aba_site',      "aba_site")
+SafeRequire("Item",      GetScriptDirectory()..'/FunLib/aba_item',      "aba_item")
+SafeRequire("Buff",      GetScriptDirectory()..'/FunLib/aba_buff',      "aba_buff")
+SafeRequire("Role",      GetScriptDirectory()..'/FunLib/aba_role',      "aba_role")
+SafeRequire("Skill",     GetScriptDirectory()..'/FunLib/aba_skill',     "aba_skill")
+SafeRequire("Chat",      GetScriptDirectory()..'/FunLib/aba_chat',      "aba_chat")
+SafeRequire("Utils",     GetScriptDirectory()..'/FunLib/utils',         "utils")
+SafeRequire("Customize", GetScriptDirectory()..'/FunLib/custom_loader', "custom_loader")
 J.Log.LoadSettings(J.Customize)
 J.Log.SetGetPositionFn(J.GetPosition)
-J.Comms = require(GetScriptDirectory()..'/FunLib/aba_comms')
-J.Strategy = require(GetScriptDirectory()..'/FunLib/aba_strategy')
+SafeRequire("Comms",     GetScriptDirectory()..'/FunLib/aba_comms',     "aba_comms")
+SafeRequire("Strategy",  GetScriptDirectory()..'/FunLib/aba_strategy',  "aba_strategy")
 
 
 function J.SetUserHeroInit( nAbilityBuildList, nTalentBuildList, sBuyList, sSellList )
@@ -4834,6 +4850,8 @@ function J.GetClosestUnitToLocationFrommAll2(hUnit, nRange, vLoc)
 end
 
 function J.CheckTimeOfDay()
+    if DotaTime() < 0 then return "day", 0 end
+
     local cycle = 600
     local time = DotaTime() % cycle
     local night = 300

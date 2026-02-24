@@ -8,13 +8,13 @@ local botName = bot:GetUnitName()
 local botTarget, nEnemyHeroes, nAllyHeroes, nEnemyTowers, nAllyTowers, nEnemyCreeps, nAllyCreeps, nAttackRange, nAttackDamage, timeToAttack, attackSpeed
 local MaxTrackingDistance = 4000
 local attackDeltaDistance = 600
-local maxDesire = BOT_ACTION_DESIRE_ABSOLUTE
+local maxDesire = BOT_MODE_DESIRE_ABSOLUTE
 
 function X.OnStart() end
 function X.OnEnd() end
 
 function X.GetDesire()
-    if not bot:IsAlive() or J.CanNotUseAction(bot) or bot:IsUsingAbility() or bot:IsChanneling() or bot:IsDisarmed() then return BOT_ACTION_DESIRE_NONE end
+    if not bot:IsAlive() or J.CanNotUseAction(bot) or bot:IsUsingAbility() or bot:IsChanneling() or bot:IsDisarmed() then return BOT_MODE_DESIRE_NONE end
 
 	botTarget = bot:GetTarget()
 	if J.IsAttacking(bot) then
@@ -22,7 +22,7 @@ function X.GetDesire()
 		or not J.CanBeAttacked(botTarget)
 		or not J.IsInRange(bot, botTarget, MaxTrackingDistance) then
 			bot:SetTarget(nil)
-			return BOT_ACTION_DESIRE_NONE
+			return BOT_MODE_DESIRE_NONE
 		end
 	end
 
@@ -145,12 +145,12 @@ function X.GetDesire()
 	if #nEnemyCreeps > 0 then
 		if J.IsInLaningPhase() then
 			-- humble in laning.
-			return BOT_ACTION_DESIRE_NONE
+			return BOT_MODE_DESIRE_NONE
 		end
 		return GetDesireBasedOnHp(nil)
 	end
 
-	return BOT_ACTION_DESIRE_NONE
+	return BOT_MODE_DESIRE_NONE
 end
 
 function GetDesireBasedOnHp(target)
@@ -159,7 +159,7 @@ function GetDesireBasedOnHp(target)
 	-- and bot:GetTarget()
 	-- and not bot:GetTarget():IsHero()
 	then
-		return BOT_ACTION_DESIRE_NONE
+		return BOT_MODE_DESIRE_NONE
 	end
 
 	if J.Utils.IsValidUnit(target) then
@@ -168,7 +168,7 @@ function GetDesireBasedOnHp(target)
 		and ((#nEnemyHeroes == 1 and bot:GetHealth() - target:GetHealth() < 250)
 			or (#nEnemyHeroes >=2 and bot:GetHealth() - target:GetHealth() < 400))
 		then
-			return BOT_ACTION_DESIRE_NONE
+			return BOT_MODE_DESIRE_NONE
 		end
 	end
 
@@ -176,14 +176,14 @@ function GetDesireBasedOnHp(target)
 	if #nEnemyTowers >= 1 then
 		if bot:GetLevel() < 5
 		and J.IsInRange(bot, nEnemyTowers[1], 750) then
-			return BOT_ACTION_DESIRE_NONE
+			return BOT_MODE_DESIRE_NONE
 		end
 	end
 
 	-- if bot.isBear then
 	-- 	maxDesire = maxDesire * 1.5
 	-- end
-	local clampedDesire = RemapValClamped(J.GetHP(bot), 0, 0.9, BOT_ACTION_DESIRE_NONE, maxDesire )
+	local clampedDesire = RemapValClamped(J.GetHP(bot), 0, 0.9, BOT_MODE_DESIRE_NONE, maxDesire )
 
 	return clampedDesire
 end

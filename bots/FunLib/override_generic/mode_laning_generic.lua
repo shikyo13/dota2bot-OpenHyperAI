@@ -94,10 +94,41 @@ function X.Think()
 		return
 	end
 
-	-- harass
+	-- Last-hit creeps (these 9 override heroes had zero farming logic)
+	local tEnemyLaneCreeps = bot:GetNearbyLaneCreeps(1200, true)
+	local attackDamage = bot:GetAttackDamage()
+	if bot:GetItemSlotType(bot:FindItemSlot("item_quelling_blade")) == ITEM_SLOT_TYPE_MAIN then
+		if bot:GetAttackRange() > 310 or bot:GetUnitName() == "npc_dota_hero_templar_assassin" then
+			attackDamage = attackDamage + 4
+		else
+			attackDamage = attackDamage + 8
+		end
+	end
+	for _, creep in pairs(tEnemyLaneCreeps) do
+		if J.IsValid(creep) and J.CanBeAttacked(creep) then
+			local nDelay = J.GetAttackProDelayTime(bot, creep)
+			if J.WillKillTarget(creep, attackDamage, DAMAGE_TYPE_PHYSICAL, nDelay) then
+				bot:SetTarget(creep)
+				bot:Action_AttackUnit(creep, true)
+				return
+			end
+		end
+	end
+
+	-- Deny creeps
+	local tAllyLaneCreeps = bot:GetNearbyLaneCreeps(1200, false)
+	for _, creep in pairs(tAllyLaneCreeps) do
+		if J.IsValid(creep) and J.GetHP(creep) < 0.49 and J.CanBeAttacked(creep)
+		and creep:GetHealth() <= attackDamage then
+			bot:SetTarget(creep)
+			bot:Action_AttackUnit(creep, true)
+			return
+		end
+	end
+
+	-- Harass when few enemy creeps nearby
 	local curTarget = bot:GetTarget()
 	if not J.Utils.IsValidUnit(curTarget) or curTarget:IsHero() or not J.IsAttacking(bot) then
-		local tEnemyLaneCreeps = bot:GetNearbyLaneCreeps(600, true)
 		local tEnemyHeroes = bot:GetNearbyHeroes(bot:GetAttackRange() + 200, true, BOT_MODE_NONE)
 		if #tEnemyLaneCreeps <= 1 then
 			local harassTarget = GetHarassTarget(tEnemyHeroes)

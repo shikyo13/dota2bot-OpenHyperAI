@@ -1,10 +1,9 @@
-if GetBot():IsInvulnerable() or not GetBot():IsHero() or not string.find(GetBot():GetUnitName(), "hero") or  GetBot():IsIllusion() then
+local bot = GetBot()
+if bot == nil or bot:IsInvulnerable() or not bot:IsHero() or not string.find(bot:GetUnitName(), "hero") or bot:IsIllusion() then
 	return
 end
 
 local X = {}
-
-local bot = GetBot()
 local J = require(GetScriptDirectory()..'/FunLib/jmz_func')
 local W = require(GetScriptDirectory() ..'/FunLib/aba_ward_utility')
 local Customize = require(GetScriptDirectory()..'/Customize/general')

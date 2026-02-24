@@ -4,6 +4,7 @@ local J = require( GetScriptDirectory()..'/FunLib/jmz_func')
 local Customize = require( GetScriptDirectory()..'/Customize/general' )
 
 local bot = GetBot()
+if bot == nil then return end
 
 local botHP, botMP, botName, botHealth, botHealthRegen, botManaRegen, botLocation, botTarget
 local botLevel, botActiveMode

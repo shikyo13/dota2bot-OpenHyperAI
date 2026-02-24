@@ -136,15 +136,20 @@ Customize.ThinkLess = 1;
 -- Logging & debugging settings for bot AI console output.
 -- Level: 1=ERROR only, 2=WARN, 3=INFO (default), 4=DEBUG (verbose)
 -- Categories: per-category overrides, e.g. { COMMS = 4, WARD = 4 } to enable DEBUG for specific systems
+--   Available categories: GENERAL, INIT, COMMS, ITEMS, STRATEGY, WARD, SUPPORT, LANING, MODE, DECISION
+--   Set a category to 4 to enable DEBUG traces for that system.
+--   Example: { DECISION = 4, LANING = 4, SUPPORT = 4 } -- enables mode transitions + laning/support traces
 -- Chat_Echo: echo key bot events to in-game team chat (prefixed with [AI])
 -- Status_Dump: periodic bot state summary printed to console
 -- Status_Dump_Interval: minutes between status dumps
+-- Trace_Interval: seconds between throttled debug trace messages per bot per category
 Customize.Log = {
     Level = 3,
     Categories = {},
     Chat_Echo = true,
     Status_Dump = true,
     Status_Dump_Interval = 5,
+    Trace_Interval = 5,
 }
 
 return Customize

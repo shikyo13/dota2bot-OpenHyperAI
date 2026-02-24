@@ -3,8 +3,9 @@ local J = require( GetScriptDirectory()..'/FunLib/jmz_func')
 local Support = require( GetScriptDirectory()..'/FunLib/aba_support')
 
 local bot = GetBot()
+if bot == nil then return end
 local botName = bot:GetUnitName()
-if bot == nil or bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return end
+if bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return end
 
 local local_mode_laning_generic = nil
 local nAllyCreeps = nil
@@ -18,99 +19,104 @@ local attackDamage = bot:GetAttackDamage()
 if Utils.BuggyHeroesDueToValveTooLazy[botName] then local_mode_laning_generic = dofile( GetScriptDirectory().."/FunLib/override_generic/mode_laning_generic" ) end
 
 function GetDesire()
-	if bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return BOT_MODE_DESIRE_NONE end
+	local ok, result = xpcall(function()
+		if bot:IsInvulnerable() or not bot:IsHero() or not bot:IsAlive() or not string.find(botName, "hero") or bot:IsIllusion() then return BOT_MODE_DESIRE_NONE end
 
-	-- Ensure comms chat callback is installed (processes !ward, !push, etc.)
-	if J.Comms ~= nil then J.Comms.Think() end
+		-- Ensure comms chat callback is installed (processes !ward, !push, etc.)
+		if J.Comms ~= nil then J.Comms.Think() end
 
-	-- Periodic status dump
-	if J.Log ~= nil then J.Log.StatusDump() end
+		-- Periodic status dump
+		if J.Log ~= nil then J.Log.StatusDump() end
 
-	local botLV = bot:GetLevel()
-	local currentTime = DotaTime()
+		-- Track mode transitions for decision tracing
+		if J.Log ~= nil then J.Log.TraceTransition(bot) end
 
-	botAttackRange = bot:GetAttackRange()
-	nAllyCreeps = bot:GetNearbyLaneCreeps(1200, false)
-	nEnemyCreeps = bot:GetNearbyLaneCreeps(800, true)
-	nInRangeEnemy = bot:GetNearbyHeroes(1600, true, BOT_MODE_NONE)
-	nFurthestEnemyAttackRange = GetFurthestEnemyAttackRange(nInRangeEnemy)
-	if local_mode_laning_generic then
-		botAssignedLane = local_mode_laning_generic.GetBotTargetLane()
-	else
-		botAssignedLane = bot:GetAssignedLane()
-	end
-	attackDamage = bot:GetAttackDamage()
-	if bot:GetItemSlotType(bot:FindItemSlot("item_quelling_blade")) == ITEM_SLOT_TYPE_MAIN then
-		if bot:GetAttackRange() > 310 or bot:GetUnitName() == "npc_dota_hero_templar_assassin" then
-			attackDamage = attackDamage + 4
+		local botLV = bot:GetLevel()
+		local currentTime = DotaTime()
+
+		botAttackRange = bot:GetAttackRange()
+		nAllyCreeps = bot:GetNearbyLaneCreeps(1200, false)
+		nEnemyCreeps = bot:GetNearbyLaneCreeps(1200, true)
+		nInRangeEnemy = bot:GetNearbyHeroes(1600, true, BOT_MODE_NONE)
+		nFurthestEnemyAttackRange = GetFurthestEnemyAttackRange(nInRangeEnemy)
+		if local_mode_laning_generic then
+			botAssignedLane = local_mode_laning_generic.GetBotTargetLane()
 		else
-			attackDamage = attackDamage + 8
+			botAssignedLane = bot:GetAssignedLane()
 		end
-	end
+		attackDamage = bot:GetAttackDamage()
+		if bot:GetItemSlotType(bot:FindItemSlot("item_quelling_blade")) == ITEM_SLOT_TYPE_MAIN then
+			if bot:GetAttackRange() > 310 or bot:GetUnitName() == "npc_dota_hero_templar_assassin" then
+				attackDamage = attackDamage + 4
+			else
+				attackDamage = attackDamage + 8
+			end
+		end
 
-	if GetGameMode() == 23 then currentTime = currentTime * 1.65 end
-	if currentTime < 0 then return BOT_MODE_DESIRE_NONE end
+		if GetGameMode() == 23 then currentTime = currentTime * 1.65 end
+		if currentTime < 0 then return BOT_MODE_DESIRE_NONE end
 
-	-- if DotaTime() > 20 and DotaTime() - skipLaningState.lastCheckTime < skipLaningState.checkGap then
-	-- 	if skipLaningState.count > 6 then
-	-- 		print('[WARN] Bot ' ..botName.. ' switching modes too often, now stop it for laning to avoid conflicts.')
-	-- 		return 0
-	-- 	end
-	-- else
-	-- 	skipLaningState.lastCheckTime = DotaTime()
-	-- 	skipLaningState.count = 0
-	-- end
-
-	if J.GetEnemiesAroundAncient(bot, 3200) > 0 then
-		return BOT_MODE_DESIRE_NONE
-	end
-
-	-- if J.GetDistanceFromAncient( bot, true ) < 6900 then
-	-- 	return BOT_MODE_DESIRE_NONE
-	-- end
-
-	if bot:WasRecentlyDamagedByAnyHero(5)
-	and #J.Utils.GetLastSeenEnemyIdsNearLocation(bot:GetLocation(), 800) > 0 then
-		local nLaneFrontLocation = GetLaneFrontLocation(GetTeam(), bot:GetAssignedLane(), 0)
-		local nDistFromLane = GetUnitToLocationDistance(bot, nLaneFrontLocation)
-		if not J.WeAreStronger(bot, 1200) or (nDistFromLane > 700 and J.GetHP(bot) < 0.7) then
+		if J.GetEnemiesAroundAncient(bot, 3200) > 0 then
 			return BOT_MODE_DESIRE_NONE
 		end
-	end
 
-	-- 如果在打高地 就别撤退去干别的
-	if J.Utils.IsTeamPushingSecondTierOrHighGround(bot) then
-		return BOT_MODE_DESIRE_NONE
-	end
-	-- if J.ShouldGoFarmDuringLaning(bot) then
-	-- 	return 0.2
-	-- end
+		if bot:WasRecentlyDamagedByAnyHero(5)
+		and #J.Utils.GetLastSeenEnemyIdsNearLocation(bot:GetLocation(), 800) > 0 then
+			local nLaneFrontLocation = GetLaneFrontLocation(GetTeam(), bot:GetAssignedLane(), 0)
+			local nDistFromLane = GetUnitToLocationDistance(bot, nLaneFrontLocation)
+			if not J.WeAreStronger(bot, 1200) or (nDistFromLane > 700 and J.GetHP(bot) < 0.7) then
+				return BOT_MODE_DESIRE_NONE
+			end
+		end
 
-	if local_mode_laning_generic or (J.GetPosition(bot) == 1 and J.IsPosxHuman(5)) then
-		-- last hit
-		if J.IsInLaningPhase() then
-			local hitCreep, _ = GetBestLastHitCreep(nEnemyCreeps)
-			if J.IsValid(hitCreep) then
-				if J.GetPosition(bot) <= 2 or not J.IsThereNonSelfCoreNearby(700) -- this is for e.g lone druid bear as pos1-2 with core LD nearby to do last hit.
-				then
-					return 0.9
+		if J.Utils.IsTeamPushingSecondTierOrHighGround(bot) then
+			return BOT_MODE_DESIRE_NONE
+		end
+
+		if local_mode_laning_generic or (J.GetPosition(bot) == 1 and J.IsPosxHuman(5)) then
+			if J.IsInLaningPhase() then
+				local hitCreep, _ = GetBestLastHitCreep(nEnemyCreeps)
+				if J.IsValid(hitCreep) then
+					if J.GetPosition(bot) <= 3 or not J.IsThereNonSelfCoreNearby(700)
+					then
+						return 0.9
+					end
 				end
 			end
 		end
-	end
-	if local_mode_laning_generic and local_mode_laning_generic.GetDesire ~= nil then return local_mode_laning_generic.GetDesire() end
+		if local_mode_laning_generic and local_mode_laning_generic.GetDesire ~= nil then return local_mode_laning_generic.GetDesire() end
 
-	if GetGameMode() == GAMEMODE_1V1MID or GetGameMode() == GAMEMODE_MO then
-		return 1
-	end
+		if GetGameMode() == GAMEMODE_1V1MID or GetGameMode() == GAMEMODE_MO then
+			return 1
+		end
 
-	if currentTime <= 10 then return 0.268 end
-	if currentTime <= 9 * 60 and botLV <= 7 then return 0.446 end
-	if currentTime <= 12 * 60 and botLV <= 11 then return 0.369 end
-	if botLV <= 14 and J.GetCoresAverageNetworth() < 7000 then return 0.2 end
+		local desireResult
+		if currentTime <= 10 then desireResult = 0.268
+		elseif currentTime <= 9 * 60 and botLV <= 7 then desireResult = 0.446
+		elseif currentTime <= 12 * 60 and botLV <= 11 then desireResult = 0.369
+		elseif botLV <= 14 and J.GetCoresAverageNetworth() < 7000 then desireResult = 0.2
+		else
+			J.Utils.GameStates.passiveLaningTime = true
+			if #nEnemyCreeps > 0 then desireResult = 0.25
+			else desireResult = 0.05
+			end
+		end
 
-	J.Utils.GameStates.passiveLaningTime = true
-	return 0.01
+		-- Trace laning desire
+		if J.Log ~= nil then
+			J.Log.Trace("LANING", bot, "desire=" .. string.format("%.2f", desireResult) .. " ecreep=" .. tostring(#nEnemyCreeps) .. " acreep=" .. tostring(#nAllyCreeps))
+		end
+
+		return desireResult
+	end, function(err)
+		if J and J.Log then
+			J.Log.Error("MODE", "laning GetDesire: " .. tostring(err) .. "\n" .. (debug.traceback and debug.traceback() or ""))
+		elseif J and J.Log and J.Log._realPrint then
+			J.Log._realPrint("[ERROR][MODE] laning GetDesire: " .. tostring(err))
+		end
+	end)
+	if not ok then return 0 end
+	return result or 0
 end
 
 function GetFurthestEnemyAttackRange(enemyList)
@@ -173,8 +179,9 @@ local function TrySupportTasks(bot)
 
 	local desire = Support.GetDesireValue(bot)
 	if desire >= 0.5 then
-		Support.Think(bot)
-		return true
+		local executed = Support.Think(bot)
+		if executed then return true end
+		-- Support.Think decided not to act (e.g. not pull timing), fall through to laning
 	end
 	return false
 end
@@ -265,79 +272,127 @@ end
 
 if local_mode_laning_generic or (J.GetPosition(bot) == 1 and J.IsPosxHuman(5)) then
 	function Think()
-		-- Support pull/stack takes priority during laning
-		if TrySupportTasks(bot) then return end
+		local ok, _ = xpcall(function()
+			-- Support pull/stack takes priority during laning
+			if TrySupportTasks(bot) then
+				if J.Log ~= nil then J.Log.Trace("LANING", bot, "think action=support_task") end
+				return
+			end
 
-		local hitCreep, moveToCreep = GetBestLastHitCreep(nEnemyCreeps)
-		if J.IsValid(hitCreep) then
-			if J.GetPosition(bot) <= 2 or not J.IsThereNonSelfCoreNearby(700)
-			then
-				if GetUnitToUnitDistance(bot, hitCreep) > botAttackRange
-				or (moveToCreep and GetUnitToUnitDistance(bot, hitCreep) > botAttackRange * 0.8) then
-					bot:Action_MoveToUnit(hitCreep)
-					return
-				else
-					bot:SetTarget(hitCreep)
-					bot:Action_AttackUnit(hitCreep, true)
-					return
+			local hitCreep, moveToCreep = GetBestLastHitCreep(nEnemyCreeps)
+			if J.IsValid(hitCreep) then
+				if J.GetPosition(bot) <= 3 or not J.IsThereNonSelfCoreNearby(700)
+				then
+					if GetUnitToUnitDistance(bot, hitCreep) > botAttackRange
+					or (moveToCreep and GetUnitToUnitDistance(bot, hitCreep) > botAttackRange * 0.8) then
+						bot:Action_MoveToUnit(hitCreep)
+						if J.Log ~= nil then J.Log.Trace("LANING", bot, "think action=move_to_lasthit") end
+						return
+					else
+						bot:SetTarget(hitCreep)
+						bot:Action_AttackUnit(hitCreep, true)
+						if J.Log ~= nil then J.Log.Trace("LANING", bot, "think action=lasthit") end
+						return
+					end
 				end
 			end
-		end
 
-		local denyCreep = GetBestDenyCreep(nAllyCreeps)
-		if J.IsValid(denyCreep) then
-			bot:SetTarget(denyCreep)
-			bot:Action_AttackUnit(denyCreep, true)
-			return
-		end
+			local denyCreep = GetBestDenyCreep(nAllyCreeps)
+			if J.IsValid(denyCreep) then
+				bot:SetTarget(denyCreep)
+				bot:Action_AttackUnit(denyCreep, true)
+				if J.Log ~= nil then J.Log.Trace("LANING", bot, "think action=deny") end
+				return
+			end
 
-		-- Support harass + equilibrium
-		if TrySupportLaneActions(bot) then return end
+			-- Support harass + equilibrium
+			if TrySupportLaneActions(bot) then
+				if J.Log ~= nil then J.Log.Trace("LANING", bot, "think action=support_lane") end
+				return
+			end
 
-		if local_mode_laning_generic then
-			local_mode_laning_generic.Think()
-		end
+			if local_mode_laning_generic then
+				local_mode_laning_generic.Think()
+			end
 
-		local fLaneFrontAmount = GetLaneFrontAmount(GetTeam(), botAssignedLane, false)
-		local fLaneFrontAmount_enemy = GetLaneFrontAmount(GetOpposingTeam(), botAssignedLane, false)
+			local fLaneFrontAmount = GetLaneFrontAmount(GetTeam(), botAssignedLane, false)
+			local fLaneFrontAmount_enemy = GetLaneFrontAmount(GetOpposingTeam(), botAssignedLane, false)
 
-		local nLongestAttackRange = math.max(botAttackRange, 250, nFurthestEnemyAttackRange)
+			local nLongestAttackRange = math.max(botAttackRange, 250, nFurthestEnemyAttackRange)
 
-		local target_loc = GetLaneFrontLocation(GetTeam(), botAssignedLane, -nLongestAttackRange)
-		if fLaneFrontAmount_enemy < fLaneFrontAmount then
-			target_loc = GetLaneFrontLocation(GetOpposingTeam(), botAssignedLane, -nLongestAttackRange)
-		end
+			local target_loc = GetLaneFrontLocation(GetTeam(), botAssignedLane, -nLongestAttackRange)
+			if fLaneFrontAmount_enemy < fLaneFrontAmount then
+				target_loc = GetLaneFrontLocation(GetOpposingTeam(), botAssignedLane, -nLongestAttackRange)
+			end
 
-		bot:Action_MoveToLocation(target_loc + RandomVector(50))
+			bot:Action_MoveToLocation(target_loc + RandomVector(50))
+		end, function(err)
+			if J and J.Log then
+				J.Log.Error("MODE", "laning Think(override): " .. tostring(err) .. "\n" .. (debug.traceback and debug.traceback() or ""))
+			end
+		end)
 	end
 else
 	-- Fallback Think for non-override heroes (includes most supports)
 	function Think()
-		-- Support pull/stack takes priority during laning
-		if TrySupportTasks(bot) then return end
+		local ok, _ = xpcall(function()
+			-- Support pull/stack takes priority during laning
+			if TrySupportTasks(bot) then
+				if J.Log ~= nil then J.Log.Trace("LANING", bot, "think action=support_task") end
+				return
+			end
 
-		-- Deny creeps
-		local denyCreep = GetBestDenyCreep(nAllyCreeps)
-		if J.IsValid(denyCreep) then
-			bot:SetTarget(denyCreep)
-			bot:Action_AttackUnit(denyCreep, true)
-			return
-		end
+			-- Deny creeps
+			local denyCreep = GetBestDenyCreep(nAllyCreeps)
+			if J.IsValid(denyCreep) then
+				bot:SetTarget(denyCreep)
+				bot:Action_AttackUnit(denyCreep, true)
+				if J.Log ~= nil then J.Log.Trace("LANING", bot, "think action=deny") end
+				return
+			end
 
-		-- Support harass + equilibrium
-		if TrySupportLaneActions(bot) then return end
+			-- Last-hit when no allied core is nearby (don't waste free CS)
+			local nearbyAllies = bot:GetNearbyHeroes(1200, false, BOT_MODE_NONE)
+			local coreNearby = false
+			if nearbyAllies ~= nil then
+				for _, ally in pairs(nearbyAllies) do
+					if ally ~= bot and J.IsValid(ally) and J.GetPosition(ally) <= 3 then
+						coreNearby = true
+						break
+					end
+				end
+			end
+			if not coreNearby then
+				local hitCreep, _ = GetBestLastHitCreep(nEnemyCreeps)
+				if J.IsValid(hitCreep) then
+					bot:Action_AttackUnit(hitCreep, true)
+					if J.Log ~= nil then J.Log.Trace("LANING", bot, "think action=lasthit_no_core") end
+					return
+				end
+			end
 
-		-- Default: move toward lane front
-		local fLaneFrontAmount = GetLaneFrontAmount(GetTeam(), botAssignedLane, false)
-		local fLaneFrontAmount_enemy = GetLaneFrontAmount(GetOpposingTeam(), botAssignedLane, false)
+			-- Support harass + equilibrium
+			if TrySupportLaneActions(bot) then
+				if J.Log ~= nil then J.Log.Trace("LANING", bot, "think action=support_lane") end
+				return
+			end
 
-		local nLongestAttackRange = math.max(botAttackRange, 250, nFurthestEnemyAttackRange)
+			-- Default: move toward lane front
+			local fLaneFrontAmount = GetLaneFrontAmount(GetTeam(), botAssignedLane, false)
+			local fLaneFrontAmount_enemy = GetLaneFrontAmount(GetOpposingTeam(), botAssignedLane, false)
 
-		local target_loc = GetLaneFrontLocation(GetTeam(), botAssignedLane, -nLongestAttackRange)
-		if fLaneFrontAmount_enemy < fLaneFrontAmount then
-			target_loc = GetLaneFrontLocation(GetOpposingTeam(), botAssignedLane, -nLongestAttackRange)
-		end
+			local nLongestAttackRange = math.max(botAttackRange, 250, nFurthestEnemyAttackRange)
 
-		bot:Action_MoveToLocation(target_loc + RandomVector(50))
+			local target_loc = GetLaneFrontLocation(GetTeam(), botAssignedLane, -nLongestAttackRange)
+			if fLaneFrontAmount_enemy < fLaneFrontAmount then
+				target_loc = GetLaneFrontLocation(GetOpposingTeam(), botAssignedLane, -nLongestAttackRange)
+			end
+
+			bot:Action_MoveToLocation(target_loc + RandomVector(50))
+		end, function(err)
+			if J and J.Log then
+				J.Log.Error("MODE", "laning Think(fallback): " .. tostring(err) .. "\n" .. (debug.traceback and debug.traceback() or ""))
+			end
+		end)
 	end
 end

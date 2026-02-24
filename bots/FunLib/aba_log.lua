@@ -1,16 +1,25 @@
 --------------------------------------------------------------------
--- aba_log.lua  –  Centralized Logging & Debugging System
+-- aba_log.lua  -  Centralized Logging & Debugging System
 --
 -- Provides:
 --   1. Log levels: ERROR(1), WARN(2), INFO(3), DEBUG(4)
---   2. Category filtering: COMMS, ITEMS, STRATEGY, WARD, SUPPORT, LANING, MODE, GENERAL
+--   2. Category filtering: COMMS, ITEMS, STRATEGY, WARD, SUPPORT, LANING, MODE, GENERAL, DECISION, INIT
 --   3. Per-category level overrides
 --   4. Chat echo for important events (throttled)
 --   5. Periodic bot status dump
 --   6. Lazy settings: works before J.Customize exists
+--   7. Throttled Trace helper for decision tracing
+--   8. Mode transition tracker
 --------------------------------------------------------------------
 
 local X = {}
+
+-- Capture the real print function BEFORE aba_global_overrides replaces it.
+-- aba_log is loaded at jmz_func.lua:29, before aba_item (line 31) which
+-- triggers the print override. At this point, print is still the engine's
+-- real function.
+local _realPrint = print
+X._realPrint = _realPrint
 
 --------------------------------------------------------------------
 -- Log levels
@@ -36,12 +45,19 @@ local settings = {
     Chat_Echo = true,
     Status_Dump = true,
     Status_Dump_Interval = 5,
+    Trace_Interval = 5,
 }
 
 local lastStatusDumpTime = -999
 local lastChatEchoTime = {}  -- [botPlayerID] = last echo time
 local CHAT_ECHO_THROTTLE = 5  -- seconds between chat echoes per bot
 local getPositionFn = nil  -- injected by jmz_func to avoid circular require
+
+--------------------------------------------------------------------
+-- Trace throttle state
+--------------------------------------------------------------------
+local traceThrottle = {}  -- [category_playerID] = last trace time
+local lastMode = {}       -- [playerID] = last active mode (for transition tracking)
 
 --------------------------------------------------------------------
 -- Settings loader
@@ -56,6 +72,7 @@ function X.LoadSettings(customize)
     if log.Chat_Echo ~= nil then settings.Chat_Echo = log.Chat_Echo end
     if log.Status_Dump ~= nil then settings.Status_Dump = log.Status_Dump end
     if log.Status_Dump_Interval ~= nil then settings.Status_Dump_Interval = log.Status_Dump_Interval end
+    if log.Trace_Interval ~= nil then settings.Trace_Interval = log.Trace_Interval end
 end
 
 function X.SetGetPositionFn(fn)
@@ -80,12 +97,12 @@ end
 local function LogMessage(level, category, msg)
     if level == LEVEL_ERROR then
         -- ERROR always prints
-        print("[ERROR][" .. category .. "] " .. tostring(msg))
+        _realPrint("[ERROR][" .. category .. "] " .. tostring(msg))
         return
     end
     if not X.IsEnabled(category, level) then return end
     local levelName = LEVEL_NAMES[level] or "???"
-    print("[" .. levelName .. "][" .. category .. "] " .. tostring(msg))
+    _realPrint("[" .. levelName .. "][" .. category .. "] " .. tostring(msg))
 end
 
 --------------------------------------------------------------------
@@ -105,6 +122,73 @@ end
 
 function X.Debug(category, msg)
     LogMessage(LEVEL_DEBUG, category, msg)
+end
+
+--------------------------------------------------------------------
+-- Throttled Trace helper (DEBUG level, throttled per bot per category)
+--------------------------------------------------------------------
+function X.Trace(category, bot, msg)
+    if not X.IsEnabled(category, LEVEL_DEBUG) then return end
+    if bot == nil then return end
+    local now = DotaTime()
+    if now < 0 then return end
+    local key = category .. "_" .. tostring(bot:GetPlayerID())
+    if traceThrottle[key] and now - traceThrottle[key] < settings.Trace_Interval then return end
+    traceThrottle[key] = now
+    local hero = string.gsub(bot:GetUnitName(), "npc_dota_hero_", "")
+    _realPrint("[DEBUG][" .. category .. "] " .. hero .. " | " .. tostring(msg))
+end
+
+--------------------------------------------------------------------
+-- Mode transition tracker
+-- Logs when a bot's active mode changes.
+-- Called from mode_laning_generic.lua GetDesire (runs every frame).
+--------------------------------------------------------------------
+local MODE_NAMES = {
+    [BOT_MODE_LANING]              = "LANE",
+    [BOT_MODE_ATTACK]              = "ATTACK",
+    [BOT_MODE_ROAM]                = "ROAM",
+    [BOT_MODE_RETREAT]             = "RETREAT",
+    [BOT_MODE_SECRET_SHOP]         = "SHOP",
+    [BOT_MODE_SIDE_SHOP]           = "SIDE_SHOP",
+    [BOT_MODE_PUSH_TOWER_TOP]      = "PUSH_TOP",
+    [BOT_MODE_PUSH_TOWER_MID]      = "PUSH_MID",
+    [BOT_MODE_PUSH_TOWER_BOT]      = "PUSH_BOT",
+    [BOT_MODE_DEFEND_TOWER_TOP]    = "DEFEND_TOP",
+    [BOT_MODE_DEFEND_TOWER_MID]    = "DEFEND_MID",
+    [BOT_MODE_DEFEND_TOWER_BOT]    = "DEFEND_BOT",
+    [BOT_MODE_ASSEMBLE]            = "ASSEMBLE",
+    [BOT_MODE_TEAM_ROAM]           = "TEAM_ROAM",
+    [BOT_MODE_FARM]                = "FARM",
+    [BOT_MODE_DEFEND_ALLY]         = "DEF_ALLY",
+    [BOT_MODE_EVASIVE_MANEUVERS]   = "EVADE",
+    [BOT_MODE_ROSHAN]              = "ROSHAN",
+    [BOT_MODE_ITEM]                = "ITEM",
+    [BOT_MODE_WARD]                = "WARD",
+    [BOT_MODE_RUNE]                = "RUNE",
+}
+
+function X.TraceTransition(bot)
+    if not X.IsEnabled("DECISION", LEVEL_DEBUG) then return end
+    if bot == nil then return end
+    if not bot:IsAlive() then return end
+    local now = DotaTime()
+    if now < 0 then return end
+
+    local pid = bot:GetPlayerID()
+    local currentMode = bot:GetActiveMode()
+    local prev = lastMode[pid]
+
+    if prev ~= nil and prev ~= currentMode then
+        local hero = string.gsub(bot:GetUnitName(), "npc_dota_hero_", "")
+        local fromName = MODE_NAMES[prev] or tostring(prev)
+        local toName = MODE_NAMES[currentMode] or tostring(currentMode)
+        local desire = string.format("%.2f", bot:GetActiveModeDesire())
+        local time = tostring(math.floor(now))
+        _realPrint("[DEBUG][DECISION] " .. hero .. " | transition | from=" .. fromName .. " to=" .. toName .. " desire=" .. desire .. " time=" .. time)
+    end
+
+    lastMode[pid] = currentMode
 end
 
 --------------------------------------------------------------------
@@ -168,30 +252,7 @@ function X.StatusDump()
             local desire = 0
             if hero:IsAlive() then
                 local activeMode = hero:GetActiveMode()
-                local modeNames = {
-                    [BOT_MODE_LANING]      = "LANE",
-                    [BOT_MODE_ATTACK]      = "ATTACK",
-                    [BOT_MODE_ROAM]        = "ROAM",
-                    [BOT_MODE_RETREAT]      = "RETREAT",
-                    [BOT_MODE_SECRET_SHOP]  = "SHOP",
-                    [BOT_MODE_SIDE_SHOP]    = "SIDE_SHOP",
-                    [BOT_MODE_PUSH_TOWER_TOP]  = "PUSH",
-                    [BOT_MODE_PUSH_TOWER_MID]  = "PUSH",
-                    [BOT_MODE_PUSH_TOWER_BOT]  = "PUSH",
-                    [BOT_MODE_DEFEND_TOWER_TOP] = "DEFEND",
-                    [BOT_MODE_DEFEND_TOWER_MID] = "DEFEND",
-                    [BOT_MODE_DEFEND_TOWER_BOT] = "DEFEND",
-                    [BOT_MODE_ASSEMBLE]    = "ASSEMBLE",
-                    [BOT_MODE_TEAM_ROAM]   = "TEAM_ROAM",
-                    [BOT_MODE_FARM]        = "FARM",
-                    [BOT_MODE_DEFEND_ALLY] = "DEF_ALLY",
-                    [BOT_MODE_EVASIVE_MANEUVERS] = "EVADE",
-                    [BOT_MODE_ROSHAN]      = "ROSHAN",
-                    [BOT_MODE_ITEM]        = "ITEM",
-                    [BOT_MODE_WARD]        = "WARD",
-                    [BOT_MODE_RUNE]        = "RUNE",
-                }
-                mode = modeNames[activeMode] or tostring(activeMode)
+                mode = MODE_NAMES[activeMode] or tostring(activeMode)
                 desire = hero:GetActiveModeDesire()
             end
 
@@ -204,7 +265,7 @@ function X.StatusDump()
     table.insert(lines, "=== END STATUS DUMP ===")
 
     for _, line in ipairs(lines) do
-        print(line)
+        _realPrint(line)
     end
 end
 

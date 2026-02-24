@@ -1,6 +1,7 @@
 local X = {}
 
 local bot = GetBot()
+if bot == nil then return end
 local J = require( GetScriptDirectory()..'/FunLib/jmz_func' )
 local Localization = require( GetScriptDirectory()..'/FunLib/localization' )
 local Customize = require( GetScriptDirectory()..'/Customize/general' )

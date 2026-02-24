@@ -746,7 +746,7 @@ function X.Announce(bot, announceType, message)
 	if pendingAnnouncements[pid] == nil then pendingAnnouncements[pid] = {} end
 	table.insert(pendingAnnouncements[pid], {
 		message = message,
-		allChat = true,
+		allChat = false,
 		pingLoc = nil,
 		pingDanger = false,
 	})
@@ -783,7 +783,7 @@ function X.AnnounceMissing(bot, lane)
 	if pendingAnnouncements[pid] == nil then pendingAnnouncements[pid] = {} end
 	table.insert(pendingAnnouncements[pid], {
 		message = laneName .. " missing!",
-		allChat = true,
+		allChat = false,
 		pingLoc = nil,
 		pingDanger = false,
 	})

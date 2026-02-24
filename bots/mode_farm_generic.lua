@@ -736,13 +736,17 @@ function X.CouldBlink(bot,nLocation)
 	if botName == "npc_dota_hero_antimage"
 	then
 		blink = bot:GetAbilityByName( "antimage_blink" );
-		maxBlinkDist = blink:GetSpecialValueInt('AbilityCastRange')
+		if blink ~= nil then
+			maxBlinkDist = blink:GetSpecialValueInt('AbilityCastRange')
+		end
 	end
-	
+
 	if botName == "npc_dota_hero_queenofpain"
 	then
 		blink = bot:GetAbilityByName( "queenofpain_blink" );
-		maxBlinkDist = J.GetProperCastRange(false, bot, blink:GetCastRange())
+		if blink ~= nil then
+			maxBlinkDist = J.GetProperCastRange(false, bot, blink:GetCastRange())
+		end
 	end
 	
 	if blink ~= nil 

@@ -276,7 +276,7 @@ end
 --------------------------------------------------------------------
 function X.HasSentryWard(bot)
     if bot == nil then return false end
-    for i = 0, 5 do
+    for i = 0, 8 do
         local item = bot:GetItemInSlot(i)
         if item ~= nil and item:GetName() == "item_ward_sentry" then
             return true

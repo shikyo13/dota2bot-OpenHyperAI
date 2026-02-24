@@ -232,12 +232,15 @@ function X.UpdateEnemyTracking()
         local state = enemyState[id]
         if state == nil then goto continue end
 
-        -- Check if alive and detect alive->dead transitions
+        -- Check if alive and detect alive->dead / dead->alive transitions
         local aliveOk, alive = pcall(IsHeroAlive, id)
         if aliveOk then
             if state.isAlive and not alive then
                 -- Hero just died: record death time
                 state.deathTime = now
+            elseif not state.isAlive and alive then
+                -- Hero just respawned: clear stale death time
+                state.deathTime = nil
             end
             state.isAlive = alive
         end
@@ -528,7 +531,8 @@ function X.GetTeamPowerBalance()
         end
     end
 
-    -- Enemy power
+    -- Enemy power (visible enemies)
+    local countedEnemyIDs = {}  -- track player IDs already counted to avoid double-counting
     local enemyOk, enemyList = pcall(function() return GetUnitList(UNIT_LIST_ENEMY_HEROES) end)
     if enemyOk and enemyList ~= nil then
         for _, hero in pairs(enemyList) do
@@ -540,13 +544,21 @@ function X.GetTeamPowerBalance()
             if validOk and valid then
                 enemyPower = enemyPower + X.GetHeroPowerLevel(hero)
                 enemyCount = enemyCount + 1
+                -- Record player ID so we don't double-count in missing loop
+                local pidOk, pid = pcall(function() return hero:GetPlayerID() end)
+                if pidOk and pid ~= nil then
+                    countedEnemyIDs[pid] = true
+                end
             end
         end
     end
 
-    -- For dead enemies we can't see, estimate based on level
+    -- For missing alive enemies, estimate based on level (skip already-counted)
     if enemyIDs ~= nil then
         for _, id in pairs(enemyIDs) do
+            if countedEnemyIDs[id] then
+                goto continue_power
+            end
             local state = enemyState[id]
             if state ~= nil and not state.isAlive then
                 -- Dead enemy contributes 0
@@ -555,11 +567,11 @@ function X.GetTeamPowerBalance()
                 local lvlOk, lvl = pcall(GetHeroLevel, id)
                 if lvlOk and lvl ~= nil and lvl > 0 then
                     local estimatedPower = lvl * 1.2 + math.log(1 + lvl * 300) * 3
-                    -- Only add if this enemy wasn't already counted in the visible list
                     enemyPower = enemyPower + estimatedPower
                     enemyCount = enemyCount + 1
                 end
             end
+            ::continue_power::
         end
     end
 
