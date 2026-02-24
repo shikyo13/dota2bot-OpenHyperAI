@@ -14,11 +14,16 @@
 
 local X = {}
 
--- Capture the real print function BEFORE aba_global_overrides replaces it.
--- aba_log is loaded at jmz_func.lua:29, before aba_item (line 31) which
--- triggers the print override. At this point, print is still the engine's
--- real function.
-local _realPrint = print
+-- Capture the REAL engine print function.
+-- hero_selection.lua loads aba_global_overrides BEFORE any bot module,
+-- replacing print() with a DebugMode-gated version. By the time aba_log
+-- loads, print is already the fake one. We recover the real print from
+-- aba_global_overrides' exported orig_print.
+local _realPrint = print  -- fallback (will be the gated version, but better than nil)
+local ok_overrides, overrides = pcall(require, GetScriptDirectory()..'/FunLib/aba_global_overrides')
+if ok_overrides and overrides and overrides.orig_print then
+    _realPrint = overrides.orig_print
+end
 X._realPrint = _realPrint
 
 --------------------------------------------------------------------

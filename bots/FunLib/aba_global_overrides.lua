@@ -457,7 +457,8 @@ end
 
 local X = {
 	orig_GetTeamPlayers = orig_GetTeamPlayers,
-	GetTeamPlayers = GetTeamPlayers
+	GetTeamPlayers = GetTeamPlayers,
+	orig_print = orig_print,
 }
 
 return X
